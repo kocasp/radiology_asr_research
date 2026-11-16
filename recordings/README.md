@@ -144,34 +144,7 @@ FROM recordings a JOIN recordings n
 
 ## Schemat bazy
 
-### `recordings` (7 643 wiersze, to samo co `metadata.csv`)
-
-| Kolumna | Opis |
-|---|---|
-| `recording_id` | Nazwa pliku bez `.wav` (klucz główny). |
-| `path` | Ścieżka względna do `.wav`, np. `audio/natural/AMV010/….wav`. |
-| `source` | `natural` / `anonymized` / `synthetic`. |
-| `category_code`, `category` | `02-001` radiologia tarczycy (USG) / `02-003` radiologia głowa–szyja. |
-| `speaker_id` | `AMV…` człowiek, `ANI…` głos zanonimizowany, `SYN…` głos syntetyczny. |
-| `speaker_sex`, `speaker_age` | `F`/`M` i wiek; puste dla anonymized. |
-| `rec_place` | `GU…` pomieszczenia GUMed, `PG…` studio, `UNKNV` nagranie online, `SPGEN` syntezator. |
-| `mic_code`, `mic` | Mikrofon, np. `NTG2` = RODE NTG-2, `ONLN` = online, `MODE` = synteza. |
-| `text_id` | ID tekstu; klucz obcy do `phrases`. |
-| `phrase_group` | Grupa identycznych tekstów (patrz wyżej). |
-| `phrase` | **Transkrypcja referencyjna** (spacje znormalizowane, Unicode NFC). |
-| `duration_s`, `sample_rate`, `bit_depth`, `channels` | Odczytane z nagłówka WAV. |
-| `mos_pred`, `grade`, `comments` | Jakość nagrania i uwagi z metadanych korpusu. |
-| `recorded_at` | Data z nazwy pliku. W 23 nagraniach anonymized jest to zastępczy ciąg w rodzaju `03753T000000`, a nie data. |
-
-### `phrases` (857 wierszy, to samo co `phrases.csv`)
-
-Kolumny `text_id`, `phrase_group`, `category_code`, `phrase` i `n_words`, a do tego liczba nagrań
-każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
-
-### Widoki
-
-- `summary` zawiera liczby z tabeli wyżej.
-- `speakers` zawiera, dla każdego mówcy: źródło, płeć, wiek, użyte mikrofony, liczbę nagrań i minuty.
+Opis tabel, kolumn i widoków jest w głównym README repo: `../README.md`, sekcja 3.3.
 
 ## Przykładowe zapytania
 
