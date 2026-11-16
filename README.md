@@ -1,3 +1,5 @@
+<p align="center"><img src="assets/banner.svg" alt="Halucynacje modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej — model dopisuje tekst w ciszy nagrania" width="100%"></p>
+
 # Halucynacje modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej
 
 > Wersja robocza publikacji. Plik jest aktualizowany po każdym kroku badania (zasady w `CLAUDE.md`).
@@ -25,10 +27,82 @@ mikrofon, głos przetworzony lub syntetyczny?
 
 ## 2. Powiązane prace
 
-*TODO.* Punkty wyjścia:
-- korpus ADMEDVOICE ([Scientific Data 2025](https://www.nature.com/articles/s41597-025-05776-1)),
-- model `whisper-medium-medical-pl`, dla którego deklarowany WER spada z 24,03 do 13,91 (deklaracja
-  autorów, nie sprawdzaliśmy jej).
+### 2.1 ADMEDVOICE i model `whisper-medium-medical-pl`
+
+Korpus opisano w artykule Czyżewski i in., *A Comprehensive Polish Medical Speech Dataset for
+Enhancing Automatic Medical Dictation*, Scientific Data 12:1436 (2025),
+[doi:10.1038/s41597-025-05776-1](https://doi.org/10.1038/s41597-025-05776-1),
+[PMC12357909](https://europepmc.org/articles/PMC12357909). Zespół pochodzi z Politechniki Gdańskiej
+i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4/0003/2022).
+
+**Jak powstał model.** Opis pochodzi z artykułu, karty modelu na Kaggle i notebooka autora
+(sprawdzone 2026-11-16).
+
+- **Model bazowy:** `openai/whisper-medium` (769M parametrów, licencja Apache 2.0). Notebook odczytuje
+  go z konfiguracji adaptera (`PeftConfig.base_model_name_or_path`).
+- **Metoda:** artykuł jej nie nazywa. Karta na Kaggle podaje „trained with LoRA” i 4,7M trenowanych
+  parametrów, czyli około 0,6% modelu. Notebook ładuje adapter przez `PeftModel` i scala go
+  (`merge_and_unload`). Rank, alpha i docelowe moduły LoRA nie są nigdzie podane.
+- **Parametry treningu:** wszystkie dane pochodzą z artykułu, nie sprawdzaliśmy ich.
+
+  | Parametr | Wartość |
+  |---|---|
+  | Liczba kroków | maks. 10 000 |
+  | Batch | 64 |
+  | Learning rate | 1e-5 |
+  | Wybór checkpointu | najniższy WER na walidacji |
+  | Sprzęt | 1× NVIDIA A100 (PLGrid), do 48 h na przebieg |
+  | Biblioteki | PyTorch 2.5, transformers 4.48, HF datasets |
+  | Audio | próbkowanie 16 kHz; nagrania dłuższe niż 30 s usunięte |
+
+- **Dane:** wszystkie kategorie ADMEDVOICE, nie tylko radiologia. Podział jest rozłączny po mówcach
+  (deklaracja autorów):
+
+  | Zbiór | Train | Val | Test |
+  |---|---|---|---|
+  | N+A+S (łącznie) | 34 900 próbek (58 h) | 2 492 (4 h) | 12 468 (21 h) |
+  | Natural | 7 404 (9,6 h) | 529 | 2 645 (3,4 h) |
+
+  W zbiorze testowym każda unikalna fraza pojawia się średnio 4,6 razy.
+- **Warianty:** na Kaggle są checkpointy trenowane na danych natural, anonym, synth oraz na wszystkich
+  trzech razem. Najlepszy to `natural_anonym_synth`.
+- **Wyniki:** WER na teście natural, deklaracja autorów, w nawiasach 95% CI z bootstrapu.
+
+  | Model | WER (natural test) |
+  |---|---|
+  | Whisper bazowy | 24,0 [22,3; 26,0] |
+  | trening na natural | 15,5 [12,5; 19,8] |
+  | trening na anonymized | 13,6 [12,1; 15,2] |
+  | trening na N+A+S | 13,9 [12,4; 15,6] |
+  | N+A+S + Common Voice + FLEURS | 9,5 [8,1; 11,1] |
+
+  Ten ostatni model nie jest opublikowany.
+- **Publikacja:** model na Kaggle `msxksm/whisper-medium-medical-pl` (Apache 2.0) i notebook
+  `msxksm/transcribe-medical-pl-whisper-medium`. Wersja dla whisper.cpp to HF
+  `fwasil162/whisper-medium-medical-pl-ggml`: adapter scalony z modelem bazowym, przekonwertowany
+  do formatu ggml i skwantyzowany do q5_0 (514 MB). To repozytorium nie jest od autorów korpusu.
+
+**Luki i niespójności istotne dla naszego badania:**
+- **Artykuł nie analizuje halucynacji.** Cytuje literaturę o halucynacjach, ale ich nie mierzy. To jest
+  luka, którą wypełnia nasze badanie.
+- **Nie wiadomo, jak normalizowano tekst przed liczeniem WER.** Artykuł o tym nie pisze.
+- **Niespójności w artykule:**
+  - w tekście wyników WER 9,5% przypisano treningowi na nagraniach naturalnych, a tabela podaje 9,5
+    dla wariantu z Common Voice i FLEURS;
+  - przedziały ufności wariantów natural i anonymized nakładają się, więc teza, że trening na danych
+    zanonimizowanych jest lepszy, nie jest dowiedziona.
+- **Ryzyko przecieku danych (najważniejsze dla nas):** model trenowano na mówcach z ADMEDVOICE, a lista
+  mówców testowych nie jest opublikowana w artykule ani w notebooku. Ocena tego modelu na naszym
+  wycinku radiologicznym może więc obejmować nagrania, które widział w treningu, nawet jeśli tylko
+  w wersji zanonimizowanej. Notebook demonstracyjny transkrybuje nagranie mówcy AMV010
+  z `cat_02-001`, który jest w naszym zbiorze. *TODO: ustalić podział mówców autorów, np. z kodu na
+  Kaggle albo przez kontakt z autorami, zanim porównamy ten model z bazowym Whisperem.*
+
+### 2.2 Inne prace
+
+- Kurowski, Zaporowski, Kostek, Czyżewski (ISD 2025/2026): porównują metody PEFT (LoRA, DoRA, MoRA)
+  na Whisper small, oceniając je na teście ADMEDVOICE.
+  *TODO: przeczytać i opisać.*
 
 ## 3. Dane
 
