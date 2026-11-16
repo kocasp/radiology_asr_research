@@ -1,0 +1,858 @@
+text_id,phrase_group,category_code,phrase,n_words,n_natural,n_anonymized,n_synthetic
+3753,1,02-001,Unaczynienie miąższu tarczycy prawidłowe. Nie widać powiększonych węzłów chłonnych okołotarczycowo.,10,1,3,0
+3772,2,02-001,Nie widać powiększonych węzłów chłonnych okołotarczycowo.,6,1,3,0
+3788,3,02-001,Unaczynienie miąższu tarczycy prawidłowe.,4,1,3,0
+3805,4,02-001,"Zmiany ogniskowe: - w biegunie dolnym płata prawego zmiana hipoechogenna, dobrze odgraniczona, unaczynienie mieszane, o wymiarze do 8x5x13mm - stabilna, poprzednio 10x5x13mm.",22,1,2,0
+3809,5,02-001,Stabilny obraz zmian ogniskowych tarczycy.,5,1,2,0
+3810,6,02-001,"Tarczyca położona typowo, dwupłatowa, o gładkich zarysach, o nieco obniżonej echogeniczności, nieco niejednorodna.",13,1,2,0
+3812,7,02-001,"Poniżej bieguna dolnego niejednorodny guzek hipoechogenny o wymiarze 20x14x16mm, poprzednio 20x10x14mm.",11,1,2,0
+3814,8,02-001,"Wymiary tarczycy: płat prawy 21x15x50mm, objętość 8,1 ml płat lewy 14x17x47mm, objętość 5,8 ml cieśń 3mm.",16,1,2,0
+3815,9,02-001,"Dane z wywiadu: Kontrola guzków tarczycy w ośrodku zewnętrznym, stan po biopsji.",12,1,2,0
+3816,10,02-001,"Tarczyca położona typowo, dwupłatowa, o gładkich zarysach, normoechogenna, jednorodna z prawidłowym unaczynieniem w opcji CD.",15,1,2,0
+3818,11,02-001,Dodatkowo w dolnym biegunie płata prawego zmiana gąbczasta wielkości 6x4mm.,10,1,2,0
+3820,12,02-001,"Wymiary tarczycy: - płat prawy 23x25x58mm, objętość, 17,8 ml - płat lewy 15x14x47mm, objętość 6,1 ml - cieśń wypełniona przez guzek 13x7mm, zmiana o morfologii dwóch największych opisywanych wyżej.",29,1,2,0
+3824,13,02-001,"Poza tym bez cech odrostu w loży po gruczole, bez zmian ogniskowych.",12,1,2,0
+3825,14,02-001,Obustronnie na szyi patologicznie powiększonych węzłów chłonnych nie widać.,9,1,2,0
+3826,15,02-001,"Tarczyca położona typowo, powiększona, dwupłatowa, o gładkich zarysach.",8,1,2,0
+3848,16,02-001,Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4),19,1,2,0
+4473,17,02-001,"Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",21,11,35,0
+4474,18,02-001,"W płacie prawym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4 mm, TIRADS 4, bez wzmożonego przepływu.",16,13,18,0
+4475,19,02-001,Innych zmian ogniskowych w tarczycy nie uwidoczniono. Patologicznie powiększonych węzłów chłonnych szyjnych nie widać.,14,8,19,6
+4476,20,02-001,"Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",19,8,19,0
+4477,22,02-001,"Tarczyca o atroficznym miąższu, zmiany ogniskowe, TIRADS 4, do okresowej kontroli USG.",12,12,32,0
+4478,22,02-001,"Tarczyca o atroficznym miąższu, zmiany ogniskowe, TIRADS 4, do okresowej kontroli USG.",12,12,0,0
+4479,23,02-001,"Tarczyca położona prawidłowo, nieco powiększona, o odcinkowo nierównych zarysach zewnętrznych.",10,8,21,6
+4480,25,02-001,"Miąższ tarczycy o niejednorodnej echostrukturze i niejednorodnie obniżonej echogeniczności, z obszarami niższego echa, o prawidłowym unaczynieniu w opcji color doppler ‒ całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",28,7,17,6
+4481,26,02-001,W prawym płacie dwie hiperechogenne zmiany ogniskowe. W części środkowej prawego płata i bocznie wielkości 3x3x3 mm.,17,12,17,0
+4482,27,02-001,"Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości od 4x4,5x4 mm, TIRADS 4, bez wzmożonego przepływu.",18,13,15,0
+4483,28,02-001,"Również w części środkowej i centralnie zmiana wielkości 9x5x10 mm z brzeżnym zwapnieniem długości 2 mm. W dolnej części cieśni, kolejna hipoechogenna zmiana wielkości 7x6x7mm.",25,12,16,0
+4484,29,02-001,"Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",21,8,35,0
+4485,31,02-001,"Okołotarczycowe węzły chłonne niepowiększone. Tarczyca położona typowo, dwupłatowa, o gładkich zarysach.",11,8,34,6
+4486,32,02-001,"W obu płatach widoczne pojedyncze zmiany płynowo-lite, gąbczaste i torbiele koloidowe. W prawym płacie w biegunie dolnym zmiana lito-płynowa wielkości 4x3x4 mm, TIRADS 2.",24,12,0,0
+4487,33,02-001,"Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4,5x4 mm bez wzmożonego przepływu.",16,12,16,0
+4488,30,02-001,"W lewym płacie w części środkowej zmiana gąbczasta o wielkości 3x3 mm, TIRADS 2. W biegunie górnym zmiana płynowo-lita wiekości 3x2 mm, TIRADS 2.",24,13,0,0
+4489,34,02-001,"Na szyi bez cech limfadenopatii. Tarczyca położona typowo, dwupłatowa, o gładkich zarysach.",12,9,19,6
+4490,35,02-001,"Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x57 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",21,5,0,0
+4491,36,02-001,Dokumentacja zdjęciowa w PACS.,4,7,17,0
+4492,37,02-001,"Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4,5x4 mm, Eu-TIRADS 4, bez wzmożonego przepływu.",18,12,15,0
+4493,38,02-001,"Gruczoł tarczowy o objętości 11 ml, gładkokonturowany, o obniżonej echogeniczności i prawidłowym przepływie naczyniowym.",14,12,16,0
+4494,39,02-001,Guzek płata prawego stabilnej wielkości względem badania poprzedniego. Nowych guzków w tarczycy nie widać.,14,8,20,6
+4495,40,02-001,"Miąższ tarczycy nieco niejednorodny, o prawidłowej echogeniczności, o prawidłowym unaczynieniu w opcji color doppler, z pasmami zwłóknień. Okołotarczycowo obecne pojedyncze, niepowiększone węzły chłonne. Całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",30,8,17,6
+4496,41,02-001,Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.,7,8,18,6
+4497,42,02-001,Guzki obu płatów tarczycy. Ich wielkość jest porównywalna z poprzednim badaniem USG.,12,8,18,0
+4498,43,02-001,Płat lewy tarczycy bez zmian ogniskowych.,6,8,20,6
+4499,44,02-001,Obraz zmian bez istotnych różnic w porównaniu z badaniem poprzednim. Cieśń wynosi 4 mm.,14,12,18,0
+4500,45,02-001,"Poniżej tej zmiany grzbietowo znajduje się ognisko hipoechogenne, wielkości 4x5x7 mm, TIRADS 4. Do dalszej obserwacji przy tej wielkości.",19,11,14,0
+4501,46,02-001,Poniżej zmiana hipoechogenna owalna z hiperechogennym centrum wielkości 4 mm. Poza tym w obu płatach widoczne zmiany ogniskowe o strukturze gąbczastej mierzące do 9 mm.,25,8,20,0
+4502,47,02-001,"Tarczyca niepowiększona, nie zagłębia się poniżej wcięcia jarzmowego mostka.",9,8,20,6
+4503,48,02-001,"Tarczyca o typowej echogeniczności, niepowiększona, bez wzmożenia przepływu naczyniowego przez miąższ.",11,7,20,6
+4504,49,02-001,W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.,15,7,20,6
+4505,50,02-001,"USG tarczycy. Tarczyca o gładkich zarysach, dwupłatowa. W biegunie dolnym lewego płata tarczycy widoczna jest zmiana guzkowa, dobrze ograniczona, normoechogeniczna, typu gąbczastego, o obwodowym typie unaczynienia. Wymiary 11x8x13 mm, TIRADS 1.",31,11,20,0
+4506,51,02-001,"Tarczyca położona prawidłowo, mała, o gładkich zarysach zewnętrznych.",8,8,20,6
+4507,52,02-001,"Tarczyca położona typowo, niepowiększona, o pozaciąganych zarysach oraz niejednorodnej echostrukturze, z pasmami zwłóknień. Obraz jak w autoimmunologicznym zapaleniu tarczycy.",19,8,20,6
+4508,53,02-001,W tarczycy obecnych jest kilka obszarów obniżonego echa. Największy w płacie prawym wielkości 4x2x3 mm. Przy cieśni obecny drobny węzeł chłonny wielkości 3x1 mm.,24,13,19,0
+4509,54,02-001,"Zmiana dominująca w płacie prawym, TIRADS 2, o stabilnej wielkości. Do obserwacji pozostaje ognisko w płacie prawym, TIRADS 4.",19,8,18,0
+4510,55,02-001,"Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji color doppler.",17,8,18,6
+4511,56,02-001,"Tarczyca położona prawidłowo, mniejsza, o gładkich zarysach zewnętrznych.",8,8,19,6
+4512,57,02-001,"Miąższ tarczycy niejednorodny, o obniżonej echogeniczności, z pasmami zwłóknień, bez cech wzmożenia przepływu w opcji color doppler. Obraz miąższu tarczycy jak w chorobie Hashimoto.",24,7,18,6
+4513,58,02-001,"Echogeniczność podstawowa gruczołu prawidłowa, echostruktura nieco niejednorodna, bez cech wzmożenia przepływu naczyniowego w opcji color doppler.",16,9,18,6
+4514,59,02-001,"Płat lewy wielkości 25x25x52 mm, objętość 17 ml. W biegunie dolnym płata lewego widoczny jest konglomerat guzków hipoechogennych z przestrzeniami płynowymi, z hipoechogenną obwódką ‒ wielkość konglomeratu 25x26x30 mm.",29,12,20,0
+4515,61,02-001,"Poza tym miąższ tarczycy jednorodny, o prawidłowej echogeniczności, bez wzmożenia unaczynienia. Okoliczne węzły chłonne niepowiększone.",15,7,21,6
+4516,62,02-001,"W obu płatach widoczne zmiany ogniskowe o charakterze gąbczastym, TIRADS 2. W prawym płacie największa ze zmian położona w części środkowej wielkości 7x4x7 mm. W lewym płacie największa położona w biegunie dolnym wielkości 3x3x3 mm.",35,13,20,0
+4517,63,02-001,"Miąższ tarczycy niejednorodny, o obniżonej echogeniczności, z pasmami zwłóknień, bez cech wzmożenia przepływu w opcji CD. Obraz miąższu tarczycy jak w chorobie Hashimoto.",23,7,19,0
+4518,64,02-001,"Echogeniczność podstawowa gruczołu prawidłowa, echostruktura nieco niejednorodna, bez cech wzmożenia przepływu naczyniowego w opcji CD.",15,7,19,0
+4519,65,02-001,"Płat prawy wielkości 14x16x42 mm, objętość 5,2 ml. W biegunie dolnym płata prawego widoczny jest konglomerat guzków wielkości 13x15x22 mm. Unaczynienie zmiany obwodowe.",23,10,15,0
+4520,66,02-001,W lewym płacie drobne do 2 mm torbiele koloidowe. Powiększonych węzłów chłonnych przytarczycowych nie widać. Guzki obu płatów tarczycy.,19,12,17,0
+4521,67,02-001,"Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji color doppler. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",20,8,17,6
+4522,68,02-001,"Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",21,13,18,0
+4523,69,02-001,W płacie prawym w części dolnej grzbietowo zmiana hipoechogenna wielkości 6x6x4 mm do kontroli.,14,8,19,0
+4524,70,02-001,"Na szyi nie stwierdzono patologicznych, powiększonych węzłów chłonnych. Dalsza diagnostyka obrazowa zależy od konsultacji klinicznej.",15,8,17,6
+4525,71,02-001,"W jednej trzeciej części dolnej płata prawego tarczycy i grzbietowo wydziela się egzofityczne ognisko izoechogenne z halo i obwodowym unaczynieniem, wyższe niż szersze, do 15x13x19 mm.",26,12,17,0
+4526,72,02-001,"W płacie lewym, brzusznie, widoczna jest izoechogenna zmiana z hipoechogenną otoczką wielkości 6x3 mm. Raczej zmiana z tarczycy niż węzeł chłonny.",21,12,17,0
+4527,73,02-001,W przyleganiu do tarczycy nie widać patologicznych węzłów chłonnych. Po stronie prawej płat piramidowy. Wnioski: zmiana w prawym płacie tarczycy do biopsji.,22,12,18,6
+4528,74,02-001,"Tarczyca położona prawidłowo, powiększona, o nierównych zarysach zewnętrznych.",8,8,19,6
+4529,75,02-001,"Na szyi nie stwierdzono patologicznych, powiększonych węzłów chłonnych. Obraz USG jak w przebiegu autoimmunologicznego zapalenia tarczycy.",16,8,17,0
+4530,76,02-001,"W prawym płacie widoczna torbielowato-lita zmiana ogniskowa o wymiarach 9x9x16 mm, wyraźnie odgraniczona od otoczenia. Jest struktury gąbczastej, TIRADS 2.",20,10,16,0
+4531,77,02-001,"W płacie prawym, w części brzusznej, obecny stabilnej wielkości względem badania poprzedniego guzek hipoechogenny wielkości 4x3x4 mm. Poprzednio 3x3x4 mm.",20,8,17,0
+4532,78,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono.",8,8,35,6
+4533,79,02-001,W części środkowej płata lewego zmiana izoechogenna z hipootoczką wielkości 9x6x6 mm.,12,7,0,0
+4534,17,02-001,"Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",21,7,0,0
+4837,80,02-001,W prawym płacie dwie hiperechogenne zmiany ogniskowe. W części środkowej prawego płata i bocznie wielkości 3x3x3 mm. Również w części środkowej i centralnie zmiana wielkości 9x5x10 mm z brzeżnym zwapnieniem długości 2 mm. W dolnej części cieśni kolejna hipoechogenna zmiana wielkości 7x6x7 mm.,43,0,2,0
+4840,81,02-001,"W obu płatach widoczne pojedyncze zmiany płynowo-lite, gąbczaste i torbiele koloidowe. Największe: w prawym płacie w biegunie dolnym zmiana lito-płynowa wielkości 3x4x4 mm (TIRADS 2).",25,0,1,0
+4843,82,02-001,"Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",20,0,2,0
+4844,83,02-001,"Gruczoł tarczycowy o objętości 11 ml, gładkokonturowany, o obniżonej echogeniczności i prawidłowym przepływie naczyniowym.",14,0,3,0
+4845,84,02-001,Bez znaczenia klinicznego.,3,0,2,0
+4846,85,02-001,"W 1/3 górnej płata prawego tarczycy i brzusznie wydziela się konglomerat litych, izoechogennych zmian ogniskowych z halo i obwodowym unaczynieniem do 6x12x5mm (TIRADS 3).",24,0,2,0
+4847,86,02-001,"W 1/3 dolnej płata prawego tarczycy i grzbietowo wydziela się egzofityczne ognisko izoechogenne z halo i obwodowym unaczynieniem, wyższe niż szersze, do 15x13x19 mm.",24,0,2,0
+4848,87,02-001,Zmiana była widoczna na granicy skanowania w badaniu TK z dnia 2 lipca 2021 roku. Wtedy w przekroju poprzecznym do 7x12 mm. TIRADS 4 według ACR TI-RADS 2017 rok do biopsji.,31,0,2,0
+4851,88,02-001,W przyleganiu do tarczycy patologicznych węzłów chłonnych nie widzę. Po stronie prawej płat piramidowy. Wnioski: zmiana w prawym płacie tarczycy do biopsji.,22,0,2,0
+4854,89,02-001,"Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji CD.",16,0,2,0
+4855,90,02-001,"W płacie lewym brzusznie, widoczna izoechogenna zmiana z hipoechogenną otoczką wielkości 6x3 mm. Raczej zmiana z tarczycy niż węzeł chłonny.",20,0,2,0
+4857,91,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono. Wniosek: Obraz USG jak w przebiegu autoimmunologicznego zapalenia tarczycy.",17,0,2,0
+4864,92,02-001,Obraz zmian bez istotnych różnic w porównaniu z badaniem poprzednim. Cieśń: 4mm.,12,0,2,0
+4865,93,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono. Dalsza diagnostyka obrazowa w zależności od konsultacji klinicznej. Wniosek: Cechy choroby Hashimoto.",20,0,2,0
+4866,94,02-001,Guzki obu płatów tarczycy. Wielkość porównywalna z poprzednim badaniem USG.,10,0,2,0
+4870,95,02-001,Poniżej tej zmiany grzbietowo znajduje się ognisko hipoechogenne wielkości 4x5x7 mm - TIRADS4. Do dalszej obserwacji przy tej wielkości. W lewym płacie drobne do 2 mm torbiele koloidowe. Powiększonych węzłów chłonnych przytarczycowych nie widać. Wniosek: guzki obu płatów tarczycy.,39,0,2,0
+4871,96,02-001,Zmiana dominująca w płacie prawym TIRADS 2 stabilnej wielkości. Do obserwacji ognisko w płacie prawym TIRADS 4.,17,0,2,0
+4876,97,02-001,Wniosek: Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.,8,0,1,0
+4878,98,02-001,"Miąższ tarczycy nieco niejednorodny, o prawidłowej echogeniczności, o prawidłowym unaczynieniu w opcji CD, z pasmami zwłóknień. Okołotarczycowo obecne pojedyncze, niepowiększone węzły chłonne. Całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",29,0,2,0
+4880,99,02-001,W płacie prawym w części brzusznej obecny stabilnej wielkości względem badania poprzedniego guzek hipoechogenny wielkości 4x3x4 mm. Poprzednio 3x3x4 mm.,20,0,3,0
+4881,100,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono. Wniosek: Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.",16,0,2,0
+4891,101,02-001,"Poza tym miąższ tarczycy normoechogenny, jednorodny. Bez cech wzmożenia unaczynienia w opcji CD. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",19,0,2,0
+4893,102,02-001,"Tarczyca niepowiększona, miąższ jednorodny, o prawidłowej echogeniczności, bez wzmożenia przepływów w opcji Color Doppler.",14,0,2,0
+4894,103,02-001,"W płacie prawym hipoechogeniczny niejednorodny lity guzek, o zrazikowym brzegu, z pojedynczym hiperechegennicznym zwapnieniem, wielkości 5x4x3 mm stabilny względem badania poprzedniego.",21,0,2,0
+4896,104,02-001,Okoliczne węzły chłonne niepowiększone. Wnioski: stabilny obraz guzka w prawym płacie tarczycy.,12,0,1,0
+4897,105,02-001,"Stan po tyreoidektomii. W loży po zabiegu uwidoczniono tkankę gruczołową o echogeniczności wyższej niż okolicznych mięśni, położona nisko na szyi, odrost po stronie lewej schodzi poniżej wcięcia mostka oraz przemieszcza tchawicę na stronę prawą.",34,0,2,0
+4899,106,02-001,"Obustronnie w obrębie odrostu lito-płynowe zmiany ogniskowe ze zwapnieniami tworzące konglomeraty, największy z nich po stronie lewej wielkości 25x20x42 mm.",20,0,2,0
+4900,107,02-001,Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.,9,0,2,0
+4901,108,02-001,"Tarczyca położona prawidłowo, mała, o słabo widocznych zarysach zewnętrznych.",9,0,2,0
+4902,109,02-001,"Miąższ tarczycy hipoechogenny, z cechami włóknienia. Jak w przebiegu autoimmunologicznego zapalenia tarczycy. Zmian ogniskowych w miąższu tarczycy nie widać.",19,0,2,0
+4903,110,02-001,Okołotarczycowo powiększonych węzłów chłonnych nie wykazano.,6,0,2,0
+4904,111,02-001,"Tarczyca położona typowo, dwupłatowa, o nierównych zarysach zewnętrznych, o niejednorodnej, obniżonej echogeniczności. Jak w przebiegu autoimmunologicznego zapalenia tarczycy.",18,0,2,0
+4905,112,02-001,"W prawym płacie widoczne są zmiany ogniskowe, hiperechogenne, z hipootoczką, unaczynione głównie obwodowo. Zmiana w części środkowej wielkości 7x9x15 mm.",20,0,2,0
+4906,113,02-001,"Zmiana w biegunie dolnym wielkości 6x8x10 mm. Poza tym w części środkowej prawego płata wydziela się niejednorodny obszar wielkości 6,5x3,5 mm.",21,0,2,0
+4908,114,02-001,W lewym płacie zmian ogniskowych nie widać. Unaczynienie miąższu tarczycy prawidłowe. Nie widać powiększonych węzłów chłonnych okołotarczycowo.,17,0,2,0
+4909,115,02-001,"Tarczyca niepowiększona, miąższ niejednorodny z pasmami zwłóknień, o obniżonej echogeniczności. Przepływy w opcji Color Doppler zaznaczone.",16,0,1,0
+4911,116,02-001,"Gruczoł tarczowy o objętości 24 ml, gładkokonturowany, o prawidłowej echogeniczności i prawidłowym przepływie naczyniowym.",14,0,2,0
+4912,117,02-001,"Obustronnie w tarczycy wydzielają się dobrze odgraniczone zmiany płynowo-lite (50/50), hipoechogenne, z kryształami koloidu i o unaczynieniu obwodowym.",18,0,2,0
+4914,118,02-001,W dolnej 1/3 płata lewego i na granicy z cieśnią wydziela się duże ognisko o podobnej morfologii do 15x16x9 mm. EU-TIRADS 4.,22,0,1,0
+4915,119,02-001,Do biopsji cienkoigłowej jeśli wcześniej zmiana nie była bioptowana.,9,0,2,0
+4917,120,02-001,Proponuję tu biopsję cienkoigłową jeśli wcześniej zmiana nie była bioptowana.,10,0,2,0
+4918,121,02-001,W przyleganiu do tarczycy patologicznych węzłów chłonnych nie widzę.,9,0,2,0
+4919,122,02-001,"Tarczyca położona prawidłowo, niepowiększona, o gładkich zarysach zewnętrznych.",8,0,2,0
+4920,123,02-001,"Miąższ tarczycy jednorodny, o prawidłowej echogeniczności, bez cech wzmożonego unaczynienia.",10,0,2,0
+4921,124,02-001,W obu płatach tarczycy widoczne są umiarkowanie liczne guzki o morfologii gąbczastej.,12,0,2,0
+4922,125,02-001,"Największy w płacie lewym wielkości do 5 mm, w płacie prawym wielkości do 6 mm. Poza tym w miąższu tarczycy widoczne są pojedyncze drobne torbiele wielkości do 2,5 mm.",29,0,2,0
+4923,126,02-001,"Okołotarczycowo powiększonych węzłów chłonnych nie stwierdzono. Wniosek: Zmiany guzkowe tarczycy, bez wskazań do biopsji cienkoigłowej.",15,0,2,0
+4924,127,02-001,Wydano dokumentację zdjęciową. Stan po usunięciu płata lewego tarczycy z powodu wola guzowatego.,13,0,2,0
+4925,128,02-001,"Prawy płat tarczycy gładkokonturowany, o objętości 12,7 ml, o prawidłowej echogeniczności i prawidłowym przepływie naczyniowym.",15,0,2,0
+4926,129,02-001,"W górnej 1/3 płata prawego tarczycy wydziela się lita, hipoechogenna zmiana ogniskowa z hipoechogenną otoczką, o gładkich brzegach i mieszanym unaczynieniu wielkości do 13x15x10 mm. TIRADS 3.",27,0,1,0
+4927,130,02-001,Bez wskazań do biopsji cienkoigłowej.,5,0,2,0
+4928,131,02-001,"W dolnej 1/3 płata prawego widoczna jest lita, hipoechogenna zmiana ogniskowa, z makrozwapnieniem, bez widocznego unaczynienia, wielkości do 11x10x11mm. TIRADS 4.",21,0,1,0
+4929,132,02-001,Ze względu na zwapnienie do rozważenia biopsja cienkoigłowa.,8,0,2,0
+4930,133,02-001,Poza tym w górnej połowie tarczycy widoczne jest makrozwapnienie wielkości do 4 mm.,13,0,2,0
+4931,134,02-001,Po stronie lewej widoczny jest ektopowy miąższ tarczycy lub pozostałość płata piramidowego wielkości do 5x2mm.,15,0,2,0
+4932,135,02-001,W przyleganiu do tarczycy patologicznych węzłów chłonnych nie uwidoczniono.,9,0,2,0
+4933,136,02-001,"Tarczyca położona prawidłowo, powiększona w zakresie prawego płata, o gładkich zarysach zewnętrznych.",12,0,2,0
+4934,137,02-001,"Miąższ tarczycy jednorodny, o prawidłowej echogeniczności, o prawidłowym unaczynieniu.",9,0,2,0
+4935,138,02-001,W obu płatach dość liczne guzki. Większość hiperechogenna z hipoechogennymi otoczkami.,11,0,2,0
+4936,139,02-001,Guzki dominujące: W płacie lewym hiperechogenny z hipootoczką wielkości 10x9x13mm. W płacie prawym niejednorodnie hiperechogenny z hipootoczką wielkości 16x13x20 mm,20,0,2,0
+5192,140,02-001,"Tarczyca dwupłatowa, mała. Miąższ niejednorodny, z pasmami zwłóknień, unaczynienie nie wzmożone w opcji CD.",14,0,2,0
+5193,141,02-001,"Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4,5x4 mm (TIRADS 4) bez wzmożonego przepływu.",18,0,2,0
+5197,142,02-001,"Wnioski: Tarczyca o atroficznym miąższu, zmiany ogniskowe TIRADS 4 do okresowej kontroli USG.",13,1,2,0
+5199,143,02-001,"Miąższ tarczycy o niejednorodnej echostrukturze i niejednorodnie obniżonej echogeniczności, z obszarami niższego echa, o prawidłowym unaczynieniu w opcji CD - całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",27,0,2,0
+5201,144,02-001,"Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 mm. Cieśń wielkości do 7 mm.",21,0,1,0
+5203,145,02-001,"W obu płatach widoczne pojedyncze zmiany płynowo-lite, gąbczaste i torbiele koloidowe. Największe: w prawym płacie w biegunie dolnym zmiana lito-płynowa wielkości 4x3x4 mm (TIRADS 2).",25,0,1,0
+5205,146,02-001,"Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji CD. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",19,0,2,0
+5219,147,02-001,"Wymiary tarczycy: płat prawy: 11x11x39 mm, objętość 2,5 ml. Płat lewy: 9x14x40 mm, objętość 2,6 ml. Cieśń: 2 mm.",19,0,2,0
+5223,148,02-001,"Wymiary i objętość prawego płata: 15 x 18 x 47 mm, objętość 6,3 ml. Wymiary i objętość lewego płata: 19 x 16 x 45 mm, objętość 6,8 ml, cieśń do 3 mm.",32,0,2,0
+5226,149,02-001,"Wymiary tarczycy: Płat prawy wielkości 14x16x42 ml, objętość 5,2 ml. W biegunie dolnym płata prawego widoczny jest konglomerat guzków wielkości 13x15x22 mm. Podobnie jak poprzednio. Unaczynienie zmiany obwodowe.",28,0,1,0
+5232,150,02-001,"Prawy płat o wymiarach 16x15x46 mm, objętość 5,72 ml. Lewy płat o wymiarach 15x16x47 mm, objętość 5,87 ml. Cieśń grubości 2,4 mm.",22,0,2,0
+5233,151,02-001,W prawym płacie widoczna torbielowato-lita zmiana ogniskowa o wymiarach 9x9x16 mm wyraźnie odgraniczona od otoczenia. O strukturze gąbczastej - TIRADS 2.,21,0,2,0
+5237,152,02-001,W tarczycy obecnych jest kilka obszarów obniżonego echa. Największy w płacie prawym wielkości 4x2x3 mm. W pierwszej kolejności zmiany w przebiegu Hashimoto niż guzki. Przy cieśni obecny drobny węzeł chłonny wielkości 3x1 mm.,33,0,2,0
+5238,153,02-001,"Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,9 ml Cieśń: do 3 mm",18,1,1,0
+5241,154,02-001,"Wymiary tarczycy: Płat prawy wielkości 14x14x41 mm, objętość 4,2 ml.",10,0,2,0
+5243,155,02-001,"Płat lewy: 10x8x35 mm, objętość 1,6 ml, bez zmian ogniskowych. Cieśń wielkości 4 mm.",14,0,2,0
+5251,156,02-001,"Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",18,0,2,0
+5255,157,02-001,"Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",20,0,2,0
+5258,158,02-001,"Prawy płat wielkości 14x15x47 mm, objętość 5,2 ml Lewy płat wielkości 13x12x48 mm, objętość 3,8 ml. Cieśń wielkości do 3 mm",21,0,2,0
+5259,104,02-001,Okoliczne węzły chłonne niepowiększone. Wnioski: stabilny obraz guzka w prawym płacie tarczycy.,12,1,0,0
+5261,159,02-001,"Wymiary: po stronie prawej wielkości 20x22x49 mm, objętość 11,5 ml po stronie lewej wielkości 37x36x57 mm, objętość 40,3 ml",19,1,1,0
+5266,160,02-001,"Wymiary tarczycy: Płat prawy wielkości 7x9x27 mm, objętość 0,9 ml. Płat lewy wielkości 9x9x24 mm, objętość 1 ml. Cieśń wielkości 2 mm.",22,0,2,0
+5271,161,02-001,Zmiany w przebiegu autoimmunologicznego zapalenia tarczycy lub zmiana ogniskowa - do obserwacji.,12,0,2,0
+5273,162,02-001,"Wymiary tarczycy: - prawy płat wielkości 18x15x53 mm, objętość 7,4ml - lewy płat 16x16x52 mm, objętość 6,7 ml - cieśń 4mm.",21,0,2,0
+5274,163,02-001,"Tarczyca niepowiększona, miąższ niejednorodny z pasmami zwłóknień, o obniżonej echogeniczności. Przepływy w opcji Color Doppler CD zaznaczone.",17,0,1,0
+5275,164,02-001,W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.,8,0,2,0
+5276,165,02-001,"Prawy płat wielkości 14x15x40mm, objętość 4,4 ml. Lewy płat wielkości 16x15x45mm, objętość 5,7 ml. Grubość cieśni do 2,6 mm. Okoliczne węzły chłonne niepowiększone.",23,0,2,0
+5279,166,02-001,"Największa zmiana po stronie prawej leży w 1/3 środkowej oraz centralnie i brzusznie, mierzy 10x11x8 mm TIRADS 4.",18,0,1,0
+5280,167,02-001,W dolnej 1/3 płata lewego i na granicy z cieśnią wydziela się duże ognisko o podobnej morfologii do 15x16x9 mm. TIRADS 4.,22,0,1,0
+5282,168,02-001,Na tle wszystkich zmian wyróżnia się największe ognisko w płacie lewym położone w 1/3 górnej i przy naczyniach. Ta zmiana ma chaotyczny rysunek unaczynienia. Mierzy 13x19x9 mm. TIRADS 4.,29,0,1,0
+5284,169,02-001,"Wymiary i objętość - płat prawy wielkość 23x47x20 mm, objętość 10,3 ml - płat lewy wielkości 23x59x21 mm, objętość 13,4 ml -cieśń wielkości do 3 mm.",26,0,2,0
+5290,170,02-001,"Wymiary tarczycy: Płat prawy wielkości 16x16x45 mm, objętość 6 ml. Płat lewy wielkości 16x15x46 mm, objętość 5,9 ml. Cieśń wielkości do 3 mm.",23,0,2,0
+5294,129,02-001,"W górnej 1/3 płata prawego tarczycy wydziela się lita, hipoechogenna zmiana ogniskowa z hipoechogenną otoczką, o gładkich brzegach i mieszanym unaczynieniu wielkości do 13x15x10 mm. TIRADS 3.",27,1,0,0
+5296,131,02-001,"W dolnej 1/3 płata prawego widoczna jest lita, hipoechogenna zmiana ogniskowa, z makrozwapnieniem, bez widocznego unaczynienia, wielkości do 11x10x11mm. TIRADS 4.",21,1,0,0
+5299,171,02-001,"Wymiary i objętość: Płat prawy wielkości 31x39x22mm, objętość 12,7ml.",9,0,2,0
+5306,172,02-001,"Po stronie lewej płat piramidowy wielkości 14x5x4 mm, w jego zakresie nieco hipoechogenny guzek wielkości 2,5 mm.",17,0,2,0
+5307,173,02-001,"Płat prawy wielkości 23x18x52 mm, objętość 11 ml. Płat lewy: 14x13x57 mm, objętość 5 ml. Cieśń wielkości 5 mm.",19,0,1,0
+5308,174,02-001,Okołotarczycowe węzły chłonne niepowiększone. Wniosek: W porównaniu z dostępnym badaniem z 2018 roku progresja wielkości guzków dominujących w obu płatach.,20,0,2,0
+5309,175,02-001,Do rozważenia biopsja aspiracyjna cienkoigłowa celowana.,6,0,2,0
+5310,176,02-001,"Gruczoł tarczowy położony prawidłowo na szyi, o zachowanej budowie płatowej, o objętości 26,6 ml, gładkokonturowany, o prawidłowej echogeniczności i prawidłowym przepływie naczyniowym.",22,0,2,0
+5311,177,02-001,Obustronnie w tarczycy widoczne są głównie lite zmiany ogniskowe.,9,0,2,0
+5312,178,02-001,"W dolnej 1/3 płata prawego widoczny jest konglomerat litych, dobrze odgraniczonych, izoechogennych zmian ogniskowych z unaczynieniem obwodowym, wielkości do 26x30x24mm.",20,0,1,0
+5313,179,02-001,"W biopsji cienkoigłowej Bethesda II - w części dolnej cieśni konglomerat podobnych zmian ogniskowych wielkości do 24x20x10mm, też o unaczynieniu obwodowym. TIRADS 3. Do biopsji. W płacie lewym kilka mniejszych zmian litych i gąbczastych.",34,0,1,0
+5314,180,02-001,"Wymiary i objętość Płat prawy wielkości 28x51x26 mm, objętość 17,8 ml Płat lewy wielkości 20x52x18mm, objętość 8,8 ml; cieśń wielkości do 10 mm.",23,0,2,0
+5316,181,02-001,"Tarczyca położona typowo, niepowiększona o wymiarach.",6,0,2,0
+5317,182,02-001,"Płat prawy wielkości 14x18x52 mm, objętość 6,9 ml. Płat lewy wielkości 13x16x53 mm, objętość 5,9 ml. Cieśń wielkości do 3 mm.",21,0,2,0
+5318,183,02-001,Na pograniczu płata prawego i cieśni widoczny konglomerat zmian ogniskowych hiperechogennych oraz izoechogennych z przestrzeniami płynowymi wielkości 15x7x21 mm. Obraz porównywalny do badania poprzedniego z dnia 08/02/2022 roku.,28,0,2,0
+5319,184,02-001,Poza tym echogeniczność gruczołu tarczowego niejednorodna z obszarami hipoechogennymi oraz pasmami zwłóknień z wzmożonym unaczynieniem w opcji CD.,18,0,2,0
+5320,185,02-001,Jak w przebiegu autoimmunologicznego zapalenia tarczycy.,6,0,2,0
+5321,186,02-001,Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zaobserwowano.,9,0,1,0
+5322,187,02-001,Wniosek: Obraz miąższu tarczycy jak w przebiegu autoimmunologicznego zapalenia tarczycy.,10,0,2,0
+5323,188,02-001,Zmiana ogniskowa pogranicza cieśni i płata prawego jest stabilna.,9,0,2,0
+5324,189,02-001,"Tarczyca położona typowo, dwupłatowa, o gładkich zarysach, normoechogenna, jednorodna.",9,0,2,0
+5325,190,02-001,"W części środkowej płata prawego wydziela się lita, głównie izoechogenna zmiana ogniskowa wielkości 19x16x25mm (poprzednio 13x13x19mm), z hipoechogenną otoczką, o obwodowym typie unaczynienia w opcji CD.",26,0,2,0
+5326,191,02-001,"W przyleganiu do tej zmiany obecna jest drobna hipoechogenna zmiana wielkości 2x2,5mm. Płat lewy wolny od zmian ogniskowych.",18,0,2,0
+5328,192,02-001,"Wymiary tarczycy: Płat prawy wielkości 21x19x47mm, objętość 9,9ml Płat lewy wielkości 14x19x47mm, objętość 6,4ml cieśń wielkości do 4mm.",18,0,2,0
+5329,193,02-001,Stan po częściowej strumektomii z powodu wola.,7,0,2,0
+5330,194,02-001,"W loży prawego płata tkanka gruczołowa wielkości 13x13x35mm, objętość 3,1ml. Z niewielkimi izoechogennymi i hipoechogennymi zmianami ogniskowymi wielkości do 10mm.",20,0,2,0
+5331,195,02-001,"Lewy płat tarczycy wielkości 18x20x59mm i objętości 11ml, przebudowany guzkowo, ze zmianami izoechogennymi o mieszanym unaczynieniu z tendencją do tworzenia konglomeratów.",21,0,2,0
+5332,196,02-001,"Największa zmiana w górnej części płata wielkości 19x13x30mm, nieco niżej zmiana o podobnej morfologii wielkości 15x11x18mm. Przepływy miąższowe w normie.",20,0,2,0
+5333,197,02-001,Nie wykazano powiększonych węzłów chłonnych wokół gruczołu tarczowego.,8,0,2,0
+5334,198,02-001,"Tarczyca położona typowo, dwupłatowa, o gładkich zarysach.",7,0,2,0
+5335,199,02-001,"W obu płatach widoczne są zmiany ogniskowe. W prawym płacie w 1/3 środkowej zmiana izoechogenna, z przestrzeniami płynowymi i odbiciami koloidowymi, o obwodowym typie unaczynienia wielkości 20x14x30mm.",27,0,1,0
+5336,200,02-001,TIRADS 3. Do rozważenia dalsza obserwacja bądź biopsja cienkoigłowa.,9,0,1,0
+5337,201,02-001,"Na pograniczu z cieśnią zmiana o morfologii gąbczastej wielkości 10x5mm, TIRADS 2. W lewym płacie: kilka litych zmian izoechogennych, wielkości do 10x11x15mm. TIRADS 3.",24,0,1,0
+5338,202,02-001,"Wewnątrz jednej z izoechogennych zmian, w 1/3 dolnej płata widoczny jest lity, owalny, hipoechogenny guzek o mieszanym typie unaczynienia wielkości 4x3x6mm, TIRADS 4. Do obserwacji.",25,0,1,0
+5341,203,02-001,"Wymiary tarczycy: - płat prawy 31x21x56mm, objętość 18ml - płat lewy 21x19x49mm, objętość 9,2ml -cieśń wielkości 4mm Wniosek: Guzek prawego płata tarczycy TIRADS 3.",24,0,1,0
+5342,204,02-001,Do rozważenia biopsja cienkoigłowa. Guzek TIRADS 4 lewego płata tarczycy do obserwacji.,12,0,1,0
+5343,205,02-001,"Tarczyca położona typowo, dwupłatowa, o pozaciąganych zarysach, normoechogenna, jednorodna.",9,0,2,0
+5344,206,02-001,W obu płatach widoczne zmiany ogniskowe: - w prawym płacie: największa zmiana izoechogenna z hipoechogenną obwódką i z makrozwapnieniami wielkości 7x10x14 mm (poprzednio 8x9x14mm) - TIRADS 3.,27,0,2,0
+13289,208,02-003,"Treść wyniku opisowego. Badanie rezonansem magnetycznym twarzoczaszki w protokole standardowym z DWI, obrazowaniem dyfuzyjnym, kontrastem i badaniem dynamicznym, GRASP-Vibe.",19,3,21,0
+13290,207,02-003,"Treść wyniku opisowego.Badanie rezonansem magnetycznym twarzoczaszki w protokole standardowym z DWI, obrazowaniem dyfuzyjnym, kontrastem i badaniem dynamicznym, GRASP-Vibe.",18,1,0,0
+13291,209,02-003,Zmiany te nie są typowe dla ziarniniakowatości z zapaleniem naczyń.,10,2,15,6
+13292,210,02-003,"Bardziej wydatna tkanka limfatyczna w części nosowej gardła po stronie prawej, z torbielami, zmieniona odczynowo.",15,3,16,6
+13293,211,02-003,Prawa przestrzeń przygardłowa bez zmian ogniskowych.,6,3,21,6
+13294,212,02-003,"Bezpowietrzne ucho prawe, do konsultacji laryngologicznej. Zmian typowych dla GPA nie widzę.",12,3,16,0
+13295,213,02-003,"Badanie rezonansem magnetycznym krtani w protokole standardowym z DWI i kontrastem, Gadovist.",12,3,15,0
+13296,214,02-003,W przestrzeni przygłośniowej po stronie lewej widoczna jest dobrze odgraniczona owalna zmiana o wymiarach 11x23x19 mm.,16,1,13,0
+13297,215,02-003,Zmiana niejednorodnie wzmacnia się po kontraście i nie ogranicza dyfuzji.,10,3,15,6
+13298,216,02-003,W górnej części zmiany obecny jest gaz. Zmiana wywiera efekt masy na lewy fałd przedsionka.,15,3,15,6
+13299,217,02-003,"Fałdy głosowe wydają się ustawione symetrycznie, fałd nalewkowo-nagłośniowy lewy jest niepogrubiały.",11,3,15,6
+13300,218,02-003,Zmiany te nie są typowe dla choroby Wegenera.,8,3,15,6
+13301,219,02-003,Prawa PPS bez zmian ogniskowych.,5,3,15,0
+13302,220,02-003,Ślad płynu w szczycie wyrostka sutkowatego lewego. Zgrubienia śluzówkowe w zatoce szczękowej prawej ‒ prawdopodobnie są to zmiany zapalne.,19,3,14,6
+13303,222,02-003,Innej masy patologicznej w krtani nie widzę. Zachyłki gruszkowate wolne.,10,2,14,6
+13304,223,02-003,Tłuszczowo przebudowana ślinianka podżuchwowa prawa.,5,3,15,6
+13305,224,02-003,Obraz przemawia za laryngocele wewnętrznym po lewej.,7,2,14,6
+13306,225,02-003,Badanie rezonansem magnetycznym szyi wykonano w protokole standardowym z DWI i po dożylnym podaniu kontrastu.,15,2,14,0
+13307,226,02-003,Zmiany te nie są typowe dla GPA.,7,2,14,0
+13308,227,02-003,"9 września 2019 roku dokonano tyroidektomii z powodu raka brodawkowatego tarczycy, resekcja R1, potem dwukrotna terapia.",16,2,13,0
+13309,228,02-003,Aktualnie wznowa w loży po lewym płacie wielkości około 1 mm.,11,2,13,0
+13310,229,02-003,10 listopada 2022 rewizja loży ‒ nie udało się usunąć ogniska.,11,2,14,0
+13311,231,02-003,W poziomie loży po usuniętym lewym płacie tarczycy nie wykryto ewentualnych zmian ogniskowych ‒ w obrazie dominują zmiany pozabiegowe.,19,2,14,6
+13312,233,02-003,Loża po usuniętym prawym płacie tarczycy jest wolna.,8,2,14,6
+13313,234,02-003,Nie wykryto cech restrykcji dyfuzji ani ognisk nieprawidłowego wzmocnienia po kontraście.,11,2,14,6
+13314,235,02-003,Nie widać powiększonych węzłów chłonnych.,5,2,14,6
+13315,236,02-003,W obecnych warunkach badania nie wykryto ewentualnych zmian ogniskowych w loży lewego płatu.,13,2,14,6
+13316,237,02-003,Poza tym stan po RTx do sierpnia 2019 roku.,9,2,12,0
+13317,238,02-003,Stan po lewostronnej parotidektomii i reparotidektomii z powodu Acnic Cell Carcinoma.,11,1,11,6
+13318,239,02-003,Stan po parotidektomii prawostronnej w 2013 roku z powodu raka zrazikowokomórkowego.,11,1,13,0
+13319,240,02-003,"Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",9,1,10,0
+13320,241,02-003,"Ograniczenia badania, miejscowo ‒ do przodu od szczytu wyrostka sutkowatego prawej kości skroniowej i otworu rylcowo-sutkowego widoczna jest wzmacniająca się zmiana ogniskowa do 7x8x8 mm.",25,1,13,0
+13321,243,02-003,W pozostawionym wyrostku przednim ślinianki przyusznej prawej nie widzę zmian ogniskowych. W lewej śliniance przyusznej zmian ogniskowych również nie widzę.,20,1,13,6
+13322,244,02-003,"W kontekście struktur nerwowych, kanał nerwu twarzowego prawego jest bez ognisk patologicznego wzmocnienia.",13,1,13,6
+13323,245,02-003,Prawy dół skrzydłowo-podniebienny wolny.,4,1,13,6
+13324,246,02-003,Prawy otwór owalny również bez ognisk patologicznego wzmocnienia.,8,1,13,6
+13325,247,02-003,Obustronnie w grupach I i II patologicznych węzłów chłonnych nie widzę.,11,1,12,0
+13326,249,02-003,"Inne istotne znaleziska to przepuklina ślinianki podjęzykowej prawej przez mięsień żuchwowo-gnykowy, a także wole guzkowe tarczycy z płatem piramidowym, do kontroli w USG.",23,1,11,0
+13327,250,02-003,"Wnioski, status idem, czyli bez zmian, do dalszej obserwacji w rezonansie magnetycznym. NI-RADS ‒ miejscowo 4, węzłowo 1.",18,1,10,0
+13328,251,02-003,"Rezonans magnetyczny oczodołów wykonano w protokole standardowym z DWI, także po dożylnym podaniu kontrastu Prohance.",15,1,12,0
+13329,252,02-003,"Guz rzekomy oczodołu prawego ‒ choroba IgG4 zależna, niezróżnicowana choroba tkanki łącznej.",12,1,14,0
+13330,253,02-003,Stan po leczeniu biologicznym. Borelioza w wywiadzie i choroba zwyrodnieniowa stawów.,11,1,13,6
+13331,254,02-003,"Poprzednie badanie rezonansem magnetycznym z 19 lipca 2022 roku. Jak poprzednio, zwraca uwagę powiększony lewy gruczoł łzowy, ulegający silnemu wzmocnieniu. Jest wielkości 14x8x16 mm.",24,1,12,0
+13332,255,02-003,"Naciek w obrębie oczodołu prawego stabilnej wielkości i morfologii, obecnie wielkości 16x18x29 mm, a więc tak jak poprzednio.",18,1,12,0
+13333,256,02-003,"Układa się zarówno wewnątrz- i zewnątrzstożkowo, przy ścianie górnej i skroniowej oczodołu, sięga jego szczytu i szczeliny oczodołowej górnej.",19,2,13,6
+13334,257,02-003,Obejmuje mięśnie prosty boczny i prosty górny wraz z dźwigaczem powieki.,11,1,12,6
+13335,258,02-003,"Naciek ulega słabemu wzmocnieniu po kontraście, nie wykazuje cech restrykcji dyfuzji.",11,1,12,6
+13336,259,02-003,"Utrzymuje się niewielkiego stopnia modelowanie przebiegu prawego nerwu wzrokowego, przy czym obecnie widoczny jest wąski margines tkanki tłuszczowej między nerwem wzrokowym prawym a naciekiem oczodołu prawego.",26,1,11,6
+13337,260,02-003,"Nerw bez cech naciekania, o zachowanym sygnale, bez nieprawidłowego wzmocnienia po kontraście.",12,1,12,6
+13338,261,02-003,Stabilny obraz zmian w obrębie powieki górnej oka prawego.,9,1,12,6
+13339,262,02-003,Obraz skrzyżowania nerwów wzrokowych bez zmian.,6,1,12,6
+13340,263,02-003,"Utrzymują się zmiany zapalne w zatokach obocznych nosa ‒ poziomy płynu w lewej części zatoki klinowej i komórkach sitowia, zgrubienia śluzówkowe w prawej zatoce czołowej.",25,1,12,6
+13341,264,02-003,Obecnie bez płynu w prawej zatoce szczękowej.,7,1,12,6
+13342,265,02-003,"Stabilny obraz nacieku oczodołu prawego. Jak poprzednio, widoczne jest silne wzmocnienie lewego gruczołu łzowego.",14,1,11,6
+13343,266,02-003,"Utrzymuje się proces zapalny zatok obocznych nosa, niewielka poprawa w porównaniu do badania poprzedniego.",14,1,12,6
+13344,267,02-003,"Badanie rezonansem magnetycznym ślinianek wykonano w protokole multiparametrycznym bez i po dożylnym podaniu kontrastu, Gadovist, także w sekwencji dynamicznej.",19,1,11,6
+13345,268,02-003,"Stan po parotidektomii obustronnej, loże wolne.",6,1,12,6
+13346,269,02-003,Cech procesu resztkowego w lewej przestrzeni przygardłowej nie uwidoczniono.,9,1,12,6
+13347,270,02-003,Pozostałe duże gruczoły ślinowe bez zmian.,6,1,12,6
+13348,271,02-003,Stabilna wielkość pojedynczego obserwowanego węzła chłonnego w lewej przestrzeni zagardłowej. Poza tym bez uchwytnej limfadenopatii.,15,1,12,6
+13349,272,02-003,Zmiany zapalne w zatoce klinowej i w sitowiu po stronie prawej.,11,1,12,6
+13350,273,02-003,Wykonano badanie rezonansem magnetycznym twarzoczaszki i szyi.,7,0,11,6
+13351,274,02-003,"Płyn w obu wyrostkach sutkowych, prawdopodobnie wtórnie do radioterapii.",9,0,11,6
+13352,275,02-003,"Podniebienie miękkie wzmacnia się intensywnie jak w badaniach poprzednich, ale bez ognisk restrykcji dyfuzji ‒ obraz przemawia za odczynowo zmienionymi po RTx małymi gruczołami ślinowymi w tym miejscu.",28,0,9,0
+13353,276,02-003,Jama ustna i pozostałe części gardła bez ognisk patologicznego wzmocnienia.,10,0,11,6
+13354,277,02-003,Stan po usunięciu ślinianki podżuchwowej prawej w 2020 roku z powodu basal cell adenoma.,14,0,10,0
+13355,278,02-003,Otwór okrągły i kanał skrzydłowy po stronie lewej bez cech patologicznego wzmocnienia.,12,0,11,6
+13356,279,02-003,"Cech wznowy nie widzę, NIRADS miejscowo 1, węzłowo 1.",9,0,9,0
+13357,280,02-003,Stan po protonoterapii we wrześniu 2022 roku z powodu wznowy miejscowej w okolicy ujścia trąbki słuchowej lewej.,17,0,10,0
+13358,281,02-003,Otwór okrągły i kanał skrzydłowy po stronie prawej bez cech patologicznego wzmocnienia.,12,0,11,6
+13359,282,02-003,"Płyn w obu wyrostkach sutkowych, prawdopodobnie wtórnie do RTx.",9,0,11,0
+13360,283,02-003,Stan po usunięciu ślinianki podżuchwowej prawej w 2020 roku z powodu BCA.,12,0,11,0
+13361,284,02-003,"Nasilone zgrubienia śluzówkowe w zatoce szczękowej lewej, zmiany śluzówkowe w sitowiu i zatoce klinowej.",14,0,10,6
+13362,285,02-003,"Dyskopatia na poziomach C3, C4, C5-C7.",6,0,10,0
+13363,286,02-003,Sekwencje Turbo-spin echo w obrazach T1-zależnych są obarczone artefaktami od naczyń.,11,0,10,0
+13364,287,02-003,W loży po śliniance podżuchwowej prawej ognisk restrykcji dyfuzji ani patologicznego wzmocnienia nie widzę.,14,0,10,6
+13365,288,02-003,"W kontekście struktur nerwowych, na przebiegu nerwu językowego i podjęzykowego po stronie prawej nie widzę ognisk patologicznego wzmocnienia.",18,0,10,6
+13366,289,02-003,"W kontekście węzłów chłonnych, obustronnie na szyi cech limfadenopatii nie widzę.",11,0,10,6
+13367,290,02-003,"Inne istotne znaleziska to pozostałe duże ślinianki bez zmian ogniskowych oraz dyskopatia szyjna na poziomach C4-C7, najbardziej nasilona na poziomie C5-C7.",21,0,10,0
+13368,291,02-003,Stan po chemioterapii i radykalnej radioterapii z powodu raka nasady języka.,11,0,9,6
+13369,292,02-003,"Sekwencje TSE, w obrazach T1-zależnych są obarczone artefaktami od naczyń.",10,0,9,0
+13370,293,02-003,Utrzymuje się obrzęk ściany tylnej gardła po stronie lewej z płynem w przestrzeni zagardłowej oraz obrzęk w przestrzeni podżuchwowej lewej z objęciem ślinianki podżuchwowej ‒ zmiany wtórnie do radioterapii.,29,0,10,6
+13371,294,02-003,Nasilone zmiany zwyrodnieniowe kręgosłupa.,4,0,9,6
+13372,295,02-003,"Badanie rezonansu magnetycznego głowy oraz kręgosłupa szyjnego wykonano w sekwencji TSE, TFE, FLAIR, DWI, SWI, STIR, VEN BOLD w czasie T1, T2 i PD-zależnym w trzech płaszczyznach.",27,0,9,0
+13373,296,02-003,W dnie jamy ustnej i nasady języka po stronie lewej nie widać ognisk patologicznego wzmocnienia ani restrykcji dyfuzji.,18,0,9,6
+13374,297,02-003,Wykonano rezonans magnetyczny mózgowia. W porównaniu do badania poprzedniego nie wykazano nowych ognisk demielinizacyjnych ani zmian wzmacniających się po podaniu kontrastu.,21,0,9,6
+13375,298,02-003,"Widoczne są ogniska w istocie białej przykomorowej ‒ zlewające się w obszary o podwyższonym sygnale przy stropach komór bocznych, części grzbietowej komór, rogu skroniowym prawym i czołowym lewym, w części tylnej ciała modzelowatego.",33,0,9,6
+13376,299,02-003,"Rozsiane zmiany w istocie białej podkorowej ‒ w płacie czołowym lewym, ciemieniowym prawym, w części przedniej ciała modzelowatego, móżdżku i pniu mózgu.",22,0,9,6
+13377,300,02-003,Otwór okrągły i kanał skrzydłowy po stronie lewej również bez zmian.,11,0,9,6
+13378,301,02-003,Szerokość komór nie zmieniła się. Komory ustawione pośrodkowo. Cech ciasnoty w tylnym dole czaszki nie widać.,16,0,9,6
+13379,302,02-003,"Rezonans magnetyczny kręgosłupa szyjnego. W rdzeniu szyjnym ogniska demielinizacyjne, bez cech aktywności.",12,0,9,6
+13380,303,02-003,Nowych ognisk o podwyższonym sygnale w obrazach T2 zależnych nie wykazano.,11,0,9,0
+13381,304,02-003,Lordoza kręgosłupa wyprostowana.,3,0,9,6
+13382,305,02-003,Wysokość i sygnał trzonów kręgowych i krążków w normie.,9,0,9,6
+13383,306,02-003,W badaniu rezonansem magnetycznym mózgowie i rdzeń odcinka szyjnego kręgosłupa bez cech progresji.,13,0,9,6
+13384,307,02-003,"Stan po chemioterapii i radykalnej radioterapii z powodu raka migdałka podniebiennego lewego, rak płaskonabłonkowy, G2, p16plus, cT4N1.",17,0,9,0
+13385,308,02-003,"Loża po migdałku podniebiennym lewym oraz dołek zajęzykowy lewy wolny, nie widzę ognisk patologicznego wzmocnienia ani restrykcji dyfuzji.",18,0,9,6
+13386,309,02-003,"Stan po CTx, i radykalnej RTx, z powodu raka nasady języka.",11,0,10,0
+13387,310,02-003,Badanie porównano do poprzedniego badania rezonansem magnetycznym głowy z dnia 22 lutego 2022 roku oraz rezonansem magnetycznym głowy i kręgosłupa szyjnego z dnia 30 grudnia 2020 roku.,27,0,8,0
+13388,311,02-003,"Stan po CTx i radykalnej RTx, z powodu raka migdałka podniebiennego lewego, SCC, G2, p16plus, cT4N1.",16,0,9,0
+13389,312,02-003,"Przerośnięty, trochę zniekształcony koniec tylny małżowiny nosowej dolnej prawej, bez niepokoju.",11,0,8,6
+13390,313,02-003,Zmiany w szczytach obu płuc jak poprzednio.,7,0,8,6
+13391,314,02-003,Utrzymuje się obrzęk ściany tylnej gardła po stronie lewej z płynem w RPS oraz obrzęk w przestrzeni podżuchwowej lewej z objęciem ślinianki podżuchwowej ‒ zmiany wtórnie do RTx.,28,0,8,0
+13392,315,02-003,Stan po lewostronnej parotidektomii i reparotidektomii z powodu AcCCa.,9,0,8,0
+13393,316,02-003,Otwór rylcowo-sutkowy lewy i dół skrzydłowo-podniebienny lewy bez zmian.,9,0,8,6
+13394,317,02-003,Kanał nerwu twarzowego lewego i otwór owalny lewy bez cech patologicznego wzmocnienia.,12,0,8,6
+13395,318,02-003,Badanie rezonansem magnetycznym mózgowia i szyjnego odcinka kręgosłupa wykonano 7 marca 2023 roku w protokołach standardowych z sekwencji CISS także po dożylnym podaniu kontrastu.,24,0,8,0
+13396,319,02-003,"W dniu uzupełniono badanie o sekwencje na tkanki miękkie szyi, zgodnie ze skierowaniem.",13,0,8,6
+13397,320,02-003,"Podejrzenie konfliktu nerwowo-naczyniowego, uszkodzenia nerwu dziesiątego po stronie prawej.",9,0,8,6
+13398,321,02-003,"Niespecyficzne ognisko wzmocnienia 3x4x3,5 mm w moście paramedialnie od linii pośrodkowej.",11,0,9,0
+13399,322,02-003,Nie stwierdza się cech ograniczenia dyfuzji w sekwencji DWI ani na mapach ADC.,13,0,8,0
+13400,323,02-003,Nie widać złogów hemosyderyny.,4,0,8,6
+13401,324,02-003,"Układ komorowy ustawiony pośrodkowo, symetryczny, nieposzerzony.",6,0,8,6
+13402,325,02-003,Szersze przestrzenie okołonaczyniowe Robina-Virchowa.,4,0,8,0
+13403,326,02-003,Tylna jama czaszki bez cech ciasnoty.,6,0,8,6
+13404,327,02-003,Kąty mostowo-móżdżkowe wolne.,3,0,8,6
+13405,328,02-003,Asymetria szerokości zatok poprzecznych i esowatych ‒ naczynia o szerszym świetle po prawej stronie ‒ jest to wariant anatomiczny.,19,0,8,6
+13406,329,02-003,"Gruczoł tarczowy mniejszy, o niejednorodnym wzmocnieniu po kontraście, jak w AIT.",11,0,8,0
+13407,330,02-003,"Otwory żył szyjnych o gładkich zarysach, wolne.",7,0,8,6
+13408,331,02-003,Zniesiona lordoza szyjna.,3,0,8,6
+13409,332,02-003,"Zachowana wysokość trzonów kręgowych, a także zachowana wysokość przestrzeni międzytrzonowych.",10,0,8,6
+13410,333,02-003,"W trzonie C6 zmiana wielkości 3x7x9 mm, obserwacja w kierunku atypowego naczyniaka.",12,0,8,0
+13411,334,02-003,Nie widać cech przemieszczenia materiału tarcz międzykręgowych dokanałowo.,8,0,8,6
+13412,335,02-003,"Gruczoł tarczowy mniejszy, o niejednorodnym wzmocnieniu po kontraście, jak w AiTD.",11,0,8,0
+13413,336,02-003,Kanał kręgowy bez cech stenozy.,5,0,8,6
+13414,337,02-003,"Zachowany sygnał szyjnego odcinka rdzenia kręgowego, nie wykazano ognisk nieprawidłowego wzmocnienia po kontraście.",13,0,8,6
+13415,338,02-003,Niespecyficzne ognisko wzmocnienia w moście paramedialnie od linii pośrodkowej.,9,0,8,6
+13416,339,02-003,Nie wykryto ewentualnych zmian na przebiegu prawego nerwu dziesiątego.,9,0,8,6
+13417,340,02-003,Obserwowany węzeł chłonny w grupie IIa po stronie prawej mierzy obecnie 8x17 mm ‒ niepełna odpowiedź.,16,0,8,0
+13418,341,02-003,Opisywane w ubiegłym badaniu węzły chłonne w grupie III mierzą obecnie 5x10 mm.,13,0,8,0
+13419,342,02-003,"W przestrzeni zagardłowej nieliczne węzły chłonne są wielkości do 4,5x8 mm.",11,0,8,0
+13420,343,02-003,Ocena gardła nie jest możliwa ze względu na artefakty ruchowe.,10,0,8,6
+13421,344,02-003,"Gruczoł tarczowy mniejszy, o niejednorodnym wzmocnieniu po kontraście, jak w autoimmunologicznym zapaleniu tarczycy.",13,0,8,6
+13422,345,02-003,"Zatoki żylne opon mózgowo-rdzeniowych ulegają prawidłowemu wzmocnieniu po kontraście, nie wykazano cech zakrzepicy.",13,0,8,6
+13423,346,02-003,Stan po częściowej resekcji języka i dna jamy ustnej po stronie prawej z rekonstrukcją płata podbródkowego oraz zmodyfikowanej operacji węzłowej.,20,0,8,6
+13424,347,02-003,Stan po plastyce blizny w dnie jamy ustnej.,8,0,8,6
+13425,348,02-003,Wokół płata na trzonie języka po stronie prawej oraz w dnie jamy ustnej ognisk patologicznego wzmocnienia ani restrykcji dyfuzji nie widzę.,21,0,8,6
+13426,349,02-003,Na przebiegu nerwu językowego i podjęzykowego prawego ognisk patologicznego wzmocnienia nie widzę.,12,0,8,6
+13427,350,02-003,"Obrzęk w okolicy trójkąta zatrzonowcowego lewego I policzka lewego, bez cech restrykcji dyfuzji ‒ prawdopodobnie zmiany zapalne do konfrontacji z badaniem klinicznym.",22,0,8,0
+13428,351,02-003,"Gardło bez ognisk patologicznego wzmocnienia. Zaznaczone węzły chłonne grupy IVa po lewej ‒ nieco większe niż w badaniu wyjściowym z dnia 21 września 2020 roku, prawdopodobnie odczynowe ‒ do kontroli w USG.",32,0,6,0
+13429,352,02-003,Nasilona dyskopatia szyjna na poziomach C5-C7.,6,0,8,0
+13430,353,02-003,Nasilone zmiany śluzówkowe w zatokach szczękowych.,6,0,8,6
+13431,354,02-003,"Cech wznowy miejscowej nie widzę, węzły grupy VIa po lewej do kontroli w USG.",14,0,8,0
+13432,355,02-003,"Stan po częściowej resekcji języka i FOM po stronie prawej z rekonstrukcją płata podbródkowego oraz MND po stronie prawej ‒ SMG IB-V ‒ i SND po lewej ‒ SMG IB, III, z powodu raka, SCCa, G1, pT2N0.",37,0,6,0
+13433,356,02-003,"Badanie rezonansem magnetycznym twarzoczaszki i szyi wykonano w protokole standardowym z DWI, przed i po dożylnym podaniu kontrastu.",18,0,8,0
+13434,357,02-003,Jama ustna i gardło bez ognisk patologicznego wzmocnienia.,8,0,8,6
+13435,358,02-003,Doły skrzydłowo-podniebienne wolne.,3,0,8,6
+13436,359,02-003,Otwory owalne bez cech patologicznego wzmocnienia.,6,0,8,6
+13437,360,02-003,Zmiany zwyrodnieniowe szyjnego odcinka kręgosłupa i w stawie mostkowo-obojczykowym prawym.,10,0,8,6
+13438,361,02-003,Badanie rezonansem magnetycznym szyi oraz stawu ramiennego prawego przed i po podaniu kontrastu. Badanie o ograniczonej wartości diagnostycznej ze względu na liczne artefakty ruchowe.,24,0,8,6
+13439,362,02-003,"Na poziomie mięśnia czworobocznego szyi po stronie prawej widoczna jest masa patologiczna. Zmiana prawdopodobnie znajduje się międzymięśniowo, powoduje impresję na mięsień czworoboczny.",22,0,8,6
+13440,363,02-003,"Zmiana w większości wykazuje sygnał tłuszczowy, w jej części centralnej widoczny jest nieregularny obszar niskiego sygnału wzmacniający się po podaniu kontrastu. Charakter zmiany niejednoznaczny ‒ może odpowiadać tłuszczakowi z centralną blizną, nie można wykluczyć komponentu o innym charakterze.",38,0,8,6
+13441,364,02-003,"Zmiana dobrze odgraniczona od otoczenia. Wysięk w stawie ramiennym, w kaletce podbarkowej oraz w kaletce podkruczej.",16,0,9,6
+13442,365,02-003,"Pełnej grubości uszkodzenie ścięgna mięśnia nadgrzebieniowego w obrębie przyczepu, bez zaniku mięśnia. Drobne uszkodzenie od strony stawowej w przyczepie ścięgna mięśnia podłopatkowego, poza tym ciągłość ścięgna zachowana.",27,0,8,6
+13443,366,02-003,"Ścięgno mięśnia podgrzebieniowego oraz obłego mniejszego zachowanej ciągłości. Wokół ścięgna mięśnia głowy długiej mięśnia dwugłowego widoczny płyn, ścięgno w odcinku śródścięgnistym z cechami tendinopatii.",24,0,8,6
+13444,367,02-003,"Mięśnie pierścienia rotatorów o prawidłowym sygnale. Staw barkowo-obojczykowy ze zmianami zwyrodnieniowymi, z cechami ciasnoty podbarkowej. Sygnał kości prawidłowy.",18,0,8,6
+13445,368,02-003,"Zmiana przy mięśniu czworobocznym ‒ jak tłuszczak z centralną blizną, nie można jednak wykluczyć komponentu o innym charakterze ze względu na wzmocnienie pokontrastowe zmiany. Pełnej grubości uszkodzenie ścięgna mięśnia nadgrzebieniowego.",30,0,8,6
+13446,369,02-003,Ograniczenia badania to widoczne w jamie ustnej nasilone artefakty od materiału stomatologicznego ‒ ocena jamy ustnej w badaniu klinicznym. Badanie obarczone jest również artefaktami ruchowymi.,25,0,8,6
+13447,370,02-003,"Miejscowo ‒ migdałki podniebienne obustronnie zaznaczone, symetryczne. Tkanka limfatyczna respektuje ściany części ustnej gardła. Rowki językowo-migdałkowe bez zmian. Nasada języka bez zmian.",22,0,8,6
+13448,371,02-003,Pozostałe części gardła bez ognisk patologicznego wzmocnienia. Inne istotne znaleziska to zagardłowy przebieg prawej tętnicy szyjnej wewnętrznej.,17,0,8,6
+13449,372,02-003,Migdałki podniebienne nie budzą niepokoju onkologicznego.,6,0,11,6
+13450,373,02-003,Dane ze skierowania. Stan po operacji i uzupełniającej radioterapii 63Gy/30fr z powodu raka ślinianki podżuchwowej lewej patologiczne T1N0MxR1.,18,0,7,0
+13451,374,02-003,Carcinoma adenoides-cysticum glandulae salivaris.,4,0,8,6
+13452,375,02-003,Lewy otwór owalny wolny. Pozostałe duże gruczoły ślinowe bez zmian ogniskowych.,11,0,8,6
+13453,376,02-003,Obraz lewej zatoki szczękowej jak poprzednio.Nie wykryto cech wznowy miejscowej.,10,0,8,6
+13454,377,02-003,"Stan po obustronnej, częściowej resekcji brzegów języka z powodu raka.",10,0,8,6
+13455,378,02-003,"Stan po prawostronnej selektywnej operacji węzłowej – ślinianka podżuchwowa Ib, II i III.",13,0,8,0
+13456,379,02-003,"W badaniu obecne są artefakty od materiału stomatologicznego, które uniemożliwiają ocenę brzegów języka ‒ tu wyższość ma badanie kliniczne. Gardło bez ognisk patologicznego wzmocnienia.",24,0,8,6
+13457,380,02-003,Pozostałe części gardła bez ognisk patologicznego wzmocnienia. Inne istotne znaleziska to zagardłowy przebieg R-ICA.,14,0,8,0
+13458,381,02-003,"Stan po prawostronnej SND ‒ SMG Ib, II i III.",10,0,8,0
+13459,382,02-003,W okolicy podżuchwowej prawej pozostał fragment płata głębokiego ślinianki podżuchwowej.,10,0,8,6
+13460,383,02-003,"Stan po CRTx w 2011 roku z powodu raka migdałka podniebiennego prawego (rak niskozróżnicowany, CT3N1).",15,0,8,0
+13461,384,02-003,"W przedniej części jamy ustnej obecne są artefakty od materiału stomatologicznego, ta okolica nie jest do oceny.",17,0,8,6
+13462,385,02-003,"Poszerzony jest prawy rowek językowo-migdałkowy, prawdopodobnie po stopieniu się masy guza.",11,0,8,6
+13463,386,02-003,Dół skrzydłowo-podniebienny prawy wolny.,4,0,11,6
+13464,387,02-003,Dyskopatia szyjna na poziomach C3 i C6/C7.,7,0,8,0
+13465,388,02-003,Obustronnie na szyi cech limfadenopatii nie widzę.,7,0,8,6
+13466,389,02-003,"Stan po parotidektomii powierzchownej prawostronnej w 2016 roku z powodu Acinic Cell Carcinoma, a także stan po radioterapii do czerwca 2016 roku.",22,0,8,0
+13467,390,02-003,Miejscowo ‒ w loży po śliniance przyusznej prawej ognisk restrykcji dyfuzji ani patologicznego wzmocnienia nie widzę. Cech wznowy nie widzę.,20,0,8,6
+13468,391,02-003,Struktury nerwowe ‒ otwór rylcowo-sutkowy prawy bez zmian. Kanał nerwu twarzowego prawego bez cech patologicznego wzmocnienia.,16,0,6,6
+13469,392,02-003,"Inne istotne znaleziska to mała ślinianka podżuchwowa prawa, redukcja ilości tkanki limfatycznej w zachyłku gardłowym prawym i loży migdałka podniebiennego prawej oraz jama szpikowa prawej gałęzi żuchwy przebudowana tłuszczowo – są to zmiany wtórnie po RTx.",36,0,7,0
+13470,393,02-003,Dalszą obserwację proponuję prowadzić w USG.,6,0,8,0
+13471,394,02-003,"Stan po resekcji dna jamy ustanej i języka po stronie prawej z rekonstrukcją uszypułowanym płatem skórno-mięśniowym podbródkowym oraz obustronną selektywną operacją węzłową (Ib, II, III i V po stronie prawej oraz Ia i Ib po stronie lewej) z powodu raka (SCCa, Rak płaskonabłonkowy G1, pT2N0, R1).",46,0,9,0
+13472,395,02-003,"Stan po uzupełniającej, radykalnej chemioterapii.",5,0,8,6
+13473,396,02-003,Badanie obarczone jest umiarkowanymi artefaktami ruchowymi.,6,0,11,6
+13474,397,02-003,Miejscowo ‒ język bez ognisk obrzęku i patologicznego wzmocnienia. Wokół płata podbródkowego również nie widzę patologicznego wzmocnienia.,17,0,8,6
+13475,398,02-003,Struktury nerwowe ‒ w miejscu przebiegu bliższej części nerwu językowego i nerwu podjęzykowego po stronie prawej ognisk patologicznego wzmocnienia nie widzę.,21,0,8,6
+13476,399,02-003,W kontekście węzłów chłonnych ‒ obustronnie na szyi cech limfadenopatii nie widzę.,12,0,8,6
+13477,400,02-003,Inne istotne znaleziska to zgrubienia śluzówkowe w zatokach przynosowych i komórkach sitowych. Dyskopatia szyjna na poziomie C5-C7.,17,0,8,0
+13478,401,02-003,Stan po uzupełniającej radiochemioterapii.,4,0,8,6
+13479,402,02-003,"Stan po resekcji FOM i języka po stronie prawej z rekonstrukcją uszypułowanym płatem skórno-mięśniowym podbródkowym oraz obustronną SND, Ib, II, III i V po stronie prawej oraz Ia i Ib po stronie lewej, z powodu raka, SCCa, Rak płaskonabłonkowy G1, pT2N0, R1.",42,0,8,0
+13480,403,02-003,W kontekście pozostałych części dróg oddechowych i pokarmowych ‒ gardło bez ognisk patologicznego wzmocnienia.,14,0,8,6
+13481,404,02-003,Stan po plastyce języka.,4,0,8,6
+13482,405,02-003,"Stan po częściowej glossektomii ‒ zarys języka zniekształcony, nie uwidoczniono ognisk restrykcji dyfuzji ani patologicznego wzmocnienia.",16,0,8,6
+13483,406,02-003,Utrzymują się pojedyncze węzły chłonne o średnicy 6 mm na pograniczu grup Ib/IIa po stronie lewej ‒ bez cech progresji wielkości. Poza tym obustronnie na szyi nie widać powiększonych węzłów chłonnych.,31,0,8,0
+13484,407,02-003,"Stan po radykalnej radioterapii z powodu NPCa po stronie prawej, cT1N0M0.",11,0,14,0
+13485,408,02-003,Stan po częściowej glossektomii z limfadenektomią szyjną lewostronną z powodu raka języka patologia T3N0 ‒ zabieg R1.,17,0,8,0
+13486,409,02-003,"Stan po radykalnej radioterapii z powodu raka części nosowej gardła po stronie prawej, cT1N0M0.",14,0,15,0
+13487,410,02-003,Przewlekłe zapalenie błony śluzowej żołądka i dwunastnicy.,7,0,8,6
+13488,411,02-003,Stan po protonoterapii z chemioterapią z powodu wznowy miejscowej.,9,0,8,6
+13489,412,02-003,Stan po implantacji stentgraftu do prawej tętnicy szyjnej wewnętrznej z powodu krwawienia.,12,0,8,6
+13490,413,02-003,Stan po wykrzepnięciu prawej tętnicy szyjnej wewnętrznej.,7,0,8,6
+13491,414,02-003,W porównaniu z badaniem poprzednim z 17 października 2022 roku wielkość jamki nekrotycznej jest podobna.,15,0,8,0
+13492,415,02-003,"Martwicy uległa niewielka ilość błony śluzowej stanowiącej dolne ograniczenia wejścia do jamy, która nie miała podparcia w innych tkankach.",19,0,8,6
+13493,416,02-003,Jamka dochodzi do otworu poszarpanego prawego ‒ tu obraz wydaje się stabilny.,12,0,8,6
+13494,417,02-003,"W miejscu po guzie ognisk restrykcji dyfuzji nie widzę, cech wznowy miejscowej nie widzę.",14,0,8,6
+13495,418,02-003,Obustronnie w przestrzeni zagardłowej oraz obustronnie na szyi cech limfadenopatii nie widzę.,12,0,8,6
+13496,419,02-003,Obustronnie w RPS oraz obustronnie na szyi cech limfadenopatii nie widzę.,11,0,8,0
+13497,420,02-003,Podwyższenie sygnału istoty białej w biegunach przednich obu płatów skroniowych ‒ zmiany wtórne do radioterapii.,15,0,8,6
+13498,421,02-003,"W badaniu poprzednim zmiany były dyskretne, teraz wyraźne ‒ do obserwacji.",11,0,8,6
+13499,422,02-003,"W prawej tętnicy szyjnej wewnętrznej widoczny jest stent, prawa tętnica szyjna wewnętrzna bez cech zakontrastowania.",15,0,8,6
+13500,423,02-003,"W R-ICA widoczny jest stent, R-ICA bez cech zakontrastowania. Płyn wypełnia całkowicie ucho środkowe prawe ‒ do konsultacji laryngologicznej, czy drenik nie wypadł.",23,0,8,0
+13501,424,02-003,"Płyn wypełnia całkowicie ucho środkowe prawe ‒ do konsultacji laryngologicznej, czy drenik nie wypadł.",14,0,8,6
+13502,425,02-003,"Obraz jamki nekrotycznej bez istotnych zmian, cech wznowy nie widzę, płyn nadal jest obecny w uchu prawym.",17,0,7,6
+13504,426,02-003,Stan po parotidektomii całkowitej prawostronnej z powodu ACCa w 2013 roku i uzupełniającej radioterapii w 2014 roku.,17,0,7,0
+13505,427,02-003,Stan po implantacji stentgraftu do R-ICA z powodu krwawienia. Stan po wykrzepnięciu R-ICA.,13,0,7,0
+13506,428,02-003,"Miejscowo ‒ w porównaniu z badaniem poprzednim wielkość jamki nekrotycznej jest nieznacznie mniejsza, płytsza, a poza tym cieńsza jest warstwa wzmocnienia pokontrastowego na jej powierzchni.",25,0,7,6
+13507,429,02-003,Obraz można interpretować jako częściową regresję zmian zapalnych w jamie nekrotycznej.,11,0,7,6
+13508,430,02-003,"W miejscu po guzie ognisk restrykcji dyfuzji nie widzę, cech wznowy miejscowej również nie widzę.",15,0,6,6
+13509,431,02-003,"Struktury nerwowe ‒ jamka dochodzi do otworu poszarpanego prawego, jak poprzednio.",11,0,6,6
+13510,432,02-003,"Przy otworze widoczne jest rozlane wzmocnienie, prawdopodobnie jako przejaw zmian zapalnych.",11,0,6,6
+13511,433,02-003,W kontekście węzłów chłonnych ‒ obustronnie w przestrzeni zagardłowej oraz obustronnie na szyi cech limfadenopatii nie widzę.,17,0,6,6
+13512,434,02-003,W kontekście węzłów chłonnych ‒ obustronnie w RPS oraz obustronnie na szyi cech limfadenopatii nie widzę.,16,0,6,0
+13513,435,02-003,"Inne istotne znaleziska to podwyższenie sygnału istoty białej w biegunach przednich obu płatów skroniowych z towarzyszącymi, pierzastymi obszarami wzmocnienia pokontrastowego – są to zmiany wtórne do radioterapii.",27,0,6,6
+13514,436,02-003,"Obrzęk szpiku w stoku, też wtórnie do RTx. W R-ICA widoczny jest stent, R-ICA bez cech zakontrastowania.",17,0,6,0
+13515,437,02-003,"Płyn wypełnia prawie całkowicie ucho środkowe prawe, prawdopodobnie wtórnie do radioterapii i uszkodzenia trąbki słuchowej prawej.",16,0,6,6
+13516,438,02-003,Stan po protonoterapii z CTx z powodu wznowy miejscowej.,9,0,6,0
+13517,439,02-003,"Zachyłek gardłowy boczny lewy węższy, ale o powierzchownym wzmocnieniu pokontrastowym, nie budzi mojego niepokoju.",14,0,6,6
+13518,440,02-003,"Stan po częściowej resekcji języka z częściową faryngektomią po stronie lewej oraz MND po stronie lewej i SND po prawej z powodu raka płaskonabłonkowego, SCCa, G2, patologicznieT2N0.",27,0,6,0
+13519,441,02-003,Miejscowo ‒ w obrębie języka widoczny jest ubytek tkanek po stronie lewej.,12,0,6,6
+13520,442,02-003,W obrębie języka i lewobocznej ścianie gardła ognisk patologicznego wzmocnienia nie widzę.,12,0,6,6
+13521,443,02-003,Kanały nerwów podniebiennych lewych nieposzerzone.,5,0,6,6
+13522,444,02-003,Dół skrzydłowo-podniebienny lewy wolny.,4,0,6,6
+13523,445,02-003,"Inne istotne znaleziska to obrzęk w RPS, wtórnie do radioterapii.",10,0,6,0
+13524,446,02-003,"Ślad płynu w wyrostku sutkowatym lewym, prawdopodobnie wtórnie do RTx.",10,0,6,0
+13525,447,02-003,Przewlekłe zmiany zapalne zatok przynosowych i sitowia po stronie lewej.,10,0,6,6
+13527,448,02-003,"Dane kliniczne. Stan po radykalnej radioterapii, 68Gy/34fr, z powodu raka nasady języka po stronie prawej, SCCa, G2/3, p16minus, cT4aN2cM0.",19,0,4,0
+13528,449,02-003,Jamka nekrotyczna jest nieznacznie mniejsza.,5,0,5,6
+13529,450,02-003,Miejscowo ‒ widoczny jest ubytek tkanek nasady języka po stronie prawej.,11,0,6,6
+13530,451,02-003,W kontekście struktur nerwowych ‒ otwór podniebienny większy lewy bez zmian.,11,0,7,6
+13531,452,02-003,"Inne istotne znaleziska to niewielki obrzęk w RPS, prawdopodobnie wtórnie do RTx.",12,0,7,0
+13532,453,02-003,Stan po parotidektomii całkowitej prawostronnej z powodu Acinic Cell Carcinoma w 2013 roku i uzupełniającej radioterapii w 2014 roku.,19,0,7,0
+13533,454,02-003,"W kontekście struktur nerwowych, pod otworem rylcowo-sutkowym prawym utrzymuje się obszar o podwyższonym sygnale w obrazach T2-zależnych, bez cech restrykcji dyfuzji oraz o słabym wzmocnieniu pokontrastowym.",26,0,7,0
+13534,455,02-003,Ślinianka podżuchwowa prawa w zaniku po RTx.,7,0,7,0
+13535,456,02-003,"Zachyłek gardłowy boczny prawy szeroki wtórnie do radioterapii, prawy migdałek podniebienny niewidoczny, prawdopodobnie w zaniku po RTx.",17,0,7,0
+13536,457,02-003,"Rezonans magnetyczny twarzoczaszki i szyi bez i po kontraście, Gadovist, DWI.",11,0,7,0
+13537,458,02-003,Niewielkie zmiany obrzękowe w przestrzeniach podżuchwowych po RTx.,8,0,7,0
+13538,459,02-003,Prawowypukłe skrzywienie przegrody nosa.,4,0,7,6
+13539,460,02-003,"Stan po częściowej resekcji języka z częściową faryngektomią po stronie lewej oraz zmodyfikowanej operacji węzłowej po stronie lewej i selektywnej operacji węzłowej po prawej z powodu raka płaskonabłonkowego, SCCa, G2, patologicznieT2N0.",31,0,6,0
+13540,461,02-003,"W kręgosłupie szyjnym na poziomie C3/C4 ześlizg przedni, na C6/C7 dyskopatia.",11,0,6,0
+13541,462,02-003,Jak poprzednio drobne ognisko hiperintensywne w obrazach T2-zależnych w bocznej części strony prawej kręgu C2.,15,0,6,0
+13542,463,02-003,Stan po zabiegu operacyjnym z powodu raka szczęki i po rekonstrukcji ubytku podniebienia po stronie lewej przy pomocy wolnego płata.,20,0,6,6
+13543,464,02-003,W poziomie loży po wykonanych zabiegach i na wysokości płata rekonstrukcyjnego ognisk restrykcji dyfuzji ani patologicznego wzmocnienia nie wykryto.,19,0,6,6
+13544,465,02-003,Jamy Meckela wolne. Dół skrzydłowo-podniebienny prawy bez zmian.,8,0,6,6
+13545,466,02-003,"Ślinianka podżuchwowa lewa i przyuszna lewa małe, wtórnie do RTx. Gruczoł tarczowy powiększony, ulega niejednorodnemu wzmocnieniu po podaniu środka kontrastującego.",20,0,4,0
+13546,467,02-003,"Stan po CTx i radykalnej RTx z powody raka migdałka podniebiennego prawego z limfadenopatią ipsilateralną w grupie IIa, SCCa, p16plus, cT2N2aM0.",21,0,6,0
+13547,468,02-003,Struktury nerwowe ‒ otwór podniebienny większy prawy bez zmian.,9,0,6,6
+13548,469,02-003,Zmiany ogniskowe w tarczycy w kontroli.,6,0,6,6
+13549,470,02-003,Pozostałe części dróg oddechowych i pokarmowych ‒ w jamie ustnej i w pozostałych częściach gardła ognisk patologicznego wzmocnienia nie widzę.,20,0,6,6
+13550,471,02-003,"Stan po tonsillektomii obustronnej z lewostronną zmodyfikowaną operacją węzłową (I-V) z powodu raka migdałka podniebiennego lewego, SCCa, G2, pT1N2b cM0.",20,0,6,0
+13551,472,02-003,"Loża migdałka podniebiennego lewego wolna, a kanały nerwów podniebiennych lewych bez cech patologicznego wzmocnienia.",14,0,6,6
+13552,473,02-003,Pozostałe części gardła i jama ustna bez ognisk patologicznego wzmocnienia.,10,0,6,6
+13553,474,02-003,Obustronnie na szyi nie widać powiększonych węzłów chłonnych.,8,0,6,6
+13554,475,02-003,Utrzymuje się węzeł chłonny 7x8 mm w okolicy podżuchwowej prawej.,10,0,6,0
+13555,476,02-003,"W loży prawego płata tarczycy widoczne jest niejednorodnie wzmacniający się miąższ gruczołowy wielkości 14x19x27 mm, wole odrostowe.",17,0,6,0
+13556,477,02-003,Poziomy płynu w zatoce klinowej oraz w zatoce szczękowej po stronie prawej ‒ wskazuje to na ostre zmiany zapalne.,19,0,6,6
+13557,478,02-003,"Stan po tonsillektomii obustronnej z lewostronną MND (I-V) z powodu raka migdałka podniebiennego lewego, SCCa, G2, pT1N2b cM0.",18,0,6,0
+13558,479,02-003,"Stan po panendoskopii, bez cech nowotworu.",6,0,6,6
+13559,480,02-003,Węzły chłonne. Pod blizną po limfadenektomii widoczna jest grupa ognisk patologicznego wzmocnienia o łącznym wymiarze 17x43x18 mm ‒ prawdopodobnie zmiany resztkowe po resekcji.,23,0,6,0
+13560,481,02-003,"W grupie IIb po stronie lewej, pod brzuścem tylnym mięśnia dwubrzuścowego, w przyleganiu do żyły szyjnej wewnętrznej, widoczny jest patologiczny węzeł chłonny do 30x11 mm.",25,0,6,0
+13561,482,02-003,"Węzeł ma policykliczny zarys, prawdopodobnie z rozszerzeniem pozawęzłowym, może naciekać żyłę.",11,0,6,6
+13562,483,02-003,"W grupie IIa po stronie lewej węzeł do 19x9 mm, raczej odczynowy.",12,0,6,0
+13563,484,02-003,W grupie Va po stronie lewej kilka okrągłych węzłów chłonnych do 5mm ‒ podejrzane.,14,0,6,0
+13564,485,02-003,"Po stronie lewej w RPS widoczny węzeł chłonny do 15x5 mm, prawdopodobnie odczynowy.",13,0,7,0
+13565,486,02-003,Drogi oddechowe i pokarmowe ‒ w migdałku gardłowym widoczne są drobne torbiele po stronie prawej.,15,0,6,6
+13566,487,02-003,"Stan po CRTx z powodu raka migdałka podniebiennego do marca 2017 roku oraz SND, po stronie lewej poziom IIa ‒ VIII 2017 rok.",23,0,6,0
+13567,488,02-003,Kanały nerwów podniebiennych prawych bez cech patologicznego wzmocnienia.,8,0,6,6
+13568,489,02-003,"Inne istotne znaleziska to polipowata zmiana śluzówkowa w prawej zatoce szczękowej do 24 mm, prawdopodobnie torbiel retencyjna lub zmiany zapalne.",20,0,6,0
+13569,490,02-003,"Migdałek językowy po stronie lewej większy, przemieszczony przez głęboko położoną w migdałku zmianę do 8x11 mm, która odpowiada prawdopodobnie torbieli o gęstej treści.",23,0,6,0
+13570,491,02-003,Migdałek gardłowy i podniebienne niepowiększone.,5,0,6,6
+13571,492,02-003,Klinicznie może być twardą zmianą wyczuwalną w bocznej części migdałka.,10,0,6,6
+13572,493,02-003,Obraz przemawia za torbielą w migdałku językowym po lewej.,9,0,6,6
+13573,494,02-003,Częściowa resekcja prawej szczęki ‒ histopatologia. Rak gruczołowo-torbielowaty o niskim stopniu złośliwości histologicznej.,13,0,6,6
+13574,495,02-003,"Migdałek językowy lewy ma morfologie odczynową, respektuje ściany gardła, nie nacieka nasady języka.",13,0,6,6
+13575,496,02-003,"Brak zajęcia naczyń, widoczne naciekanie wzdłuż nerwów.",7,0,6,6
+13576,497,02-003,"Węzeł ma policykliczny zarys, prawdopodobnie z ENE, może naciekać żyłę.",10,0,6,0
+13577,498,02-003,Ostre zmiany zapalne w zatokach obocznych nosa.,7,0,6,6
+13578,499,02-003,Częściowe wycięcie szczęki - poszerzenie marginesu wycięcie wznowy.,8,0,6,6
+13579,500,02-003,W jamie po zatoce szczękowej prawej i na granicy resekcji zmian ogniskowych ani patologicznego wzmocnienia nie uwidoczniono ‒ jest to do dalszej obserwacji.,23,0,6,6
+13580,501,02-003,Otwór okrągły prawy i kanał skrzydłowy prawy bez cech patologicznego wzmocnienia.,11,0,6,6
+13581,502,02-003,"Utrzymuje się obrzęk przednich części mięśnia skroniowego prawego, prawdopodobnie pozabiegowo.",10,0,6,6
+13582,503,02-003,"Pojedyncze homogenne węzły. Przewlekłe zmiany śluzówkowe w sitowiu, w zatokach czołowych, w zatoce klinowej i zatoce szczękowej lewej ‒ z cechami zaostrzenia, poziomy płynu widoczne w zatoce klinowej i w lewej zatoce szczękowej.",33,0,6,6
+13583,504,02-003,Płyn w uchu środkowym lewym.,5,0,6,6
+13584,505,02-003,Choroby resztkowej ani wznowy nie uwidoczniono ‒ jest to do dalszej obserwacji.,12,0,6,6
+13585,506,02-003,Cechy zaostrzenia przewlekłego procesu zapalnego zatok obocznych nosa.,8,0,6,6
+13586,507,02-003,"Stan po CTx i radykalnej RTx z powodu NPCa po stronie prawej, cT2N2M0, do listopada 2015 roku.",17,0,6,0
+13587,508,02-003,Przewlekłe zmiany zapalne w zatokach obocznych nosa. Stan po ESS po stronie lewej.,13,0,6,0
+13588,509,02-003,"Stan po prawostronnej selektywnej operacji węzłowej I-III, V, z powodu wznowy węzłowej.",12,0,6,0
+13589,510,02-003,Stan po radioterapii protonowej.,4,0,6,6
+13590,511,02-003,Asymetria tkanek przy sklepieniu części nosowej gardła z większą ilością pośrodkowo i po lewej ‒ prawdopodobnie jest to resztka tkanki limfatycznej z ubytkiem tkanek po prawej po RTx.,28,0,6,0
+13591,512,02-003,"Zachyłki gardłowe boczne wypełnione symetrycznie tkanką limfatyczną, która respektuje ściany gardła. Otwory poszarpane obustronnie bez zmian.",16,0,6,6
+13592,513,02-003,"Zaznaczony, niespecyficzny, drobny węzeł chłonny grupy IVb po lewej do 7x5 mm ‒ do obserwacji.",15,0,6,0
+13593,514,02-003,Cechy ostrego zapalenia zatok przynosowych z płynem w zatoce szczękowej prawej i w zatoce klinowej.,15,0,6,6
+13594,515,02-003,"Zmianom towarzyszy pogrubienie tkanek z zaciśnięciem światła grzbietowych części jam nosa przy samym stropie, bez cech restrykcji dyfuzji.",18,0,6,6
+13595,516,02-003,Prawdopodobnie są to zmiany zapalne ‒ do obserwacji w kolejnym badaniu kontrolnym.,12,0,6,6
+13596,517,02-003,Obrzęk szpiku w stoku i szczycie części skalistej kości skroniowej prawej oraz płyn w uchu środkowym prawym ‒ prawdopodobnie wtórnie do RTx.,22,0,6,0
+13597,518,02-003,Zanik mięśnia mostkowo-obojczykowo-sutkowego i czworobocznego po stronie prawej ze zmianami przeciążeniowymi mięśnia dźwigacza łopatki prawej ‒ prawdopodobnie wtórnie do selektywnej operacji węzłowej.,22,0,5,6
+13598,519,02-003,Zanik mięśnia MOS i czworobocznego po stronie prawej ze zmianami przeciążeniowymi mięśnia dźwigacza łopatki prawej ‒ prawdopodobnie wtórnie do SND.,20,0,5,0
+13599,520,02-003,"Zmiany przeciążeniowe mięśnia czworobocznego lewego ‒ kula, laska. Cechy porażenia nerwu krtaniowego wstecznego prawego.",14,0,6,6
+13600,521,02-003,W prawej przestrzeni naczyń na wysokości części ustnej gardła widoczna jest wrzecionowata zmiana do 10x30x8 mm ‒ prawdopodobnie neurofibroma lub schwannoma nerwu błędnego prawego.,24,0,6,0
+13601,522,02-003,"Stan po radykalnej chemioterapii w 2016 roku z powodu nierogowaciejącego raka niezróżnicowanego części nosowej gardła po stronie prawej, rak części nosowej gardła, typ III, cT1N3.",25,0,6,0
+13602,523,02-003,Węzły chłonne ‒ obustronnie na szyi cech limfadenopatii nie widzę. W RPS cech limfadenopatii nie widzę.,16,0,6,0
+13603,524,02-003,Struktury nerwowe ‒ otwory poszarpane i otwory okrągłe obustronnie bez cech patologicznego wzmocnienia.,13,0,6,6
+13604,525,02-003,"Stan po chemioterapii i radykalnej radioterapii z powodu raka części nosowej gardła po stronie prawej, cT2N2M0, do listopada 2015 roku.",20,0,4,0
+13605,526,02-003,"Stan po radykalnej CRTx w 2016 roku z powodu nierogowaciejącego raka niezróżnicowanego części nosowej gardła po stronie prawej, NPCa, typ III, cT1N3.",22,0,6,0
+13606,527,02-003,Inne istotne znaleziska to stabilny obraz płata skroniowego prawego.,9,0,6,6
+13607,528,02-003,"W prawej przestrzeni przygardłowej, między tętnicą szyjną wewnętrzną prawą a przemieszczoną nieco ku tyłowi żyłą szyjną wewnętrzną, wydziela się zmiana wielkości 10x13x37 mm, zawierająca treść o sygnale podążającym za płynem, nie ulegająca wzmocnieniu po podaniu kontrastu.",36,0,6,0
+13608,529,02-003,"Jest to prawdopodobnie resztkowa wykrzepnięta masa guza, ewentualnie zhemolizowany krwiak.",10,0,6,6
+13609,530,02-003,"W świetle żyły szyjnej wewnętrznej w poziomie jej otworu oraz w świetle zatoki esowatej widoczny jest centralny ubytek sygnału, jak przewlekła skrzeplina.",22,0,6,6
+13610,531,02-003,Przyścienny przepływ w świetle naczynia jest zachowany.,7,0,4,6
+13611,532,02-003,"Nie wykazano obecności powiększonych węzłów chłonnych szyi ‒ w grupach węzłowych I, II obustronnie widoczne są węzły chłonne o osiach krótkich do 8 mm. Pojedyncze węzły chłonne zagardłowe wielkości do 5x7 mm.",32,0,6,0
+13612,533,02-003,Stan po operacji paraganglioma przestrzeni przygardłowej.,6,0,6,6
+13613,534,02-003,W poziomie loży znajduje się zmiana wymagająca różnicowania między resztkową wykrzepniętą masą guza a zhemolizowanym krwiakiem.,16,0,6,6
+13614,535,02-003,"Skrzeplina w zatoce esowatej, przyścienny przepływ w naczyniu zachowany.",9,0,4,6
+13615,536,02-003,"Płyn w przestrzeni zagardłowej i w komórkach sutkowych lewych, prawdopodobnie wtórnie do protonoterapii.",13,0,6,6
+13616,537,02-003,Stan po CRTx w 2016 roku z powodu NPCa.,9,0,6,0
+13617,538,02-003,Ograniczenia badania. Badanie obarczone jest niewielkimi artefaktami ruchowymi. Badaniem objęty jest wlot klatki piersiowej.,14,0,6,6
+13618,539,02-003,W okolicy ujścia trąbki słuchowej lewej ognisk restrykcji dyfuzji czy patologicznego wzmocnienia nie widzę.,14,0,6,6
+13619,540,02-003,Zachyłek gardłowy boczny lewy spłycony ‒ najprawdopodobniej zmiany zejściowe po zabiegu.,11,0,5,6
+13620,541,02-003,Poza tym część nosowa gardła bez ognisk restrykcji dyfuzji i patologicznego wzmocnienia. Cech wznowy miejscowej nie widzę.,17,0,6,6
+13621,542,02-003,W kontekście struktur nerwowych ‒ otwór poszarpany lewy i otwór owalny lewy bez cech patologicznego wzmocnienia.,16,0,6,6
+13622,543,02-003,Dół skrzydłowo-podniebienny lewy bez zmian.,5,0,6,6
+13623,544,02-003,W kontekście węzłów chłonnych ‒ w grupie IVb po stronie prawej widoczne są cztery okrągłe węzły chłonne 4-9 mm. Węzły były tylko częściowo objęte badaniem ‒ do obserwacji w kolejnym planowym badaniu.,32,0,6,0
+13624,545,02-003,"Inne istotne znaleziska ‒ utrzymują się obrzęki mięśnia skrzydłowego bocznego lewego, prawdopodobnie wtórnie do protonoterapii.",15,0,4,6
+13625,546,02-003,Obrzęk w przestrzeni zagardłowej i obustronnie w przestrzeni przygardłowej ‒ zmiany wtórne do przebytej radioterapii.,15,0,6,6
+13626,547,02-003,"Ślad płynu w komórkach sutkowych, jest go jednak znacznie mniej niż w badaniu rezonansem magnetycznym.",15,0,6,6
+13627,548,02-003,Niewielkie zgrubienia śluzówkowe w zatoce szczękowej lewej ‒ są to przewlekłe zmiany zapalne.,13,0,6,6
+13628,549,02-003,"Cech wznowy miejscowej nie widzę, węzły w grupie IVb po prawej do obserwacji.",13,0,6,0
+13629,550,02-003,Stan po usunięciu ependymoma jamy tylnej czaszki w grudniu 2013 roku. Stan po radykalnej RTx do listopada 2016 roku z powodu wznowy miejscowej.,23,0,6,0
+13630,551,02-003,"Przy prawym otworze Luschki zmiana mierzy do 13x7 mm, wykazuje podwyższony sygnał w obrazach T2 dark fluid, punktowo wzmacnia się po podaniu kontrastu, nie wykazuje wzrostu parametrów perfuzji.",28,0,6,0
+13631,552,02-003,Kolejna zmiana w przyleganiu do tylno-bocznego zarysu rdzenia przedłużonego ‒ w linii środkowej i po stronie lewej.,17,0,5,6
+13632,553,02-003,"Pokontrastowe wzmocnienie tych zmian najlepiej widać w badaniu kręgosłupa szyjnego w projekcji strzałkowej ‒ ognisko w linii środkowej mierzy około 4x2mm, bardziej na stronę lewą około 8x4 mm.",28,0,7,0
+13633,554,02-003,"Sygnał istoty białej w normie. Komory prawidłowej szerokości, ustawione pośrodkowo.",10,0,6,6
+13634,555,02-003,Wykonano rezonans magnetyczny kręgosłupa szyjnego. Ząb obrotnika przebudowany tłuszczowo. Sygnał pozostałych trzonów kręgowych w normie.,15,0,4,6
+13635,556,02-003,"Nie wykazano cech protruzji jąder miażdżystych, zmian ogniskowych w rdzeniu.",10,0,6,6
+13636,557,02-003,"Widoczne są ogniska o podwyższonym sygnale w obrazach T2 zależnych, które nie wzmacniają się po podaniu kontrastu i lokalizują się wokół komory czwartej, w prawym konarze móżdżku i gałce prawej po stronie prawej.",33,0,5,0
+13637,558,02-003,"Skrzyżowanie wzrokowe prawidłowe. Utrzymuje się niewielka asymetria w grubości nerwów wzrokowych ‒ po stronie prawej nieco grubszy, różnica około 1 mm, bez cech patologicznego wzmocnienia.",25,0,6,0
+13638,559,02-003,"Komory ustawione pośrodkowo, szersza część grzbietowa komór.",7,0,6,6
+13639,560,02-003,Torbiel szyszynki ‒ bez znaczenia klinicznego.,6,0,9,6
+13640,561,02-003,Wielkość zmiany porównywalna i w płaszczyźnie czołowej wynosi około 65x34 mm.,11,0,6,0
+13641,562,02-003,Żyła szyjna modeluje się na przednim ograniczeniu zmiany.,8,0,6,6
+13642,563,02-003,"Na poziomie wlotu zmiana otacza tętnicę podobojczykową, początkowy odcinek tętnicy kręgowej.",11,0,6,6
+13643,564,02-003,"Splot ramienny wydaje się, że przebiega grzbietowo od masy.",9,0,6,6
+13644,565,02-003,"Na poziomie Th1-Th2 zmiana przylega do trzonów, ale nie wnika do kanału kręgowego.",13,0,6,0
+13645,566,02-003,W rdzeniu i kanale kręgowym zmian nie wykazano. Sygnał trzonów w normie.,12,0,6,6
+13646,567,02-003,Odwrócona kifoza kręgosłupa szyjnego.,4,0,6,6
+13647,568,02-003,"Na poziomie Th4 przy otworze międzykręgowym, po stronie prawej, ognisko o podwyższonym sygnale w obrazach T2, przestrzeń płynowa nerwiakowłókniak.",19,0,6,0
+13648,569,02-003,"Stan po maksylektomii lewostronnej z powodu ACCa, raka gruczołowo-torbielowatego i radykalnej radioterapii.",12,0,6,0
+13649,570,02-003,"Okolica po dole skrzydłowo-podniebiennym, kanał skrzydłowy lewy, otwór okrągły i jama Meckela po stronie lewej bez patologicznego wzmocnienia.",18,0,6,6
+13650,571,02-003,W grupach węzłów chłonnych I i II jak poprzednio liczne węzły chłonne owalne o wydzielających się zatokach tłuszczowych wielkości do 8x16 mm oraz nieliczne krągłe do 6 mm średnicy.,29,0,6,0
+13651,572,02-003,Jama hydrosyryngomieliczna w szyjnym odcinku rdzenia kręgowego z dystalnym podwyższeniem sygnału rdzenia.,12,0,6,6
+13652,573,02-003,"Oponiak 5,5x11x12 mm w kanale kręgowym na poziomie C3/C4.",9,0,6,0
+13653,574,02-003,Bóle głowy w okolicy potylicznej. Rak pęcherza moczowego.,8,0,6,6
+13654,575,02-003,"Nadnamiotowo w istocie białej obu półkul mózgu, okołokomorowo i podkorowo widoczne liczne, zlewające się obszary o wysokim sygnale w obrazach T2 zależnych ‒ jak naczyniopochodne, Fazekas stopnia III.",28,0,6,0
+13655,576,02-003,Poza tym innych zmian ogniskowych w obrębie mózgowia nie uwidoczniono. Cech ograniczenia dyfuzji nie stwierdza się.,16,0,6,6
+13656,577,02-003,"Struktury tylnego dołu bez widocznej patologii, w obrazach po podaniu kontrastu obarczone znacznymi artefaktami.",14,0,6,6
+13657,578,02-003,"Układ komorowy ustawiony pośrodkowo, symetryczny, szerszy proporcjonalnie do uogólnionych zaników.",10,0,6,6
+13658,579,02-003,Zmiany śluzówkowe w zatokach obocznych nosa. Nie widać wysięku w obrębie komórek wyrostków sutkowatych.,14,0,6,6
+13659,580,02-003,"Dane kliniczne. Stan po dwukrotnej resekcji ACCa, z pogranicza jamy nosa i części nosowej gardła po stronie prawej, R2.",19,0,6,0
+13660,581,02-003,"Ograniczenia badania ‒ badanie wykonano na aparacie 1,5T. Kolejne badanie proszę wykonać na aparacie 3T ze względu na małą wielkość obserwowanej zmiany.",22,0,6,0
+13661,582,02-003,"Miejscowo ‒ w badaniu słabo wydziela się niewielkie ognisko wzmocnienia pokontrastowego w przestrzeni przygardłowej po stronie prawej, tuż pod przestrzenią błony śluzowej gardła, przyśrodkowo od blaszki przyśrodkowej wyrostka skrzydłowego prawego, do 3x3 mm.",33,0,6,0
+13662,583,02-003,Zmiana nie powiększyła się w porównaniu do badania poprzedniego. Zmiana nie ogranicza dyfuzji.,13,0,6,6
+13663,584,02-003,Struktury nerwowe. Kanały nerwów podniebiennych prawych bez cech patologicznego wzmocnienia.,10,0,6,6
+13664,585,02-003,Dół skrzydłowo-podniebienny prawy bez zmian.,5,0,6,6
+13665,586,02-003,Inne istotne znaleziska to zmiany z przydatków skóry w okolicy policzkowej i przedusznej po stronie lewej.,16,0,6,6
+13666,587,02-003,"Zmiana w przestrzeni przygardłowej po prawej nie powiększyła się i nie ogranicza dyfuzji ‒ w obserwacji 6-letniej zmiana nie progresuje, proponuje kolejną kontrolę za 1 rok na aparacie 3T. NIRADS miejscowo 2b, węzłowo 1.",34,0,4,0
+13667,588,02-003,Stan po usunięciu nerki prawej z powodu RCC raka nerkowokomórkowego. Cech wznowy miejscowej nie wykazano.,15,0,6,0
+13668,589,02-003,"Wątroba niepowiększona, bez wydzielających się zmian ogniskowych.",7,0,6,6
+13669,590,02-003,"Drogi żółciowe wewnątrzwątrobowe nie poszerzone. Pęcherzyk żółciowy cienkościenny, bez złogów.",10,0,6,6
+13670,591,02-003,"Trzustka niepowiększona, jednorodna, bez innych zmian ogniskowych. Przewód trzustkowy główny nieposzerzony.",11,0,6,6
+13671,592,02-003,"Żyła wrotna i śledzionowa drożne, śledziona jednorodna, niepowiększona.",8,0,6,6
+13672,593,02-003,"Nadnercza typowego kształtu i wielkości. Nerka lewa bez zmian ogniskowych, cech zastoju. Aorta brzuszna nieposzerzona.",15,0,6,6
+13673,594,02-003,Powiększonych węzłów chłonnych ani wolnego płynu w jamie brzusznej nie widać.,11,0,6,6
+13674,595,02-003,Pęcherz moczowy cienkościenny. W szyjce macicy torbiele Nabotha. W lewym jajniku torbiel wielkości około 39x29 mm.,16,0,6,0
+13675,596,02-003,Stan po CTx z powodu chłoniaka (DLBCL) w polipie prawej jamy nosa do marca 2017 roku. Stan po usunięciu guza prawej jamy nosa.,23,0,6,0
+13676,597,02-003,"Stan po radioterapii 46Gy/23fr z powodu wznowy. Stan po częściowym wycięciu nerki z powodu raka, RCC, pT1a.",17,0,6,0
+13677,598,02-003,Jamy nosa wolne. W jamie ustnej i gardle ognisk patologicznego wzmocnienia nie widzę.,13,0,6,0
+13678,599,02-003,Migdałek gardłowy i językowy niepowiększone. Migdałki podniebienne w zaniku.,9,0,6,6
+13679,600,02-003,Obszar malacji w lewym płacie skroniowym jak poprzednio. Dyskopatia szyjna na poziomach C3-C6.,13,0,6,0
+13680,601,02-003,"Stan po chemioterapii z powodu raka migdałka podniebiennego prawego z ipsilateralna limfadenopatią, SCCa, G2, p16plus, cT4N1M0.",16,0,6,0
+13681,602,02-003,"Stan po selektywnej operacji węzłowej, II i III z powodu choroby rezydualnej.",12,0,6,0
+13682,603,02-003,Loża po migdałku podniebiennym prawym wolna.,6,0,6,6
+13683,604,02-003,"Porównywalnej wielkości obszar wysokiego sygnału w obrazach T2-zależnych na podniebieniu miękkim po stronie prawej, 7,5x16 mm, bez cech patologicznego wzmocnienia i restrykcji dyfuzji ‒ malformacja limfatyczna, do dalszej kontroli.",29,0,6,0
+13684,605,02-003,Kanały nerwowe podniebienne prawe bez cech patologicznego wzmocnienia.,8,0,4,6
+13685,606,02-003,Gruczoł tarczowy ulega niejednorodnemu wzmocnieniu po kontraście.,7,0,6,6
+13686,607,02-003,"Mózgowie bez cech obrzęku i krwawienia, bez wydzielających się zmian ogniskowych wzmacniających się po podaniu kontrastu.",16,0,6,6
+13687,608,02-003,"Układ komorowy ustawiony pośrodkowo, nieposzerzony. W obrębie półkul móżdżku i w pniu mózgu zmian patologicznych nie widać.",17,0,6,6
+13688,609,02-003,"Pojedynczy, drobny, okrągły węzeł chłonny wielkości do 6 mm wydziela się po stronie lewej w przyleganiu do dużych naczyń szyjnych.",20,0,6,0
+13689,610,02-003,W obrębie przednich części blaszek granicznych trzonów kręgowych L2 i L3 na tym poziomie zmiany zwyrodnieniowe typu Modic II.,19,0,5,0
+13690,611,02-003,"Na poziomie L4/L5 obuboczna protruzja materiału tarczy międzykręgowej, możliwa impresja na prawy korzeń nerwowy L5.",15,0,6,0
+13691,612,02-003,Na poziomie L5/S1 niewielkiego stopnia centralne grzbietowe uwypuklenie krążka międzykręgowego.,10,0,6,0
+13692,613,02-003,"Stan po SND, II i III z powodu choroby rezydualnej.",10,0,6,0
+13693,614,02-003,Obraz rezonansu magnetycznego mózgowia w granicach normy.,7,0,6,6
+13694,615,02-003,"Stan po częściowej resekcji języka po stronie prawej z obustronną SND, SMG IB, IIB, III i VA po stronie prawej oraz IA i IB po lewej z powodu raka, SCC, G2, pT1N0.",32,0,6,0
+13695,616,02-003,"W trzonie języka po stronie prawej widoczna jest łukowata blizna, bez ognisk patologicznego wzmocnienia i restrykcji dyfuzji. Cech wznowy nie widzę.",21,0,6,6
+13696,617,02-003,Patologicznego wzmocnienia wzdłuż drogi przebiegu nerwu językowego prawego ani w prawym otworze owalnym nie widzę.,15,0,6,6
+13697,618,02-003,"Pojedynczy większy węzeł chłonny w grupie III po stronie prawej do 21x4 mm ‒ prawdopodobnie odczynowy, bez niepokoju.",18,0,6,0
+13698,619,02-003,Dane ze skierowania. W TK z 20 lutego 2023 roku niejednoznaczny obraz loży lewego migdałka.,15,0,6,0
+13699,620,02-003,Badanie rezonansem magnetycznym nie potwierdziło obecności zmiany ogniskowej w loży lewego migdałka podniebiennego.,13,0,6,6
+13700,621,02-003,"Nie uwidoczniono ognisk nieprawidłowego wzmocnienia w gardle ani w krtani. Doły skrzydłowo-podniebienne są wolne. Otwory owalne, okrągłe i poszarpane symetryczne, nieposzerzone.",21,0,6,6
+13701,622,02-003,Przewlekłe zmiany zapalne w zatokach obocznych nosa. Stan po endoskopowej chirurgii zatok przynosowych po stronie lewej.,16,0,6,6
+13702,623,02-003,Zmian ogniskowych w obrębie mózgowia nie uwidoczniono. Poza tym nie stwierdza się cech ograniczenia dyfuzji.,15,0,6,6
+13703,624,02-003,"Układ komorowy ustawiony pośrodkowo, symetryczny, nieposzerzony. Struktury tylnego dołu czaszki bez zmian.",12,0,6,6
+13704,625,02-003,"Fizjologiczna lordoza kręgosłupa szyjnego zachowana. Wysokość trzonów kręgów w granicach normy, ich sygnał również w granicach normy. Rdzeń szyjny o prawidłowym sygnale.",22,0,6,6
+13705,626,02-003,Centralno-obuboczne uwypuklenie krążka międzykręgowego C4-C5 razem z towarzyszącymi osteofitami brzeżnymi w kierunku kanału kręgowego do 3 mm.,17,0,6,0
+13706,627,02-003,"Nieznaczne modelowanie rdzenia kręgowego. Umiarkowane zwężenia otworów międzykręgowych, bardziej zaznaczone po prawej.",12,0,6,6
+13707,628,02-003,Centralno-lewoboczne uwypuklenie krążka międzykręgowego C5/C6 razem z towarzyszącymi osteofitami brzeżnymi w kierunku kanału kręgowego do 4 mm.,17,0,6,0
+13708,629,02-003,Wymiar AP worka oponowego wynosi w tym odcinku 9mm.,9,0,6,0
+13709,630,02-003,"Nieznaczne modelowanie rdzenia kręgowego. Umiarkowane zwężenia otworów międzykręgowych, bardziej zaznaczone po lewej.",12,0,6,6
+13710,631,02-003,Obraz rezonansu magnetycznego może odpowiadać zaznaczonym zmianom dyskopatycznym na poziomach C4/C5 i C5/C6.,13,0,6,0
+13711,632,02-003,Zmian budzących niepokój onkologiczny nie uwidoczniono.,6,0,6,6
+13712,633,02-003,"Stan po radykalnej RTx, 66Gy/33fr z powodu raka języczka (SCCa, G2, p16(-), cT1N0M0), rak płaskonabłonkowy.",15,0,7,0
+13713,634,02-003,Parestezje kończyny górnej lewej oraz klatki piersiowej po stronie lewej.,10,0,6,6
+13714,635,02-003,"Czy jest progresja radiologiczna zmian demielinizacyjnych, podejrzenie nowego ogniska demielinizacji w lewobocznej części rdzenia szyjnego.",15,0,5,6
+13715,636,02-003,Leczenie immunomodulujce ocrelizumabem.,3,0,6,6
+13716,637,02-003,Parotidektomia prawostronna - 21 lat temu - prawdopodobnie z powodu gruczolaka wielopostaciowego. Parotidektomia lewostronna - usunięcie guza przestrzeni przygardłowej.,19,0,6,0
+13717,638,02-003,"Histopatologia – myoepithelioma, gruczolak mioepitelialny - ocena doszczętności wycięcia niemożliwa ze względu na rozfragmentowanie guza.",15,0,6,6
+13718,639,02-003,"W sekwencji CISS zachowany sygnał objętych badaniem nerwów czaszkowych. Nie wykryto ewentualnych zmian na przebiegu prawego nerwu X, CN dziesięć, w możliwym do oceny zakresie.",25,0,6,0
+13719,640,02-003,"FPI, przerzut raka płaskonabłonkowego do węzła chłonnego poziomu IIa po stronie prawej.",12,0,6,0
+13720,641,02-003,Obustronnie na szyi nie uwidoczniono powiększonych węzłów chłonnych.,8,0,6,6
+13721,642,02-003,Stan po prawostronnej SND (I-V).,5,0,6,0
+13722,643,02-003,Nie widać powiększonych wezłów chłonnych szyjnych. Pojedynczy węzeł chłonny zagardłowy lewy 4x5 mm jak poprzednio.,15,0,6,0
+13723,644,02-003,"W kontekście węzłów chłonnych ‒ obustronnie w CS widoczne są zaznaczone węzły chłonne do 5x10 mm po prawej i do 17x4 mm po lewej, ale były widoczne już w badaniu TK i nie budzą mojego niepokoju.",36,0,6,0
+13724,645,02-003,"Widoczne pogrubienie gałęzi V2 po stronie lewej także w poziomie otworu okrągłego ‒ bez cech progresji względem badania poprzedniego, obserwacja w kierunku przewlekłej niewydolności serca.",25,0,6,0
+13725,646,02-003,"Obraz przemawia za zmianami resztkowymi w bliźnie z towarzyszącą lewostronną limfadenopatią, nie widzę ogniska pierwotnego. TNM: iN3b.",17,0,6,0
+13726,647,02-003,"Wycięcie niedoszczętne w 2 miejscach .Dodatkowe marginesy ‒ bez raka. Uzupełnienie wyniku po odwapnieniu ‒ podniebienie twarde lewostronnie, przegroda przód-dół ‒ naciek raka.",23,0,6,0
+13727,648,02-003,"Wycięcie guza przestrzeni przygardłowej P klinicznie i MR przyzwojak n. X H-P: paraganglioma, Nerw czaszkowy dziesiąty, w badaniu histopatologicznym - margines niepewny.",22,0,4,0
+13728,649,02-003,"W lewem płacie czołowym podkorowo pojedyncze ognisko naczyniopochodne oraz szersze naczynie przeszywające, DVA, rozwojowa anomalia żylna mózgowia.",17,0,5,0
+13729,650,02-003,"NF1, nerwiakowłókniakowatość typu I.",4,0,6,0
+13730,651,02-003,"Na szyi, po stronie prawej, między mięśniem mostkowo-obojczykowo-sutkowym a kręgosłupem ‒ od poziomu C3 po wlot klatki, Th2, widoczna jest masa patologiczna o policyklicznych zarysach o niejednorodnie podwyższonym sygnale w obrazach T2 zależnych, która nieznacznie wzmacnia się po podaniu kontrastu.",40,0,6,0
+13731,652,02-003,Przewód żółciowy wspólny nieposzerzony.,4,0,6,6
+13732,653,02-003,PŻW nieposzerzony.,2,0,6,6
+13733,654,02-003,Cechy nasilenia fizjologicznej lordozy odcinek L/S kręgosłupa z poziomym ustawieniem kości krzyżowej.,12,0,6,0
+13734,655,02-003,Osteofity na tylnych i przednich krawędziach trzonów kręgowych. Na poziomie L2/L3 szerokopodstawne uwypuklenie krążka miedzykręgowego spłycające zachyłki korzeniowe obustronnie.,19,0,6,0
+13735,656,02-003,Na poziomie L3/L4 zwężenie przestrzeni międzykręgowej z centralno-lewoboczną przepukliną krążka międzykręgowego migrującą ku górze wzdłuż zarysu trzonu L3 do 1/3 jego wysokości.,22,0,5,0
+13736,657,02-003,Wysokość trzonów kręgowych zachowana. Kanał kręgowy bez cech stenozy.,9,0,6,6
+13737,658,02-003,"Stożek rdzenia widoczny na poziomie L1, bez wydzielających się ognisk o odmiennym sygnale.",13,0,6,0
+13738,659,02-003,"Po stronie prawej ‒ ślinianka podżuchwowa IB-V ‒ i selektywnej operacji węzłowej po stronie lewej ‒ ślinianka podżuchwowa IB, III, z powodu raka, SCCa, G1, pT2N0.",26,0,5,0
+13739,660,02-003,Radykalna chemioterapia do 14 grudnia 2022 roku. Badanie obarczone nasilonymi artefaktami ruchowymi.,12,0,6,0
+14201,20,02-001,"Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",19,4,0,0
+14206,29,02-001,"Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",21,4,0,0
+14208,81,02-001,"W obu płatach widoczne pojedyncze zmiany płynowo-lite, gąbczaste i torbiele koloidowe. Największe: w prawym płacie w biegunie dolnym zmiana lito-płynowa wielkości 3x4x4 mm (TIRADS 2).",25,1,0,0
+14211,82,02-001,"Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",20,1,0,0
+14214,85,02-001,"W 1/3 górnej płata prawego tarczycy i brzusznie wydziela się konglomerat litych, izoechogennych zmian ogniskowych z halo i obwodowym unaczynieniem do 6x12x5mm (TIRADS 3).",24,1,0,0
+14216,661,02-001,Zmiana była widoczna na granicy skanowania w badaniu TK z dnia 02 lipca 2021 roku. Wtedy w przekroju poprzecznym do 7x12 mm. TIRADS 4 według ACR TI-RADS 2017 roku do biopsji.,31,1,0,0
+14219,88,02-001,W przyleganiu do tarczycy patologicznych węzłów chłonnych nie widzę. Po stronie prawej płat piramidowy. Wnioski: zmiana w prawym płacie tarczycy do biopsji.,22,1,0,0
+14224,147,02-001,"Wymiary tarczycy: płat prawy: 11x11x39 mm, objętość 2,5 ml. Płat lewy: 9x14x40 mm, objętość 2,6 ml. Cieśń: 2 mm.",19,1,0,0
+14225,91,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono. Wniosek: Obraz USG jak w przebiegu autoimmunologicznego zapalenia tarczycy.",17,1,0,0
+14226,662,02-001,"USG tarczycy. Tarczyca o gładkich zarysach, dwupłatowa. W biegunie dolnym lewego płata tarczycy widoczna jest zmiana guzkowa, dobrze ograniczona, normoechogeniczna, typu gąbczastego, o obwodowym typie unaczynienia, wymiary 11x8x13 mm TIRADS 1.",31,1,0,0
+14228,148,02-001,"Wymiary i objętość prawego płata: 15 x 18 x 47 mm, objętość 6,3 ml. Wymiary i objętość lewego płata: 19 x 16 x 45 mm, objętość 6,8 ml, cieśń do 3 mm.",32,1,0,0
+14230,63,02-001,"Miąższ tarczycy niejednorodny, o obniżonej echogeniczności, z pasmami zwłóknień, bez cech wzmożenia przepływu w opcji cd. Obraz miąższu tarczycy jak w chorobie Hashimoto.",23,4,0,0
+14231,663,02-001,"Wymiary tarczycy: Płat prawy wielkości 14x16x42 mm, objętość 5,2 ml. W biegunie dolnym płata prawego widoczny jest konglomerat guzków wielkości 13x15x22 mm. Podobnie jak poprzednio. Unaczynienie zmiany obwodowe.",28,1,1,0
+14233,92,02-001,Obraz zmian bez istotnych różnic w porównaniu z badaniem poprzednim. Cieśń: 4mm.,12,1,0,0
+14234,93,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono. Dalsza diagnostyka obrazowa w zależności od konsultacji klinicznej. Wniosek: Cechy choroby Hashimoto.",20,1,0,0
+14235,94,02-001,Guzki obu płatów tarczycy. Wielkość porównywalna z poprzednim badaniem USG.,10,1,0,0
+14238,151,02-001,W prawym płacie widoczna torbielowato-lita zmiana ogniskowa o wymiarach 9x9x16 mm wyraźnie odgraniczona od otoczenia. O strukturze gąbczastej - TIRADS 2.,21,1,0,0
+14239,95,02-001,Poniżej tej zmiany grzbietowo znajduje się ognisko hipoechogenne wielkości 4x5x7 mm - TIRADS4. Do dalszej obserwacji przy tej wielkości. W lewym płacie drobne do 2 mm torbiele koloidowe. Powiększonych węzłów chłonnych przytarczycowych nie widać. Wniosek: guzki obu płatów tarczycy.,39,1,0,0
+14240,96,02-001,Zmiana dominująca w płacie prawym TIRADS 2 stabilnej wielkości. Do obserwacji ognisko w płacie prawym TIRADS 4.,17,1,0,0
+14243,664,02-001,"Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,3 ml Cieśń: do 3 mm",18,0,1,0
+14245,97,02-001,Wniosek: Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.,8,1,0,0
+14248,154,02-001,"Wymiary tarczycy: Płat prawy wielkości 14x14x41 mm, objętość 4,2 ml.",10,1,0,0
+14249,99,02-001,W płacie prawym w części brzusznej obecny stabilnej wielkości względem badania poprzedniego guzek hipoechogenny wielkości 4x3x4 mm. Poprzednio 3x3x4 mm.,20,5,0,0
+14250,155,02-001,"Płat lewy: 10x8x35 mm, objętość 1,6 ml, bez zmian ogniskowych. Cieśń wielkości 4 mm.",14,1,0,0
+14251,100,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono. Wniosek: Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.",16,1,0,0
+14254,64,02-001,"Echogeniczność podstawowa gruczołu prawidłowa, echostruktura nieco niejednorodna, bez cech wzmożenia przepływu naczyniowego w opcji CD.",15,4,0,0
+14255,79,02-001,W części środkowej płata lewego zmiana izoechogenna z hipootoczką wielkości 9x6x6 mm.,12,5,0,0
+14256,69,02-001,W płacie prawym w części dolnej grzbietowo zmiana hipoechogenna wielkości 6x6x4 mm do kontroli.,14,5,0,0
+14258,156,02-001,"Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",18,1,0,0
+14260,665,02-001,W obu płatach widoczne zmiany ogniskowe o charakterze gąbczastym. TIRADS 2. W prawym płacie największa ze zmian położona w części środkowej wielkości 7x4x7 mm. W lewym płacie największa położona w biegunie dolnym wielkości 3x3x3 mm.,35,1,0,0
+14262,157,02-001,"Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",20,1,0,0
+14263,102,02-001,"Tarczyca niepowiększona, miąższ jednorodny, o prawidłowej echogeniczności, bez wzmożenia przepływów w opcji Color Doppler.",14,1,0,0
+14264,103,02-001,"W płacie prawym hipoechogeniczny niejednorodny lity guzek, o zrazikowym brzegu, z pojedynczym hiperechegennicznym zwapnieniem, wielkości 5x4x3 mm stabilny względem badania poprzedniego.",21,1,0,0
+14266,666,02-001,Wnioski: stabilny obraz guzka w prawym płacie tarczycy.,8,0,1,0
+14267,105,02-001,"Stan po tyreoidektomii. W loży po zabiegu uwidoczniono tkankę gruczołową o echogeniczności wyższej niż okolicznych mięśni, położona nisko na szyi, odrost po stronie lewej schodzi poniżej wcięcia mostka oraz przemieszcza tchawicę na stronę prawą.",34,1,0,0
+14268,667,02-001,"Wymiary: po stronie prawej wielkości 20x22x49 mm, objętość 10,5 ml po stronie lewej wielkości 37x36x57 mm, objętość 40,3 ml",19,0,1,0
+14269,106,02-001,"Obustronnie w obrębie odrostu lito-płynowe zmiany ogniskowe ze zwapnieniami tworzące konglomeraty, największy z nich po stronie lewej wielkości 25x20x42 mm.",20,1,0,0
+14270,107,02-001,Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.,9,1,0,0
+14271,108,02-001,"Tarczyca położona prawidłowo, mała, o słabo widocznych zarysach zewnętrznych.",9,1,0,0
+14273,668,02-001,"Wymiary tarczycy: Płat prawy wielkości 7x9x27 mm, objętość 0,9 ml Płat lewy wielkości 9x9x24 mm, objętość 1 ml Cieśń wielkości 2 mm.",22,1,0,0
+14274,110,02-001,Okołotarczycowo powiększonych węzłów chłonnych nie wykazano.,6,1,0,0
+14275,111,02-001,"Tarczyca położona typowo, dwupłatowa, o nierównych zarysach zewnętrznych, o niejednorodnej, obniżonej echogeniczności. Jak w przebiegu autoimmunologicznego zapalenia tarczycy.",18,1,0,0
+14276,669,02-001,"W prawym płacie widoczne są zmiany ogniskowe, hiperechogenne, z hipootoczką, unaczynione głównie obwodowo. Z miana w części środkowej wielkości 7x9x15 mm.",21,1,0,0
+14278,161,02-001,Zmiany w przebiegu autoimmunologicznego zapalenia tarczycy lub zmiana ogniskowa - do obserwacji.,12,1,0,0
+14280,162,02-001,"Wymiary tarczycy: - prawy płat wielkości 18x15x53 mm, objętość 7,4ml - lewy płat 16x16x52 mm, objętość 6,7 ml - cieśń 4mm.",21,1,0,0
+14281,115,02-001,"Tarczyca niepowiększona, miąższ niejednorodny z pasmami zwłóknień, o obniżonej echogeniczności. Przepływy w opcji Color Doppler zaznaczone.",16,1,0,0
+14282,164,02-001,W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.,8,1,0,0
+14286,670,02-001,"Największa zmiana po stronie prawej leży w 1/3 środkowej oraz centralnie i brzusznie, mierzy 10x11x8 mm EU-TIRADS 4.",18,1,1,0
+14287,118,02-001,W dolnej 1/3 płata lewego i na granicy z cieśnią wydziela się duże ognisko o podobnej morfologii do 15x16x9 mm. EU-TIRADS 4.,22,1,0,0
+14288,119,02-001,Do biopsji cienkoigłowej jeśli wcześniej zmiana nie była bioptowana.,9,1,0,0
+14289,671,02-001,Na tle wszystkich zmian wyróżnia się największe ognisko w płacie lewym w 1/3 górnej i przy naczyniach. Ta zmiana ma chaotyczny rysunek unaczynienia. Mierzy 13x19x9 mm. EU-TIRADS 4.,28,1,1,0
+14290,120,02-001,Proponuję tu biopsję cienkoigłową jeśli wcześniej zmiana nie była bioptowana.,10,1,0,0
+14291,169,02-001,"Wymiary i objętość - płat prawy wielkość 23x47x20 mm, objętość 10,3 ml - płat lewy wielkości 23x59x21 mm, objętość 13,4 ml -cieśń wielkości do 3 mm.",26,1,0,0
+14292,121,02-001,W przyleganiu do tarczycy patologicznych węzłów chłonnych nie widzę.,9,1,0,0
+14293,122,02-001,"Tarczyca położona prawidłowo, niepowiększona, o gładkich zarysach zewnętrznych.",8,1,0,0
+14294,123,02-001,"Miąższ tarczycy jednorodny, o prawidłowej echogeniczności, bez cech wzmożonego unaczynienia.",10,1,0,0
+14295,124,02-001,W obu płatach tarczycy widoczne są umiarkowanie liczne guzki o morfologii gąbczastej.,12,1,0,0
+14298,126,02-001,"Okołotarczycowo powiększonych węzłów chłonnych nie stwierdzono. Wniosek: Zmiany guzkowe tarczycy, bez wskazań do biopsji cienkoigłowej.",15,1,0,0
+14299,127,02-001,Wydano dokumentację zdjęciową. Stan po usunięciu płata lewego tarczycy z powodu wola guzowatego.,13,1,0,0
+14301,672,02-001,"1/3 płata prawego tarczycy wydziela się lita, hipoechogenna zmiana ogniskowa z hipoechogenną otoczką, o gładkich brzegach i mieszanym unaczynieniu wielkości do 13x15x10 mm. EU-TIRADS 3.",25,0,1,0
+14302,130,02-001,Bez wskazań do biopsji cienkoigłowej.,5,1,0,0
+14303,673,02-001,"W dolnej 1/3 płata prawego widoczna jest lita, hipoechogenna zmiana ogniskowa, z makrozwapnieniem, bez widocznego unaczynienia, wielkości do 11x10x11mm. EU-TIRADS 4.",21,0,1,0
+14305,133,02-001,Poza tym w górnej połowie tarczycy widoczne jest makrozwapnienie wielkości do 4 mm.,13,1,0,0
+14306,171,02-001,"Wymiary i objętość: Płat prawy wielkości 31x39x22mm, objętość 12,7ml.",9,1,0,0
+14308,135,02-001,W przyleganiu do tarczycy patologicznych węzłów chłonnych nie uwidoczniono.,9,1,0,0
+14309,136,02-001,"Tarczyca położona prawidłowo, powiększona w zakresie prawego płata, o gładkich zarysach zewnętrznych.",12,1,0,0
+14310,137,02-001,"Miąższ tarczycy jednorodny, o prawidłowej echogeniczności, o prawidłowym unaczynieniu.",9,1,0,0
+14314,674,02-001,"Płat prawy wielkości 23x18x52 mm, objętość 11 ml. Płat lewy: 14x13x54 mm, objętość 5 ml. Cieśń wielkości 5 mm .",20,1,1,0
+14315,174,02-001,Okołotarczycowe węzły chłonne niepowiększone. Wniosek: W porównaniu z dostępnym badaniem z 2018 roku progresja wielkości guzków dominujących w obu płatach.,20,1,0,0
+14316,175,02-001,Do rozważenia biopsja aspiracyjna cienkoigłowa celowana.,6,1,0,0
+14317,176,02-001,"Gruczoł tarczowy położony prawidłowo na szyi, o zachowanej budowie płatowej, o objętości 26,6 ml, gładkokonturowany, o prawidłowej echogeniczności i prawidłowym przepływie naczyniowym.",22,1,0,0
+14318,177,02-001,Obustronnie w tarczycy widoczne są głównie lite zmiany ogniskowe.,9,1,0,0
+14319,675,02-001,"W dolnej 1/3 części płata prawego widoczny jest konglomerat litych, dobrze odgraniczonych, izoechogennych zmian ogniskowych z unaczynieniem obwodowym, wielkości do 26x30x24mm.",21,1,1,0
+14320,676,02-001,"W biopsji cienkoigłowej Bethesda II - w części dolnej cieśni konglomerat podobnych zmian ogniskowych wielkości do 24x20x10mm, też o unaczynieniu obwodowym. EU-TIRADS 3. Do biopsji. W płacie lewym kilka mniejszych zmian litych i gąbczastych.",34,1,1,0
+14321,180,02-001,"Wymiary i objętość Płat prawy wielkości 28x51x26 mm, objętość 17,8 ml Płat lewy wielkości 20x52x18mm, objętość 8,8 ml; cieśń wielkości do 10 mm.",23,1,0,0
+14342,677,02-001,"W obu płatach widoczne są zmiany ogniskowe. W prawym płacie w 1/3 środkowej zmiana izoechogenna, z przestrzeniami płynowymi i odbiciami koloidowymi, o obwodowym typie unaczynienia wielkości 20x14x30mm. EU-TIRADS 3.",29,0,1,0
+14343,678,02-001,Do rozważenia dalsza obserwacja bądź biopsja cienkoigłowa.,7,0,1,0
+14344,679,02-001,"Na pograniczu z cieśnią zmiana o morfologii gąbczastej wielkości 10x5mm, EU-TIRADS 2. W lewym płacie: kilka litych zmian izoechogennych, wielkości do 10x11x15mm. EU-TIRADS 3.",24,0,1,0
+14345,680,02-001,"Wewnątrz jednej z izoechogennych zmian, w 1/3 dolnej płata widoczny jest lity, owalny, hipoechogenny guzek o mieszanym typie unaczynienia wielkości 4x3x6mm, EU-TIRADS 4. Do obserwacji.",25,0,1,0
+14348,681,02-001,"Wymiary tarczycy: - płat prawy 31x25x56mm, objętość 18ml - płat lewy 21x19x49mm, objętość 9,2ml -cieśń wielkości 4mm Wniosek: Guzek prawego płata tarczycy EU-TIRADS 3.",24,0,1,0
+14349,682,02-001,Do rozważenia biopsja cienkoigłowa. Guzek EU-TIRADS 4 lewego płata tarczycy do obserwacji.,12,0,1,0
+14352,683,02-001,"Pozostałe zmiany o charakterze gąbczastym - największa wielkości 4x3mm (TIRADS2) - w lewym płacie: kilka zmian gąbczastych, największa wielkości 7x4mm - w cieśni również zmiana gąbczasta wielkości 3x2mm (TIRADS2). Unaczynienie miąższu tarczycy prawidłowe.",33,0,1,0
+14354,684,02-001,"Wymiary tarczycy: - płat prawy 17x15x45mm, objętość 6 ml - płat lewy 13x15x46mm, objętość 4,4 ml - cieśń do 3mm.",20,0,1,0
+14355,685,02-001,Wniosek: Guzki w obu płatach tarczycy TIRADS2 i TIRADS3 - stabilnej wielkości w porównaniu z badaniem poprzednim.,17,0,1,0
+14356,686,02-001,Bez wskazań do biopsji przy tej wielkości.,7,0,1,0
+14357,687,02-001,"Tarczyca dwupłatowa, powiększona, położona prawidłowo.",5,0,1,0
+14358,688,02-001,Echogeniczność i echostruktura miąższu niejednorodna - jak w autoimmunologicznym zapaleniu tarczycy.,11,0,1,0
+14359,689,02-001,W płacie prawym w części środkowej widoczna jest izoechogenna zmiana ogniskowa z hipootoczką wielkości 4x3 mm.,16,0,1,0
+14360,690,02-001,Poza tym w bocznej części płata słabo wydziela się niejednorodny izoechogenny obszar z hipoechogennym centrum wielkości 8x8mm.,17,0,1,0
+14361,691,02-001,W różnicowaniu drobny guzek albo zmiana w przebiegu autoimmunologicznego zapalenia tarczycy.,11,0,1,0
+14362,692,02-001,"Wymiary: Płat prawy - 26x17x55ml objętość - 12,5ml. Płat lewy - 22x22x60mm, objętość - 15 ml.",16,0,1,0
+14363,693,02-001,Okołotarczycowe węzły chłonne niepowiększone.,4,0,1,0
+14364,694,02-001,"Tarczyca powiększona, schodzi nisko za wcięcie mostka.",7,0,1,0
+14365,695,02-001,"Oba płaty oraz cieśń całkowicie przebudowane przez lito-płynowe guzki, zlewające się ze sobą, trudne do wyróżnienia, tworzące konglomeraty.",18,0,1,0
+14366,696,02-001,"Najlepiej wydziela się zmiana w grzbietowej części płata prawego ze zwapnieniami, uwypukla się poza zarys boczny tarczycy, orientacyjnej wielkości 21x24x26 mm.",21,0,1,0
+14367,697,02-001,Stan po biopsji aspiracyjnej cienkoigłowej celowanej.,6,0,1,0
+14368,698,02-001,W cieśni widoczna nieco hipoechogenna zmiana wielkości 14x11mm ze zwapnieniami.,10,0,1,0
+14371,699,02-001,"Płat prawy – 48x28x70 mm, objętość 49ml lewy płat – 33x22x67 mm, objętość 25 ml -cieśń niepogrubiała, poza zmianą ogniskową, mierzy 2mm. Tarczyca niepowiększona, dwupłatowa, położona typowo, o gładkich zarysach zewnętrznych.",31,0,1,0
+14372,700,02-001,"W obu płatach wydzielają się zmiany ogniskowe, dominuje morfologia zmian mieszanej echogeniczności z pasmowatymi przestrzeniami płynowymi.",16,0,1,0
+14373,701,02-001,"Guzki gąbczaste, wielkości do 7x5x7mm po prawej, do 7x7x8mm w dolnym biegunie płata lewego - ta zmiana o dominującym obwodowym unaczynieniu.",21,0,1,0
+14374,702,02-001,Miąższ podstawowy normoechogenny.,3,0,1,0
+14375,703,02-001,Przepływy krwi w zakresie gruczołu prawidłowe.,6,0,1,0
+14376,704,02-001,Bez cech limfadenopatii szyjnej.,4,0,1,0
+14377,705,02-001,"Płat prawy : 18x18x45mm, objętość około 7,6 ml. Płat lewy 18x16x41 mm, objętość około 6,1 ml, cieśń do 3mm.",19,0,1,0
+14378,706,02-001,Wnioski : Zmiany ogniskowe tarczycy bez cech progresji wielkości względem badania poprzedniego.,12,0,1,0
+14379,707,02-001,Stan po usunięciu tarczycy i leczeniu radiojodem w 2016 roku z powodu raka brodawkowatego.,14,0,1,0
+14380,708,02-001,"Jak w badaniu poprzednim w loży po zabiegu po stronie prawej słabo wydziela się jednorodnej echogeniczności obszar wielkości 7x9x18mm, poprzednio wielkości 8x10x21mm.",22,0,1,0
+14381,709,02-001,Stan po biopsji cienkoigłowej 28.07.2021.,5,0,1,0
+14382,710,02-001,Po stronie lewej odbić echa przemawiających za tkanką gruczołową nie widzę.,11,0,1,0
+14383,711,02-001,Okoliczne węzły chłonne niepowiększone.,4,0,1,0
+14384,712,02-001,"Tarczyca o niejednorodnie obniżonej echogeniczności, w normie wielkości, z pasmami zwłóknień.",11,0,1,0
+14385,713,02-001,"Obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy, o nieco obniżonym przepływie w opcji CD.",14,0,1,0
+14387,714,02-001,"Wyżej zmiana uwapniona, do 4 mm - stabilna - w płacie lewym w części górnej zmiana izoechogenna z przestrzenią płynową wielkości 11x9x21mm - stabilna, poprzednio 11x8x22mm.",26,0,1,0
+14388,715,02-001,"Płat prawy: 16x15x45mm, objętość 5,8 ml, płat lewy: 15x13x56mm, objętość 5,5 ml, cieśń do 3mm.",15,0,1,0
+14389,716,02-001,Wnioski: Obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy.,8,0,1,0
+14392,717,02-001,"W obu płatach widoczne zmiany ogniskowe: - w prawym płacie: lity guzek hipoechogennym o wymiarze 11x5x9mm, poprzednio 10x4x8mm, oraz drobne torbiele. - w lewym płacie: hipoechogenny guzek o wymiarze 5x6mm, poprzednio 5x3x6mm.",32,0,1,0
+14398,718,02-001,"W obrębie prawego płata, w biegunie górnym i dolnym widoczne dwie dobrze odgraniczone, lito-torbielowate zmiany o mieszanej echogeniczności i unaczynieniu - zmiana w biegunie górnym wielkości 19x14x27mm, w biegunie dolnym 12x16x18mm.",31,0,1,0
+14402,719,02-001,Wniosek: Tarczyca bez cech autoimmunologicznego zapalenia tarczycy.,7,0,1,0
+14403,720,02-001,Stan po strumektomii subtotalnej z powodu wola wieloguzkowego.,8,0,1,0
+14404,721,02-001,"Jak poprzednio, po stronie lewej widoczny drobny fragment hipoechogennej tkanki o wymiarach 5x3mm, może odpowiadać pozostawionemu miąższowi tarczycy.",18,0,1,0
+14408,722,02-001,Lewy płat tarczycy schodzi za obojczyk lewy.,7,0,1,0
+14409,723,02-001,W lewym płacie tarczycy widoczna zmiana lito-płynowa o dominującym obwodowym unaczynieniu wielkości 43x27x39mm (TIRADS 2).,15,0,1,0
+14410,724,02-001,Prawy płat tarczycy bez wydzielających się zmian ogniskowych.,8,0,1,0
+14411,725,02-001,"Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji CD.",13,0,1,0
+14413,726,02-001,"Wymiary tarczycy: - płat prawy 14x10x41mm, objętość 3 ml - płat lewy 43x27x42 mm, objętość 25,4 ml -cieśń do 3 mm.",21,0,1,0
+14414,727,02-001,Wnioski: Wole guzkowe tarczycy.,4,0,1,0
+14415,728,02-001,Zmian o charakterze gruczolaków przytarczyc w zakresie badania nie uwidoczniono.,10,0,1,0
+14416,729,02-001,"Tarczyca powiększona, schodząca za mostek, niejednorodna, w całości przebudowana guzkowo, z przestrzeniami płynowymi, zwapnieniami.",14,0,1,0
+14417,730,02-001,"W obu płatach widoczne zmiany ogniskowe, największe: - w prawym płacie: 18x25x28 mm - EU-TIRADS. W lewym płacie: 20x25x41 mm - EU-TIRADS 3.",23,0,1,0
+14418,731,02-001,Unaczynienie miąższu tarczycy wzmożone.,4,0,1,0
+14420,732,02-001,"Wymiary tarczycy: - płat prawy 36x35x64 mm, 43 ml - płat lewy 44x31x58 mm, 43 ml - cieśń do 7 mm.",21,0,1,0
+14421,733,02-001,"Gruczoł tarczowy powiększony, o objętości 34ml, gładkokonturowany, o prawidłowej echogeniczności i prawidłowym przepływie naczyniowym.",14,0,1,0
+14422,734,02-001,"W 1/3 górnej płata prawego i w przyleganiu do naczyń widoczna jest owalna, dobrze odgraniczona, nieznacznie hipoechogeniczna zmiana ogniskowa z cienkim halo, do 6x5 mm, bez widocznego unaczynienia.",28,0,1,0
+14423,735,02-001,"W 1/3 środkowej płata prawego i grzbietowo widoczna jest dobrze odgraniczona lito-płynowa, w połowie płynowa, izoechogeniczna zmiana ogniskowa do 10x8x9 mm, w obwodowym unaczynieniu.",24,0,1,0
+14424,736,02-001,"W płacie lewym widoczny jest konglomerat zmian lito-płynowych, z dominującą komponentą litą, o mieszanej echogeniczności, głównie izoechogeniczny, do 24x40x18 mm, o mieszanym typie unaczynienia - EU-TIRADS 3.",27,0,1,0
+14425,737,02-001,Zmiana ta prawdopodobnie była już bioptowana.,6,0,1,0
+14426,738,02-001,"Na granicy płata lewego i cieśni widoczne dwie owalne, dobrze odgraniczone, hipoechogeniczne zmiany ogniskowe do 10x7 i 10x6mm, bez widocznego unaczynienia - EU-TIRADS 4 - te zmiany były już bioptowana.",30,0,1,0
+14427,739,02-001,"Wymiary i objętość płata prawego 22x64x18mm, 15 ml; płata lewego 25x71x22mm, 19 ml; cieśń do 6mm.",16,0,1,0
+14428,740,02-001,Po stronie prawej widoczny jest płat piramidowy do 16x4mm. W przyleganiu do tarczycy patologicznych węzłów chłonnych nie widzę.,18,0,1,0
+14430,741,02-001,Zmiany te były już prawdopodobnie bioptowane - proponuję obserwację.,9,0,1,0
+14432,742,02-001,"Tarczyca położona typowo, znacznie powiększona, schodzi zamostkowo, o niejednorodnej echogeniczności.",10,0,1,0
+14433,743,02-001,"Unaczynienie w opcji PD skąpe. W płacie lewym dwie zmiany - torbielowo-lita wielkości 18x8mm oraz lita, hipoechogeniczna 6x7mm (TIRADS 4).",20,0,1,0
+14434,744,02-001,"W prawym płacie kilka litych, hipoechogenicznych zmian, największa w części środkowej wielkości do około 9x7 z makrozwapnieniem (TR - 4).",20,0,1,0
+14435,745,02-001,"W cieśni izoechogenna zmiana wielkości około 14x11mm, uwypuklająca zarys zewnętrzny o mieszanym unaczynieniu.",13,0,1,0
+14436,746,02-001,"Płat prawy – 34x28x74 mm, objętość około 36,6 ml. Płat lewy – 35x31x80 mm, objętość około 40 ml. Cieśń grubości około 15 mm.",23,0,1,0
+14437,747,02-001,Na szyi bez cech limfadenopatii. Wydano dokumentację zdjęciową.,8,0,1,0
+14438,748,02-001,"Gruczoł tarczowy położony prawidłowo o zachowanej budowie płatowej, gładkokonturowany.",9,0,1,0
+14439,749,02-001,"W biegunie górnym prawego płata wydziela się ognisko hiperechogenne z hipoechogenną otoczką i obwodowym unaczynieniem, wielkości 7x6x8mm - bez istotnej różnicy wielkości (TIRADS 3).",24,0,1,0
+14440,750,02-001,"Poza tym w obu płatach widoczne zmiany płynowo-lite (TIRADS 3), największa w płacie prawym na pograniczu płata prawego i cieśni wielkości 7x2mm, największa w płacie lewym zlokalizowana w dolnym biegunie wielkości 2x2mm.",32,0,1,0
+14442,751,02-001,"Prawy płat tarczycy o wymiarach około 13x17x39ml objętość około 4,5 ml. Lewy płat tarczycy o wymiarach około 12x12x38 mm objętość około 2,8 ml. Cieśń do 1 mm.",27,0,1,0
+14443,752,02-001,W otoczeniu tarczycy patologicznych węzłów chłonnych nie widać.,8,0,1,0
+14444,753,02-001,"Tarczyca położona typowo, dwupłatowa, przebudowana guzkowo.",6,0,1,0
+14445,754,02-001,"Dolny biegun płata prawego modelowany przez konglomerat guzkowy o mieszanej echogeniczności, z widocznymi przestrzeniami płynowymi i makrozwapnieniami oraz mieszanym unaczynieniu wielkości 21x22x18mm.",22,0,1,0
+14446,755,02-001,"Bez cech progresji wielkości w stosunku do badania z 2015roku oraz badania ostatniego z 14.03.2023 roku, TIRADS 4 - do rozważenia biopsja cienkoigłowa. Nieco powyżej niego widoczna zmiana gąbczasta z makrozwapnieniem o wymiarach 6x4mm (TIRADS 3).",36,0,1,0
+14447,756,02-001,Poza tym w płacie prawym wyróżnia się kilka innych zmian gąbczastych największa w biegunie górnym wielkości do 8x7x9mm (TIRADS 2) oraz w części środkowej płata prawego torbiel koloidowa 6x6mm.,29,0,1,0
+23151,757,02-001,"Tarczyca dwupłatowa, mała. Miąższ niejednorodny, z pasmami zwłóknień, unaczynienie nie było wzmożone w opcji color doppler.",16,4,1,0
+23152,758,02-001,"Tarczyca dwupłatowa, mała. Miąższ niejednorodny, z pasmami zwłóknień, unaczynienie nie wzmożone w opcji color doppler.",15,5,1,0
+23153,759,02-001,"Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości od 4 na 4,5 na 4 milimetry, Tirads 4, bez wzmożonego przepływu.",22,0,1,0
+23154,760,02-001,"Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4 na 4,5 na 4 milimetry bez wzmożonego przepływu.",20,0,1,0
+23155,761,02-001,"Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4 na 4,5 na 4 milimetry, Eu-Tirads 4 bez wzmożonego przepływu.",22,0,1,0
+23156,762,02-001,"W płacie prawym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4 na 4 milimetry, Tirads 4, bez wzmożonego przepływu.",18,0,1,0
+23157,763,02-001,"W płacie prawym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4 na 4 milimetry, bez wzmożonego przepływu.",16,0,1,0
+23158,764,02-001,"W płacie prawym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4 na 4 milimetry, Eu-Tirads 4, bez wzmożonego przepływu.",18,0,1,0
+23159,19,02-001,Innych zmian ogniskowych w tarczycy nie uwidoczniono. Patologicznie powiększonych węzłów chłonnych szyjnych nie widać.,14,5,0,0
+23162,23,02-001,"Tarczyca położona prawidłowo, nieco powiększona, o odcinkowo nierównych zarysach zewnętrznych.",10,5,0,0
+23163,25,02-001,"Miąższ tarczycy o niejednorodnej echostrukturze i niejednorodnie obniżonej echogeniczności, z obszarami niższego echa, o prawidłowym unaczynieniu w opcji color doppler ‒ całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",28,5,0,0
+23166,765,02-001,Również w części środkowej i centralnie zmiana wielkości 9 na 5 na 10 milimetrów z brzeżnym zwapnieniem długości 2 milimetry. W dolnej części cieśni kolejna hipoechogenna zmiana wielkości 7 na 6 ma 7 milimetrów.,34,0,1,0
+23167,766,02-001,"Płat prawy wielkości 22 na 18 na 57 milimetrów, objętość 12 mililitrów. Płat lewy wielkości 19 na 22 na 54 milimetrów, objętość 11,7 mililitra. Cieśń wielkości do 7 milimetrów.",29,0,1,0
+23168,767,02-001,"Płat prawy wielkości 22 na 18 na 57 milimetrów, objętość 12 mililitrów. Płat lewy wielkości 19 na 22 na 57 milimetrów, objętość 11,7 mililitra. Cieśń wielkości do 7 milimetrów.",29,0,1,0
+23169,31,02-001,"Okołotarczycowe węzły chłonne niepowiększone. Tarczyca położona typowo, dwupłatowa, o gładkich zarysach.",11,5,0,0
+23172,67,02-001,"Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji color doppler. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",20,5,0,0
+23176,43,02-001,Płat lewy tarczycy bez zmian ogniskowych.,6,5,0,0
+23177,768,02-001,"Wymiary i objętość: Płat prawy 15 na 57 na 16 milimetrów, objętość 6,5 mililitra. Płat lewy 12 na 45 na 18 milimetrów, objętość 4,5 mililitra. Cieśń do 2 milimetrów.",29,0,1,0
+23179,36,02-001,Dokumentacja zdjęciowa w Pacs.,4,5,0,0
+23180,56,02-001,"Tarczyca położona prawidłowo, mniejsza, o gładkich zarysach zewnętrznych.",8,5,0,0
+23181,55,02-001,"Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji color doppler.",17,5,0,0
+23183,75,02-001,"Na szyi nie stwierdzono patologicznych, powiększonych węzłów chłonnych. Obraz USG jak w przebiegu autoimmunologicznego zapalenia tarczycy.",16,4,0,0
+23185,61,02-001,"Poza tym miąższ tarczycy jednorodny, o prawidłowej echogeniczności, bez wzmożenia unaczynienia. Okoliczne węzły chłonne niepowiększone.",15,4,0,0
+23186,74,02-001,"Tarczyca położona prawidłowo, powiększona, o nierównych zarysach zewnętrznych.",8,4,0,0
+23187,57,02-001,"Miąższ tarczycy niejednorodny, o obniżonej echogeniczności, z pasmami zwłóknień, bez cech wzmożenia przepływu w opcji color doppler. Obraz miąższu tarczycy jak w chorobie Hashimoto.",24,4,0,0
+23189,769,02-001,"Płat prawy wielkości 14 na 16 na 42 milimetry, objętość 5,2 mililitra. W biegunie dolnym płata prawego widoczny jest konglomerat guzków wielkości 13 na 15 na 22 milimetry. Podobnie jak poprzednio. Unaczynienie zmiany obwodowe.",34,0,1,0
+23190,770,02-001,"Płat lewy wielkości 25 na 25 na 52 milimetry, objętość 17 mililitrów. W biegunie dolnym płata lewego widoczny jest konglomerat guzków hipoechogennych z przestrzeniami płynowymi, z hipoechogenną obwódką ‒ wielkość konglomeratu 25 na 26 na 30 milimetrów.",37,0,1,0
+23192,70,02-001,"Na szyi nie stwierdzono patologicznych, powiększonych węzłów chłonnych. Dalsza diagnostyka obrazowa zależy od konsultacji klinicznej.",15,4,0,0
+23193,42,02-001,Guzki obu płatów tarczycy. Ich wielkość jest porównywalna z poprzednim badaniem USG.,12,4,0,0
+23194,48,02-001,"Tarczyca o typowej echogeniczności, niepowiększona, bez wzmożenia przepływu naczyniowego przez miąższ.",11,5,0,0
+23195,771,02-001,"W prawym płacie widoczna torbielowato-lita zmiana ogniskowa o wymiarach 9 na 9 na 16 milimetrów wyraźnie odgraniczona od otoczenia. Jest struktury gąbczastej, Tirads 2.",24,2,1,0
+23196,772,02-001,"Poniżej tej zmiany grzbietowo znajduje się ognisko hipoechogenne wielkości 4 na 5 na 7 milimetrów, Tirads 4. Do dalszej obserwacji przy tej wielkości.",23,0,1,0
+23198,54,02-001,"Zmiana dominująca w płacie prawym, Tirads 2, o stabilnej wielkości. Do obserwacji pozostaje ognisko w płacie prawym, Tirads 4.",19,4,0,0
+23199,52,02-001,"Tarczyca położona typowo, niepowiększona, o pozaciąganych zarysach oraz niejednorodnej echostrukturze, z pasmami zwłóknień. Obraz jak w autoimmunologicznym zapaleniu tarczycy.",19,5,0,0
+23202,49,02-001,W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.,15,4,0,0
+23203,41,02-001,Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.,7,4,0,0
+23204,51,02-001,"Tarczyca położona prawidłowo, mała, o gładkich zarysach zewnętrznych.",8,4,0,0
+23205,40,02-001,"Miąższ tarczycy nieco niejednorodny, o prawidłowej echogeniczności, o prawidłowym unaczynieniu w opcji color doppler, z pasmami zwłóknień. Okołotarczycowo obecne pojedyncze, niepowiększone węzły chłonne. Całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",30,5,0,0
+23207,78,02-001,"Na szyi patologicznych, powiększonych węzłów chłonnych nie stwierdzono.",8,4,0,0
+23208,39,02-001,Guzek płata prawego stabilnej wielkości względem badania poprzedniego. Nowych guzków w tarczycy nie widać.,14,5,0,0
+23209,47,02-001,"Tarczyca niepowiększona, nie zagłębia się poniżej wcięcia jarzmowego mostka.",9,5,0,0
+23210,58,02-001,"Echogeniczność podstawowa gruczołu prawidłowa, echostruktura nieco niejednorodna, bez cech wzmożenia przepływu naczyniowego w opcji color doppler.",16,5,0,0
+23213,46,02-001,Poniżej zmiana hipoechogenna owalna z hiperechogennym centrum wielkości 4 mm. Poza tym w obu płatach widoczne zmiany ogniskowe o strukturze gąbczastej mierzące do 9 mm.,25,5,0,0
+23214,34,02-001,"Na szyi bez cech limfadenopatii. Tarczyca położona typowo, dwupłatowa, o gładkich zarysach.",12,4,0,0
+23215,773,02-001,"W obu płatach widoczne zmiany ogniskowe o charakterze gąbczastym, Tirads 2. W prawym płacie największa ze zmian położona w części środkowej wielkości 7 na 4 na 7 minimetrów. W lewym płacie największa położona w biegunie dolnym wielkości 3 na 3 na 3 minimetry.",43,0,1,0

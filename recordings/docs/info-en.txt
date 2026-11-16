@@ -1,0 +1,51 @@
+The collected files come from various sources and are raw recordings.
+They were not subjected to normalization - its choice depends on the user and the task at hand.
+
+catalog human - contains recordings of untransformed human voice.
+	anoni - are recordings of speakers subjected to the process of anonymization (SALT)
+	synth - are recordings obtained with the help of a speech synthesizer - speachgen
+
+Naming in the files:
+MMNNN-AMVXXX-SSS-REC1-NN-NNN-TTTTTT-RRRMMDDTHHMMSS , where:
+
+MM{ddd} - place of recording:
+	PG{ddd} - HQ recording studios
+	GU{ddd} - rooms on gumed MQ-LQ
+	UNKNOV - online system, can be from LQ to HQ
+	LQ{xxxxx} - does not exist at the moment, but it is synthesized and was ultimately intended as a model 
+	
+AMV{ddd} - technically a speaker ID, in the old approach synthesis also had its AMV, 
+	AMV{ddd} - uploaded human voices (doctors, voiceovers)
+	ANI{ddd} - anonymized human voices (transferring their color, gender)
+	
+FOR - here will always be for as forms
+REC1 - id of the device they were recorded on (technically a microphone, e.g. TLM3 - neumann tlm3 etc., BEB5 - behringer b-5
+ 
+NTSX -  RODE NT-SF1 (ambisonic, X=1:4)	
+NTG2 - RODE NTG-2 (shotgun)	
+SK24 - SENNHEISER ME 4-N (krawatowy)	
+SH5 - ZOOM SSH-6 (stereo shotgun)	
+ZM1X - Zylia Zm1 
+ZOF2 - ZOOM F2		
+BEB5 - Behringer B-5	
+S416 - Sennheiser mkv416	
+SU58 - SHURE SM58
+TLM3 - Neumann TLM 103
+TLM2 - Neumann TLM 102
+
+{dd}-{ddd} - category codes
+categoryName, 
+
+02-001 - thyroid radiology
+02-003 - head-neck radiology
+03-000 - Oncology
+05-000 - Cardiology 
+06-000 - Surgical procedure course 
+07-000 - Course of resuscitation 
+08-000 - Recommendations (formally none)
+09-000 - Referral 
+
+TTTTTTT - six-digit text id - note, older uploads of texts with errors result in texts b similar, but with different id (sometimes white space, sometimes inflection, etc).
+
+Following is the date of recording/creating the file
+

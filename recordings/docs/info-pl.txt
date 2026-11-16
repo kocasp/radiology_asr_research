@@ -1,0 +1,42 @@
+Zebrane pliki pochodzą z róznych źródeł i są zapisami surowymi.
+Nie były poddawane normalizacji - jej wybór zależy od użytkownika i wykonywanego zadania.
+
+Katalog human - zawiera nagrania nieprzetowrzonego ludzkiego glosu.
+	anoni - to nagrania mowcow poddane procesowi anonimiacji (SALT)
+	synth - to nagrania uzyskane za pomoca syntezaotra mowy - speachgen
+
+
+Nazewnictwo w plikach:
+MMNNN-AMVXXX-SSS-REC1-NN-NNN-TTTTTT-RRRRMMDDTHHMMSS , gdzie:
+
+MM{ddd} - miejsce nagrania:
+	PG{ddd} - studia nagraniowe HQ
+	GU{ddd} - pomieszczenia na gumed MQ-LQ
+	UNKNOV - system online, może być od LQ do HQ
+	{xxxxx} - w tym momencie nie ma, ale jest to synteza i docelowo miał to byc model 
+	
+AMV{ddd} - technicznie ID mówcy, w starym podejściu synteza tez miała swoje AMV, 
+	AMV{ddd} - wrzucane głosy ludzkie (lekarze, lektorzy)
+	ANI{ddd} - zanonimizowane głosy ludzi (przenoszenie ich barwy, płci)
+	
+FOR - tu zawsze będzie for jako formularze
+REC1 - id urządzenia na jakie nagrywane były (technicznie mikrofon, np TLM3 - neumann tlm3 itp, BEB5 - behringer b-5
+
+{dd}-{ddd} - kody kategorii
+categoryName, 
+
+02-001 - radiologia tarczycy
+02-003 - radiologia glowa-szyja
+03-000 - onkologia
+05-000 - Kardiologia 
+07-000 - Przebieg akcji reanimacyjnej 
+08-000 - Zalecenia - nadcisnienie
+09-000 - Skierowanie 
+
+
+
+TTTTTT - sześciocyfrowe oznaczenie tekstu - uwaga, starsze wgrania tekstów z błedami powodują ze są teksty b podobne, ale o innych id (czasem biała spacja, czasem fleksja itp).
+
+Dalej to data nagrania/utworzenia pliku
+
+

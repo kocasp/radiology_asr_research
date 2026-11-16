@@ -1,0 +1,6 @@
+# audio (5,6 GB) — za duże na GitHub; odtworzenie: pobierz ADMEDVOICE z Kaggle i uruchom scripts/build_radiology_db.py
+recordings/audio/
+.DS_Store
+__pycache__/
+*.pyc
+.venv/
