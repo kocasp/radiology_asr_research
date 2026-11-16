@@ -76,7 +76,10 @@ i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4
   | trening na N+A+S | 13,9 [12,4; 15,6] |
   | N+A+S + Common Voice + FLEURS | 9,5 [8,1; 11,1] |
 
-  Ten ostatni model nie jest opublikowany.
+  Wariantu z Common Voice i FLEURS (WER 9,5) nie ma wśród checkpointów wymienionych w opisie modelu
+  na Kaggle. Opis podaje tylko natural, anonym, synth i `natural_anonym_synth`. Najlepszy model,
+  który da się pobrać, ma więc deklarowany WER 13,9, a nie 9,5. Listy plików modelu nie
+  sprawdzaliśmy, bo wymaga logowania do Kaggle.
 - **Publikacja:** model na Kaggle `msxksm/whisper-medium-medical-pl` (Apache 2.0) i notebook
   `msxksm/transcribe-medical-pl-whisper-medium`. Wersja dla whisper.cpp to HF
   `fwasil162/whisper-medium-medical-pl-ggml`: adapter scalony z modelem bazowym, przekonwertowany

@@ -3,6 +3,10 @@
 Badamy, kiedy i jak modele ASR (np. Whisper) halucynują, czyli wstawiają tekst, którego nie było
 w nagraniu, przy dyktowaniu polskich opisów radiologicznych. Dane opisuje `recordings/README.md`.
 
+**To autonomiczny projekt.** Nie przeszukuj, nie czytaj i nie cytuj plików z nadrzędnego katalogu
+`exrais/` (jego CLAUDE.md, README, briefs/, status/, data/, asr/…). Wiedza z zewnątrz pochodzi tylko
+ze świeżego researchu ze źródłami, zapisanego w README tego repo.
+
 ## Cel: publikacja i landing page
 
 Z projektu mają powstać:
