@@ -103,8 +103,8 @@ Policzone z bazy (`SELECT * FROM summary`). Czasy wyliczono z nagłówków WAV.
   - `mos_pred` to automatyczna predykcja MOS, dostępna dla natural i anonymized,
   - synthetic nie ma żadnej z nich.
 - **Notatka do mówcy AMV016** (`docs/speaker_notes/GUSOR-AMV016.txt`): od tekstu 4502 w tle
-  słychać „beep" aparatury, a od 4522 dodatkowe szumy. Te nagrania przydadzą się do testów
-  halucynacji na zaszumionym audio.
+  słychać „beep" aparatury, a od 4522 dodatkowe szumy. Te nagrania przydadzą się do sprawdzenia, jak
+  szum tła wpływa na błędy rozpoznawania.
 
 ## Powtórzenia nagrań
 
@@ -156,7 +156,7 @@ WHERE p.n_natural > 0 AND p.n_anonymized > 0 AND p.n_synthetic > 0;
 -- zaszumione nagrania AMV016 (aparatura w tle)
 SELECT path, phrase FROM recordings WHERE speaker_id = 'AMV016' AND text_id >= 4502;
 
--- najdłuższe nagrania naturalne (ryzyko halucynacji na długim audio)
+-- najdłuższe nagrania naturalne (długie audio to większe ryzyko błędów)
 SELECT path, duration_s, phrase FROM recordings WHERE source = 'natural' ORDER BY duration_s DESC LIMIT 20;
 
 -- dobre jakościowo nagrania naturalne

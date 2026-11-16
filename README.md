@@ -1,6 +1,6 @@
-<p align="center"><img src="assets/banner.svg" alt="Halucynacje modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej — model dopisuje tekst w ciszy nagrania" width="100%"></p>
+<p align="center"><img src="assets/banner.svg" alt="Błędy modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej — porównanie tekstu podyktowanego z rozpoznanym: podmiana strony ciała, zły wymiar, zgubione zaprzeczenie, wstawione słowo" width="100%"></p>
 
-# Halucynacje modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej
+# Błędy modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej
 
 > Wersja robocza publikacji. Plik jest aktualizowany po każdym kroku badania (zasady w `CLAUDE.md`).
 > Sekcje oznaczone *TODO* nie mają jeszcze wyników.
@@ -13,17 +13,25 @@ Stan na 2026-11-16: przygotowany zbiór danych (sekcja 3). Eksperymentów z mode
 
 ## 1. Wprowadzenie i pytanie badawcze
 
-Radiolodzy coraz częściej dyktują opisy badań do systemów rozpoznawania mowy (ASR). Modele
-sekwencyjne, takie jak Whisper, mogą **halucynować**: zwracają płynny, wiarygodnie brzmiący tekst,
-którego nie było w nagraniu. W opisie badania obrazowego taki błąd jest groźniejszy niż zwykła
-literówka. Wstawiony wymiar, strona ciała czy zaprzeczenie („nie stwierdza się") zmienia znaczenie
-kliniczne, a lekarz może go nie zauważyć.
+Radiolodzy coraz częściej dyktują opisy badań do systemów rozpoznawania mowy (ASR). Ogólne modele,
+takie jak Whisper, dobrze radzą sobie z mową potoczną. W dyktowaniu radiologicznym mylą się jednak
+częściej: na terminologii, liczbach i jednostkach, skrótach i nazwach własnych. Błędy w opisie badania
+obrazowego nie są sobie równe. Jedne są kosmetyczne, jak interpunkcja czy końcówka fleksyjna. Inne
+zmieniają znaczenie kliniczne i lekarz może ich nie zauważyć:
+- podmieniona strona ciała („prawy” → „lewy”),
+- zły wymiar („45 mm” → „4 mm”),
+- zgubione zaprzeczenie („bez zmian” → „zmian”),
+- słowa wstawione, choć nikt ich nie powiedział (tzw. halucynacje).
 
-**Pytanie badawcze:** jak często i w jakich warunkach modele ASR halucynują przy polskich frazach
-z opisów radiologicznych? Które cechy nagrania zwiększają ryzyko: szum tła, cisza, długość,
-mikrofon, głos przetworzony lub syntetyczny?
+**Pytania badawcze:**
+1. Jak duży jest błąd rozpoznawania (WER, CER) polskich fraz z opisów radiologicznych dla różnych
+   modeli ASR, ogólnych i dotrenowanych medycznie?
+2. Jakie typy błędów dominują (podmiany, pominięcia, wstawienia) i jaka ich część jest istotna
+   klinicznie: terminy, liczby i jednostki, strona ciała, zaprzeczenia?
+3. Które cechy nagrania zwiększają liczbę błędów: szum tła, cisza, długość, mikrofon, mówca, głos
+   przetworzony lub syntetyczny?
 
-*TODO: operacyjna definicja halucynacji i metoda jej wykrywania.*
+*TODO: operacyjne definicje metryk i kategorii błędów, w tym błędu istotnego klinicznie.*
 
 ## 2. Powiązane prace
 
@@ -86,8 +94,9 @@ i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4
   do formatu ggml i skwantyzowany do q5_0 (514 MB). To repozytorium nie jest od autorów korpusu.
 
 **Luki i niespójności istotne dla naszego badania:**
-- **Artykuł nie analizuje halucynacji.** Cytuje literaturę o halucynacjach, ale ich nie mierzy. To jest
-  luka, którą wypełnia nasze badanie.
+- **Artykuł raportuje zagregowany WER.** Nie znaleźliśmy w nim podziału błędów na typy ani oceny ich
+  wagi klinicznej. Halucynacje są w nim cytowane z literatury, ale nie są mierzone. Tym właśnie
+  zajmuje się nasze badanie.
 - **Nie wiadomo, jak normalizowano tekst przed liczeniem WER.** Artykuł o tym nie pisze.
 - **Niespójności w artykule:**
   - w tekście wyników WER 9,5% przypisano treningowi na nagraniach naturalnych, a tabela podaje 9,5
@@ -143,7 +152,7 @@ Długość nagrań wyliczyliśmy z nagłówków WAV. Frazy mają od 2 do 46 sł�
 
 **Zbiór oceniający to wyłącznie nagrania naturalne.** Warianty zanonimizowany i syntetyczny służą
 jako warunki porównawcze, bo pozwalają sprawdzić, czy przetworzony lub sztuczny głos zmienia
-skłonność modelu do halucynacji.
+liczbę i rodzaj błędów modelu.
 
 ### 3.3 Budowa bazy
 
@@ -223,7 +232,7 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 
 ## 4. Metoda
 
-*TODO: wybrane modele ASR, normalizacja tekstu, definicja i detekcja halucynacji, metryki.*
+*TODO: wybrane modele ASR, normalizacja tekstu, metryki (WER, CER), wyrównanie i klasyfikacja błędów, kryteria błędu istotnego klinicznie.*
 
 ## 5. Eksperymenty i wyniki
 
