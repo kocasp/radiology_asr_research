@@ -8,8 +8,7 @@ from collections import Counter, defaultdict
 
 ROOT = os.path.abspath(sys.argv[1]); MOVE = "--move" in sys.argv
 CATS = {"02-001": "radiologia tarczycy (USG)", "02-003": "radiologia głowa–szyja"}
-SRC_DIRS = {"natural": "human_voices/human/human", "anonymized": "anoni/anoni", "synthetic": "synth/synth"}
-SUMMARY_SRC = {"natural": "natural", "anonymization": "anonymized", "synthesis": "synthetic"}
+SRC_DIRS = {"natural": "human_voices/human/human"}
 MICS = {"NTG2": "RODE NTG-2", "TLM3": "Neumann TLM 103", "TLM2": "Neumann TLM 102", "S416": "Sennheiser MKH 416",
         "BEB5": "Behringer B-5", "SK24": "Sennheiser ME 4-N", "SU58": "Shure SM58", "ZOF2": "Zoom F2",
         "ONLN": "nagranie online (nieznany mikrofon)", "MODE": "synteza mowy"}
@@ -107,8 +106,8 @@ with open(os.path.join(ROOT, "metadata.csv"), "w", newline="", encoding="utf-8")
 ph = {}
 for r in rows:
     p = ph.setdefault(r["text_id"], dict(text_id=r["text_id"], phrase_group=r["phrase_group"], category_code=r["category_code"],
-                                          phrase=r["phrase"], n_words=len(r["phrase"].split()), n_natural=0, n_anonymized=0, n_synthetic=0))
-    p["n_" + r["source"]] += 1
+                                          phrase=r["phrase"], n_words=len(r["phrase"].split()), n_natural=0))
+    p["n_natural"] += 1
 with open(os.path.join(ROOT, "phrases.csv"), "w", newline="", encoding="utf-8") as f:
     w = csv.DictWriter(f, list(next(iter(ph.values())).keys())); w.writeheader(); w.writerows(sorted(ph.values(), key=lambda p: p["text_id"]))
 
@@ -116,13 +115,13 @@ db = os.path.join(ROOT, "radiology.sqlite")
 if os.path.exists(db): os.remove(db)
 con = sqlite3.connect(db)
 con.execute("""CREATE TABLE phrases(text_id INTEGER PRIMARY KEY, phrase_group INTEGER, category_code TEXT, phrase TEXT,
-               n_words INTEGER, n_natural INTEGER, n_anonymized INTEGER, n_synthetic INTEGER)""")
+               n_words INTEGER, n_natural INTEGER)""")
 con.execute("""CREATE TABLE recordings(recording_id TEXT PRIMARY KEY, path TEXT NOT NULL, source TEXT NOT NULL,
                category_code TEXT, category TEXT, speaker_id TEXT, speaker_sex TEXT, speaker_age INTEGER, rec_place TEXT,
                mic_code TEXT, mic TEXT, text_id INTEGER REFERENCES phrases(text_id), phrase_group INTEGER, phrase TEXT,
                duration_s REAL, sample_rate INTEGER, bit_depth INTEGER, channels INTEGER, mos_pred REAL, grade REAL,
                comments TEXT, recorded_at TEXT)""")
-con.executemany("INSERT INTO phrases VALUES(:text_id,:phrase_group,:category_code,:phrase,:n_words,:n_natural,:n_anonymized,:n_synthetic)", ph.values())
+con.executemany("INSERT INTO phrases VALUES(:text_id,:phrase_group,:category_code,:phrase,:n_words,:n_natural)", ph.values())
 con.executemany(f"INSERT INTO recordings VALUES({','.join(':'+c for c in cols)})", rows)
 for c in ["source", "category_code", "speaker_id", "text_id"]:
     con.execute(f"CREATE INDEX ix_rec_{c} ON recordings({c})")

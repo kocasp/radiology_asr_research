@@ -20,8 +20,9 @@ podmienionych, pominiętych lub wstawionych, względem liczby słów w tekście 
 **słownictwa radiologicznego**: TER (ang. *term error rate*: odsetek błędnie zapisanych wystąpień
 terminów z ręcznie oznaczonego leksykonu 309 form) w porównaniu z tym samym wskaźnikiem dla słów ogólnych.
 
-**Główny wynik: terminy radiologiczne są rozpoznawane 3–6 razy gorzej niż słowa ogólne w tych samych
-nagraniach** (dotyczy modeli, które dobrze radzą sobie z ogólną polszczyzną). Najlepszy model otwarty, Whisper large-v3, zapisuje błędnie 15,8% wystąpień terminów (95% CI
+**Główny wynik: w klasycznych modelach ASR terminy radiologiczne są rozpoznawane 3–6 razy gorzej niż
+słowa ogólne w tych samych nagraniach** (dotyczy modeli, które dobrze radzą sobie z ogólną
+polszczyzną); systemy oparte na LLM zbliżają te wartości (sekcja 5.2). Najlepszy model otwarty, Whisper large-v3, zapisuje błędnie 15,8% wystąpień terminów (95% CI
 14,8–17,1) i tylko 3,1% słów ogólnych. Ponad połowa błędów terminologicznych tego modelu to
 *bliskie zapisy* („TIRADS” → „TIRAC”, „miąższ” → „miosz”, „color” → „kolor”, „dopplerowskim” →
 „doplerowskim”): model słyszy termin, ale nie zna jego pisowni. Najtrudniejsze są skróty i nazwy
@@ -76,8 +77,7 @@ zmieniają znaczenie kliniczne i lekarz może ich nie zauważyć:
    chorobowe i zabiegi, skróty i nazwy obce) w porównaniu ze słowami ogólnymi w tych samych
    nagraniach? Jakiego rodzaju są te błędy: fleksja, podział na słowa, błędna pisownia słyszanego
    terminu, podmiana na inne słowo, pominięcie?
-3. Które cechy nagrania zwiększają liczbę błędów: szum tła, cisza, długość, mikrofon, mówca, głos
-   przetworzony lub syntetyczny?
+3. Które cechy nagrania zwiększają liczbę błędów: szum tła, cisza, długość, mikrofon, mówca?
 
 Definicje operacyjne terminu, wskaźnika TER i kategorii błędów są w sekcji 4.4.
 
@@ -195,11 +195,9 @@ Polskie nagrania medyczne z korpusu **ADMEDVOICE**:
 - DOI (cyfrowy identyfikator obiektu) 10.34740/kaggle/ds/6698205,
 - licencja CC BY 4.0 (Creative Commons, uznanie autorstwa).
 
-Korpus zawiera 52 990 nagrań (88:19 h, dane autorów) w trzech wariantach:
-- **naturalny** głos ludzki,
-- **zanonimizowany**, czyli głos ludzki po konwersji metodą SALT (konwersja barwy głosu użyta
-  przez autorów korpusu),
-- **syntetyczny**, wygenerowany przez syntezator mowy (TTS, ang. *text-to-speech*).
+Korpus zawiera 52 990 nagrań (88:19 h, dane autorów). **W niniejszym badaniu wykorzystywany jest
+wyłącznie wariant naturalny (głos ludzki)**; warianty zanonimizowany (konwersja barwy głosu metodą
+SALT) i syntetyczny (syntezator mowy, TTS, ang. *text-to-speech*) nie są brane pod uwagę.
 
 Nagrania to czytane krótkie frazy, a nie spontaniczne dyktowanie całych opisów.
 
@@ -213,18 +211,9 @@ Z ośmiu kategorii tematycznych korpusu pozostawione zostały dwie radiologiczne
 Pozostałe kategorie (onkologia, kardiologia, resuscytacja, zalecenia, skierowania) zostały usunięte,
 ponieważ nie są diagnostyką obrazową.
 
-| Wariant | Nagrania | Mówcy | Teksty | Godziny |
-|---|---:|---:|---:|---:|
-| naturalny | 939 | 14 | 246 | 2,69 |
-| zanonimizowany | 4 964 | 30 | 755 | 12,57 |
-| syntetyczny | 1 740 | 6 | 290 | 2,89 |
-| **Razem** | **7 643** | | **857** | **18,2** |
-
-Długość nagrań została wyliczona z nagłówków plików WAV (nieskompresowany format audio). Frazy mają od 2 do 46 słów, średnio 15,8.
-
-**Zbiór oceniający to wyłącznie nagrania naturalne.** Warianty zanonimizowany i syntetyczny służą
-jako warunki porównawcze, bo pozwalają sprawdzić, czy przetworzony lub sztuczny głos zmienia
-liczbę i rodzaj błędów modelu.
+**Zbiór testowy to 939 nagrań naturalnych (2,69 h, 14 mówców, 246 tekstów)** z tych dwóch
+kategorii. Długość nagrań wyliczono z nagłówków plików WAV (nieskompresowany format audio). Frazy
+mają od 2 do 46 słów, średnio 15,8.
 
 ### 3.3 Budowa bazy
 
@@ -238,64 +227,56 @@ pliki CSV (tabele tekstowe z wartościami rozdzielonymi przecinkami: `metadata.c
 
 **Schemat bazy** (`recordings/radiology.sqlite`; pliki CSV mają te same kolumny):
 
-#### Tabela `recordings` (7 643 wiersze, to samo co `metadata.csv`)
+#### Tabela `recordings` (939 wierszy, to samo co `metadata.csv`)
 
 | Kolumna | Opis |
 |---|---|
 | `recording_id` | Nazwa pliku bez `.wav` (klucz główny). |
 | `path` | Ścieżka do `.wav` względem `recordings/`, np. `audio/natural/AMV010/….wav`. |
-| `source` | `natural` / `anonymized` / `synthetic`. |
+| `source` | `natural` (zbiór zawiera wyłącznie głos naturalny). |
 | `category_code`, `category` | `02-001` radiologia tarczycy (USG) / `02-003` radiologia głowa–szyja. |
-| `speaker_id` | `AMV…` człowiek, `ANI…` głos zanonimizowany, `SYN…` głos syntetyczny. |
-| `speaker_sex`, `speaker_age` | `F`/`M` i wiek; puste dla anonymized. |
-| `rec_place` | `GU…` pomieszczenia Gdańskiego Uniwersytetu Medycznego (GUMed), `PG…` studio, `UNKNV` nagranie online, `SPGEN` syntezator. |
-| `mic_code`, `mic` | Mikrofon, np. `NTG2` = RODE NTG-2, `ONLN` = online, `MODE` = synteza. |
+| `speaker_id` | `AMV…` mówca (głos ludzki). |
+| `speaker_sex`, `speaker_age` | `F`/`M` i wiek. |
+| `rec_place` | `GU…` pomieszczenia Gdańskiego Uniwersytetu Medycznego (GUMed), `PG…` studio, `UNKNV` nagranie online. |
+| `mic_code`, `mic` | Mikrofon, np. `NTG2` = RODE NTG-2, `ONLN` = online. |
 | `text_id` | Identyfikator (ID) tekstu; klucz obcy do `phrases`. |
 | `phrase_group` | Grupa identycznych tekstów (patrz „Problemy z danymi” niżej). |
 | `phrase` | **Transkrypcja referencyjna** (spacje znormalizowane, Unicode NFC — kanoniczna postać złożona znaków). |
 | `duration_s`, `sample_rate`, `bit_depth`, `channels` | Odczytane z nagłówka WAV. |
 | `mos_pred`, `grade`, `comments` | Jakość nagrania i uwagi z metadanych korpusu. |
-| `recorded_at` | Data z nazwy pliku. W 23 nagraniach anonymized jest to zastępczy ciąg w rodzaju `03753T000000`, a nie data. |
+| `recorded_at` | Data z nazwy pliku. |
 
-#### Tabela `phrases` (857 wierszy, to samo co `phrases.csv`)
+#### Tabela `phrases` (246 wierszy, to samo co `phrases.csv`)
 
 Kolumny `text_id`, `phrase_group`, `category_code`, `phrase` i `n_words`, a do tego liczba nagrań
-każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
+każdego tekstu: `n_natural`.
 
 #### Widoki
 
-- `summary` zawiera liczby z tabeli w sekcji 3.2, w podziale na kategorie.
-- `speakers` zawiera, dla każdego mówcy: źródło, płeć, wiek, użyte mikrofony, liczbę nagrań i minuty.
+- `summary` zawiera liczby zbioru w podziale na kategorie.
+- `speakers` zawiera, dla każdego mówcy: płeć, wiek, użyte mikrofony, liczbę nagrań i minuty.
 
 **Problemy z danymi znalezione i poprawione przy budowie bazy:**
 - 61 nagrań mówcy AMV102 ma w nazwie pliku kod kategorii `02-001` (tarczyca), choć teksty dotyczą
   głowy i szyi (np. MR twarzoczaszki, `text_id` 13289–13739). W bazie przypisano im kod `02-003`.
-  Bez tej poprawki część naturalna głowy i szyi liczyłaby 39 nagrań zamiast 100.
-- 60 nagrań ma niestandardowy separator (`_`) w nazwie pliku, a 23 nagrania zanonimizowane mają
-  zastępczy znacznik czasu zamiast daty. Skrypt obsługuje oba przypadki.
+  Bez tej poprawki głowa i szyja liczyłaby 39 nagrań zamiast 100.
+- 60 nagrań ma niestandardowy separator (`_`) w nazwie pliku; skrypt to obsługuje.
 - Ten sam tekst bywa wgrany pod różnymi `text_id`, bo autorzy poprawiali spacje i fleksję. Kolumna
   `phrase_group` łączy teksty identyczne po zmianie na małe litery i obcięciu końcowej kropki:
-  857 `text_id` daje 773 grupy.
+  246 `text_id` daje 215 grup.
 
-### 3.4 Powtórzenia i ryzyko przecieku między zbiorami
+### 3.4 Powtórzenia
 
 - **Identycznych plików nie ma.** Zostało to sprawdzone skrótem kryptograficznym MD5 próbek audio, z pominięciem
   nagłówka WAV.
-- **449 nagrań zanonimizowanych to przekonwertowane nagrania naturalne.** Zostały dopasowane po
-  `text_id` i identycznym znaczniku czasu w nazwie pliku. Potwierdza to korelacja obwiedni głośności:
-  - liczona jako korelacja Pearsona logarytmu średniej kwadratowej amplitudy (log-RMS)
-    w ramkach 10 ms,
-  - dla kandydatów o tej samej długości (±50 ms) wynosi zwykle ponad 0,9,
-  - dla 200 losowych par z tym samym tekstem mediana wynosi 0,21.
-
-  Takie pary są tą samą wypowiedzią, więc **przy podziale train/test muszą trafiać do tego samego
-  zbioru**.
-- **Ten sam mówca czyta ten sam tekst kilka razy:** 258 takich nagrań w części naturalnej i 365
-  w zanonimizowanej. Jeden tekst ma średnio 3,8 nagrania naturalnego.
+- **Ten sam mówca czyta ten sam tekst kilka razy:** 129 przypadków, razem 258 nagrań. Jeden tekst ma
+  średnio 3,8 nagrania (najwięcej 13).
+- **Ryzyko przecieku:** model dotrenowany na frazach ADMEDVOICE zna frazy testowe — potwierdzone
+  pomiarem w sekcji 4.2 (WER 1,46% wobec 13,9% deklarowanych przez autorów).
 
 ### 3.5 Ograniczenia danych
 
-- Część naturalna jest mała (2,69 h) i zdominowana przez USG tarczycy: 839 nagrań wobec 100 z głowy
+- Zbiór jest mały (2,69 h) i zdominowany przez USG tarczycy: 839 nagrań wobec 100 z głowy
   i szyi.
 - Nagrania to czytane frazy, a nie spontaniczne dyktowanie, więc brakuje typowych dla dyktowania
   pauz, poprawek i komend.
@@ -312,8 +293,8 @@ Badanie jest podzielone na dwa etapy:
    język to polski. Nie są używane prompty ze słownictwem, listy słów kluczowych (ang. *keyword
    boosting*), słowniki niestandardowe, kontekst medyczny ani korekta tekstu po rozpoznaniu.
    Etap mierzy, jak gotowe rozwiązanie radzi sobie „z pudełka”, i stanowi punkt odniesienia.
-    Jedyny wyjątek to Google Gemini (ogólny LLM), który wymaga polecenia tekstowego: dostaje
-    neutralną instrukcję „przepisz dosłownie”, bez słownictwa i bez wzmianki o medycynie.
+   Jedyny wyjątek to Google Gemini (ogólny LLM), który wymaga polecenia tekstowego: dostaje
+   neutralną instrukcję „przepisz dosłownie”, bez słownictwa i bez wzmianki o medycynie.
 2. **Etap 2 (planowany): modele z pomocą.** Te same systemy z dostępnymi w nich mechanizmami
    wsparcia (prompt lub lista terminów z leksykonu, słowniki niestandardowe usług chmurowych)
    oraz z korektą pisowni terminów po rozpoznaniu. Wynik etapu 2 jest porównywany z etapem 1.
@@ -350,14 +331,14 @@ Aktualny plan z postępem i blokadami jest w `eval/asr_eval/plan.py` i na stroni
 Z porównania wyłączone zostały modele dotrenowane na korpusie, z którego pochodzi zbiór testowy:
 `whisper-medium-medical-pl` (wszystkie warianty LoRA) i VoxMedic (trenowany na `lion-ai/admed_voice`).
 
-Pomiar wariantu N+A+S pokazał, że taki model zna frazy testowe:
+Pomiar takiego modelu pokazał, że zna frazy testowe:
 - WER 1,46% wobec 13,9% deklarowanych przez autorów na ich teście;
 - u każdego z 14 mówców WER mieści się w przedziale 0–10%, a jeden mówca ma 60 nagrań bez błędu;
 - na frazach czytanych przez wielu mówców WER wynosi 0,9%, a na czytanych przez jednego 5,4%.
 
-Podział autorów jest rozłączny po mówcach, ale nie po tekstach: te same frazy występują w korpusie
-wielokrotnie, czytane przez różnych mówców oraz w wersjach zanonimizowanej i syntetycznej. Wynik
-takiego modelu na ADMEDVOICE nie mierzy więc rozpoznawania nowej mowy.
+Podział autorów jest rozłączny po mówcach, ale nie po tekstach: te same frazy czytane są przez
+wielu mówców (średnio 3,8 nagrania na tekst). Wynik takiego modelu na ADMEDVOICE nie mierzy więc
+rozpoznawania nowej mowy.
 
 ### 4.3 Procedura
 
@@ -527,7 +508,7 @@ lokalnymi (sekcja 4.3).
   „dwóch milimetrów", „14x12x45 mm" → „czternaście na dwanaście na czterdzieści pięć
   milimetrów", „10,9 ml" → „dziesięć i dziewięć dziesiątych mililitra". Dotyczy to 97,7% tokenów
   z cyfrą i podnosi CER do 23,53%. Po wyrównaniu formy zapisu liczb (WER-N) ElevenLabs osiąga
-  5,22% — drugi najlepszy wynik po gpt-4o-transcribe. Równocześnie ma najwięcej długich wstawek
+  5,22% — trzeci najlepszy wynik (po Gemini 4,18% i gpt-4o-transcribe 4,47%). Równocześnie ma najwięcej długich wstawek
   (65 wobec 1–6 u pozostałych), co sugeruje „wygładzanie" treści zamiast dosłownej transkrypcji.
 - **Speechmatics**, mimo deklarowanego modelu medycznego, nie wyróżnia się: WER 19,41%, najgorzej
   ze stroną ciała (7,0%) i z liczbami (16,1%).
@@ -590,7 +571,7 @@ TER według klasy terminu (wybrane modele; pełna tabela: `results/terms/by_clas
   u modeli, które źle rozpoznają także zwykłą polszczyznę (MMS bez LM, wav2vec2, FastConformer),
   i do 1,0 w kontroli negatywnej.
 - **Wyjątkiem jest ElevenLabs Scribe v2: terminy są dla niego łatwiejsze niż słowa ogólne**
-  (TER/GWER 0,7; TER 7,2% — najlepszy wynik w całym zestawieniu, wobec 15,8% u Whisper large-v3).
+  (TER/GWER 0,7 — jedyny system poniżej 1,0; TER 7,2%, drugi najlepszy po Gemini, wobec 15,8% u Whisper large-v3).
   Wysoki GWER (10,1%) przy niskim TER sugeruje, że ElevenLabs lepiej utrwala rzadkie terminy
   (być może dzięki zapisowi liczbowemu/słownemu i „wygładzaniu”), a myli się raczej na słowach
   pospolitych i spójnikach.

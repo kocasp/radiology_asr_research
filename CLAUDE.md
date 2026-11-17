@@ -64,10 +64,9 @@ Przy pisaniu pilnuj, żeby:
   osobno i porównywany z etapem 1. Szczegóły: README, sekcja 4.0.
 - **Testujemy tylko gotowe, dostępne rozwiązania.** Nie oceniamy modeli dotrenowanych na ADMEDVOICE
   (np. whisper-medium-medical-pl, VoxMedic), bo znają frazy testowe. Uzasadnienie: README, sekcja 4.2.
-- Audio (`recordings/audio/`, 5,6 GB) nie jest w Git. Odtwarza się je skryptem
-  `scripts/build_radiology_db.py`.
-- Do oceny ASR używaj nagrań `source='natural'`. Przy podziale na train/test nagrania anonymized,
-  które są przetworzonymi wersjami nagrań naturalnych, muszą być po tej samej stronie co oryginał
-  (szczegóły w `recordings/README.md`, sekcja „Powtórzenia nagrań”).
+- Audio (`recordings/audio/`, ok. 1,0 GB) nie jest w Git. Odtwarza się je skryptem
+  `scripts/build_radiology_db.py` (przetwarza wyłącznie nagrania naturalne).
+- Baza zawiera wyłącznie nagrania naturalne (`source='natural'`); warianty zanonimizowany
+  i syntetyczny korpusu nie są wykorzystywane.
 - Dane są publiczne: ADMEDVOICE, CC BY 4.0. Przy publikacji podaj źródło (DOI
   10.34740/kaggle/ds/6698205).
