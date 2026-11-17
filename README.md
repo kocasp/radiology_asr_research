@@ -7,9 +7,27 @@
 
 ## Streszczenie
 
-*TODO — uzupełnić po pierwszych eksperymentach z modelami ASR.*
+> **Wersja wstępna (2026-11-17):** wyniki modeli otwartych są kompletne; usługi chmurowe
+> i dwa najnowsze modele (Cohere Transcribe, NVIDIA Nemotron 3.5) są w toku.
 
-Stan na 2026-11-16: przygotowany zbiór danych (sekcja 3). Eksperymentów z modelami jeszcze nie było.
+Porównaliśmy gotowe systemy rozpoznawania mowy (ASR) na polskich frazach z opisów diagnostyki
+obrazowej. Zbiór testowy to 939 nagrań głosu naturalnego (2,69 h, 14 mówców, USG tarczycy oraz
+radiologia głowy i szyi) z publicznego korpusu ADMEDVOICE. Poza WER i CER mierzymy błędy w trzech
+kategoriach istotnych klinicznie (liczby i wymiary, zaprzeczenia, strona ciała) oraz wstawki słów,
+których nie było w nagraniu.
+
+Wśród 10 modeli otwartych uruchamianych lokalnie (12 konfiguracji, w tym warianty z modelem
+językowym i kontrola negatywna) najlepszy jest **Whisper large-v3: WER 8,0%**
+(95% CI 7,4–8,7), z błędami w 2,5–2,8% liczb, zaprzeczeń i określeń strony. Nowsze modele z lat
+2025–2026 (NVIDIA Canary-1B-v2, Parakeet-TDT-0.6B-v3, Qwen3-ASR-1.7B) osiągają WER 18–22%. Ich
+słabości są różne: modele NVIDIA tracą głównie na zapisie liczb, a Qwen3-ASR na zaprzeczeniach
+i stronie ciała (10–14% błędów). Modele CTC bez modelu językowego (wav2vec2, MMS) mają WER 35–58%;
+ogólny polski model językowy obniża go o 3–6 punktów.
+
+Ustalenie metodologiczne: modele dotrenowane na ADMEDVOICE znają frazy testowe. Opublikowany adapter
+LoRA osiąga na naszym zbiorze WER 1,46% wobec 13,9% deklarowanych przez autorów, a jeden z mówców
+ma 60 nagrań bez żadnego błędu. Takie modele wykluczyliśmy z porównania. Korpusu ADMEDVOICE nie
+należy używać jako testu dla modeli trenowanych na jego tekstach.
 
 ## 1. Wprowadzenie i pytanie badawcze
 
