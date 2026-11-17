@@ -502,7 +502,7 @@ Kolumny jak w sekcji 5.1. RTF obejmuje czas sieci i kolejki, więc nie jest por�
 lokalnymi (sekcja 4.3).
 
 | Model | WER [95% CI] | WER-N | CER | Liczby | Zaprzecz. | Strona | Wstawki ≥3 | RTF |
-|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+|---|---|---:|---:|---:|---:|---:|---:|---:|
 | OpenAI gpt-4o-transcribe | 5,96 [5,4–6,52] | 4,47 | 2,03 | 1,9 | 2,0 | 2,7 | 1 | 0,021 |
 | OpenAI whisper-1 | 9,93 [9,26–10,62] | 9,45 | 2,58 | 3,5 | 3,3 | 3,5 | 1 | 0,032 |
 | AssemblyAI Universal-2 | 10,25 [9,54–10,96] | 9,71 | 2,77 | 3,5 | 2,8 | 3,8 | 1 | 0,265 |
@@ -563,7 +563,7 @@ ich suma to TER.
 Usługi chmurowe (te same kolumny):
 
 | Model | TER [95% CI] | TER-L | GWER | TER/GWER | Inna forma | Podział | Bliski zapis | Podmiana | Pominięcie |
-|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
 | Google Gemini 3.5 Flash | 6,6 [5,8–7,4] | 4,8 | 4,0 | 1,6 | 1,3 | 0,4 | 2,8 | 1,6 | 0,5 |
 | ElevenLabs Scribe v2 | 7,2 [6,4–8,1] | 5,7 | 10,1 | 0,7 | 0,6 | 0,9 | 3,7 | 1,6 | 0,4 |
 | OpenAI gpt-4o-transcribe | 7,6 [6,8–8,5] | 4,5 | 2,9 | 2,6 | 1,4 | 1,7 | 1,8 | 2,2 | 0,5 |
