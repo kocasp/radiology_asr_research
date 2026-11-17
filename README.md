@@ -10,9 +10,9 @@
 > **Wersja wstępna (2026-11-17):** wyniki modeli otwartych są kompletne; usługi chmurowe
 > i dwa najnowsze modele (Cohere Transcribe, NVIDIA Nemotron 3.5) są w toku.
 
-Porównaliśmy gotowe systemy rozpoznawania mowy (ASR) na polskich frazach z opisów diagnostyki
+Porównane zostały gotowe systemy rozpoznawania mowy (ASR) na polskich frazach z opisów diagnostyki
 obrazowej. Zbiór testowy to 939 nagrań głosu naturalnego (2,69 h, 14 mówców, USG tarczycy oraz
-radiologia głowy i szyi) z publicznego korpusu ADMEDVOICE. Poza WER i CER mierzymy błędy w trzech
+radiologia głowy i szyi) z publicznego korpusu ADMEDVOICE. Poza WER i CER mierzone są błędy w trzech
 kategoriach istotnych klinicznie (liczby i wymiary, zaprzeczenia, strona ciała) oraz wstawki słów,
 których nie było w nagraniu.
 
@@ -25,8 +25,8 @@ i stronie ciała (10–14% błędów). Modele CTC bez modelu językowego (wav2ve
 ogólny polski model językowy obniża go o 3–6 punktów.
 
 Ustalenie metodologiczne: modele dotrenowane na ADMEDVOICE znają frazy testowe. Opublikowany adapter
-LoRA osiąga na naszym zbiorze WER 1,46% wobec 13,9% deklarowanych przez autorów, a jeden z mówców
-ma 60 nagrań bez żadnego błędu. Takie modele wykluczyliśmy z porównania. Korpusu ADMEDVOICE nie
+LoRA osiąga na zbiorze testowym WER 1,46% wobec 13,9% deklarowanych przez autorów, a jeden z mówców
+ma 60 nagrań bez żadnego błędu. Takie modele zostały wykluczone z porównania. Korpusu ADMEDVOICE nie
 należy używać jako testu dla modeli trenowanych na jego tekstach.
 
 ## 1. Wprowadzenie i pytanie badawcze
@@ -104,7 +104,7 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
 
   Artykuł podaje jeden zestaw ustawień (batch 64, lr 1e-5, 10 000 kroków). Logi pokazują, że warianty
   trenowano z różnym batchem, a dla wariantów łączonych z wyższym learning rate. WER walidacji
-  jest liczony na zbiorach walidacyjnych autorów, a nie na naszym teście.
+  jest liczony na zbiorach walidacyjnych autorów, a nie na zbiorze testowym niniejszego badania.
 
 - **Dane:** wszystkie kategorie ADMEDVOICE, nie tylko radiologia. Podział jest rozłączny po mówcach
   (deklaracja autorów):
@@ -135,19 +135,19 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
   `fwasil162/whisper-medium-medical-pl-ggml`: adapter scalony z modelem bazowym, przekonwertowany
   do formatu ggml i skwantyzowany do q5_0 (514 MB). To repozytorium nie jest od autorów korpusu.
 
-**Luki i niespójności istotne dla naszego badania:**
-- **Artykuł raportuje zagregowany WER.** Nie znaleźliśmy w nim podziału błędów na typy ani oceny ich
+**Luki i niespójności istotne dla niniejszego badania:**
+- **Artykuł raportuje zagregowany WER.** Nie zawiera on podziału błędów na typy ani oceny ich
   wagi klinicznej. Halucynacje są w nim cytowane z literatury, ale nie są mierzone. Tym właśnie
-  zajmuje się nasze badanie.
+  zajmuje się niniejsze badanie.
 - **Nie wiadomo, jak normalizowano tekst przed liczeniem WER.** Artykuł o tym nie pisze.
 - **Niespójności w artykule:**
   - w tekście wyników WER 9,5% przypisano treningowi na nagraniach naturalnych, a tabela podaje 9,5
     dla wariantu z Common Voice i FLEURS;
   - przedziały ufności wariantów natural i anonymized nakładają się, więc teza, że trening na danych
     zanonimizowanych jest lepszy, nie jest dowiedziona.
-- **Przeciek danych:** model trenowano na frazach ADMEDVOICE, więc na naszym zbiorze testowym zna
-  frazy, które ma rozpoznać. Potwierdziliśmy to pomiarem i wykluczyliśmy model z porównania
-  (sekcja 4.2).
+- **Przeciek danych:** model trenowano na frazach ADMEDVOICE, więc na zbiorze testowym niniejszego badania
+  zna frazy, które ma rozpoznać. Zostało to potwierdzone pomiarem, a model został wykluczony
+  z porównania (sekcja 4.2).
 
 ### 2.2 Inne prace
 
@@ -173,12 +173,12 @@ Nagrania to czytane krótkie frazy, a nie spontaniczne dyktowanie całych opisó
 
 ### 3.2 Wybór podzbioru radiologicznego
 
-Z ośmiu kategorii tematycznych korpusu zostawiliśmy dwie radiologiczne:
+Z ośmiu kategorii tematycznych korpusu pozostawione zostały dwie radiologiczne:
 - `02-001`: radiologia tarczycy, czyli frazy z opisów USG,
 - `02-003`: radiologia głowy i szyi, w tym frazy z opisów TK i MR.
 
-Pozostałe kategorie (onkologia, kardiologia, resuscytacja, zalecenia, skierowania) usunęliśmy, bo
-nie są diagnostyką obrazową.
+Pozostałe kategorie (onkologia, kardiologia, resuscytacja, zalecenia, skierowania) zostały usunięte,
+ponieważ nie są diagnostyką obrazową.
 
 | Wariant | Nagrania | Mówcy | Teksty | Godziny |
 |---|---:|---:|---:|---:|
@@ -187,7 +187,7 @@ nie są diagnostyką obrazową.
 | syntetyczny | 1 740 | 6 | 290 | 2,89 |
 | **Razem** | **7 643** | | **857** | **18,2** |
 
-Długość nagrań wyliczyliśmy z nagłówków WAV. Frazy mają od 2 do 46 słów, średnio 15,8.
+Długość nagrań została wyliczona z nagłówków WAV. Frazy mają od 2 do 46 słów, średnio 15,8.
 
 **Zbiór oceniający to wyłącznie nagrania naturalne.** Warianty zanonimizowany i syntetyczny służą
 jako warunki porównawcze, bo pozwalają sprawdzić, czy przetworzony lub sztuczny głos zmienia
@@ -236,7 +236,7 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 
 **Problemy z danymi znalezione i poprawione przy budowie bazy:**
 - 61 nagrań mówcy AMV102 ma w nazwie pliku kod kategorii `02-001` (tarczyca), choć teksty dotyczą
-  głowy i szyi (np. MR twarzoczaszki, `text_id` 13289–13739). W bazie przypisaliśmy im `02-003`.
+  głowy i szyi (np. MR twarzoczaszki, `text_id` 13289–13739). W bazie przypisano im kod `02-003`.
   Bez tej poprawki część naturalna głowy i szyi liczyłaby 39 nagrań zamiast 100.
 - 60 nagrań ma niestandardowy separator (`_`) w nazwie pliku, a 23 nagrania zanonimizowane mają
   zastępczy znacznik czasu zamiast daty. Skrypt obsługuje oba przypadki.
@@ -246,9 +246,9 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 
 ### 3.4 Powtórzenia i ryzyko przecieku między zbiorami
 
-- **Identycznych plików nie ma.** Sprawdziliśmy to hashem MD5 próbek audio, z pominięciem nagłówka
-  WAV.
-- **449 nagrań zanonimizowanych to przekonwertowane nagrania naturalne.** Dopasowaliśmy je po
+- **Identycznych plików nie ma.** Zostało to sprawdzone hashem MD5 próbek audio, z pominięciem
+  nagłówka WAV.
+- **449 nagrań zanonimizowanych to przekonwertowane nagrania naturalne.** Zostały dopasowane po
   `text_id` i identycznym znaczniku czasu w nazwie pliku. Potwierdza to korelacja obwiedni głośności:
   - liczona jako korelacja Pearsona log-RMS w ramkach 10 ms,
   - dla kandydatów o tej samej długości (±50 ms) wynosi zwykle ponad 0,9,
@@ -273,25 +273,30 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 
 ### 4.1 Zakres: gotowe rozwiązania
 
-Testujemy rozwiązania, które radiolog lub szpital może dziś wdrożyć bez własnego treningu:
+Testowane są rozwiązania, które radiolog lub szpital może dziś wdrożyć bez własnego treningu:
 - **Otwarte modele uruchamiane lokalnie (offline):**
   - Whisper medium (model bazowy z publikacji ADMEDVOICE), large-v3-turbo i large-v3,
+  - modele z lat 2025–2026 z deklarowaną obsługą polskiego: NVIDIA Canary-1B-v2,
+    NVIDIA Parakeet-TDT-0.6B-v3, Qwen3-ASR-1.7B, Cohere Transcribe 03-2026,
+    NVIDIA Nemotron 3.5 Transcribe (wymaga wynajętego GPU), Meta Omnilingual ASR,
   - NVIDIA FastConformer PL,
-  - wav2vec2 XLSR-53 Polish,
-  - Meta MMS-1b-all,
+  - wav2vec2 XLSR-53 Polish i Meta MMS-1b-all, każdy bez modelu językowego i z ogólnym polskim KenLM,
   - Google MedASR (model tylko angielski, jako kontrola negatywna).
 - **Usługi chmurowe (online):**
-  - ElevenLabs Scribe,
+  - ElevenLabs Scribe v2,
   - OpenAI whisper-1 i gpt-4o-transcribe,
   - Deepgram Nova-3,
-  - Google Chirp,
+  - Speechmatics, AssemblyAI, Soniox,
+  - Google Chirp i Google Gemini (transkrypcja przez model multimodalny),
   - Azure AI Speech.
+
+Obsługa polskiego przez nowe modele została sprawdzona w kartach modeli na Hugging Face (2026-11-17).
 
 Aktualny plan z postępem i blokadami jest w `eval/asr_eval/plan.py` i na stronie `dashboard/`.
 
 ### 4.2 Wykluczone: modele dotrenowane na ADMEDVOICE
 
-Z porównania wyłączyliśmy modele dotrenowane na korpusie, z którego pochodzi nasz zbiór testowy:
+Z porównania wyłączone zostały modele dotrenowane na korpusie, z którego pochodzi zbiór testowy:
 `whisper-medium-medical-pl` (wszystkie warianty LoRA) i VoxMedic (trenowany na `lion-ai/admed_voice`).
 
 Pomiar wariantu N+A+S pokazał, że taki model zna frazy testowe:
@@ -408,8 +413,8 @@ rozpoznanych tokenów w danej kategorii (n = 1 990 / 399 / 599 tokenów w refere
 | Sprzęt | MacBook Pro M1 Pro, 16 GB RAM | wszystkie przebiegi offline |
 
 Odtworzenie danych:
-1. pobierz ADMEDVOICE z Kaggle i rozpakuj go do `recordings/`,
-2. uruchom `python3 scripts/build_radiology_db.py recordings --move`.
+1. pobranie ADMEDVOICE z Kaggle i rozpakowanie go do `recordings/`,
+2. uruchomienie `python3 scripts/build_radiology_db.py recordings --move`.
 
 Analiza par z sekcji 3.4 była jednorazowym skryptem uruchomionym w sesji. *TODO: przenieść ją do
 `scripts/`.*

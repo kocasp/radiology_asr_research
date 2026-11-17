@@ -45,6 +45,8 @@ Przy pisaniu pilnuj, żeby:
   jeśli to wnosi coś do publikacji (np. „podejście X zawyżało WER, bo…”).
 - **Liczby pochodziły z pomiarów, a nie z przeczucia.** Oddzielaj to, co zweryfikowane, od tego, co
   deklarują autorzy modeli lub korpusów.
+- **README był pisany w formie bezosobowej:** „porównane zostały”, „zmierzono”, a nie „porównaliśmy”,
+  „mierzymy”, i bez trybu rozkazującego („należy pobrać”, a nie „pobierz”).
 - **README był pisany stylem artykułu:** wnioski na początku, potem metoda i wyniki, potem ograniczenia.
   Tabele i wykresy zapisuj w repo i linkuj z README.
 - **Informacje o danych były w `recordings/README.md`.** Główny README tylko do niego odsyła
