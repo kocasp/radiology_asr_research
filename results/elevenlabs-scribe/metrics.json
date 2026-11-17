@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 28.27,
+ "wer_ci": [
+  26.22,
+  30.33
+ ],
+ "cer": 23.53,
+ "cer_ci": [
+  21.1,
+  25.87
+ ],
+ "S": 4177,
+ "D": 66,
+ "I": 786,
+ "long_ins": 65,
+ "utt_perfect": 41.9,
+ "audio_s": 9672.5,
+ "proc_s": 358.2,
+ "rtf": 0.037,
+ "num_err": 97.7,
+ "num_n": 1990,
+ "neg_err": 1.3,
+ "neg_n": 399,
+ "side_err": 1.7,
+ "side_n": 599,
+ "wer_num": 5.22,
+ "wer_num_ci": [
+  4.7,
+  5.79
+ ],
+ "top_subs": [
+  [
+   "2 mm",
+   "dwóch milimetrów",
+   26
+  ],
+  [
+   "4 mm",
+   "cztery milimetry",
+   25
+  ],
+  [
+   "3 mm",
+   "trzech milimetrów",
+   21
+  ],
+  [
+   "4",
+   "cztery",
+   19
+  ],
+  [
+   "3 x 3 x 3 mm",
+   "trzy na trzy na trzy milimetry",
+   19
+  ],
+  [
+   "14 x 12 x 45 mm",
+   "na dwanaście na czterdzieści pięć milimetrów",
+   16
+  ],
+  [
+   "22 x 18 x 57 mm",
+   "na osiemnaście na pięćdziesiąt siedem milimetrów",
+   15
+  ],
+  [
+   "12 ml",
+   "dwanaście mililitrów",
+   15
+  ],
+  [
+   "tirads 2",
+   "tirad dwa",
+   15
+  ],
+  [
+   "7 mm",
+   "siedmiu milimetrów",
+   14
+  ],
+  [
+   "2 mm",
+   "dwa milimetry",
+   14
+  ],
+  [
+   "odgraniczona",
+   "ograniczona",
+   14
+  ],
+  [
+   "4 x 3 x 4 mm",
+   "cztery na trzy na cztery milimetry",
+   14
+  ],
+  [
+   "2",
+   "dwa",
+   13
+  ],
+  [
+   "12 x 13 x 39 mm",
+   "na trzynaście na trzydzieści dziewięć milimetrów",
+   13
+  ]
+ ],
+ "top_ins": [
+  [
+   "dwanaście",
+   43
+  ],
+  [
+   "czternaście",
+   33
+  ],
+  [
+   "trzy przecinek",
+   26
+  ],
+  [
+   "cztery na",
+   25
+  ],
+  [
+   "dwadzieścia dwa",
+   17
+  ],
+  [
+   "piętnaście",
+   15
+  ],
+  [
+   "dziewiętnaście na",
+   15
+  ],
+  [
+   "cztery",
+   14
+  ],
+  [
+   "dziesięć",
+   13
+  ],
+  [
+   "jeden przecinek",
+   13
+  ]
+ ],
+ "top_dels": [
+  [
+   "tarczycy",
+   8
+  ],
+  [
+   "wzmożone",
+   5
+  ],
+  [
+   "w",
+   5
+  ],
+  [
+   "2",
+   4
+  ],
+  [
+   "mm",
+   3
+  ],
+  [
+   "płynowa",
+   3
+  ],
+  [
+   "płacie",
+   3
+  ],
+  [
+   "jak",
+   2
+  ],
+  [
+   "lewym",
+   2
+  ],
+  [
+   "z",
+   2
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+   "hyp": "Wymiary tarczycy. Płat prawy dziewiętnaście na dwadzieścia na pięćdziesiąt pięć milimetrów, objętość dziesięć i dziewięć dziesiątych mililitra. Płat lewy osiemnaście na osiemnaście na czterdzieści osiem milimetrów, objętość osiem i jeden na dziesiąta mililitra. Cień do czterech milimetrów."
+  },
+  {
+   "err": 100,
+   "ref": "Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",
+   "hyp": "Wymiary tarczycy. Płat prawy dziewiętnaście na piętnaście na czterdzieści sześć milimetrów. Objętość sześć i siedem dziesiątych mililitra. Płat lewy szesnaście na piętnaście na czterdzieści cztery milimetra. Objętość pięć i pięć dziesiątych mililitra. Cieśń nie pogrubiała"
+  },
+  {
+   "err": 97,
+   "ref": "Wymiary i objętość - płat prawy wielkość 23x47x20 mm, objętość 10,3 ml - płat lewy wielkości 23x59x21 mm, objętość 13,4 ml -cieśń wielkości do 3 mm.",
+   "hyp": "Wymiary i objętość. Płat prawy wielkości dwadzieścia trzy na czterdzieści siedem na dwadzieścia milimetrów. Objętość dziesięć i trzy dziesiąte mililitra. Płat lewy wielkości dwadzieścia trzy na pięćdziesiąt dziewięć na dwadzieścia jeden milimetrów. Objętość trzynaście i cztery dziesiąte mililitra. Cieśnin wielkości do trzech milimetrów."
+  },
+  {
+   "err": 96,
+   "ref": "Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,9 ml Cieśń: do 3 mm.",
+   "hyp": "Wymiary płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów. Objętość trzy i siedem dziesiątych mililitra. Płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów. Objętość trzy i trzy dziesiąte mililitra. Cieśń do trzech milimetrów"
+  },
+  {
+   "err": 96,
+   "ref": "Wymiary: po stronie prawej wielkości 20x22x49 mm, objętość 11,5 ml po stronie lewej wielkości 37x36x57 mm, objętość 40,3 ml.",
+   "hyp": "Wymiary po stronie prawej wielkości dwadzieścia na dwadzieścia dwa na czterdzieści dziewięć milimetrów. Objętość jedenaście i pół mililitra. Po stronie lewej wielkości trzydzieści siedem na trzydzieści sześć na pięćdziesiąt siedem milimetrów. Objętość czterdzieści i trzy dziesiąte mililitra"
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski: obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy"
+  },
+  {
+   "err": 93,
+   "ref": "Wymiary i objętość: Płat prawy wielkości 31x39x22mm, objętość 12,7ml.",
+   "hyp": "Wymiary i objętość. Płat prawy wielkości trzydzieści jeden na trzydzieści dziewięć na dwadzieścia dwa milimetry, objętość dwanaście i siedem dziesiątych mililitra"
+  },
+  {
+   "err": 93,
+   "ref": "Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",
+   "hyp": "Wymiary tarczycy. Płat prawy siedemnaście na siedemnaście na pięćdziesiąt siedem milimetrów. Objętość osiem i sześć mililitra. Płat lewy piętnaście na szesnaście na pięćdziesiąt trzy milimetry. Objętość sześć i sześć mililitra. Cieśń do trzech milimetrów."
+  },
+  {
+   "err": 93,
+   "ref": "Wymiary tarczycy: - prawy płat wielkości 18x15x53 mm, objętość 7,4ml - lewy płat 16x16x52 mm, objętość 6,7 ml - cieśń 4mm.",
+   "hyp": "Wymiary tarczycy. Prawy płat wielkości osiemnaście na piętnaście na pięćdziesiąt trzy milimetry. Objętość siedem i cztery dziesiąte mililitra. Lewy płat szesnaście na szesnaście na pięćdziesiąt dwa milimetry. Objętość sześć i siedem dziesiątych mililitra. Cieśń cztery milimetry."
+  },
+  {
+   "err": 93,
+   "ref": "Wymiary tarczycy: płat prawy 21x15x50mm, objętość 8,1 ml płat lewy 14x17x47mm, objętość 5,8 ml cieśń 3mm.",
+   "hyp": "Wymiary tarczycy płat prawy dwadzieścia jeden na piętnaście na pięćdziesiąt milimetrów, objętość osiem przecinek jeden mililitra. Płat lewy czternaście na siedemnaście na czterdzieści siedem milimetrów, objętość pięć przecinek osiem mililitra, cień trzy milimetry."
+  },
+  {
+   "err": 90,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiary: płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów. Objętość trzy i siedem dziesiątych mililitra. Płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów. Objętość trzy i trzy dziesiętne mililitra. Cieśń o wielkości do trzech milimetrów."
+  },
+  {
+   "err": 90,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiary: płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów, objętość trzy i siedem dziesiątych mililitra. Płat lewy: dwanaście na trzynaście na trzydzieści dziewięć milimetrów, objętość trzy i trzy dziesiąte mililitra. Cieśń o wielkości do trzech milimetrów."
+  }
+ ],
+ "model": "scribe_v2",
+ "lm": null,
+ "finished": "2026-11-17T21:54:22+01:00",
+ "decoding": "API, language=pl, bez promptu/słownika"
+}

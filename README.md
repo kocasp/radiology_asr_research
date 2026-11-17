@@ -7,8 +7,9 @@
 
 ## Streszczenie
 
-> **Wersja wstępna (2026-11-17):** wyniki modeli otwartych są kompletne; usługi chmurowe
-> i dwa najnowsze modele (Cohere Transcribe, NVIDIA Nemotron 3.5) są w toku.
+> **Wersja wstępna (2026-11-17):** wyniki modeli otwartych i siedmiu usług chmurowych są kompletne;
+> w toku pozostają dwa najnowsze modele (Cohere Transcribe, NVIDIA Nemotron 3.5). Soniox, Google
+> Chirp i Azure są zablokowane (brak środków/kluczy).
 
 Porównane zostały gotowe systemy automatycznego rozpoznawania mowy (ASR, ang. *automatic speech
 recognition*) na polskich frazach z opisów diagnostyki
@@ -20,7 +21,7 @@ podmienionych, pominiętych lub wstawionych, względem liczby słów w tekście 
 terminów z ręcznie oznaczonego leksykonu 309 form) w porównaniu z tym samym wskaźnikiem dla słów ogólnych.
 
 **Główny wynik: terminy radiologiczne są rozpoznawane 3–6 razy gorzej niż słowa ogólne w tych samych
-nagraniach** (dotyczy modeli, które dobrze radzą sobie z ogólną polszczyzną). Najlepszy model, Whisper large-v3, zapisuje błędnie 15,8% wystąpień terminów (95% CI
+nagraniach** (dotyczy modeli, które dobrze radzą sobie z ogólną polszczyzną). Najlepszy model otwarty, Whisper large-v3, zapisuje błędnie 15,8% wystąpień terminów (95% CI
 14,8–17,1) i tylko 3,1% słów ogólnych. Ponad połowa błędów terminologicznych tego modelu to
 *bliskie zapisy* („TIRADS” → „TIRAC”, „miąższ” → „miosz”, „color” → „kolor”, „dopplerowskim” →
 „doplerowskim”): model słyszy termin, ale nie zna jego pisowni. Najtrudniejsze są skróty i nazwy
@@ -38,6 +39,16 @@ dla każdego fragmentu dźwięku osobno, bez wbudowanej wiedzy o języku) bez mo
 Meta MMS, ang. *Massively Multilingual Speech*) mają WER 35–58%;
 ogólny polski model językowy obniża go o 3–6 punktów procentowych (p.p.), czyli
 względnie o ok. 9%.
+
+Najlepszą usługą chmurową jest **OpenAI gpt-4o-transcribe** — WER 5,96% (CI 5,4–6,5), najlepszy
+wynik w całym zestawieniu, wyprzedzający Whisper large-v3 (8,0%). OpenAI whisper-1 (9,9%),
+AssemblyAI Universal-2 (10,3%) i Google Gemini 3.5 Flash (10,4%) plasują się tuż za nim, a Deepgram
+Nova-3 i Speechmatics mają WER 15–19%. Najlepiej terminy zapisuje **Google Gemini 3.5 Flash**
+(TER 6,6%, WER-N 4,2%) — to ogólny LLM, który „wygładza" treść, stąd jego surowy WER jest wyższy
+niż po normalizacji. Osobnym przypadkiem jest **ElevenLabs Scribe v2**, który zapisuje liczby
+słownie zamiast cyframi („2 mm" → „dwóch milimetrów"), przez co jego surowy WER (28,3%) jest
+mylący; po wyrównaniu formy zapisu liczb (WER-N 5,2%) to trzeci najdokładniejszy system, a jego
+TER (7,2%) drugi najniższy.
 
 Ustalenie metodologiczne: modele dotrenowane na ADMEDVOICE znają frazy testowe. Opublikowany adapter
 LoRA (ang. *low-rank adaptation*: dotrenowanie niewielkich dodatkowych macierzy zamiast całego
@@ -294,6 +305,21 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 
 ## 4. Metoda
 
+### 4.0 Etapy badania
+
+Badanie jest podzielone na dwa etapy:
+1. **Etap 1 (bieżący): modele bez pomocy.** Każdy system dostaje tylko nagranie i informację, że
+   język to polski. Nie są używane prompty ze słownictwem, listy słów kluczowych (ang. *keyword
+   boosting*), słowniki niestandardowe, kontekst medyczny ani korekta tekstu po rozpoznaniu.
+   Etap mierzy, jak gotowe rozwiązanie radzi sobie „z pudełka”, i stanowi punkt odniesienia.
+    Jedyny wyjątek to Google Gemini (ogólny LLM), który wymaga polecenia tekstowego: dostaje
+    neutralną instrukcję „przepisz dosłownie”, bez słownictwa i bez wzmianki o medycynie.
+2. **Etap 2 (planowany): modele z pomocą.** Te same systemy z dostępnymi w nich mechanizmami
+   wsparcia (prompt lub lista terminów z leksykonu, słowniki niestandardowe usług chmurowych)
+   oraz z korektą pisowni terminów po rozpoznaniu. Wynik etapu 2 jest porównywany z etapem 1.
+
+Wszystkie wyniki w sekcji 5 pochodzą z etapu 1.
+
 ### 4.1 Zakres: gotowe rozwiązania
 
 Testowane są rozwiązania, które radiolog lub szpital może dziś wdrożyć bez własnego treningu:
@@ -312,7 +338,7 @@ Testowane są rozwiązania, które radiolog lub szpital może dziś wdrożyć be
   - OpenAI whisper-1 i gpt-4o-transcribe,
   - Deepgram Nova-3,
   - Speechmatics, AssemblyAI, Soniox,
-  - Google Chirp i Google Gemini (transkrypcja przez model multimodalny),
+  - Google Chirp i Google Gemini 3.5 Flash (transkrypcja przez ogólny LLM),
   - Azure AI Speech.
 
 Obsługa polskiego przez nowe modele została sprawdzona w kartach modeli na Hugging Face (2026-11-17).
@@ -348,7 +374,13 @@ Audio jest przepróbkowane do 16 kHz mono (soxr).
 - NVIDIA NeMo (FastConformer, Canary, Parakeet): domyślny dekoder modelu; Canary z
   `source_lang=target_lang="pl"`.
 - Qwen3-ASR: pakiet `qwen-asr`, backend transformers, `language="Polish"`.
-- Usługi chmurowe: każde nagranie wysyłane osobno, `language=pl`, bez promptu i bez słownika.
+- Usługi chmurowe (`eval/asr_eval/cloud.py`): każde nagranie wysyłane osobnym żądaniem jako WAV
+  16 kHz mono, `language=pl`, bez promptu i bez słownika (etap 1); do 8 żądań równolegle. Wyjątek
+  to Google Gemini (ogólny multimodalny LLM `gemini-3.5-flash`), który przez API `generateContent`
+  dostaje neutralne „przepisz dosłownie" — bez słownictwa i bez kontekstu medycznego. Usługi
+  asynchroniczne (Speechmatics, Soniox, AssemblyAI) są odpytywane o wynik, a pliki i zadania
+  usuwane z ich serwerów po odczytaniu transkrypcji. RTF usług chmurowych obejmuje czas sieci
+  i kolejki, więc nie jest porównywalny z modelami lokalnymi.
 
 **Normalizacja tekstu** (`eval/asr_eval/textnorm.py`, taka sama dla referencji i hipotezy):
 - małe litery, usunięta interpunkcja;
@@ -448,7 +480,7 @@ rozpoznanych tokenów w danej kategorii (n = 1 990 / 399 / 599 tokenów w refere
 | wav2vec2 XLSR-53 Polish (bez LM) | 58,31 [56,67–59,69] | 41,08 | 30,68 | 100,0 | 23,8 | 25,5 | 121 | 0,07 |
 | Google MedASR | 99,65 [99,21–100,08] | 99,01 | 80,48 | 98,2 | 100,0 | 100,0 | 41 | 0,011 |
 
-**Wstępne obserwacje** (do potwierdzenia po dołożeniu usług chmurowych):
+**Obserwacje:**
 - **Whisper large-v3 jest najlepszy spośród modeli otwartych** (WER 8,0%), także wobec nowszych
   modeli z lat 2025–2026: NVIDIA Canary-1B-v2, Parakeet-TDT-0.6B-v3 i Qwen3-ASR-1.7B.
 - **Nowe modele NVIDIA tracą głównie na zapisie liczb** (20–26% błędów w wymiarach). Po wyrównaniu
@@ -462,11 +494,54 @@ rozpoznanych tokenów w danej kategorii (n = 1 990 / 399 / 599 tokenów w refere
   negatywnej. Zamienia polską mowę na angielskie terminy medyczne („discharge”, „protein”),
   co ilustruje mechanizm halucynacji.
 
-*TODO: usługi chmurowe, Cohere Transcribe, NVIDIA Nemotron 3.5 Transcribe.*
+*TODO: Cohere Transcribe, NVIDIA Nemotron 3.5 Transcribe.*
 
-### 5.2 Słownictwo radiologiczne (stan na 2026-11-17)
+### 5.2 Usługi chmurowe (online, stan na 2026-11-17)
 
-Te same transkrypcje co w sekcji 5.1, ocenione metodą z sekcji 4.4. Wartości w procentach.
+Kolumny jak w sekcji 5.1. RTF obejmuje czas sieci i kolejki, więc nie jest porównywalny z modelami
+lokalnymi (sekcja 4.3).
+
+| Model | WER [95% CI] | WER-N | CER | Liczby | Zaprzecz. | Strona | Wstawki ≥3 | RTF |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|
+| OpenAI gpt-4o-transcribe | 5,96 [5,4–6,52] | 4,47 | 2,03 | 1,9 | 2,0 | 2,7 | 1 | 0,021 |
+| OpenAI whisper-1 | 9,93 [9,26–10,62] | 9,45 | 2,58 | 3,5 | 3,3 | 3,5 | 1 | 0,032 |
+| AssemblyAI Universal-2 | 10,25 [9,54–10,96] | 9,71 | 2,77 | 3,5 | 2,8 | 3,8 | 1 | 0,265 |
+| Google Gemini 3.5 Flash | 10,4 [9,75–11,09] | 4,18 | 4,03 | 3,0 | 1,0 | 3,0 | 8 | 0,076 |
+| Deepgram Nova-3 | 15,06 [14,3–15,84] | 8,48 | 7,88 | 8,0 | 3,5 | 2,5 | 6 | 0,018 |
+| Speechmatics (pl) | 19,41 [18,68–20,18] | 16,37 | 6,18 | 16,1 | 0,3 | 7,0 | 1 | 0,03 |
+| ElevenLabs Scribe v2 | 28,27 [26,22–30,33] | 5,22 | 23,53 | 97,7 | 1,3 | 1,7 | 65 | 0,037 |
+
+**Obserwacje:**
+- **OpenAI gpt-4o-transcribe jest najlepszym systemem w całym zestawieniu** (WER 5,96%, CER 2,03%,
+  WER-N 4,47%, najniższy odsetek błędów w liczbach: 1,9%). Wyprzedza najlepszy model otwarty
+  Whisper large-v3 (8,03%) i wszystkich konkurentów chmurowych. Aż 54% wypowiedzi transkrybuje
+  bezbłędnie (Whisper large-v3: 39,6%).
+- **Google Gemini 3.5 Flash jest najlepszy w zapisie terminów** (TER 6,6% — najniżej ze wszystkich,
+  wobec 15,8% u Whisper large-v3) i w WER-N (4,18%) oraz najrzadziej myli zaprzeczenia (1,0%).
+  Jego surowy WER (10,4%) jest wyższy, bo ogólny LLM „wygładza" treść (interpunkcja, podział
+  wyrazów, 8 dłuższych wstawek), co metryka WER liczy jako błąd.
+- **OpenAI whisper-1 (9,93%)** i AssemblyAI Universal-2 (10,25%) plasują się tuż za Whisper
+  large-v3, ale przed Whisper medium (13,77%). AssemblyAI prawie nie wstawia dłuższych fraz
+  (1 wstawka).
+- **ElevenLabs Scribe v2 zapisuje liczby słownie**, co sztucznie zawyża WER: „2 mm" →
+  „dwóch milimetrów", „14x12x45 mm" → „czternaście na dwanaście na czterdzieści pięć
+  milimetrów", „10,9 ml" → „dziesięć i dziewięć dziesiątych mililitra". Dotyczy to 97,7% tokenów
+  z cyfrą i podnosi CER do 23,53%. Po wyrównaniu formy zapisu liczb (WER-N) ElevenLabs osiąga
+  5,22% — drugi najlepszy wynik po gpt-4o-transcribe. Równocześnie ma najwięcej długich wstawek
+  (65 wobec 1–6 u pozostałych), co sugeruje „wygładzanie" treści zamiast dosłownej transkrypcji.
+- **Speechmatics**, mimo deklarowanego modelu medycznego, nie wyróżnia się: WER 19,41%, najgorzej
+  ze stroną ciała (7,0%) i z liczbami (16,1%).
+- **Deepgram Nova-3** jest najszybszy (RTF 0,018) i bliski AssemblyAI w WER-N (8,48%).
+
+**Usługi niedostępne w tym przebiegu:** Soniox (brak środków, `organization_balance_exhausted`),
+Google Chirp (wymaga projektu i poświadczeń Google Cloud), Azure AI Speech (brak klucza).
+Dedykowany model transkrypcyjny Google `gemini-3.5-transcribe` ma limit 100 żądań/dzień na
+tierze 1 (AI Studio), więc na pełnym zbiorze (939 nagrań) nie da się go zmierzyć w jednym dniu;
+zamiast niego zmierzony został ogólny model `gemini-3.5-flash` (transkrypcja przez LLM).
+
+### 5.3 Słownictwo radiologiczne (stan na 2026-11-17)
+
+Te same transkrypcje co w sekcjach 5.1 i 5.2, ocenione metodą z sekcji 4.4. Wartości w procentach.
 Kolumny „Inna forma” … „Pominięcie” podają odsetek wszystkich wystąpień terminów (n = 5 429);
 ich suma to TER.
 
@@ -485,6 +560,18 @@ ich suma to TER.
 | wav2vec2 XLSR-53 Polish (bez LM) | 54,9 [53,3–56,3] | 49,7 | 31,9 | 1,7 | 1,6 | 3,7 | 22,9 | 22,4 | 4,4 |
 | Google MedASR (kontrola negatywna) | 97,6 [97,2–98,1] | 97,6 | 98,1 | 1,0 | 0,0 | 0,0 | 0,5 | 50,1 | 47,1 |
 
+Usługi chmurowe (te same kolumny):
+
+| Model | TER [95% CI] | TER-L | GWER | TER/GWER | Inna forma | Podział | Bliski zapis | Podmiana | Pominięcie |
+|---|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Google Gemini 3.5 Flash | 6,6 [5,8–7,4] | 4,8 | 4,0 | 1,6 | 1,3 | 0,4 | 2,8 | 1,6 | 0,5 |
+| ElevenLabs Scribe v2 | 7,2 [6,4–8,1] | 5,7 | 10,1 | 0,7 | 0,6 | 0,9 | 3,7 | 1,6 | 0,4 |
+| OpenAI gpt-4o-transcribe | 7,6 [6,8–8,5] | 4,5 | 2,9 | 2,6 | 1,4 | 1,7 | 1,8 | 2,2 | 0,5 |
+| Deepgram Nova-3 | 16,6 [15,3–17,9] | 13,9 | 11,1 | 1,5 | 1,2 | 1,5 | 7,6 | 4,4 | 1,9 |
+| OpenAI whisper-1 | 19,1 [17,9–20,3] | 15,5 | 3,7 | 5,2 | 1,3 | 2,3 | 9,8 | 4,7 | 0,9 |
+| AssemblyAI Universal-2 | 19,3 [18,0–20,6] | 15,8 | 4,3 | 4,5 | 1,1 | 2,4 | 9,8 | 4,9 | 1,1 |
+| Speechmatics (pl) | 29,2 [27,9–30,4] | 23,0 | 6,7 | 4,4 | 2,4 | 3,8 | 11,4 | 10,1 | 1,6 |
+
 TER według klasy terminu (wybrane modele; pełna tabela: `results/terms/by_class.csv`):
 
 | Model | Anatomia | Opis obrazu | Patologia i zabiegi | Skróty i nazwy obce |
@@ -502,12 +589,17 @@ TER według klasy terminu (wybrane modele; pełna tabela: `results/terms/by_clas
   (Whisper, NVIDIA Canary i Parakeet, Qwen3-ASR, MMS + KenLM). Iloraz TER/GWER spada do 1,7–2,8
   u modeli, które źle rozpoznają także zwykłą polszczyznę (MMS bez LM, wav2vec2, FastConformer),
   i do 1,0 w kontroli negatywnej.
+- **Wyjątkiem jest ElevenLabs Scribe v2: terminy są dla niego łatwiejsze niż słowa ogólne**
+  (TER/GWER 0,7; TER 7,2% — najlepszy wynik w całym zestawieniu, wobec 15,8% u Whisper large-v3).
+  Wysoki GWER (10,1%) przy niskim TER sugeruje, że ElevenLabs lepiej utrwala rzadkie terminy
+  (być może dzięki zapisowi liczbowemu/słownemu i „wygładzaniu”), a myli się raczej na słowach
+  pospolitych i spójnikach.
 - **Dominuje bliski zapis, nie podmiana na inne słowo.** U Whisper large-v3 8,7 z 15,8 p.p. TER
   to zapisy bliskie poprawnemu: model rozpoznaje brzmienie terminu, ale go nie zna. Najczęstsze:
   „TIRADS” → „TIRAC”/„TIRATS”/„TIRAS” (104 ze 176 wystąpień), „color” → „kolor” (34),
   „miąższ” → „miosz”/„miąż” (19), „guzki” → „głuski”/„guski” (15), „cieśń” → „cieść” (8).
   To wskazuje, że słownik podpowiedzi lub korekta pisowni po rozpoznaniu mogłyby usunąć dużą część
-  błędów bez zmiany modelu akustycznego (hipoteza do sprawdzenia).
+  błędów bez zmiany modelu akustycznego; zostanie to sprawdzone w etapie 2 (sekcja 4.0).
 - **Złożenia pisane łącznie są rozbijane** („okołotarczycowo” → „około tarczycowo”,
   „gładkokonturowany” → „gładko konturowany”): 2–5% wystąpień terminów.
 - **Najtrudniejsza klasa to skróty i nazwy obce** (44–68% błędów). Sam TIRADS odpowiada za 18%
@@ -558,9 +650,10 @@ TER według klasy terminu (wybrane modele; pełna tabela: `results/terms/by_clas
 | wordfreq | 3.1.1 | częstość słów w ogólnej polszczyźnie (skala Zipfa) |
 | simplemma | 2.0.0 | lematy słów hipotezy (analiza terminów) |
 | matplotlib | 3.11.2 | wykres `assets/terms_vs_frequency.svg` |
+| google-auth, requests | z `eval/uv.lock` | opcjonalna ścieżka Vertex AI (nieużywana w bieżących wynikach) |
 | Sprzęt | MacBook Pro M1 Pro, 16 GB pamięci operacyjnej (RAM) | wszystkie przebiegi offline |
 
-Analizę terminów (sekcja 5.2) odtwarza `cd eval && uv run python terms.py` (ok. 30 s na M1 Pro);
+Analizę terminów (sekcja 5.3) odtwarza `cd eval && uv run python terms.py` (ok. 30 s na M1 Pro);
 zapisuje `results/terms/*.csv`, wykres i tabelę `term_tokens` w `results/results.sqlite`.
 Polecenie trzeba uruchomić ponownie po `build_results_db.py`, bo ten odbudowuje bazę od zera.
 

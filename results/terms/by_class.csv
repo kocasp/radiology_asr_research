@@ -47,3 +47,31 @@ google-medasr,Google MedASR,anatomy,2326,100.0,100.0,100.0,100.0
 google-medasr,Google MedASR,descriptor,2142,99.95,99.85,100.0,99.95
 google-medasr,Google MedASR,pathology,410,100.0,100.0,100.0,100.0
 google-medasr,Google MedASR,acronym,551,76.77,72.66,81.03,76.77
+elevenlabs-scribe,ElevenLabs Scribe v2,anatomy,2326,3.14,2.42,3.92,2.41
+elevenlabs-scribe,ElevenLabs Scribe v2,descriptor,2142,5.98,4.9,7.23,3.87
+elevenlabs-scribe,ElevenLabs Scribe v2,pathology,410,4.88,2.69,7.37,4.39
+elevenlabs-scribe,ElevenLabs Scribe v2,acronym,551,30.67,26.55,35.07,27.95
+openai-whisper-1,OpenAI whisper-1,anatomy,2326,14.66,12.84,16.35,11.18
+openai-whisper-1,OpenAI whisper-1,descriptor,2142,15.87,14.1,17.67,10.74
+openai-whisper-1,OpenAI whisper-1,pathology,410,17.32,13.42,21.29,16.34
+openai-whisper-1,OpenAI whisper-1,acronym,551,51.72,47.71,56.07,51.36
+openai-gpt-4o-transcribe,OpenAI gpt-4o-transcribe,anatomy,2326,5.25,4.35,6.27,2.71
+openai-gpt-4o-transcribe,OpenAI gpt-4o-transcribe,descriptor,2142,7.94,6.57,9.43,3.78
+openai-gpt-4o-transcribe,OpenAI gpt-4o-transcribe,pathology,410,5.12,2.95,7.53,4.88
+openai-gpt-4o-transcribe,OpenAI gpt-4o-transcribe,acronym,551,17.97,14.86,21.83,14.16
+deepgram-nova-3,Deepgram Nova-3,anatomy,2326,11.56,10.06,13.06,9.89
+deepgram-nova-3,Deepgram Nova-3,descriptor,2142,14.52,12.94,16.13,9.71
+deepgram-nova-3,Deepgram Nova-3,pathology,410,16.34,12.53,20.45,15.61
+deepgram-nova-3,Deepgram Nova-3,acronym,551,45.92,41.42,50.29,45.55
+speechmatics,Speechmatics (pl) / Oak (medyczny),anatomy,2326,17.88,16.38,19.38,13.03
+speechmatics,Speechmatics (pl) / Oak (medyczny),descriptor,2142,36.69,34.82,38.63,27.59
+speechmatics,Speechmatics (pl) / Oak (medyczny),pathology,410,14.88,11.2,19.0,8.78
+speechmatics,Speechmatics (pl) / Oak (medyczny),acronym,551,58.26,54.44,62.46,57.71
+assemblyai,AssemblyAI Universal-2,anatomy,2326,14.83,13.07,16.59,12.12
+assemblyai,AssemblyAI Universal-2,descriptor,2142,16.2,14.38,18.16,10.78
+assemblyai,AssemblyAI Universal-2,pathology,410,16.59,12.62,20.68,15.37
+assemblyai,AssemblyAI Universal-2,acronym,551,51.72,47.5,56.26,51.36
+gemini-transcribe,Google Gemini 3.5 Flash (transkrypcja przez LLM),anatomy,2326,3.05,2.29,3.93,2.15
+gemini-transcribe,Google Gemini 3.5 Flash (transkrypcja przez LLM),descriptor,2142,8.08,6.84,9.39,5.51
+gemini-transcribe,Google Gemini 3.5 Flash (transkrypcja przez LLM),pathology,410,4.63,2.42,7.37,4.15
+gemini-transcribe,Google Gemini 3.5 Flash (transkrypcja przez LLM),acronym,551,17.06,13.83,20.55,14.16

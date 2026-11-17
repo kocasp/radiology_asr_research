@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 5.96,
+ "wer_ci": [
+  5.4,
+  6.52
+ ],
+ "cer": 2.03,
+ "cer_ci": [
+  1.75,
+  2.33
+ ],
+ "S": 834,
+ "D": 119,
+ "I": 107,
+ "long_ins": 1,
+ "utt_perfect": 54.0,
+ "audio_s": 9672.5,
+ "proc_s": 205.2,
+ "rtf": 0.021,
+ "num_err": 1.9,
+ "num_n": 1990,
+ "neg_err": 2.0,
+ "neg_n": 399,
+ "side_err": 2.7,
+ "side_n": 599,
+ "wer_num": 4.47,
+ "wer_num_ci": [
+  4.02,
+  5.01
+ ],
+ "top_subs": [
+  [
+   "x",
+   "na",
+   204
+  ],
+  [
+   "color",
+   "kolor",
+   30
+  ],
+  [
+   "tirads",
+   "rads",
+   19
+  ],
+  [
+   "zmiany ogniskowe",
+   "zmiana ogniskowa",
+   14
+  ],
+  [
+   "tarczyca",
+   "tarczycza",
+   12
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   12
+  ],
+  [
+   "lito",
+   "litopłynowa",
+   10
+  ],
+  [
+   "wzmożenia",
+   "wzmożonego",
+   10
+  ],
+  [
+   "hipoechogenna",
+   "hypoechogenna",
+   10
+  ],
+  [
+   "tarczyca",
+   "tarczycą",
+   8
+  ],
+  [
+   "płynowo lita",
+   "płynowolita wielkości",
+   7
+  ],
+  [
+   "hiperechogennym",
+   "hyperechogennym",
+   7
+  ],
+  [
+   "jednej trzeciej",
+   "1 3",
+   7
+  ],
+  [
+   "mm",
+   "milimetry",
+   6
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   6
+  ]
+ ],
+ "top_ins": [
+  [
+   "ti",
+   15
+  ],
+  [
+   "gładko",
+   13
+  ],
+  [
+   "o",
+   10
+  ],
+  [
+   "około",
+   7
+  ],
+  [
+   "przy",
+   3
+  ],
+  [
+   "z",
+   3
+  ],
+  [
+   "płacie",
+   3
+  ],
+  [
+   "w",
+   3
+  ],
+  [
+   "i",
+   3
+  ],
+  [
+   "4 i",
+   3
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   15
+  ],
+  [
+   "płynowa",
+   10
+  ],
+  [
+   "wiekości",
+   7
+  ],
+  [
+   "lite",
+   6
+  ],
+  [
+   "x",
+   5
+  ],
+  [
+   "wzmożone",
+   5
+  ],
+  [
+   "płacie",
+   3
+  ],
+  [
+   "jak",
+   2
+  ],
+  [
+   "do",
+   2
+  ],
+  [
+   "tirads",
+   2
+  ]
+ ],
+ "worst": [
+  {
+   "err": 125,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Documentația-ți din ceva faț."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Documentația e ziceva fax."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Documentația Zincheva Paks."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Documentația din Ceaușevax."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 82,
+   "ref": "Nie wykryto cech restrykcji dyfuzji ani ognisk nieprawidłowego wzmocnienia po kontraście.",
+   "hyp": "Nebolo zistené reštrikcie difúzie ani ohnisk nepravidelného zosilnenia po kontraste."
+  },
+  {
+   "err": 80,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy duch szybował pod niebem wolny."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja z Ginczawa w Paks."
+  },
+  {
+   "err": 71,
+   "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+   "hyp": "Obecnie bez płynów prawie zaotrzewnowej."
+  },
+  {
+   "err": 55,
+   "ref": "Okołotarczycowe węzły chłonne niepowiększone. Tarczyca położona typowo, dwupłatowa, o gładkich zarysach.",
+   "hyp": "Okolica tarczcowa bez węzłów chłonnych niepowiększonych. Tarczyca położona typowo, dwupłatowa o gładkich zarysach."
+  },
+  {
+   "err": 50,
+   "ref": "Wnioski, status idem, czyli bez zmian, do dalszej obserwacji w rezonansie magnetycznym. NI-RADS ‒ miejscowo 4, węzłowo 1.",
+   "hyp": "Wniosek: status idem, czyli bez zmian. Dodała się obserwacja w rezonansie magnetycznym: N i rad, miejscowo cztery, węzłowo jeden."
+  },
+  {
+   "err": 50,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne niepowiększone."
+  }
+ ],
+ "model": "gpt-4o-transcribe",
+ "lm": null,
+ "finished": "2026-11-17T22:59:48+01:00",
+ "decoding": "API, language=pl, bez promptu/słownika"
+}

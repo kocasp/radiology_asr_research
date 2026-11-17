@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 19.41,
+ "wer_ci": [
+  18.68,
+  20.18
+ ],
+ "cer": 6.18,
+ "cer_ci": [
+  5.82,
+  6.55
+ ],
+ "S": 2362,
+ "D": 643,
+ "I": 448,
+ "long_ins": 1,
+ "utt_perfect": 17.3,
+ "audio_s": 9672.5,
+ "proc_s": 288.8,
+ "rtf": 0.03,
+ "num_err": 16.1,
+ "num_n": 1990,
+ "neg_err": 0.3,
+ "neg_n": 399,
+ "side_err": 7.0,
+ "side_n": 599,
+ "wer_num": 16.37,
+ "wer_num_ci": [
+  15.69,
+  17.09
+ ],
+ "top_subs": [
+  [
+   "x",
+   "na",
+   156
+  ],
+  [
+   "miąższ",
+   "mąż",
+   75
+  ],
+  [
+   "color",
+   "kolor",
+   67
+  ],
+  [
+   "odgraniczona",
+   "ograniczona",
+   63
+  ],
+  [
+   "hipoechogenna",
+   "hipochogenna",
+   51
+  ],
+  [
+   "niepowiększone",
+   "powiększone",
+   38
+  ],
+  [
+   "niepowiększona",
+   "powiększona",
+   38
+  ],
+  [
+   "mm",
+   "milimetrów",
+   31
+  ],
+  [
+   "tirads",
+   "tiret",
+   31
+  ],
+  [
+   "ml",
+   "mililitrów",
+   27
+  ],
+  [
+   "unaczynienia",
+   "naczynia",
+   27
+  ],
+  [
+   "w",
+   "wpłacie",
+   27
+  ],
+  [
+   "unaczynieniu",
+   "naczynieniu",
+   20
+  ],
+  [
+   "echostrukturze",
+   "strukturze",
+   20
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   19
+  ]
+ ],
+ "top_ins": [
+  [
+   "nie",
+   72
+  ],
+  [
+   "hipo",
+   44
+  ],
+  [
+   "ok",
+   30
+  ],
+  [
+   "u",
+   29
+  ],
+  [
+   "litra",
+   13
+  ],
+  [
+   "przy",
+   13
+  ],
+  [
+   "norma",
+   12
+  ],
+  [
+   "hiper",
+   12
+  ],
+  [
+   "mililitrów",
+   12
+  ],
+  [
+   "około",
+   11
+  ]
+ ],
+ "top_dels": [
+  [
+   "x",
+   170
+  ],
+  [
+   "w",
+   35
+  ],
+  [
+   "płacie",
+   31
+  ],
+  [
+   "2",
+   20
+  ],
+  [
+   "4",
+   12
+  ],
+  [
+   "hipoechogenna",
+   11
+  ],
+  [
+   "prawym",
+   11
+  ],
+  [
+   "13 x 39",
+   8
+  ],
+  [
+   "cieśni",
+   8
+  ],
+  [
+   "x 8 x",
+   8
+  ]
+ ],
+ "worst": [
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski. Obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 80,
+   "ref": "Tłuszczowo przebudowana ślinianka podżuchwowa prawa.",
+   "hyp": "Tłuszczowa przebudowana ślimaka pod żuchwą prawa."
+  },
+  {
+   "err": 73,
+   "ref": "Stan po lewostronnej parotidektomii i reparotidektomii z powodu Acnic Cell Carcinoma.",
+   "hyp": "Stan po lewej strony parodii dektomii i reparadektomii z powodu Axel Karcinoma."
+  },
+  {
+   "err": 71,
+   "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+   "hyp": "Obecnie bez płynów, prawie wartości rynkowej."
+  },
+  {
+   "err": 67,
+   "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+   "hyp": "Stan preparat dektomii prawostronne i z powodu wznowy miejscowej ACCA."
+  },
+  {
+   "err": 62,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne nie powiększone."
+  },
+  {
+   "err": 56,
+   "ref": "W płacie prawym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4 mm, TIRADS 4, bez wzmożonego przepływu.",
+   "hyp": "Płacę prawem. Hiperchogenna dobrze ograniczona zmiana wielkości do 4,4 mm. Tiret 4 bez wzmożonego przypływu."
+  },
+  {
+   "err": 56,
+   "ref": "Tarczyca niepowiększona, nie zagłębia się poniżej wcięcia jarzmowego mostka.",
+   "hyp": "Tarczyca nie powiększona, nie zagłębia się poniżej wcięcia i jarzma owego mostka."
+  },
+  {
+   "err": 54,
+   "ref": "Miąższ tarczycy niejednorodny, o obniżonej echogeniczności, z pasmami zwłóknień, bez cech wzmożenia przepływu w opcji color doppler. Obraz miąższu tarczycy jak w chorobie Hashimoto.",
+   "hyp": "Miłosz Tarczyca niejednorodny, a obniżone echo koniecznosci z pasami zwłóknienia bez wzmożenia przepływów. Obcy kolor. Doppler obraz miąższu tarczycy jak w chorobie Hashimoto."
+  },
+  {
+   "err": 50,
+   "ref": "Tarczyca położona prawidłowo, mniejsza, o gładkich zarysach zewnętrznych.",
+   "hyp": "Też jest położona prawidłowo. Mniejsza o gładkie zarysy zewnętrznych."
+  },
+  {
+   "err": 50,
+   "ref": "Stan po parotidektomii obustronnej, loże wolne.",
+   "hyp": "Stan po paru dni dektomii obustronnej. Loże wolne."
+  },
+  {
+   "err": 50,
+   "ref": "Echogeniczność podstawowa gruczołu prawidłowa, echostruktura nieco niejednorodna, bez cech wzmożenia przepływu naczyniowego w opcji color doppler.",
+   "hyp": "Organiczność podstawowa. Gruczoł. Prawidłowe echo. Struktura. Nieco niejednorodne bez cech. Wzmożenie przepływu naczyniowego w opcji Kolor Doppler."
+  }
+ ],
+ "model": "enhanced",
+ "lm": null,
+ "finished": "2026-11-17T22:02:24+01:00",
+ "decoding": "API, language=pl, bez promptu/słownika"
+}

@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 10.25,
+ "wer_ci": [
+  9.54,
+  10.96
+ ],
+ "cer": 2.77,
+ "cer_ci": [
+  2.51,
+  3.04
+ ],
+ "S": 1383,
+ "D": 178,
+ "I": 262,
+ "long_ins": 1,
+ "utt_perfect": 31.9,
+ "audio_s": 9672.5,
+ "proc_s": 2565.3,
+ "rtf": 0.265,
+ "num_err": 3.5,
+ "num_n": 1990,
+ "neg_err": 2.8,
+ "neg_n": 399,
+ "side_err": 3.8,
+ "side_n": 599,
+ "wer_num": 9.71,
+ "wer_num_ci": [
+  9.0,
+  10.42
+ ],
+ "top_subs": [
+  [
+   "color",
+   "kolor",
+   47
+  ],
+  [
+   "tirads",
+   "tirac",
+   45
+  ],
+  [
+   "tirads",
+   "tiradz",
+   27
+  ],
+  [
+   "x",
+   "na",
+   24
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   20
+  ],
+  [
+   "tirads",
+   "tirats",
+   20
+  ],
+  [
+   "miąższ",
+   "mięż",
+   19
+  ],
+  [
+   "niepowiększona",
+   "powiększona",
+   15
+  ],
+  [
+   "ml",
+   "mm",
+   12
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   12
+  ],
+  [
+   "w przyleganiu",
+   "przy leganiu",
+   10
+  ],
+  [
+   "okołotarczycowe",
+   "tarczycowe",
+   10
+  ],
+  [
+   "unaczynienia",
+   "naczynienia",
+   9
+  ],
+  [
+   "płacie",
+   "płocie",
+   9
+  ],
+  [
+   "węzłów",
+   "węzł",
+   8
+  ]
+ ],
+ "top_ins": [
+  [
+   "około",
+   36
+  ],
+  [
+   "w",
+   30
+  ],
+  [
+   "nie",
+   23
+  ],
+  [
+   "u",
+   16
+  ],
+  [
+   "gładko",
+   12
+  ],
+  [
+   "i",
+   6
+  ],
+  [
+   "t",
+   5
+  ],
+  [
+   "doplerowskim",
+   5
+  ],
+  [
+   "o",
+   4
+  ],
+  [
+   "wchłonnych",
+   3
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   23
+  ],
+  [
+   "tirads",
+   10
+  ],
+  [
+   "tarczycy",
+   9
+  ],
+  [
+   "prawidłowa",
+   7
+  ],
+  [
+   "2",
+   6
+  ],
+  [
+   "wiekości",
+   5
+  ],
+  [
+   "wzmożone",
+   4
+  ],
+  [
+   "płacie",
+   4
+  ],
+  [
+   "cieśni",
+   4
+  ],
+  [
+   "3",
+   3
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Tarczyca położona prawidłowo, mała, o gładkich zarysach zewnętrznych.",
+   "hyp": ""
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentację zdjęcia bawką."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 80,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy dół strzelbowa pod niebiedny wony."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "dokumentację zdjęciową w PAX."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja zjęcia waw fax."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja jest dzięcząca Was."
+  },
+  {
+   "err": 62,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne nie powiększone."
+  },
+  {
+   "err": 60,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "Z badaniem Doplerowskim u naczynień płatów prawej dłowe, patologicznych odbić węzłowych wzdłuż naczyń szyjnych obu strony nie zobrazowano."
+  },
+  {
+   "err": 60,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "W badaniu Doplerowskim o naczynieniu płotu prawidłowe patologicznej odbyć węzłowych wzdłuż naczyń ściennych obustronnymi zobrazowano."
+  },
+  {
+   "err": 60,
+   "ref": "Unaczynienie miąższu tarczycy prawidłowe. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",
+   "hyp": "U naczynieniem miąższu tarczycy prawidłowe nie widać powiększonych wchłonnych bezów około tarczycową."
+  },
+  {
+   "err": 58,
+   "ref": "Tarczyca o atroficznym miąższu, zmiany ogniskowe, TIRADS 4, do okresowej kontroli USG.",
+   "hyp": "Tarczycy o atroficznym miąższu. Zmiany obniskowe. Pirac 4. Bełkresowe kończoły SG."
+  }
+ ],
+ "model": "universal-2",
+ "lm": null,
+ "finished": "2026-11-17T22:45:20+01:00",
+ "decoding": "API, language=pl, bez promptu/słownika"
+}

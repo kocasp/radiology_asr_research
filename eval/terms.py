@@ -185,6 +185,7 @@ def main():
     by_run = collections.defaultdict(list)
     for r in rows:
         by_run[r["run_id"]].append(r)
+    runs = [(rid, name) for rid, name in runs if by_run[rid]]   # pomiń puste przebiegi (np. usługa bez środków)
     summary, by_class = [], []
     for rid, name in runs:
         sub = by_run[rid]

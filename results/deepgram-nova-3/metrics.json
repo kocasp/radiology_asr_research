@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 15.06,
+ "wer_ci": [
+  14.3,
+  15.84
+ ],
+ "cer": 7.88,
+ "cer_ci": [
+  7.33,
+  8.48
+ ],
+ "S": 2182,
+ "D": 263,
+ "I": 233,
+ "long_ins": 6,
+ "utt_perfect": 25.5,
+ "audio_s": 9672.5,
+ "proc_s": 174.2,
+ "rtf": 0.018,
+ "num_err": 8.0,
+ "num_n": 1990,
+ "neg_err": 3.5,
+ "neg_n": 399,
+ "side_err": 2.5,
+ "side_n": 599,
+ "wer_num": 8.48,
+ "wer_num_ci": [
+  7.9,
+  9.14
+ ],
+ "top_subs": [
+  [
+   "mm",
+   "milimetr",
+   438
+  ],
+  [
+   "x",
+   "na",
+   310
+  ],
+  [
+   "odgraniczona",
+   "ograniczona",
+   33
+  ],
+  [
+   "ml",
+   "mililitra",
+   32
+  ],
+  [
+   "mm",
+   "milimetry",
+   31
+  ],
+  [
+   "mm",
+   "milimetrów",
+   27
+  ],
+  [
+   "mm tirads",
+   "milimetr tirac",
+   24
+  ],
+  [
+   "płacie",
+   "płocie",
+   23
+  ],
+  [
+   "mm",
+   "milimetra",
+   19
+  ],
+  [
+   "tirads",
+   "tiradz",
+   16
+  ],
+  [
+   "4,5",
+   "pół",
+   14
+  ],
+  [
+   "płat",
+   "płot",
+   14
+  ],
+  [
+   "dwie",
+   "2",
+   11
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   11
+  ],
+  [
+   "tarczyca",
+   "torczyca",
+   10
+  ]
+ ],
+ "top_ins": [
+  [
+   "z",
+   18
+  ],
+  [
+   "4 i",
+   16
+  ],
+  [
+   "milimetr",
+   11
+  ],
+  [
+   "gładko",
+   11
+  ],
+  [
+   "w",
+   9
+  ],
+  [
+   "o",
+   7
+  ],
+  [
+   "4",
+   7
+  ],
+  [
+   "i",
+   6
+  ],
+  [
+   "2000 e",
+   5
+  ],
+  [
+   "1",
+   5
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   30
+  ],
+  [
+   "brzusznie",
+   10
+  ],
+  [
+   "wnioski",
+   9
+  ],
+  [
+   "płynowa",
+   9
+  ],
+  [
+   "lita",
+   8
+  ],
+  [
+   "doppler",
+   6
+  ],
+  [
+   "wzmożone",
+   5
+  ],
+  [
+   "tirads 2",
+   5
+  ],
+  [
+   "tirads",
+   4
+  ],
+  [
+   "lite",
+   4
+  ]
+ ],
+ "worst": [
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy"
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja zdjęciowa w p-ac-s"
+  },
+  {
+   "err": 73,
+   "ref": "Stan po parotidektomii prawostronnej w 2013 roku z powodu raka zrazikowokomórkowego.",
+   "hyp": "Stan poparoditektomii prawostronnej w 2000 e e 13 roku z powodu raka zwyrodikowo komórkowego"
+  },
+  {
+   "err": 62,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono okoliczne węzły chłonne nie powiększone"
+  },
+  {
+   "err": 62,
+   "ref": "Prawy otwór owalny również bez ognisk patologicznego wzmocnienia.",
+   "hyp": "Prawy otwór owalny"
+  },
+  {
+   "err": 60,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy dół strzeldowa pod niebienym wolny"
+  },
+  {
+   "err": 57,
+   "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+   "hyp": "Obecnie bez płynów prawej zadytościankowej."
+  },
+  {
+   "err": 53,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "W badaniu dopplerowskim o naczynie płodoprawidłowe, patologiczne odbić węzłowych wzdłuż na części nerw obustronny nie zobrazowano."
+  },
+  {
+   "err": 53,
+   "ref": "Tarczyca dwupłatowa, mała. Miąższ niejednorodny, z pasmami zwłóknień, unaczynienie nie wzmożone w opcji color doppler.",
+   "hyp": "Tarczyca dwupłatowa mała, mierz nie jednorodny z pasmami z włóknin. Unaczynienie niewzmożone w opcji Color Dopper."
+  },
+  {
+   "err": 53,
+   "ref": "Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji color doppler.",
+   "hyp": "Miąższ tarczycy jednorodny z licznymi pasmami z włóknin oraz obszarami hipejallogennymi o skąpo u naczyniu w opcji coledopere."
+  },
+  {
+   "err": 52,
+   "ref": "Zmiany ogniskowe: w płacie lewym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4,5x4 mm, Eu-TIRADS 4, bez wzmożonego przepływu.",
+   "hyp": "Zmiany ogniskowe: w płycie lewym hipoechogenna, dobrze ograniczona zmiana, wielkości do 4 na 4 I pół na 4 milimetr. Ł-T-R-C 4, bez wzmożonego przepływu."
+  },
+  {
+   "err": 50,
+   "ref": "Stan po parotidektomii obustronnej, loże wolne.",
+   "hyp": "Stan po porodydektomii obustronnej lożę wolny"
+  }
+ ],
+ "model": "nova-3",
+ "lm": null,
+ "finished": "2026-11-17T21:57:25+01:00",
+ "decoding": "API, language=pl, bez promptu/słownika"
+}

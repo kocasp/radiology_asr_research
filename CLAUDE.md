@@ -58,6 +58,10 @@ Przy pisaniu pilnuj, żeby:
 
 ## Zasady techniczne
 
+- **Etap 1 (bieżący): modele bez pomocy.** Żadnych promptów ze słownictwem, list słów kluczowych,
+  słowników niestandardowych ani korekty po rozpoznaniu; tylko `language=pl`. Google Gemini dostaje
+  wyłącznie neutralne „przepisz dosłownie”. Wsparcie (prompty, słowniki, korekta) to etap 2, mierzony
+  osobno i porównywany z etapem 1. Szczegóły: README, sekcja 4.0.
 - **Testujemy tylko gotowe, dostępne rozwiązania.** Nie oceniamy modeli dotrenowanych na ADMEDVOICE
   (np. whisper-medium-medical-pl, VoxMedic), bo znają frazy testowe. Uzasadnienie: README, sekcja 4.2.
 - Audio (`recordings/audio/`, 5,6 GB) nie jest w Git. Odtwarza się je skryptem

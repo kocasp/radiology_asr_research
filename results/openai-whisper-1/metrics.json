@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 9.93,
+ "wer_ci": [
+  9.26,
+  10.62
+ ],
+ "cer": 2.58,
+ "cer_ci": [
+  2.34,
+  2.84
+ ],
+ "S": 1347,
+ "D": 134,
+ "I": 286,
+ "long_ins": 1,
+ "utt_perfect": 32.9,
+ "audio_s": 9672.5,
+ "proc_s": 312.5,
+ "rtf": 0.032,
+ "num_err": 3.5,
+ "num_n": 1990,
+ "neg_err": 3.3,
+ "neg_n": 399,
+ "side_err": 3.5,
+ "side_n": 599,
+ "wer_num": 9.45,
+ "wer_num_ci": [
+  8.76,
+  10.13
+ ],
+ "top_subs": [
+  [
+   "color",
+   "kolor",
+   47
+  ],
+  [
+   "tirads",
+   "tirac",
+   31
+  ],
+  [
+   "tirads",
+   "tiradz",
+   28
+  ],
+  [
+   "tirads",
+   "tirats",
+   26
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   21
+  ],
+  [
+   "niepowiększona",
+   "powiększona",
+   16
+  ],
+  [
+   "miąższ",
+   "mięż",
+   15
+  ],
+  [
+   "x",
+   "na",
+   13
+  ],
+  [
+   "ml",
+   "mm",
+   12
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   10
+  ],
+  [
+   "tarczyca",
+   "torczyca",
+   10
+  ],
+  [
+   "tirads 2",
+   "tirac ii",
+   9
+  ],
+  [
+   "okołotarczycowe",
+   "tarczycowe",
+   9
+  ],
+  [
+   "wzmożonego",
+   "zmożonego",
+   8
+  ],
+  [
+   "tirads 2",
+   "tirats ii",
+   8
+  ]
+ ],
+ "top_ins": [
+  [
+   "w",
+   45
+  ],
+  [
+   "około",
+   37
+  ],
+  [
+   "nie",
+   24
+  ],
+  [
+   "u",
+   14
+  ],
+  [
+   "gładko",
+   10
+  ],
+  [
+   "t",
+   8
+  ],
+  [
+   "i",
+   6
+  ],
+  [
+   "o",
+   6
+  ],
+  [
+   "tirad",
+   5
+  ],
+  [
+   "z",
+   5
+  ]
+ ],
+ "top_dels": [
+  [
+   "tirads",
+   12
+  ],
+  [
+   "w",
+   10
+  ],
+  [
+   "prawidłowa",
+   7
+  ],
+  [
+   "2",
+   6
+  ],
+  [
+   "4",
+   5
+  ],
+  [
+   "tarczycy",
+   5
+  ],
+  [
+   "jak",
+   4
+  ],
+  [
+   "cieśni",
+   4
+  ],
+  [
+   "dożylnym",
+   4
+  ],
+  [
+   "wzmożone",
+   3
+  ]
+ ],
+ "worst": [
+  {
+   "err": 125,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacje z incie BAF Pax."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 80,
+   "ref": "Tłuszczowo przebudowana ślinianka podżuchwowa prawa.",
+   "hyp": "Łódczowo, przybudowana Ślinianka pod Żuchwowa Prawa."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja zjęcia waw paks."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja jest dzięcząca was."
+  },
+  {
+   "err": 67,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "Z badaniem Doplerowskim u naczynień płatów prawej głowy patologicznych odbić węzłowów wzdłuż naczyń szyjnych obu strony nie zobrazowano."
+  },
+  {
+   "err": 67,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "W badaniu Doplerowskiemu na czynienie płatofrawidłowe patologicznej odbyć węzłowych wzdłuż na częścieniach obustronnymi zobrazowano."
+  },
+  {
+   "err": 64,
+   "ref": "Naciek ulega słabemu wzmocnieniu po kontraście, nie wykazuje cech restrykcji dyfuzji.",
+   "hyp": "Znacie kolegę słabą wzmocnienie po kontraście, niewykazującej restrykcji dyfuzji."
+  },
+  {
+   "err": 62,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne nie powiększone."
+  },
+  {
+   "err": 60,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy dół strzelbowa pod niebiedny wolny."
+  },
+  {
+   "err": 55,
+   "ref": "Tarczyca o typowej echogeniczności, niepowiększona, bez wzmożenia przepływu naczyniowego przez miąższ.",
+   "hyp": "Tarcza z całotypowej echogeniczności, nie powiększona, bez zmożenia przepływu naczyniowego przez miąższ."
+  },
+  {
+   "err": 55,
+   "ref": "Okołotarczycowe węzły chłonne niepowiększone. Tarczyca położona typowo, dwupłatowa, o gładkich zarysach.",
+   "hyp": "Około tarczycowe z węzły chłonne niepowiększone tarczyca położę na typowo dwupłatowe o gładkich zarysach."
+  }
+ ],
+ "model": "whisper-1",
+ "lm": null,
+ "finished": "2026-11-17T22:56:14+01:00",
+ "decoding": "API, language=pl, bez promptu/słownika"
+}

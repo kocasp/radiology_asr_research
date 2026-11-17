@@ -70,7 +70,8 @@ CLOUD_OK = False   # ustawiane flagą --cloud (płatne wywołania tylko po akcep
 
 
 IMPLEMENTED = {"hf_whisper", "hf_ctc", "hf_mms", "nemo", "cloud", "qwen_asr"}
-CLOUD_IMPLEMENTED = {"openai-whisper-1", "openai-gpt-4o-transcribe", "elevenlabs-scribe", "deepgram-nova-3", "azure-speech"}
+CLOUD_IMPLEMENTED = {"openai-whisper-1", "openai-gpt-4o-transcribe", "elevenlabs-scribe", "deepgram-nova-3",
+                     "azure-speech", "speechmatics", "soniox", "assemblyai", "gemini-transcribe"}
 
 
 def blocked_reason(spec):
@@ -107,6 +108,8 @@ def decoding_label(spec):
     if spec["engine"] == "hf_whisper":
         return "greedy, language=pl, task=transcribe"
     if spec["engine"] == "cloud":
+        if spec["id"] == "gemini-transcribe":
+            return "API generateContent, neutralna instrukcja „przepisz dosłownie”, bez słownictwa"
         return "API, language=pl, bez promptu/słownika"
     if spec["engine"] == "nemo":
         return "greedy (domyślny dekoder NeMo), bez LM"

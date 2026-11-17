@@ -8,6 +8,7 @@ models/
 eval/.venv/
 eval/.venv-*/
 eval/.env
+eval/gcp-sa.json
 results/results.sqlite
 results/run.log
 results/_smoke*/

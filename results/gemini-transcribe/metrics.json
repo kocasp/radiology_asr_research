@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 10.4,
+ "wer_ci": [
+  9.75,
+  11.09
+ ],
+ "cer": 4.03,
+ "cer_ci": [
+  3.64,
+  4.49
+ ],
+ "S": 1626,
+ "D": 111,
+ "I": 112,
+ "long_ins": 8,
+ "utt_perfect": 37.7,
+ "audio_s": 9672.5,
+ "proc_s": 735.2,
+ "rtf": 0.076,
+ "num_err": 3.0,
+ "num_n": 1990,
+ "neg_err": 1.0,
+ "neg_n": 399,
+ "side_err": 3.0,
+ "side_n": 599,
+ "wer_num": 4.18,
+ "wer_num_ci": [
+  3.69,
+  4.69
+ ],
+ "top_subs": [
+  [
+   "x",
+   "na",
+   898
+  ],
+  [
+   "color",
+   "kolor",
+   46
+  ],
+  [
+   "mm",
+   "milimetry",
+   39
+  ],
+  [
+   "mm",
+   "milimetrów",
+   27
+  ],
+  [
+   "zwłóknień",
+   "włóknień",
+   26
+  ],
+  [
+   "ml",
+   "mililitrów",
+   18
+  ],
+  [
+   "przepływu",
+   "przepływów",
+   17
+  ],
+  [
+   "tirads",
+   "rads",
+   14
+  ],
+  [
+   "patologicznych",
+   "patologicznie",
+   14
+  ],
+  [
+   "okołotarczycowo",
+   "okołotarczycowych",
+   13
+  ],
+  [
+   "zmiany ogniskowe",
+   "zmiana ogniskowa",
+   13
+  ],
+  [
+   "hipoechogennymi",
+   "hipoechogenicznymi",
+   11
+  ],
+  [
+   "wiekości",
+   "wielkości",
+   10
+  ],
+  [
+   "mm",
+   "milimetra",
+   6
+  ],
+  [
+   "ml",
+   "mililitra",
+   6
+  ]
+ ],
+ "top_ins": [
+  [
+   "o",
+   18
+  ],
+  [
+   "ti",
+   13
+  ],
+  [
+   "nie",
+   3
+  ],
+  [
+   "w",
+   3
+  ],
+  [
+   "płacie",
+   3
+  ],
+  [
+   "na 4",
+   3
+  ],
+  [
+   "4 i",
+   2
+  ],
+  [
+   "5 i 2",
+   2
+  ],
+  [
+   "lewym",
+   2
+  ],
+  [
+   "mililitrów",
+   2
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   10
+  ],
+  [
+   "z",
+   8
+  ],
+  [
+   "i",
+   6
+  ],
+  [
+   "od",
+   5
+  ],
+  [
+   "wzmożone",
+   4
+  ],
+  [
+   "jak",
+   3
+  ],
+  [
+   "tirads",
+   3
+  ],
+  [
+   "do",
+   3
+  ],
+  [
+   "płacie",
+   3
+  ],
+  [
+   "o",
+   3
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawidłowość strzałkowa podniebiennym wolnym."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentację z inicjatywy PAX."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski: obraz może odpowiadać przewlekłemu autoimmunologicznemu zapaleniu tarczycy."
+  },
+  {
+   "err": 57,
+   "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+   "hyp": "Obecnie bez płynu w prawym stawie skroniowo-żuchwowym."
+  },
+  {
+   "err": 56,
+   "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+   "hyp": "Stan po repartitotomii prawostronnej z powodu zmian w nowowillomiejscowej ACCA."
+  },
+  {
+   "err": 55,
+   "ref": "Aktualnie wznowa w loży po lewym płacie wielkości około 1 mm.",
+   "hyp": "Aktualnie osnowa w loży po lewej ma wielkość około jednego milimetra."
+  },
+  {
+   "err": 53,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "W badaniu dopplerowskim unaczynienie płata prawidłowe. Patologicznie odbiegających węzłów chłonnych z dużym naczynieniem obustronnie nie zobrazowano."
+  },
+  {
+   "err": 52,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "Płat prawy o wielkości 22 na 18 na 57 milimetrów, objętości 12 mililitrów, płat lewy wielkości 19 na 22 na 54 milimetry, objętości 11 i 7 mililitra. Cieśń wielkości do 7 milimetrów."
+  },
+  {
+   "err": 50,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne niepowiększone."
+  },
+  {
+   "err": 50,
+   "ref": "Fałdy głosowe wydają się ustawione symetrycznie, fałd nalewkowo-nagłośniowy lewy jest niepogrubiały.",
+   "hyp": "Fałdy głosowe wydają się ustawione symetrycznie. Fałd na lewo od fałdu głosowego lewego jest niepogrubiały."
+  },
+  {
+   "err": 50,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja zdjęciowa w PAST-ie."
+  },
+  {
+   "err": 50,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja zdjęciowa z prac."
+  }
+ ],
+ "model": "gemini-3.5-flash",
+ "lm": null,
+ "finished": "2026-11-18T00:00:52+01:00",
+ "decoding": "API generateContent, neutralna instrukcja „przepisz dosłownie”, bez słownictwa"
+}
