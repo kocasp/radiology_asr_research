@@ -10,22 +10,29 @@
 > **Wersja wstępna (2026-11-17):** wyniki modeli otwartych są kompletne; usługi chmurowe
 > i dwa najnowsze modele (Cohere Transcribe, NVIDIA Nemotron 3.5) są w toku.
 
-Porównane zostały gotowe systemy rozpoznawania mowy (ASR) na polskich frazach z opisów diagnostyki
-obrazowej. Zbiór testowy to 939 nagrań głosu naturalnego (2,69 h, 14 mówców, USG tarczycy oraz
-radiologia głowy i szyi) z publicznego korpusu ADMEDVOICE. Poza WER i CER mierzone są błędy w trzech
+Porównane zostały gotowe systemy automatycznego rozpoznawania mowy (ASR, ang. *automatic speech
+recognition*) na polskich frazach z opisów diagnostyki
+obrazowej. Zbiór testowy to 939 nagrań głosu naturalnego (2,69 h, 14 mówców, ultrasonografia (USG) tarczycy oraz
+radiologia głowy i szyi) z publicznego korpusu ADMEDVOICE. Poza WER (ang. *word error rate*: odsetek słów rozpoznanych błędnie, czyli
+podmienionych, pominiętych lub wstawionych, względem liczby słów w tekście wzorcowym) i CER (ang.
+*character error rate*: to samo liczone na znakach) mierzone są błędy w trzech
 kategoriach istotnych klinicznie (liczby i wymiary, zaprzeczenia, strona ciała) oraz wstawki słów,
 których nie było w nagraniu.
 
 Wśród 10 modeli otwartych uruchamianych lokalnie (12 konfiguracji, w tym warianty z modelem
 językowym i kontrola negatywna) najlepszy jest **Whisper large-v3: WER 8,0%**
-(95% CI 7,4–8,7), z błędami w 2,5–2,8% liczb, zaprzeczeń i określeń strony. Nowsze modele z lat
+(95% przedział ufności, CI: 7,4–8,7), z błędami w 2,5–2,8% liczb, zaprzeczeń i określeń strony. Nowsze modele z lat
 2025–2026 (NVIDIA Canary-1B-v2, Parakeet-TDT-0.6B-v3, Qwen3-ASR-1.7B) osiągają WER 18–22%. Ich
 słabości są różne: modele NVIDIA tracą głównie na zapisie liczb, a Qwen3-ASR na zaprzeczeniach
-i stronie ciała (10–14% błędów). Modele CTC bez modelu językowego (wav2vec2, MMS) mają WER 35–58%;
-ogólny polski model językowy obniża go o 3–6 punktów.
+i stronie ciała (10–14% błędów). Modele CTC (ang. *connectionist temporal classification*: wybierają literę
+dla każdego fragmentu dźwięku osobno, bez wbudowanej wiedzy o języku) bez modelu językowego (wav2vec2,
+Meta MMS, ang. *Massively Multilingual Speech*) mają WER 35–58%;
+ogólny polski model językowy obniża go o 3–6 punktów procentowych (p.p.), czyli
+względnie o ok. 9%.
 
 Ustalenie metodologiczne: modele dotrenowane na ADMEDVOICE znają frazy testowe. Opublikowany adapter
-LoRA osiąga na zbiorze testowym WER 1,46% wobec 13,9% deklarowanych przez autorów, a jeden z mówców
+LoRA (ang. *low-rank adaptation*: dotrenowanie niewielkich dodatkowych macierzy zamiast całego
+modelu) osiąga na zbiorze testowym WER 1,46% wobec 13,9% deklarowanych przez autorów, a jeden z mówców
 ma 60 nagrań bez żadnego błędu. Takie modele zostały wykluczone z porównania. Korpusu ADMEDVOICE nie
 należy używać jako testu dla modeli trenowanych na jego tekstach.
 
@@ -59,8 +66,8 @@ zmieniają znaczenie kliniczne i lekarz może ich nie zauważyć:
 Korpus opisano w artykule Czyżewski i in., *A Comprehensive Polish Medical Speech Dataset for
 Enhancing Automatic Medical Dictation*, Scientific Data 12:1436 (2025),
 [doi:10.1038/s41597-025-05776-1](https://doi.org/10.1038/s41597-025-05776-1),
-[PMC12357909](https://europepmc.org/articles/PMC12357909). Zespół pochodzi z Politechniki Gdańskiej
-i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4/0003/2022).
+[PMC12357909](https://europepmc.org/articles/PMC12357909) (PubMed Central). Zespół pochodzi z Politechniki Gdańskiej
+i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało Narodowe Centrum Badań i Rozwoju (NCBR, grant INFOSTRATEG4/0003/2022).
 
 **Jak powstał model.** Opis pochodzi z artykułu, karty modelu na Kaggle, notebooka autora oraz z
 plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.json`,
@@ -77,7 +84,7 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
   | `lora_alpha` | 32 |
   | `lora_dropout` | 0,05 |
   | moduły docelowe | `q_proj`, `v_proj` |
-  | biblioteka | PEFT |
+  | biblioteka | PEFT (ang. *parameter-efficient fine-tuning*, biblioteka Hugging Face) |
 
   Karta podaje 4,7M trenowanych parametrów, czyli około 0,6% modelu.
 - **Parametry treningu według artykułu:**
@@ -88,8 +95,8 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
   | Batch | 64 |
   | Learning rate | 1e-5 |
   | Wybór checkpointu | najniższy WER na walidacji |
-  | Sprzęt | 1× NVIDIA A100 (PLGrid), do 48 h na przebieg |
-  | Biblioteki | PyTorch 2.5, transformers 4.48, HF datasets |
+  | Sprzęt | 1× NVIDIA A100 (karta graficzna, GPU) w PLGrid (polska infrastruktura obliczeniowa dla nauki), do 48 h na przebieg |
+  | Biblioteki | PyTorch 2.5, transformers 4.48, Hugging Face (HF) datasets |
   | Audio | próbkowanie 16 kHz; nagrania dłuższe niż 30 s usunięte |
 
 - **Parametry treningu według logów (`trainer_state.json`)** różnią się od artykułu:
@@ -111,7 +118,7 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
 
   | Zbiór | Train | Val | Test |
   |---|---|---|---|
-  | N+A+S (łącznie) | 34 900 próbek (58 h) | 2 492 (4 h) | 12 468 (21 h) |
+  | N+A+S (natural + anonymized + synthetic, łącznie) | 34 900 próbek (58 h) | 2 492 (4 h) | 12 468 (21 h) |
   | Natural | 7 404 (9,6 h) | 529 | 2 645 (3,4 h) |
 
   W zbiorze testowym każda unikalna fraza pojawia się średnio 4,6 razy.
@@ -133,7 +140,8 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
 - **Publikacja:** model na Kaggle `msxksm/whisper-medium-medical-pl` (Apache 2.0) i notebook
   `msxksm/transcribe-medical-pl-whisper-medium`. Wersja dla whisper.cpp to HF
   `fwasil162/whisper-medium-medical-pl-ggml`: adapter scalony z modelem bazowym, przekonwertowany
-  do formatu ggml i skwantyzowany do q5_0 (514 MB). To repozytorium nie jest od autorów korpusu.
+  do formatu ggml (format modeli biblioteki whisper.cpp) i skwantyzowany do q5_0 (wagi zapisane
+  w ok. 5 bitach) — 514 MB. To repozytorium nie jest od autorów korpusu.
 
 **Luki i niespójności istotne dla niniejszego badania:**
 - **Artykuł raportuje zagregowany WER.** Nie zawiera on podziału błędów na typy ani oceny ich
@@ -151,7 +159,8 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
 
 ### 2.2 Inne prace
 
-- Kurowski, Zaporowski, Kostek, Czyżewski (ISD 2025/2026): porównują metody PEFT (LoRA, DoRA, MoRA)
+- Kurowski, Zaporowski, Kostek, Czyżewski (ISD, International Conference on Information Systems
+  Development 2025/2026): porównują metody PEFT (LoRA, DoRA, MoRA)
   na Whisper small, oceniając je na teście ADMEDVOICE.
   *TODO: przeczytać i opisać.*
 
@@ -161,13 +170,14 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
 
 Polskie nagrania medyczne z korpusu **ADMEDVOICE**:
 - Kaggle `karmarci/polish-medical-multi-source-corpus`,
-- DOI 10.34740/kaggle/ds/6698205,
-- licencja CC BY 4.0.
+- DOI (cyfrowy identyfikator obiektu) 10.34740/kaggle/ds/6698205,
+- licencja CC BY 4.0 (Creative Commons, uznanie autorstwa).
 
 Korpus zawiera 52 990 nagrań (88:19 h, dane autorów) w trzech wariantach:
 - **naturalny** głos ludzki,
-- **zanonimizowany**, czyli głos ludzki po konwersji metodą SALT,
-- **syntetyczny**, wygenerowany przez TTS.
+- **zanonimizowany**, czyli głos ludzki po konwersji metodą SALT (konwersja barwy głosu użyta
+  przez autorów korpusu),
+- **syntetyczny**, wygenerowany przez syntezator mowy (TTS, ang. *text-to-speech*).
 
 Nagrania to czytane krótkie frazy, a nie spontaniczne dyktowanie całych opisów.
 
@@ -175,7 +185,8 @@ Nagrania to czytane krótkie frazy, a nie spontaniczne dyktowanie całych opisó
 
 Z ośmiu kategorii tematycznych korpusu pozostawione zostały dwie radiologiczne:
 - `02-001`: radiologia tarczycy, czyli frazy z opisów USG,
-- `02-003`: radiologia głowy i szyi, w tym frazy z opisów TK i MR.
+- `02-003`: radiologia głowy i szyi, w tym frazy z opisów tomografii komputerowej (TK)
+  i rezonansu magnetycznego (MR).
 
 Pozostałe kategorie (onkologia, kardiologia, resuscytacja, zalecenia, skierowania) zostały usunięte,
 ponieważ nie są diagnostyką obrazową.
@@ -187,7 +198,7 @@ ponieważ nie są diagnostyką obrazową.
 | syntetyczny | 1 740 | 6 | 290 | 2,89 |
 | **Razem** | **7 643** | | **857** | **18,2** |
 
-Długość nagrań została wyliczona z nagłówków WAV. Frazy mają od 2 do 46 słów, średnio 15,8.
+Długość nagrań została wyliczona z nagłówków plików WAV (nieskompresowany format audio). Frazy mają od 2 do 46 słów, średnio 15,8.
 
 **Zbiór oceniający to wyłącznie nagrania naturalne.** Warianty zanonimizowany i syntetyczny służą
 jako warunki porównawcze, bo pozwalają sprawdzić, czy przetworzony lub sztuczny głos zmienia
@@ -196,7 +207,7 @@ liczbę i rodzaj błędów modelu.
 ### 3.3 Budowa bazy
 
 Skrypt `scripts/build_radiology_db.py` zbudował bazę SQLite (`recordings/radiology.sqlite`) oraz
-pliki CSV (`metadata.csv`, `phrases.csv`). Dla każdego nagrania baza zawiera:
+pliki CSV (tabele tekstowe z wartościami rozdzielonymi przecinkami: `metadata.csv`, `phrases.csv`). Dla każdego nagrania baza zawiera:
 - transkrypcję referencyjną,
 - mówcę i jego płeć,
 - miejsce nagrania i mikrofon,
@@ -215,11 +226,11 @@ pliki CSV (`metadata.csv`, `phrases.csv`). Dla każdego nagrania baza zawiera:
 | `category_code`, `category` | `02-001` radiologia tarczycy (USG) / `02-003` radiologia głowa–szyja. |
 | `speaker_id` | `AMV…` człowiek, `ANI…` głos zanonimizowany, `SYN…` głos syntetyczny. |
 | `speaker_sex`, `speaker_age` | `F`/`M` i wiek; puste dla anonymized. |
-| `rec_place` | `GU…` pomieszczenia GUMed, `PG…` studio, `UNKNV` nagranie online, `SPGEN` syntezator. |
+| `rec_place` | `GU…` pomieszczenia Gdańskiego Uniwersytetu Medycznego (GUMed), `PG…` studio, `UNKNV` nagranie online, `SPGEN` syntezator. |
 | `mic_code`, `mic` | Mikrofon, np. `NTG2` = RODE NTG-2, `ONLN` = online, `MODE` = synteza. |
-| `text_id` | ID tekstu; klucz obcy do `phrases`. |
+| `text_id` | Identyfikator (ID) tekstu; klucz obcy do `phrases`. |
 | `phrase_group` | Grupa identycznych tekstów (patrz „Problemy z danymi” niżej). |
-| `phrase` | **Transkrypcja referencyjna** (spacje znormalizowane, Unicode NFC). |
+| `phrase` | **Transkrypcja referencyjna** (spacje znormalizowane, Unicode NFC — kanoniczna postać złożona znaków). |
 | `duration_s`, `sample_rate`, `bit_depth`, `channels` | Odczytane z nagłówka WAV. |
 | `mos_pred`, `grade`, `comments` | Jakość nagrania i uwagi z metadanych korpusu. |
 | `recorded_at` | Data z nazwy pliku. W 23 nagraniach anonymized jest to zastępczy ciąg w rodzaju `03753T000000`, a nie data. |
@@ -246,11 +257,12 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 
 ### 3.4 Powtórzenia i ryzyko przecieku między zbiorami
 
-- **Identycznych plików nie ma.** Zostało to sprawdzone hashem MD5 próbek audio, z pominięciem
+- **Identycznych plików nie ma.** Zostało to sprawdzone skrótem kryptograficznym MD5 próbek audio, z pominięciem
   nagłówka WAV.
 - **449 nagrań zanonimizowanych to przekonwertowane nagrania naturalne.** Zostały dopasowane po
   `text_id` i identycznym znaczniku czasu w nazwie pliku. Potwierdza to korelacja obwiedni głośności:
-  - liczona jako korelacja Pearsona log-RMS w ramkach 10 ms,
+  - liczona jako korelacja Pearsona logarytmu średniej kwadratowej amplitudy (log-RMS)
+    w ramkach 10 ms,
   - dla kandydatów o tej samej długości (±50 ms) wynosi zwykle ponad 0,9,
   - dla 200 losowych par z tym samym tekstem mediana wynosi 0,21.
 
@@ -278,9 +290,11 @@ Testowane są rozwiązania, które radiolog lub szpital może dziś wdrożyć be
   - Whisper medium (model bazowy z publikacji ADMEDVOICE), large-v3-turbo i large-v3,
   - modele z lat 2025–2026 z deklarowaną obsługą polskiego: NVIDIA Canary-1B-v2,
     NVIDIA Parakeet-TDT-0.6B-v3, Qwen3-ASR-1.7B, Cohere Transcribe 03-2026,
-    NVIDIA Nemotron 3.5 Transcribe (wymaga wynajętego GPU), Meta Omnilingual ASR,
+    NVIDIA Nemotron 3.5 Transcribe (wymaga wynajętej karty graficznej), Meta Omnilingual ASR,
   - NVIDIA FastConformer PL,
-  - wav2vec2 XLSR-53 Polish i Meta MMS-1b-all, każdy bez modelu językowego i z ogólnym polskim KenLM,
+  - wav2vec2 XLSR-53 Polish (XLSR, ang. *cross-lingual speech representations*) i Meta MMS-1b-all,
+    każdy bez modelu językowego (LM, ang. *language model*) i z ogólnym polskim KenLM
+    (n-gramowy model językowy),
   - Google MedASR (model tylko angielski, jako kontrola negatywna).
 - **Usługi chmurowe (online):**
   - ElevenLabs Scribe v2,
@@ -314,7 +328,8 @@ takiego modelu na ADMEDVOICE nie mierzy więc rozpoznawania nowej mowy.
 Audio jest przepróbkowane do 16 kHz mono (soxr).
 
 **Dekodowanie (identyczne w obrębie rodziny modeli, bez promptów i słowników):**
-- Whisper: transformers, greedy, `language="pl"`, `task="transcribe"`, batch 8, fp16 na MPS.
+- Whisper: transformers, dekodowanie zachłanne (greedy), `language="pl"`, `task="transcribe"`, batch 8,
+  połówkowa precyzja (fp16) na GPU Maca (MPS, ang. *Metal Performance Shaders*).
 - Modele CTC (wav2vec2, MMS): greedy. Warianty „+ KenLM” używają beam search (pyctcdecode) z ogólnym
   polskim 5-gramowym modelem językowym z repozytorium `jonatasgrosman/wav2vec2-large-xlsr-53-polish`.
   Ten model językowy pochodzi z 2021 roku, czyli sprzed ADMEDVOICE, i nie zawiera np. słowa
@@ -343,7 +358,8 @@ Liczby **nie** są zamieniane na słowa, bo w opisie badania oczekiwane są cyfr
   - strona ciała (prawy/lewy we wszystkich formach).
 - **Wstawki ≥3:** miejsca, w których model wstawił co najmniej 3 słowa, których nie było (przybliżenie
   halucynacji).
-- **RTF:** czas przetwarzania podzielony przez długość audio (MacBook M1 Pro, 16 GB).
+- **RTF** (ang. *real-time factor*): czas przetwarzania podzielony przez długość audio (MacBook M1 Pro,
+  16 GB pamięci operacyjnej).
 
 **Dane wynikowe:**
 - `results/<model>/hyp.jsonl`: surowe transkrypcje;
@@ -410,7 +426,7 @@ rozpoznanych tokenów w danej kategorii (n = 1 990 / 399 / 599 tokenów w refere
 | jiwer | z `eval/uv.lock` | WER, CER, wyrównanie |
 | pyctcdecode + kenlm | 0.5.0 | dekodowanie CTC z modelem językowym |
 | num2words | z `eval/uv.lock` | metryka WER-N |
-| Sprzęt | MacBook Pro M1 Pro, 16 GB RAM | wszystkie przebiegi offline |
+| Sprzęt | MacBook Pro M1 Pro, 16 GB pamięci operacyjnej (RAM) | wszystkie przebiegi offline |
 
 Odtworzenie danych:
 1. pobranie ADMEDVOICE z Kaggle i rozpakowanie go do `recordings/`,

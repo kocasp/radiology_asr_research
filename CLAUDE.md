@@ -45,6 +45,8 @@ Przy pisaniu pilnuj, żeby:
   jeśli to wnosi coś do publikacji (np. „podejście X zawyżało WER, bo…”).
 - **Liczby pochodziły z pomiarów, a nie z przeczucia.** Oddzielaj to, co zweryfikowane, od tego, co
   deklarują autorzy modeli lub korpusów.
+- **Każdy skrót był rozwinięty i wyjaśniony przy pierwszym użyciu**, np. „WER (ang. *word error rate*:
+  odsetek błędnie rozpoznanych słów)”. Dotyczy też nazw technicznych (LoRA, CTC, KenLM, fp16).
 - **README był pisany w formie bezosobowej:** „porównane zostały”, „zmierzono”, a nie „porównaliśmy”,
   „mierzymy”, i bez trybu rozkazującego („należy pobrać”, a nie „pobierz”).
 - **README był pisany stylem artykułu:** wnioski na początku, potem metoda i wyniki, potem ograniczenia.
