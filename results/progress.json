@@ -1,0 +1,3623 @@
+{
+ "title": "Błędy modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej",
+ "updated": "2026-11-17T03:03:28+01:00",
+ "state": "idle",
+ "smoke": false,
+ "test_set": {
+  "n": 939,
+  "hours": 2.69,
+  "speakers": 14,
+  "desc": "ADMEDVOICE, radiologia (02-001 tarczyca, 02-003 głowa–szyja), tylko głos naturalny"
+ },
+ "env": {
+  "machine": "arm64 · macOS-15.0.1-arm64-arm-64bit",
+  "python": "3.12.16"
+ },
+ "plan": [
+  {
+   "id": "whisper-medium",
+   "name": "Whisper medium",
+   "group": "Model bazowy z publikacji ADMEDVOICE",
+   "mode": "offline",
+   "params": "769M",
+   "model": "openai/whisper-medium",
+   "note": "Model bazowy z artykułu (deklarowany WER 24,0 na teście natural).",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "whisper-large-v3-turbo",
+   "name": "Whisper large-v3-turbo",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "809M",
+   "model": "openai/whisper-large-v3-turbo",
+   "note": null,
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "whisper-large-v3",
+   "name": "Whisper large-v3",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "1,55B",
+   "model": "openai/whisper-large-v3",
+   "note": null,
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "nemo-fastconformer-pl",
+   "name": "NVIDIA FastConformer PL (hybrid, P&C)",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "115M",
+   "model": "nvidia/stt_pl_fastconformer_hybrid_large_pc",
+   "note": "Wymaga osobnego środowiska z NVIDIA NeMo.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "nvidia-canary-1b-v2",
+   "name": "NVIDIA Canary-1B-v2",
+   "group": "Open source SOTA 2025–2026 (offline)",
+   "mode": "offline",
+   "params": "978M",
+   "model": "nvidia/canary-1b-v2",
+   "note": "25 języków europejskich (w tym pl), CC-BY-4.0, sierpień 2025.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "nvidia-parakeet-tdt-v3",
+   "name": "NVIDIA Parakeet-TDT-0.6B-v3",
+   "group": "Open source SOTA 2025–2026 (offline)",
+   "mode": "offline",
+   "params": "600M",
+   "model": "nvidia/parakeet-tdt-0.6b-v3",
+   "note": "25 języków europejskich (w tym pl), automatyczne wykrywanie języka, CC-BY-4.0, sierpień 2025.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "qwen3-asr-1.7b",
+   "name": "Qwen3-ASR-1.7B",
+   "group": "Open source SOTA 2025–2026 (offline)",
+   "mode": "offline",
+   "params": "1,7B",
+   "model": "Qwen/Qwen3-ASR-1.7B",
+   "note": "30 języków (w tym pl), Apache-2.0, styczeń 2026.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "cohere-transcribe",
+   "name": "Cohere Transcribe 03-2026",
+   "group": "Open source SOTA 2025–2026 (offline)",
+   "mode": "offline",
+   "params": "?",
+   "model": "CohereLabs/cohere-transcribe-03-2026",
+   "note": "Apache-2.0, marzec 2026, tag pl.",
+   "leak_risk": null,
+   "status": "pending",
+   "reason": null
+  },
+  {
+   "id": "nemotron-3.5-transcribe",
+   "name": "NVIDIA Nemotron 3.5 Transcribe 30B-A4B",
+   "group": "Open source SOTA 2025–2026 (offline)",
+   "mode": "offline",
+   "params": "30B (4,3B aktywnych, MoE)",
+   "model": "nvidia/NVIDIA-Nemotron-3.5-Transcribe-30B-A4B",
+   "note": "40 języków (w tym pl), licencja OpenMDW-1.1, październik 2025/2026 — najnowszy model NVIDIA.",
+   "leak_risk": null,
+   "status": "pending",
+   "reason": null
+  },
+  {
+   "id": "omniasr-ctc-1b",
+   "name": "Meta Omnilingual ASR (CTC 1B)",
+   "group": "Open source SOTA 2025–2026 (offline)",
+   "mode": "offline",
+   "params": "1B",
+   "model": "facebook/omniASR-CTC-1B",
+   "note": "1600+ języków (w tym pl), Apache-2.0, listopad 2025. Wariant LLM-7B za duży na 16 GB RAM.",
+   "leak_risk": null,
+   "status": "pending",
+   "reason": null
+  },
+  {
+   "id": "wav2vec2-xlsr53-pl",
+   "name": "wav2vec2 XLSR-53 Polish (bez LM)",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "315M",
+   "model": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+   "note": null,
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "mms-1b-all-pol",
+   "name": "Meta MMS-1b-all (adapter pol, bez LM)",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "1B",
+   "model": "facebook/mms-1b-all",
+   "note": "Licencja CC-BY-NC 4.0.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "wav2vec2-xlsr53-pl-lm",
+   "name": "wav2vec2 XLSR-53 Polish + KenLM",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "315M + 5-gram LM",
+   "model": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+   "note": "Ogólny polski KenLM z repozytorium modelu (2021, sprzed ADMEDVOICE); beam search pyctcdecode.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "mms-1b-all-pol-lm",
+   "name": "Meta MMS-1b-all (pol) + KenLM",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "1B + 5-gram LM",
+   "model": "facebook/mms-1b-all",
+   "note": "Ten sam ogólny polski KenLM co dla wav2vec2. Licencja CC-BY-NC 4.0.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "google-medasr",
+   "name": "Google MedASR",
+   "group": "Open source (offline)",
+   "mode": "offline",
+   "params": "105M",
+   "model": "google/medasr",
+   "note": "KONTROLA NEGATYWNA: model tylko angielski (karta modelu). Oczekiwany wynik bliski 100% WER — sprawdza, czy metryka działa; nie jest kandydatem do polskiej radiologii.",
+   "leak_risk": null,
+   "status": "done",
+   "reason": null
+  },
+  {
+   "id": "elevenlabs-scribe",
+   "name": "ElevenLabs Scribe v2",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "scribe_v2",
+   "note": null,
+   "leak_risk": null,
+   "status": "blocked",
+   "reason": "Brak klucza ELEVENLABS_API_KEY."
+  },
+  {
+   "id": "openai-whisper-1",
+   "name": "OpenAI whisper-1",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "whisper-1",
+   "note": null,
+   "leak_risk": null,
+   "status": "blocked",
+   "reason": "Brak klucza OPENAI_API_KEY."
+  },
+  {
+   "id": "openai-gpt-4o-transcribe",
+   "name": "OpenAI gpt-4o-transcribe",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "gpt-4o-transcribe",
+   "note": null,
+   "leak_risk": null,
+   "status": "blocked",
+   "reason": "Brak klucza OPENAI_API_KEY."
+  },
+  {
+   "id": "deepgram-nova-3",
+   "name": "Deepgram Nova-3",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "nova-3",
+   "note": null,
+   "leak_risk": null,
+   "status": "blocked",
+   "reason": "Brak klucza DEEPGRAM_API_KEY."
+  },
+  {
+   "id": "speechmatics",
+   "name": "Speechmatics (pl) / Oak (medyczny)",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "enhanced",
+   "note": "Deklaruje polski i model medyczny Oak (październik 2026) — deklaracja producenta.",
+   "leak_risk": null,
+   "status": "pending",
+   "reason": null
+  },
+  {
+   "id": "soniox",
+   "name": "Soniox",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "stt-async",
+   "note": null,
+   "leak_risk": null,
+   "status": "pending",
+   "reason": null
+  },
+  {
+   "id": "assemblyai",
+   "name": "AssemblyAI Universal",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "universal",
+   "note": "W benchmarku BIGOS V2 (2024) jeden z dwóch najlepszych systemów dla polskiego.",
+   "leak_risk": null,
+   "status": "pending",
+   "reason": null
+  },
+  {
+   "id": "gemini-transcribe",
+   "name": "Google Gemini (transkrypcja przez LLM)",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "gemini-2.5/3.x",
+   "note": "Multimodalny LLM; prompt wyłącznie „przepisz dosłownie”.",
+   "leak_risk": null,
+   "status": "pending",
+   "reason": null
+  },
+  {
+   "id": "google-chirp",
+   "name": "Google Cloud STT Chirp",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "chirp_2/chirp_3",
+   "note": null,
+   "leak_risk": null,
+   "status": "blocked",
+   "reason": "Brak projektu i poświadczeń Google Cloud."
+  },
+  {
+   "id": "azure-speech",
+   "name": "Microsoft Azure AI Speech",
+   "group": "Chmura (online)",
+   "mode": "online",
+   "params": null,
+   "model": "pl-PL",
+   "note": null,
+   "leak_risk": null,
+   "status": "blocked",
+   "reason": "Brak klucza AZURE_SPEECH_KEY i regionu."
+  }
+ ],
+ "current": null,
+ "results": {
+  "whisper-medium": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 13.77,
+   "wer_ci": [
+    12.94,
+    14.64
+   ],
+   "cer": 3.94,
+   "cer_ci": [
+    3.55,
+    4.45
+   ],
+   "S": 1912,
+   "D": 188,
+   "I": 350,
+   "long_ins": 6,
+   "utt_perfect": 22.9,
+   "audio_s": 9672.5,
+   "proc_s": 686.8,
+   "rtf": 0.071,
+   "num_err": 4.1,
+   "num_n": 1990,
+   "neg_err": 2.5,
+   "neg_n": 399,
+   "side_err": 3.8,
+   "side_n": 599,
+   "wer_num": 13.12,
+   "wer_num_ci": [
+    12.32,
+    13.99
+   ],
+   "top_subs": [
+    [
+     "tirads",
+     "tirac",
+     54
+    ],
+    [
+     "echogeniczności",
+     "ekogeniczności",
+     36
+    ],
+    [
+     "miąższ",
+     "miąż",
+     36
+    ],
+    [
+     "chłonnych",
+     "wchłonnych",
+     15
+    ],
+    [
+     "okołotarczycowo",
+     "tarczycowo",
+     14
+    ],
+    [
+     "tirads",
+     "tiradz",
+     13
+    ],
+    [
+     "echostrukturze",
+     "strukturze",
+     12
+    ],
+    [
+     "echostrukturze",
+     "ekostrukturze",
+     12
+    ],
+    [
+     "gładkokonturowany",
+     "konturowany",
+     12
+    ],
+    [
+     "echogeniczność",
+     "ekogeniczność",
+     11
+    ],
+    [
+     "guzków",
+     "gózków",
+     10
+    ],
+    [
+     "tarczyca",
+     "torczyca",
+     10
+    ],
+    [
+     "płat",
+     "płot",
+     10
+    ],
+    [
+     "x",
+     "na",
+     9
+    ],
+    [
+     "cieśń",
+     "cieśnij",
+     9
+    ]
+   ],
+   "top_ins": [
+    [
+     "w",
+     32
+    ],
+    [
+     "około",
+     28
+    ],
+    [
+     "echo",
+     21
+    ],
+    [
+     "z",
+     13
+    ],
+    [
+     "gładko",
+     11
+    ],
+    [
+     "norma",
+     10
+    ],
+    [
+     "t",
+     10
+    ],
+    [
+     "hipo",
+     7
+    ],
+    [
+     "o",
+     7
+    ],
+    [
+     "nie",
+     6
+    ]
+   ],
+   "top_dels": [
+    [
+     "w",
+     14
+    ],
+    [
+     "tarczycy",
+     12
+    ],
+    [
+     "2",
+     11
+    ],
+    [
+     "o",
+     6
+    ],
+    [
+     "3",
+     5
+    ],
+    [
+     "4",
+     4
+    ],
+    [
+     "do",
+     4
+    ],
+    [
+     "cieśni",
+     4
+    ],
+    [
+     "tirads",
+     4
+    ],
+    [
+     "wiekości",
+     4
+    ]
+   ],
+   "worst": [
+    {
+     "err": 125,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "Dokumentacja jest z dyni Ciebie w fałszy."
+    },
+    {
+     "err": 100,
+     "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+     "hyp": "Prawy duch strzelował pod niebiennym wolnym."
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Dokumentacja z in�cia wachs."
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "Dokumentacja jest z dniego w Pax."
+    },
+    {
+     "err": 95,
+     "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+     "hyp": "Wnioski, obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+    },
+    {
+     "err": 93,
+     "ref": "Tarczyca dwupłatowa, mała. Miąższ niejednorodny, z pasmami zwłóknień, unaczynienie nie było wzmożone w opcji CD.",
+     "hyp": "Wystarczy to, że wersja jest wersją, która nie jest zbyt duża."
+    },
+    {
+     "err": 89,
+     "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+     "hyp": "Stan porepa rotytyk to mi prawo stronny z powodu wznowywilo miejscowej ACCCA."
+    },
+    {
+     "err": 83,
+     "ref": "Miąższ tarczycy nieco niejednorodny, o prawidłowej echogeniczności, o prawidłowym unaczynieniu w opcji color doppler, z pasmami zwłóknień. Okołotarczycowo obecne pojedyncze, niepowiększone węzły chłonne. Całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",
+     "hyp": "Całość obrazek w autoimmunologicznym zapaleniu tarczycy."
+    },
+    {
+     "err": 78,
+     "ref": "W płacie prawym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4 mm, TIRADS 4, bez wzmożonego przepływu.",
+     "hyp": "Płacie prawie na hipoechogen na dobrzy ograniczona zmiana w wielkości do 4,4 mm, tirac 4, bez zmożonowego przypływu."
+    },
+    {
+     "err": 75,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Dokumentacja z incewa paks."
+    },
+    {
+     "err": 74,
+     "ref": "Miąższ tarczycy niejednorodny, o obniżonej echogeniczności, z pasmami zwłóknień, bez cech wzmożenia przepływu w opcji CD. Obraz miąższu tarczycy jak w chorobie Hashimoto.",
+     "hyp": "Miałam tarczycy niejednorodne, o obniżonej echo-grężności, z pasami z włókli, bez cech wzmarniania przepływów optycy d. Obraz miał szukarczycy, jak porobie hażmowy."
+    },
+    {
+     "err": 73,
+     "ref": "Stan po leczeniu biologicznym. Borelioza w wywiadzie i choroba zwyrodnieniowa stawów.",
+     "hyp": "Stan pod leczem biologicznym. Borrelioza w wywiadzie i choroba z rady nie ma warstawów."
+    }
+   ],
+   "model": "openai/whisper-medium",
+   "lm": null,
+   "finished": "2026-11-16T23:16:22+01:00",
+   "decoding": "greedy, language=pl, task=transcribe"
+  },
+  "whisper-large-v3-turbo": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 9.75,
+   "wer_ci": [
+    9.1,
+    10.44
+   ],
+   "cer": 2.57,
+   "cer_ci": [
+    2.34,
+    2.84
+   ],
+   "S": 1325,
+   "D": 142,
+   "I": 267,
+   "long_ins": 3,
+   "utt_perfect": 33.7,
+   "audio_s": 9672.5,
+   "proc_s": 794.2,
+   "rtf": 0.082,
+   "num_err": 2.8,
+   "num_n": 1990,
+   "neg_err": 1.5,
+   "neg_n": 399,
+   "side_err": 2.8,
+   "side_n": 599,
+   "wer_num": 9.21,
+   "wer_num_ci": [
+    8.59,
+    9.89
+   ],
+   "top_subs": [
+    [
+     "color",
+     "kolor",
+     73
+    ],
+    [
+     "tirads",
+     "tirats",
+     53
+    ],
+    [
+     "tirads",
+     "tirac",
+     33
+    ],
+    [
+     "miąższ",
+     "miąż",
+     21
+    ],
+    [
+     "x",
+     "na",
+     14
+    ],
+    [
+     "miąższ",
+     "mioszcz",
+     14
+    ],
+    [
+     "okołotarczycowo",
+     "tarczycowo",
+     12
+    ],
+    [
+     "hipoechogenna",
+     "hipoehogenna",
+     12
+    ],
+    [
+     "tirads",
+     "tiratz",
+     12
+    ],
+    [
+     "miąższ",
+     "miążcz",
+     11
+    ],
+    [
+     "gładkokonturowany",
+     "konturowany",
+     11
+    ],
+    [
+     "torbielowato lita",
+     "torbielowa tolita",
+     10
+    ],
+    [
+     "jednej",
+     "1",
+     10
+    ],
+    [
+     "normoechogeniczna",
+     "echogeniczna",
+     9
+    ],
+    [
+     "wiekości",
+     "wielkości",
+     8
+    ]
+   ],
+   "top_ins": [
+    [
+     "w",
+     57
+    ],
+    [
+     "normo",
+     14
+    ],
+    [
+     "nie",
+     14
+    ],
+    [
+     "około",
+     13
+    ],
+    [
+     "gładko",
+     11
+    ],
+    [
+     "o",
+     10
+    ],
+    [
+     "u",
+     7
+    ],
+    [
+     "t",
+     6
+    ],
+    [
+     "z",
+     4
+    ],
+    [
+     "hipoechogen",
+     4
+    ]
+   ],
+   "top_dels": [
+    [
+     "w",
+     15
+    ],
+    [
+     "cieśni",
+     9
+    ],
+    [
+     "tirads",
+     7
+    ],
+    [
+     "płynowa",
+     7
+    ],
+    [
+     "tarczycy",
+     7
+    ],
+    [
+     "2",
+     6
+    ],
+    [
+     "3",
+     5
+    ],
+    [
+     "4",
+     5
+    ],
+    [
+     "tirads 2",
+     3
+    ],
+    [
+     "wzmożone",
+     3
+    ]
+   ],
+   "worst": [
+    {
+     "err": 95,
+     "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+     "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+    },
+    {
+     "err": 75,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "Dokumentacja jest dynczo w paź."
+    },
+    {
+     "err": 71,
+     "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+     "hyp": "Obecnie bez płynów prawie za do to szczękowej."
+    },
+    {
+     "err": 67,
+     "ref": "Stan po parotidektomii obustronnej, loże wolne.",
+     "hyp": "Stan poparodydektomii obustronnej lożę wolny."
+    },
+    {
+     "err": 65,
+     "ref": "Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji color doppler. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",
+     "hyp": "Poza tym miąż w tarczycy normo-echogennych i jednorodnych bez cech wzmożnia u naczynienia w opcji kolor dopler. Nie widać powiększonych węzłów chłonnych około tarczycowa."
+    },
+    {
+     "err": 65,
+     "ref": "Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji color doppler. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",
+     "hyp": "Poza tym miosz tarczycy normo-echogenny, jednorodny, bez tak zmurzenia u naczynienia w opcji kolor Doppler. Nie widać powięczonych węzłów wchłonych około tarczy sowa."
+    },
+    {
+     "err": 62,
+     "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+     "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne nie powiększone."
+    },
+    {
+     "err": 60,
+     "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+     "hyp": "Z badaniem doplerowskim u naczynienia płatów prawidłowe, patologicznych odbić węsłowych wzdłuż naczyń ślinnych obu strony nie zobrazowano."
+    },
+    {
+     "err": 60,
+     "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+     "hyp": "Prawy dół sprzedłowo pod niebiednym wolny."
+    },
+    {
+     "err": 59,
+     "ref": "Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji color doppler.",
+     "hyp": "Miał w tarczyce niejednorodny licznymi pasmami zwłóknień oraz obszarami hipojaźniennymi oską po unaczynieniu w opcji kolor do plej."
+    },
+    {
+     "err": 55,
+     "ref": "Stan po lewostronnej parotidektomii i reparotidektomii z powodu Acnic Cell Carcinoma.",
+     "hyp": "Stań po lewą stronie parodidyktomii i reparodidyktomii z powodu acne cell carcinoma."
+    },
+    {
+     "err": 53,
+     "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+     "hyp": "W badaniu Dopplerowskim u naczynie niepotoprawidłowe patologicznej odbić węzłowych wzdłuż na częściach obustronnymi zobrazowano."
+    }
+   ],
+   "model": "openai/whisper-large-v3-turbo",
+   "lm": null,
+   "finished": "2026-11-16T23:53:48+01:00",
+   "decoding": "greedy, language=pl, task=transcribe"
+  },
+  "whisper-large-v3": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 8.03,
+   "wer_ci": [
+    7.43,
+    8.73
+   ],
+   "cer": 2.17,
+   "cer_ci": [
+    1.92,
+    2.44
+   ],
+   "S": 1085,
+   "D": 142,
+   "I": 202,
+   "long_ins": 2,
+   "utt_perfect": 39.6,
+   "audio_s": 9672.5,
+   "proc_s": 1348.9,
+   "rtf": 0.139,
+   "num_err": 2.8,
+   "num_n": 1990,
+   "neg_err": 2.8,
+   "neg_n": 399,
+   "side_err": 2.5,
+   "side_n": 599,
+   "wer_num": 7.61,
+   "wer_num_ci": [
+    7.03,
+    8.27
+   ],
+   "top_subs": [
+    [
+     "tirads",
+     "tirac",
+     41
+    ],
+    [
+     "tirads",
+     "tirats",
+     37
+    ],
+    [
+     "color",
+     "kolor",
+     29
+    ],
+    [
+     "okołotarczycowo",
+     "tarczycowo",
+     16
+    ],
+    [
+     "tirads",
+     "tiras",
+     15
+    ],
+    [
+     "gładkokonturowany",
+     "konturowany",
+     12
+    ],
+    [
+     "lito",
+     "litopłynowa",
+     10
+    ],
+    [
+     "okołotarczycowe",
+     "tarczycowe",
+     10
+    ],
+    [
+     "miąższ",
+     "miosz",
+     10
+    ],
+    [
+     "guzki",
+     "głuski",
+     9
+    ],
+    [
+     "miąższ",
+     "miąż",
+     9
+    ],
+    [
+     "pacs",
+     "pax",
+     9
+    ],
+    [
+     "z",
+     "starczycy",
+     9
+    ],
+    [
+     "torbielowato",
+     "to",
+     8
+    ],
+    [
+     "cieśń",
+     "cieść",
+     8
+    ]
+   ],
+   "top_ins": [
+    [
+     "około",
+     35
+    ],
+    [
+     "w",
+     18
+    ],
+    [
+     "gładko",
+     12
+    ],
+    [
+     "torbielowa",
+     6
+    ],
+    [
+     "hipoechogen",
+     5
+    ],
+    [
+     "doplerowskim",
+     4
+    ],
+    [
+     "o",
+     4
+    ],
+    [
+     "z",
+     4
+    ],
+    [
+     "i",
+     4
+    ],
+    [
+     "hipoechogeny",
+     4
+    ]
+   ],
+   "top_dels": [
+    [
+     "w",
+     12
+    ],
+    [
+     "tarczycy",
+     11
+    ],
+    [
+     "płynowa",
+     10
+    ],
+    [
+     "cieśni",
+     8
+    ],
+    [
+     "2",
+     8
+    ],
+    [
+     "4",
+     6
+    ],
+    [
+     "wzmożone",
+     5
+    ],
+    [
+     "tirads",
+     4
+    ],
+    [
+     "wiekości",
+     4
+    ],
+    [
+     "3",
+     3
+    ]
+   ],
+   "worst": [
+    {
+     "err": 100,
+     "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+     "hyp": "Prawy duch strzydłował pod niebiednym wolnym."
+    },
+    {
+     "err": 95,
+     "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+     "hyp": "Wnioski, obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+    },
+    {
+     "err": 75,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Dokumentacja z niczego w Pax."
+    },
+    {
+     "err": 67,
+     "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+     "hyp": "W badaniu Doplerowskim o naczynienie płotu prawidłowe patologicznej odbyć węzłowych wzdłuż na częściach obustronnymi zobrazowano."
+    },
+    {
+     "err": 67,
+     "ref": "Stan po parotidektomii obustronnej, loże wolne.",
+     "hyp": "Stan poparodydektomii obustronnej loża wolna."
+    },
+    {
+     "err": 63,
+     "ref": "Zmiana dominująca w płacie prawym, TIRADS 2, o stabilnej wielkości. Do obserwacji pozostaje ognisko w płacie prawym, TIRADS 4.",
+     "hyp": "Zmiana dominująca w płacie prawym, tirac 2, o stabilnej wielkości. Do obserwacji pozostaje ognisko w płacie prawym, tirac 4. Zmiana dominująca w płacie prawym, tirac 2, o stabilnej wielkości."
+    },
+    {
+     "err": 62,
+     "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+     "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne nie powiększone."
+    },
+    {
+     "err": 60,
+     "ref": "Tłuszczowo przebudowana ślinianka podżuchwowa prawa.",
+     "hyp": "Łódczowo przebudowana ślinianka pod żuchwowa prawa."
+    },
+    {
+     "err": 58,
+     "ref": "Fałdy głosowe wydają się ustawione symetrycznie, fałd nalewkowo-nagłośniowy lewy jest niepogrubiały.",
+     "hyp": "VD głosowe wydają się ustawione symetrycznie. VD na lewkowe nagłośniowe lewe jest niepogrobiały."
+    },
+    {
+     "err": 57,
+     "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+     "hyp": "obecnie bez płynów prawie za to szczękowej."
+    },
+    {
+     "err": 53,
+     "ref": "Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji color doppler.",
+     "hyp": "Miał w tarczycy niejednorodne z licznymi pasmami zwłóknień oraz obszarami hipojachodemnymi, bo skąd po unaczynieniu w opcji kolor doper."
+    },
+    {
+     "err": 50,
+     "ref": "Tarczyca o atroficznym miąższu, zmiany ogniskowe, TIRADS 4, do okresowej kontroli USG.",
+     "hyp": "Tarczyca o atroficznym miąższu, zmiany obniżkowe, TIR-S4, dogresowe kontroli WSG."
+    }
+   ],
+   "model": "openai/whisper-large-v3",
+   "lm": null,
+   "finished": "2026-11-17T00:18:28+01:00",
+   "decoding": "greedy, language=pl, task=transcribe"
+  },
+  "wav2vec2-xlsr53-pl": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 58.31,
+   "wer_ci": [
+    56.67,
+    59.69
+   ],
+   "cer": 30.68,
+   "cer_ci": [
+    28.38,
+    33.0
+   ],
+   "S": 8279,
+   "D": 656,
+   "I": 1436,
+   "long_ins": 121,
+   "utt_perfect": 3.4,
+   "audio_s": 9672.5,
+   "proc_s": 680.0,
+   "rtf": 0.07,
+   "num_err": 100.0,
+   "num_n": 1990,
+   "neg_err": 23.8,
+   "neg_n": 399,
+   "side_err": 25.5,
+   "side_n": 599,
+   "wer_num": 41.08,
+   "wer_num_ci": [
+    39.83,
+    42.25
+   ],
+   "top_subs": [
+    [
+     "hipoechogenna",
+     "ehogenna",
+     36
+    ],
+    [
+     "miąższ",
+     "miąż",
+     30
+    ],
+    [
+     "autoimmunologicznym",
+     "munologicznym",
+     25
+    ],
+    [
+     "węzłów",
+     "węzów",
+     19
+    ],
+    [
+     "dwupłatowa",
+     "płatowa",
+     18
+    ],
+    [
+     "4 mm",
+     "cztery milimetry",
+     15
+    ],
+    [
+     "2 mm",
+     "dwóch milimetrów",
+     14
+    ],
+    [
+     "3 mm",
+     "trzech milimetrów",
+     14
+    ],
+    [
+     "tarczycy",
+     "tarczyce",
+     14
+    ],
+    [
+     "echogeniczności",
+     "ehograniczności",
+     12
+    ],
+    [
+     "opcji color doppler",
+     "obcji kolor dopler",
+     12
+    ],
+    [
+     "echogeniczności",
+     "ehoganiczności",
+     11
+    ],
+    [
+     "echostruktura",
+     "struktura",
+     11
+    ],
+    [
+     "poniżej",
+     "niżej",
+     11
+    ],
+    [
+     "autoimmunologicznego",
+     "munologicznego",
+     10
+    ]
+   ],
+   "top_ins": [
+    [
+     "hipo",
+     59
+    ],
+    [
+     "auto i",
+     34
+    ],
+    [
+     "około",
+     24
+    ],
+    [
+     "nie",
+     24
+    ],
+    [
+     "dwanaście",
+     17
+    ],
+    [
+     "dwu",
+     17
+    ],
+    [
+     "echo",
+     16
+    ],
+    [
+     "po",
+     15
+    ],
+    [
+     "z",
+     14
+    ],
+    [
+     "czternaście",
+     13
+    ]
+   ],
+   "top_dels": [
+    [
+     "mm",
+     53
+    ],
+    [
+     "tarczycy",
+     42
+    ],
+    [
+     "w",
+     25
+    ],
+    [
+     "doppler",
+     19
+    ],
+    [
+     "2",
+     17
+    ],
+    [
+     "prawym",
+     13
+    ],
+    [
+     "color doppler",
+     11
+    ],
+    [
+     "szyi",
+     9
+    ],
+    [
+     "cd",
+     9
+    ],
+    [
+     "echogeniczności",
+     9
+    ]
+   ],
+   "worst": [
+    {
+     "err": 122,
+     "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+     "hyp": "stan po repard tyktowie prawostrony st powodów znowy willo miejscowej acer- cece a"
+    },
+    {
+     "err": 117,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "płet prawy wiekości dwadzieścia dwana osiemnaście na pięćdziesiąt siedym mili metrów o piętość dwanaście mili litrów płat lewy wielkości dziewiętnaścia na dwadzieścia dwana pięćdziesiąt cztedy mili metry o pięto jedenaście przecinek siedem mii litra cieśni wielkości do siedmiy mili metrów"
+    },
+    {
+     "err": 114,
+     "ref": "Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",
+     "hyp": "wymiary tarcziece płat prawy siedemnaście na siedemnaście na pięćdziesiąt siedem milimetrów objętość osiem i sześć mili litra płat lewy piętnaście na szesnaście na pięćdziesiąt trzy milimery objętość sześć i sześć milim litra ceśń to trzech mili metrów"
+    },
+    {
+     "err": 111,
+     "ref": "Wymiary tarczycy: płat prawy 21x15x50mm, objętość 8,1 ml płat lewy 14x17x47mm, objętość 5,8 ml cieśń 3mm.",
+     "hyp": "wymiary tarczycypłat prawy dwadzieścia jeden na piętnaście na pięćdziesiąt mili metrów objętość osiem przycinek jeden militra  płat lewy czternaście na siedemnaście na czterdzieści siedem milim metrów objątość pięć przecinek osiem militra cieśń trzy mili metry"
+    },
+    {
+     "err": 111,
+     "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+     "hyp": "wymiary tarczycy płac prawy dziewiętnaście na dwadzieścia na pięćdziesiąt pięć milimetrów  obiętość dziesięć i dziewięćdziesiątych mili litra płat lewy osiemnaście na osiemnaście na czterdzieści osiem milimetrów owiętość osiem i jeden na dziesiąta militra ceśń do czterech milimetrów"
+    },
+    {
+     "err": 110,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "płat prawy wielkości dwadzieścia dwana osiemnaście na pięćdziesiąt siedym mili metrów o piętość dwanaście mili litrów płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery mili metry o pięto siedenaście przycinek siedem mii litra cieśń wielkości do siedmiu mili metrów"
+    },
+    {
+     "err": 109,
+     "ref": "Stan po parotidektomii prawostronnej w 2013 roku z powodu raka zrazikowokomórkowego.",
+     "hyp": "stan po paru ditektomy prawo strony  dwa tysiące trzynastem roku z powodu roka z rezi kowo komorkowego"
+    },
+    {
+     "err": 107,
+     "ref": "Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,9 ml Cieśń: do 3 mm.",
+     "hyp": "wymiary płat prawy czternaście na dwanaście na czterdzieści pięć ilimetrów obiętość trzy i siedemdziesiątych mili litra płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów obiętość trzy i trzydziesiąte mili litra cieśń to trzech milimetrów"
+    },
+    {
+     "err": 107,
+     "ref": "Wymiary tarczycy: Płat prawy wielkości 14x14x41 mm, objętość 4,2 ml.",
+     "hyp": "wymiary tarczycy płat prawy wielkosi czternaście na czternascie na czterdziesci jeden milimetrów obie dość cztery i dwa mil witry"
+    },
+    {
+     "err": 107,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "wymiary płat prawe czternaście na dwanaście na czterdzieści pięć mili metrów o bjętość trzy i siedem mililitry  płat lewe dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy trzy mili litry cieśn o wilkości do trzech milimetrów"
+    },
+    {
+     "err": 107,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów o biętość dwanaście mili litrów płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry obiętość jedenaście i siedemdziesiątych mili litra dzieśni wielkości do siedmiu mili metrów"
+    },
+    {
+     "err": 104,
+     "ref": "Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",
+     "hyp": "wymiary tarczycy płat prawy dziewiętnaście na piętnaście na czterdzieście sześć milimetrów obiętość sześć i siedemdziesiątych mii litra płat lewy szesnaście na piętnaście na czterdzieści cztery milimetra obiętość pięć i pięćdziesiątych mili litra cieśń niepogrubiała i"
+    }
+   ],
+   "model": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+   "lm": null,
+   "finished": "2026-11-17T00:34:03+01:00",
+   "decoding": "greedy CTC, bez LM"
+  },
+  "mms-1b-all-pol": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 35.22,
+   "wer_ci": [
+    33.87,
+    36.48
+   ],
+   "cer": 13.17,
+   "cer_ci": [
+    11.96,
+    14.46
+   ],
+   "S": 4995,
+   "D": 570,
+   "I": 700,
+   "long_ins": 36,
+   "utt_perfect": 8.7,
+   "audio_s": 9672.5,
+   "proc_s": 847.2,
+   "rtf": 0.088,
+   "num_err": 57.3,
+   "num_n": 1990,
+   "neg_err": 6.3,
+   "neg_n": 399,
+   "side_err": 11.0,
+   "side_n": 599,
+   "wer_num": 27.46,
+   "wer_num_ci": [
+    26.46,
+    28.4
+   ],
+   "top_subs": [
+    [
+     "x",
+     "na",
+     215
+    ],
+    [
+     "x",
+     "n",
+     55
+    ],
+    [
+     "echogeniczności",
+     "ehogeniczności",
+     55
+    ],
+    [
+     "miąższ",
+     "miąż",
+     53
+    ],
+    [
+     "węzłów",
+     "węzów",
+     38
+    ],
+    [
+     "hipoechogenna",
+     "hipoehogenna",
+     29
+    ],
+    [
+     "wielkości",
+     "wielkoci",
+     25
+    ],
+    [
+     "color doppler",
+     "kolor dopler",
+     22
+    ],
+    [
+     "autoimmunologicznym",
+     "autoimunologicznym",
+     21
+    ],
+    [
+     "płacie",
+     "płecie",
+     20
+    ],
+    [
+     "echa",
+     "eha",
+     20
+    ],
+    [
+     "tirads",
+     "tirats",
+     19
+    ],
+    [
+     "tirads",
+     "tirac",
+     17
+    ],
+    [
+     "izoechogenna",
+     "izoehogenna",
+     17
+    ],
+    [
+     "miąższ",
+     "miż",
+     14
+    ]
+   ],
+   "top_ins": [
+    [
+     "w",
+     73
+    ],
+    [
+     "około",
+     31
+    ],
+    [
+     "u",
+     17
+    ],
+    [
+     "dwanaście",
+     14
+    ],
+    [
+     "z",
+     13
+    ],
+    [
+     "gąb",
+     12
+    ],
+    [
+     "1",
+     11
+    ],
+    [
+     "2",
+     10
+    ],
+    [
+     "auto",
+     8
+    ],
+    [
+     "cztery na",
+     8
+    ]
+   ],
+   "top_dels": [
+    [
+     "tarczycy",
+     49
+    ],
+    [
+     "x",
+     27
+    ],
+    [
+     "w",
+     26
+    ],
+    [
+     "doppler",
+     23
+    ],
+    [
+     "gładkich",
+     11
+    ],
+    [
+     "płacie",
+     9
+    ],
+    [
+     "2",
+     9
+    ],
+    [
+     "mm",
+     9
+    ],
+    [
+     "3",
+     8
+    ],
+    [
+     "o",
+     8
+    ]
+   ],
+   "worst": [
+    {
+     "err": 104,
+     "ref": "Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",
+     "hyp": "wymiary tarczycy płat prawy dziewiętnacie na piętnacie na czterdzieci szeć milme objętoć szeć i siedemdziesitch mililitra płat lewy szesnacie na piętnacie na czterdzieci cztery milm objętoć pięć i pięćdziesitch milimitra cień nie pogrubiała"
+    },
+    {
+     "err": 104,
+     "ref": "Wymiary: po stronie prawej wielkości 20x22x49 mm, objętość 11,5 ml po stronie lewej wielkości 37x36x57 mm, objętość 40,3 ml.",
+     "hyp": "wymiary po stronie prawej wielkoci dwadziecia na adzeca d nad zterdzecii mlimet objtoć jedenacie i pł mililitra po stronie lewej wielkoci trzydzieci siedem na trzydzieci szeć na pićdziesit siedem mlmetr objętoć czterdzieci i trzydziesit mllitra"
+    },
+    {
+     "err": 104,
+     "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+     "hyp": "wymiary tarczycy płat prawy dziewiętnacie na dwadziecia na pięćdziesit pięć milimetrów objętoć dziesięć i dziewięćdziesit mililitra płat lewy osiemnacie na osiemnacie na czterdzieci osiem milimetró objętoć osiem i jeden na dziesita mililitra cień do czterych milimetró"
+    },
+    {
+     "err": 100,
+     "ref": "Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",
+     "hyp": "wymiary tarczycy płat prawy siedemnacie na siedemnacie napdzest siede mlm objętoć o i ć mili litra płat lewy piętnacie na szesnacie na pizest trzy milimer objętoć szeć i szeć mili litra cień do trzech milimer"
+    },
+    {
+     "err": 100,
+     "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+     "hyp": "wymiary płatów tarczycy płat lewy w wiolkości dziesięć na osiem na trzydzieści cztery milime objętoś jeden i pół mililitra płat prawy wiolkości dwanaście na dziewięć na trzydzieści jeden milimetrów objętoś jeden i osiem milimitra"
+    },
+    {
+     "err": 100,
+     "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+     "hyp": "wymiary i objętoć płat prawy piętnacie na pięćdziesit siedem na szesnacie milimetró objętoć szeć i pięć dziesitc mililitra płat lewy dwanacie na czterdzieci pięć na omnacie milimetró objętoć cztery i pięćdziesit militra cień do dwó milimetró"
+    },
+    {
+     "err": 100,
+     "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+     "hyp": "miszu wyróżniajcych się zmian ogniskowych nie uwidoczniono okoliczne węzły chłonne nie powiększone"
+    },
+    {
+     "err": 100,
+     "ref": "Unaczynienie miąższu tarczycy prawidłowe.",
+     "hyp": "nacynianie miąsu tarcycy prawidłow"
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "dokumentacia ztin ciaba paks"
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "documentatia zinceawa pax"
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "dokumentacia s dinciowa w pac"
+    },
+    {
+     "err": 97,
+     "ref": "Wymiary i objętość - płat prawy wielkość 23x47x20 mm, objętość 10,3 ml - płat lewy wielkości 23x59x21 mm, objętość 13,4 ml -cieśń wielkości do 3 mm.",
+     "hyp": "wymiary i objętość płat prawy wielkoci dwadzieścia trzy na czterdzieci siedem na dwadziecia milimetr objętoć dziesięć i trzydziesit militra płat lewy wielkości dwadzieścia trzy na pięćdziesiąt dziewięć na dwadziecia jeden milimetr objętoć trzynaście i czterdziesit militra cieśniń w wielkości do trzech mm"
+    }
+   ],
+   "model": "facebook/mms-1b-all",
+   "lm": null,
+   "finished": "2026-11-17T00:48:26+01:00",
+   "decoding": "greedy CTC, bez LM"
+  },
+  "google-medasr": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 99.65,
+   "wer_ci": [
+    99.21,
+    100.08
+   ],
+   "cer": 80.48,
+   "cer_ci": [
+    79.48,
+    81.41
+   ],
+   "S": 8625,
+   "D": 8815,
+   "I": 284,
+   "long_ins": 41,
+   "utt_perfect": 0.0,
+   "audio_s": 9672.5,
+   "proc_s": 110.4,
+   "rtf": 0.011,
+   "num_err": 98.2,
+   "num_n": 1990,
+   "neg_err": 100.0,
+   "neg_n": 399,
+   "side_err": 100.0,
+   "side_n": 599,
+   "wer_num": 99.01,
+   "wer_num_ci": [
+    98.61,
+    99.4
+   ],
+   "top_subs": [
+    [
+     "w",
+     "unintelligible",
+     3
+    ],
+    [
+     "zmiany",
+     "unintelligible",
+     2
+    ],
+    [
+     "zmiany",
+     "30",
+     2
+    ],
+    [
+     "objętość 12",
+     "is 10",
+     2
+    ],
+    [
+     "w",
+     "in",
+     2
+    ],
+    [
+     "unaczynienie miąższu tarczycy prawidłowe",
+     "not theova ne preventionalpstidv",
+     1
+    ],
+    [
+     "nie widać powiększonych węzłów",
+     "nevituch prevention offullness occurtterval",
+     1
+    ],
+    [
+     "unaczynienie miąższu tarczycy prawidłowe",
+     "tpe separate over echo",
+     1
+    ],
+    [
+     "zmiany ogniskowe w biegunie dolnym płata prawego zmiana hipoechogenna dobrze odgraniczona unaczynienie mieszane o wymiarze",
+     "guna doma prorafgana hipo eogana of granuloma on2 of measured the osium appearance at 0",
+     1
+    ],
+    [
+     "stabilna poprzednio 10 x 5 x 13",
+     "stubing pop sh ne adjacentnp not mimro",
+     1
+    ],
+    [
+     "stabilny obraz zmian",
+     "theven ofunigible echo",
+     1
+    ],
+    [
+     "tarczyca",
+     "unina",
+     1
+    ],
+    [
+     "poniżej bieguna dolnego niejednorodny guzek",
+     "s discharge adjacent nost stimulome",
+     1
+    ],
+    [
+     "wymiary tarczycy płat prawy 21 x 15 x 50 mm objętość 8,1 ml płat lewy 14 x 17 x 47 mm",
+     "vmquv vgesapaaje mimmter obesch oom proteina than ml quad level sternasinaino tergeisa than millnmter obeum touch pinch proteinack oce tra chest",
+     1
+    ],
+    [
+     "dane z wywiadu kontrola guzków tarczycy w ośrodku zewnętrznym stan po biopsji",
+     "vi other contl andg tartrative or short cose dimens stamp for biopsy",
+     1
+    ]
+   ],
+   "top_ins": [
+    [
+     "port",
+     2
+    ],
+    [
+     "ulnoneum neur fo",
+     1
+    ],
+    [
+     "echo",
+     1
+    ],
+    [
+     "done is",
+     1
+    ],
+    [
+     "ob obrnium",
+     1
+    ],
+    [
+     "the maritorch partt",
+     1
+    ],
+    [
+     "p le",
+     1
+    ],
+    [
+     "tabilus",
+     1
+    ],
+    [
+     "terrgeist a",
+     1
+    ],
+    [
+     "was vagineal bubes asperiod as seen",
+     1
+    ]
+   ],
+   "top_dels": [
+    [
+     "zewnętrznych",
+     9
+    ],
+    [
+     "mm",
+     8
+    ],
+    [
+     "tarczycy",
+     8
+    ],
+    [
+     "2",
+     8
+    ],
+    [
+     "ogniskowych",
+     7
+    ],
+    [
+     "w opcji",
+     6
+    ],
+    [
+     "jak w autoimmunologicznym zapaleniu tarczycy",
+     6
+    ],
+    [
+     "zapaleniu tarczycy",
+     6
+    ],
+    [
+     "x 3",
+     6
+    ],
+    [
+     "wzmożonego przepływu",
+     5
+    ]
+   ],
+   "worst": [
+    {
+     "err": 183,
+     "ref": "Do rozważenia biopsja aspiracyjna cienkoigłowa celowana.",
+     "hyp": "Do was vagineal bubes asperiod as seen at the sncory groove butovana.</s>"
+    },
+    {
+     "err": 175,
+     "ref": "Unaczynienie miąższu tarczycy prawidłowe.",
+     "hyp": "ulnoneum neur fo tpe separate over. [Echo]</s>"
+    },
+    {
+     "err": 175,
+     "ref": "Tarczyca położona prawidłowo, mniejsza, o gładkich zarysach zewnętrznych.",
+     "hyp": "defit sarcos on the right le,ie shock about these risk as of mentiona.</s>"
+    },
+    {
+     "err": 157,
+     "ref": "Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.",
+     "hyp": "O other target say a autoimmunologic lis apple and new targets.</s>"
+    },
+    {
+     "err": 156,
+     "ref": "Na szyi nie stwierdzono patologicznych, powiększonych węzłów chłonnych. Obraz USG jak w przebiegu autoimmunologicznego zapalenia tarczycy.",
+     "hyp": "machin is sit on the pater of each neck po sh eventence of horness. Oressc. should be out remouer of which neck was app any.</s>"
+    },
+    {
+     "err": 153,
+     "ref": "Tarczyca położona typowo, niepowiększona, o pozaciąganych zarysach oraz niejednorodnej echostrukturze, z pasmami zwłóknień. Obraz jak w autoimmunologicznym zapaleniu tarczycy.",
+     "hyp": "tortust the portion of tip of mipple shna or posging guning of thee sac or as needed thea echo to occlusion. Spasm iso openning. Overall,  planelogation is appent totst.</s>"
+    },
+    {
+     "err": 150,
+     "ref": "Tarczyca położona prawidłowo, powiększona, o nierównych zarysach zewnętrznych.",
+     "hyp": "Ttut avulsion of rapid vova, pbing shanna, on uro neck satisfactory naturally.</s>"
+    },
+    {
+     "err": 150,
+     "ref": "Tarczyca położona prawidłowo, nieco powiększona, o odcinkowo nierównych zarysach zewnętrznych.",
+     "hyp": "ut the po on a previdva. Needs appoingchanna or a cinical when ne necessar sectivetrument.</s>"
+    },
+    {
+     "err": 150,
+     "ref": "Tarczyca położona prawidłowo, mała, o gładkich zarysach zewnętrznych.",
+     "hyp": "tt supposion avi overal now what keeps the risk as as mention.</s>"
+    },
+    {
+     "err": 150,
+     "ref": "Guzki obu płatów tarczycy. Ich wielkość jest porównywalna z poprzednim badaniem USG.",
+     "hyp": "Gd care upperport of su Iviico, she is put on the balancetru name, but the name was given.</s>"
+    },
+    {
+     "err": 150,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Documented assess in the above fax.</s>"
+    },
+    {
+     "err": 138,
+     "ref": "Tarczyca położona prawidłowo, mniejsza, o gładkich zarysach zewnętrznych.",
+     "hyp": "ter suportal and primary du micia and what case addressed asmentionally.</s>"
+    }
+   ],
+   "model": "google/medasr",
+   "lm": null,
+   "finished": "2026-11-17T00:50:42+01:00",
+   "decoding": "greedy CTC, bez LM"
+  },
+  "nemo-fastconformer-pl": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 50.7,
+   "wer_ci": [
+    49.26,
+    52.17
+   ],
+   "cer": 30.29,
+   "cer_ci": [
+    28.13,
+    32.46
+   ],
+   "S": 7367,
+   "D": 689,
+   "I": 962,
+   "long_ins": 41,
+   "utt_perfect": 4.8,
+   "audio_s": 9672.5,
+   "proc_s": 293.7,
+   "rtf": 0.03,
+   "num_err": 100.0,
+   "num_n": 1990,
+   "neg_err": 7.5,
+   "neg_n": 399,
+   "side_err": 37.1,
+   "side_n": 599,
+   "wer_num": 31.4,
+   "wer_num_ci": [
+    30.39,
+    32.36
+   ],
+   "top_subs": [
+    [
+     "odgraniczona",
+     "ograniczona",
+     45
+    ],
+    [
+     "prawym",
+     "prawem",
+     28
+    ],
+    [
+     "tarczycy",
+     "tarczy",
+     24
+    ],
+    [
+     "echogeniczności",
+     "geniczności",
+     21
+    ],
+    [
+     "2 mm",
+     "dwóch milimetrów",
+     20
+    ],
+    [
+     "3 mm",
+     "trzech milimetrów",
+     18
+    ],
+    [
+     "hipoechogenna",
+     "hipoehogenna",
+     18
+    ],
+    [
+     "węzłów",
+     "węzów",
+     17
+    ],
+    [
+     "4 mm",
+     "cztery milimetry",
+     17
+    ],
+    [
+     "biegunie dolnym",
+     "biegu niedolnym",
+     16
+    ],
+    [
+     "guzki",
+     "górski",
+     16
+    ],
+    [
+     "echostruktura",
+     "struktura",
+     16
+    ],
+    [
+     "miąższ",
+     "miąż",
+     15
+    ],
+    [
+     "echostrukturze",
+     "strukturze",
+     15
+    ],
+    [
+     "echogeniczności",
+     "echoniczności",
+     14
+    ]
+   ],
+   "top_ins": [
+    [
+     "echo",
+     83
+    ],
+    [
+     "dwanaście",
+     35
+    ],
+    [
+     "cztery",
+     24
+    ],
+    [
+     "około",
+     20
+    ],
+    [
+     "czternaście",
+     15
+    ],
+    [
+     "dwadzieścia dwa",
+     15
+    ],
+    [
+     "trzy",
+     14
+    ],
+    [
+     "cztery na",
+     13
+    ],
+    [
+     "hipo",
+     12
+    ],
+    [
+     "dwadzieścia pięć",
+     12
+    ]
+   ],
+   "top_dels": [
+    [
+     "doppler",
+     48
+    ],
+    [
+     "tarczycy",
+     40
+    ],
+    [
+     "mm",
+     36
+    ],
+    [
+     "w",
+     33
+    ],
+    [
+     "2",
+     24
+    ],
+    [
+     "chłonny",
+     17
+    ],
+    [
+     "prawym",
+     13
+    ],
+    [
+     "hipoechogenna",
+     12
+    ],
+    [
+     "szyi",
+     10
+    ],
+    [
+     "tirads 2",
+     10
+    ]
+   ],
+   "worst": [
+    {
+     "err": 100,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "Wymiarem Płatwa. Czternaście na dwanaście na czterdzieści pięć milimetrów objętyś trzy i siedem militry. Płat lewynaście na trzynastu na trzydzieści dziewięć milimetrów objęte trzy i trzy militry dzieśń o wielkości do trzech milimetrów."
+    },
+    {
+     "err": 100,
+     "ref": "Wymiary tarczycy: płat prawy 21x15x50mm, objętość 8,1 ml płat lewy 14x17x47mm, objętość 5,8 ml cieśń 3mm.",
+     "hyp": "tarczycy płat prawy, dwadzieścia jeden na piętnaście na pięćdziesiąt kilometrów, objętość osiem przycinek jeden militra płat lewy, czternaście na siedemnaście na czterdzieści siedem milimetrów, objętość pięć przyczynek osiem militra dzieśni trzy mili metry."
+    },
+    {
+     "err": 100,
+     "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+     "hyp": "Wymiary podów Tarczycy. Płat lewy wielkości dziesięć na osiem na trzydzieści cztery mili metry objęto siedmi i pół militra, płaty wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów, objęto siedem i osiem mili."
+    },
+    {
+     "err": 100,
+     "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+     "hyp": "Wymierję objętość płatę piętnaście na pięćdziesięciu siedem na szesnaście milimetrów objętych sześć pół militra. Pład lewem, dwanaście na czterdzieści pięć na osiemnaście milimetrów, objętość cztery pół militra dziesięć do dwóch milimetrów."
+    },
+    {
+     "err": 100,
+     "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+     "hyp": "W mieszkaniu wyróżniających się zmian ogniskokowych nie uwidoczniona okoliczne będą chłonne nie powiększane"
+    },
+    {
+     "err": 100,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "Płaty od wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów objętości dwanaście militrrów, płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry objętości jedenaście i siedem militra cieś wielkości do siedmiu milimetrów."
+    },
+    {
+     "err": 100,
+     "ref": "Echogeniczność podstawowa gruczołu prawidłowa, echostruktura nieco niejednorodna, bez cech wzmożenia przepływu naczyniowego w opcji color doppler.",
+     "hyp": "Ekoniczność podstawową jako czoło prawidłowe jako struktura nieco niejednorodna, bezcek zmalnie przypływ naczeniowego fukcji kolitary."
+    },
+    {
+     "err": 97,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "Wład prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów, objętość dwanaście milionów, ład lewy wielkości dziewiętnaście na dwadzieścia dwa na pięć cztery milietrów, objęto siedemnaście przycinak siedem mility trzeci wielkości do siedem milimetrów."
+    },
+    {
+     "err": 97,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "Płaty wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów, objętość dwanaście militrów. Płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry objętości jedenaście przyczynek siedem mili litra. Cieśń wielkości do siedem"
+    },
+    {
+     "err": 96,
+     "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+     "hyp": "Wymiary tarczycy. Płat prawy, dziewiętnaście, na dwadzieścia na pięćdziesiąt pięć milietrów objętość, dziesięć i dziewięćdziesiątych militra. Płat lewy, osiemnaście na osiemnaście na czterdzieści osiem milimetrów, objętość osiem i jeden na dziesiąta militra dzieśń do czterech milietrów."
+    },
+    {
+     "err": 96,
+     "ref": "Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",
+     "hyp": "Wymiary tarczycy płaty, siedemnasty na siedemnast na pięćdziesiąt siedem milimetrów objętość osiem sześć militra, płat lewy, piętnaście na szesnasty na pięćdziesiąt trzy milimetry, objętość sześć i sześć milimitra dzieśń do trzech milimetrów."
+    },
+    {
+     "err": 96,
+     "ref": "Wymiary tarczycy: płat prawy: 11x11x39 mm, objętość 2,5 ml. Płat lewy: 9x14x40 mm, objętość 2,6 ml. Cieśń: 2 mm.",
+     "hyp": "Wymiany tarczy płat prawy. Jedena na jedenaście na trzydzieści dziewięć milimetra. Obiejętość dwa i pół militra. Płat lewy dziewięć na czterynaście na czterdzieści milimetrów, objętość dwa i sześćdziesiątych militra. cieśń dwa militę"
+    }
+   ],
+   "model": "nvidia/stt_pl_fastconformer_hybrid_large_pc",
+   "lm": null,
+   "finished": "2026-11-17T00:56:59+01:00",
+   "decoding": "greedy (domyślny dekoder NeMo), bez LM"
+  },
+  "wav2vec2-xlsr53-pl-lm": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 52.8,
+   "wer_ci": [
+    51.22,
+    54.3
+   ],
+   "cer": 29.54,
+   "cer_ci": [
+    27.23,
+    31.88
+   ],
+   "S": 7433,
+   "D": 458,
+   "I": 1500,
+   "long_ins": 132,
+   "utt_perfect": 5.1,
+   "audio_s": 9672.5,
+   "proc_s": 636.2,
+   "rtf": 0.066,
+   "num_err": 100.0,
+   "num_n": 1990,
+   "neg_err": 14.0,
+   "neg_n": 399,
+   "side_err": 20.7,
+   "side_n": 599,
+   "wer_num": 32.94,
+   "wer_num_ci": [
+    31.72,
+    34.15
+   ],
+   "top_subs": [
+    [
+     "miąższ",
+     "miąż",
+     43
+    ],
+    [
+     "hipoechogenna",
+     "ehogenna",
+     35
+    ],
+    [
+     "dwupłatowa",
+     "płatowa",
+     25
+    ],
+    [
+     "4 mm",
+     "cztery milimetry",
+     20
+    ],
+    [
+     "3 mm",
+     "trzech milimetrów",
+     17
+    ],
+    [
+     "opcji color doppler",
+     "obci kolor dopler",
+     17
+    ],
+    [
+     "echogeniczności",
+     "ehograniczności",
+     16
+    ],
+    [
+     "echogeniczności",
+     "ehoganiczności",
+     16
+    ],
+    [
+     "niejednorodny",
+     "jednorodny",
+     16
+    ],
+    [
+     "2 mm",
+     "dwóch milimetrów",
+     15
+    ],
+    [
+     "węzłów",
+     "węzów",
+     14
+    ],
+    [
+     "echostruktura",
+     "struktura",
+     14
+    ],
+    [
+     "hipoechogenna",
+     "hipoehogenna",
+     14
+    ],
+    [
+     "okołotarczycowo",
+     "tarczycowo",
+     13
+    ],
+    [
+     "autoimmunologicznym",
+     "munologicznym",
+     13
+    ]
+   ],
+   "top_ins": [
+    [
+     "hipo",
+     60
+    ],
+    [
+     "nie",
+     47
+    ],
+    [
+     "auto i",
+     29
+    ],
+    [
+     "około",
+     27
+    ],
+    [
+     "dwanaście",
+     26
+    ],
+    [
+     "dwu",
+     25
+    ],
+    [
+     "cztery",
+     23
+    ],
+    [
+     "echo",
+     22
+    ],
+    [
+     "czternaście",
+     17
+    ],
+    [
+     "miał",
+     15
+    ]
+   ],
+   "top_dels": [
+    [
+     "mm",
+     34
+    ],
+    [
+     "w",
+     32
+    ],
+    [
+     "tarczycy",
+     28
+    ],
+    [
+     "doppler",
+     14
+    ],
+    [
+     "prawym",
+     11
+    ],
+    [
+     "cech",
+     10
+    ],
+    [
+     "jak",
+     10
+    ],
+    [
+     "4",
+     9
+    ],
+    [
+     "szyi",
+     9
+    ],
+    [
+     "o",
+     8
+    ]
+   ],
+   "worst": [
+    {
+     "err": 117,
+     "ref": "Stan po parotidektomii obustronnej, loże wolne.",
+     "hyp": "stałem po pore dytektomi obu stron nyj loże wolny"
+    },
+    {
+     "err": 111,
+     "ref": "Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,9 ml Cieśń: do 3 mm.",
+     "hyp": "wymiary płat prawy czternaście na dwanaście na czterdzieści pięć ili metrów obiętość trzy i siedemdziesiątych mili litra płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów obiętość trzy i trzydziesiąte mili litra cieśń to trzech milimetrów"
+    },
+    {
+     "err": 111,
+     "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+     "hyp": "stan po repardtyktowie prawostronny z powodów z nowy wielo miejscowej acer cece a"
+    },
+    {
+     "err": 107,
+     "ref": "Wymiary tarczycy: płat prawy 21x15x50mm, objętość 8,1 ml płat lewy 14x17x47mm, objętość 5,8 ml cieśń 3mm.",
+     "hyp": "wymiary tarczycypłat prawy dwadzieścia jeden na piętnaście na pięćdziesiąt milimetrów objętość osiem przecinek jeden mililitra płat lewy czternaście na siedemnaście na czterdzieści siedem mili metrów objątość pięć przecinek osiem militra cieśń trzy mili metry"
+    },
+    {
+     "err": 107,
+     "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+     "hyp": "wymiary tarczycy płac prawy dziewiętnaście na dwadzieścia na pięćdziesiąt pięć milimetrów obiętość dziesięć i dziewięćdziesiątych mili litra płat lewy osiemnaście na osiemnaście na czterdzieści osiem milimetrów obiętość osiem i jeden na dziesiąta mililitra cieśń do czterech milimetrów"
+    },
+    {
+     "err": 107,
+     "ref": "Wymiary tarczycy: Płat prawy wielkości 14x14x41 mm, objętość 4,2 ml.",
+     "hyp": "wymiary tarczycy płat prawy wielkosi czternaście na czternaście na czterdziesci jeden milimetrów obie dość cztery i dwa mili litry"
+    },
+    {
+     "err": 107,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "płat prawy tylko ści dwaje sie dwa na osiemnaście na pięćdziesiąt siedem milimetrów objętość dwanaście mililitrów płat lewy wielkość dziewiętnaście daje sie dwa na pięćdziesiąć cztery milimetry obiecasz jedenaście przetak siedem mili litry cieśni wielkości do siedmi milimetrów"
+    },
+    {
+     "err": 103,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x57 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "po ad prawy wielkości dwadzieścia dwana osiemnaście na pięćdziesiąt siedem mili metrów objętość dwanaście mil litrów poatlewy wielkości dziewiętnaście na dwadzieścia dwana pięćdziesiąt sie mili metrów objętość jedenaście je siedemdziesiątych mili litra cieśń wielkości dosiedmiu mili metrów"
+    },
+    {
+     "err": 103,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "płat prawy wielkości dwadzieścia dwana osiemnaście na pięćdziesiąt siedem milimetrów o piętość dwanaście mili litrów płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry o pięto jedenaście przecinek siedem mii litra cieśni wielkości do siedmiu milimetrów"
+    },
+    {
+     "err": 103,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów o więtość dwanaście mii litrów płat lewy wielkość dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetrów o iętość jedenaście i siedem mililitra cieśń wielkości do siedmi milimetrów"
+    },
+    {
+     "err": 103,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów o piętość dwanaście mili litrów płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry o pięto siedenaście przycinek siedem mii litra cieśń wielkości do siedmiu milimetrów"
+    },
+    {
+     "err": 100,
+     "ref": "Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",
+     "hyp": "wymiary tarczycy płat prawy dziewiętnaście na piętnaście na czterdzieści sześć milimetrów obiętość sześć i siedemdziesiątych mii litra płat lewy szesnaście na piętnaście na czterdzieści cztery milimetra obiętość pięć i pięćdziesiątych mili litra cieśń niepogrubiała"
+    }
+   ],
+   "model": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+   "lm": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+   "finished": "2026-11-17T01:09:19+01:00",
+   "decoding": "beam search CTC + KenLM (ogólny polski)"
+  },
+  "mms-1b-all-pol-lm": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 32.07,
+   "wer_ci": [
+    30.88,
+    33.35
+   ],
+   "cer": 12.47,
+   "cer_ci": [
+    11.3,
+    13.7
+   ],
+   "S": 4096,
+   "D": 987,
+   "I": 622,
+   "long_ins": 13,
+   "utt_perfect": 13.7,
+   "audio_s": 9672.5,
+   "proc_s": 976.7,
+   "rtf": 0.101,
+   "num_err": 81.8,
+   "num_n": 1990,
+   "neg_err": 1.8,
+   "neg_n": 399,
+   "side_err": 6.8,
+   "side_n": 599,
+   "wer_num": 25.72,
+   "wer_num_ci": [
+    24.73,
+    26.73
+   ],
+   "top_subs": [
+    [
+     "miąższ",
+     "miąż",
+     58
+    ],
+    [
+     "niepowiększona",
+     "powiększona",
+     38
+    ],
+    [
+     "dwupłatowa",
+     "płatowa",
+     36
+    ],
+    [
+     "color doppler",
+     "kolor dopler",
+     35
+    ],
+    [
+     "niepowiększone",
+     "powiększone",
+     34
+    ],
+    [
+     "hipoechogenna",
+     "hypoechogenna",
+     27
+    ],
+    [
+     "tirads 2",
+     "tiras i",
+     19
+    ],
+    [
+     "izoechogenna",
+     "izoehogenna",
+     18
+    ],
+    [
+     "okołotarczycowo",
+     "tarczycowo",
+     17
+    ],
+    [
+     "węzłów",
+     "węzów",
+     17
+    ],
+    [
+     "autoimmunologicznym",
+     "autoimunologicznym",
+     17
+    ],
+    [
+     "x",
+     "na",
+     17
+    ],
+    [
+     "hipoechogenna",
+     "hipoehogenna",
+     15
+    ],
+    [
+     "miąższu",
+     "miąszu",
+     15
+    ],
+    [
+     "biegunie",
+     "nie",
+     14
+    ]
+   ],
+   "top_ins": [
+    [
+     "nie",
+     79
+    ],
+    [
+     "w",
+     64
+    ],
+    [
+     "około",
+     38
+    ],
+    [
+     "dwu",
+     37
+    ],
+    [
+     "biegu",
+     14
+    ],
+    [
+     "hipo",
+     14
+    ],
+    [
+     "przy",
+     11
+    ],
+    [
+     "z",
+     11
+    ],
+    [
+     "normo",
+     9
+    ],
+    [
+     "i",
+     8
+    ]
+   ],
+   "top_dels": [
+    [
+     "4",
+     25
+    ],
+    [
+     "2",
+     25
+    ],
+    [
+     "x 4",
+     25
+    ],
+    [
+     "w",
+     25
+    ],
+    [
+     "tarczycy",
+     19
+    ],
+    [
+     "3",
+     16
+    ],
+    [
+     "x 16",
+     16
+    ],
+    [
+     "x 3",
+     16
+    ],
+    [
+     "x 57",
+     14
+    ],
+    [
+     "x 7",
+     12
+    ]
+   ],
+   "worst": [
+    {
+     "err": 100,
+     "ref": "Unaczynienie miąższu tarczycy prawidłowe.",
+     "hyp": "naczynie miostarzenia"
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "dokumentacja z in ciała paks"
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "documentatia zinca wa pak"
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "documentatia z din ciowa pacs"
+    },
+    {
+     "err": 96,
+     "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+     "hyp": "wymiary tarczycy płat prawy dziewiętnaście na dwadzieścia na pięćdziesiąt pięć milimetrów objętość dziesięć i dziewięćdziesiąt mililitra płat lewy osiemnaście na osiemnaście na czterdzieści osiem milimetrów objętość osiem i jeden na dziesiąta mililitra cie do czterech milimetrów"
+    },
+    {
+     "err": 95,
+     "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+     "hyp": "wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy"
+    },
+    {
+     "err": 93,
+     "ref": "Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,9 ml Cieśń: do 3 mm.",
+     "hyp": "wymiary płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów objętość trzy i siedemdziesiąt mililitra płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy i trzydziesta mililitra cień do trzech milimetrów"
+    },
+    {
+     "err": 92,
+     "ref": "Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",
+     "hyp": "wymiary tarczycy płat prawy dziewiętnaście na piętnaście na czterdzieści sześć mm objętość sześć i siedemdziesiątych mililitra płat lewy szesnaście na piętnaście na czterdzieści cztery mm objęto pięć i pięćdziesiątych mililitra cień nie pogrubia"
+    },
+    {
+     "err": 91,
+     "ref": "Wymiary i objętość - płat prawy wielkość 23x47x20 mm, objętość 10,3 ml - płat lewy wielkości 23x59x21 mm, objętość 13,4 ml -cieśń wielkości do 3 mm.",
+     "hyp": "wymiary i objętość płat prawy wielkości dwadzieścia trzy na czterdzieści siedem na dwadzieścia milimetr objętość dziesięć i trzydziesta milita płat lewy wielkości dwadzieścia trzy na pięćdziesiąt dziewięć na dwadzieścia jeden milimetr objętość trzynaście czterdziesta mililitra cieni w wielkości do trzech i"
+    },
+    {
+     "err": 89,
+     "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+     "hyp": "wymiary płatów tarczycy płat lewy wielkości dziesięć na osiem na trzydzieści cztery milimetry objęto jeden i pół mililitra płat prawy wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów objęto jeden i osiem mililitra"
+    },
+    {
+     "err": 88,
+     "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+     "hyp": "i wyróżniających się zmian ogniskowych nie uwidoczniono okoliczne węzły chłonne nie powiększone"
+    },
+    {
+     "err": 83,
+     "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+     "hyp": "wymiary i objętość płat prawy piętnaście na pięćdziesiąt siedem na szesnaście milimetr objętość sześć i pięćdziesiąt mililitra płat lewy dwanaście na czterdzieści pięć na onimir objętość cztery i pięćdziesiąt mililitra cień do dwóch metrów"
+    }
+   ],
+   "model": "facebook/mms-1b-all",
+   "lm": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+   "finished": "2026-11-17T01:26:24+01:00",
+   "decoding": "beam search CTC + KenLM (ogólny polski)"
+  },
+  "nvidia-canary-1b-v2": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 20.05,
+   "wer_ci": [
+    18.95,
+    21.34
+   ],
+   "cer": 8.66,
+   "cer_ci": [
+    7.83,
+    9.68
+   ],
+   "S": 2904,
+   "D": 230,
+   "I": 432,
+   "long_ins": 8,
+   "utt_perfect": 15.2,
+   "audio_s": 9672.5,
+   "proc_s": 2848.9,
+   "rtf": 0.295,
+   "num_err": 25.6,
+   "num_n": 1990,
+   "neg_err": 1.5,
+   "neg_n": 399,
+   "side_err": 5.0,
+   "side_n": 599,
+   "wer_num": 14.04,
+   "wer_num_ci": [
+    13.3,
+    14.83
+   ],
+   "top_subs": [
+    [
+     "x",
+     "na",
+     224
+    ],
+    [
+     "color",
+     "kolor",
+     65
+    ],
+    [
+     "zwłóknień",
+     "zwłoknień",
+     38
+    ],
+    [
+     "miąższ",
+     "miąż",
+     25
+    ],
+    [
+     "tirads",
+     "tirac",
+     21
+    ],
+    [
+     "niepowiększona",
+     "powiększona",
+     17
+    ],
+    [
+     "tarczycy",
+     "tarczyce",
+     17
+    ],
+    [
+     "zwłóknień",
+     "włókien",
+     16
+    ],
+    [
+     "miąższ",
+     "miesz",
+     16
+    ],
+    [
+     "tirads",
+     "tiratz",
+     16
+    ],
+    [
+     "cieśń",
+     "cień",
+     15
+    ],
+    [
+     "guzki",
+     "guski",
+     15
+    ],
+    [
+     "biegunie dolnym",
+     "biegu niedolnym",
+     14
+    ],
+    [
+     "guzków",
+     "gusków",
+     12
+    ],
+    [
+     "torbielowato lita",
+     "torbielowa tolita",
+     12
+    ]
+   ],
+   "top_ins": [
+    [
+     "w",
+     44
+    ],
+    [
+     "nie",
+     29
+    ],
+    [
+     "około",
+     26
+    ],
+    [
+     "z",
+     20
+    ],
+    [
+     "cztery na",
+     12
+    ],
+    [
+     "gładko",
+     10
+    ],
+    [
+     "przy",
+     9
+    ],
+    [
+     "dwanaście",
+     9
+    ],
+    [
+     "norma",
+     7
+    ],
+    [
+     "trzy i",
+     6
+    ]
+   ],
+   "top_dels": [
+    [
+     "w",
+     19
+    ],
+    [
+     "tarczycy",
+     18
+    ],
+    [
+     "tirads",
+     15
+    ],
+    [
+     "płynowa",
+     10
+    ],
+    [
+     "tirads 2",
+     8
+    ],
+    [
+     "wielkości",
+     8
+    ],
+    [
+     "prawidłowa",
+     6
+    ],
+    [
+     "chłonny",
+     6
+    ],
+    [
+     "tirads 1",
+     5
+    ],
+    [
+     "płacie",
+     4
+    ]
+   ],
+   "worst": [
+    {
+     "err": 104,
+     "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+     "hyp": "Wymiary płotów tarczyce płat lewy w wielkości dziesięć na osiem na trzydzieści cztery milimetry objęto jeden i pół militra płat prawy w wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów objęto jeden i osiem militra"
+    },
+    {
+     "err": 100,
+     "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+     "hyp": "Prawie duch strzelowa pod niebiedny wolny."
+    },
+    {
+     "err": 95,
+     "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+     "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+    },
+    {
+     "err": 90,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "Wymiery płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów objętość trzy i siedem mililitrów płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy i trzy mililitry, cieśni o wielkości do trzech milimetrów."
+    },
+    {
+     "err": 90,
+     "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+     "hyp": "Wymiery i objętość płat prawy piętnaście na pięćdziesiąt siedem na szesnaście milimetrów objętość sześć i pół militra płat lewy dwanaście na czterdzieści pięć na osiemnaście milimetrów objętość cztery i pół militra cieśnieniem do dwóch milimetrów"
+    },
+    {
+     "err": 86,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "Wymiary: płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów, objętość trzy i siedem mililitra, płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów, objętość trzy i trzy mililitra, cień o wielkości do trzech milimetrów."
+    },
+    {
+     "err": 86,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "Wymiary płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów objętość trzy i siedem mililitrów płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy i trzy mililitra cień o wielkości do trzech milimetrów"
+    },
+    {
+     "err": 85,
+     "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+     "hyp": "Wymiary płatów tarczycy płatle w wielkości dziesięć na osiem na trzydzieści cztery mm objętość jeden i pół militra płat prawy w wielkości dwanaście na dziewięć na trzydzieści jeden mm objętość jeden i osiem militra"
+    },
+    {
+     "err": 83,
+     "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+     "hyp": "Wymiary i objętość płat prawy piętnaście na pięćdziesiąt siedem na szesnaście mm objętość sześć i pół mililitra płat lewy dwanaście na czterdzieści pięć na osiemnaście mililitrów objętość cztery i pół mililitra cięć do dwóch milimetrów"
+    },
+    {
+     "err": 81,
+     "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+     "hyp": "Wymiary płatów tarczycy płat lewy wielkości dziesięć na osiem na trzydzieści cztery milimetry objętość jeden i pół militra płat prawy wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów objętość jeden i osiem militra."
+    },
+    {
+     "err": 75,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Dokumentacja zdjęcia była w PAX."
+    },
+    {
+     "err": 75,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Dokumentacja z inicjatywy PAST."
+    }
+   ],
+   "model": "nvidia/canary-1b-v2",
+   "lm": null,
+   "finished": "2026-11-17T02:18:30+01:00",
+   "decoding": "greedy (domyślny dekoder NeMo), bez LM"
+  },
+  "nvidia-parakeet-tdt-v3": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 18.21,
+   "wer_ci": [
+    17.2,
+    19.2
+   ],
+   "cer": 6.29,
+   "cer_ci": [
+    5.6,
+    7.07
+   ],
+   "S": 2413,
+   "D": 498,
+   "I": 328,
+   "long_ins": 3,
+   "utt_perfect": 17.5,
+   "audio_s": 9672.5,
+   "proc_s": 942.2,
+   "rtf": 0.097,
+   "num_err": 20.8,
+   "num_n": 1990,
+   "neg_err": 1.8,
+   "neg_n": 399,
+   "side_err": 5.3,
+   "side_n": 599,
+   "wer_num": 15.03,
+   "wer_num_ci": [
+    14.32,
+    15.73
+   ],
+   "top_subs": [
+    [
+     "x",
+     "na",
+     129
+    ],
+    [
+     "ml",
+     "mm",
+     81
+    ],
+    [
+     "odgraniczona",
+     "ograniczona",
+     57
+    ],
+    [
+     "miąższ",
+     "miąż",
+     40
+    ],
+    [
+     "tirads",
+     "tirac",
+     36
+    ],
+    [
+     "węzłów",
+     "węzów",
+     24
+    ],
+    [
+     "color",
+     "kolor",
+     23
+    ],
+    [
+     "ml cieśń",
+     "mm cień",
+     18
+    ],
+    [
+     "color",
+     "kolordopler",
+     15
+    ],
+    [
+     "miąższ",
+     "mąż",
+     15
+    ],
+    [
+     "miąższu",
+     "miąszu",
+     11
+    ],
+    [
+     "echogeniczności",
+     "echoganiczności",
+     10
+    ],
+    [
+     "guzków",
+     "gusków",
+     10
+    ],
+    [
+     "gładkokonturowany",
+     "konturowany",
+     10
+    ],
+    [
+     "guzkowa",
+     "gózkowa",
+     10
+    ]
+   ],
+   "top_ins": [
+    [
+     "w",
+     65
+    ],
+    [
+     "około",
+     17
+    ],
+    [
+     "mm",
+     11
+    ],
+    [
+     "u",
+     10
+    ],
+    [
+     "gładko",
+     10
+    ],
+    [
+     "i",
+     8
+    ],
+    [
+     "o",
+     7
+    ],
+    [
+     "dwanaście",
+     6
+    ],
+    [
+     "przy",
+     5
+    ],
+    [
+     "z",
+     5
+    ]
+   ],
+   "top_dels": [
+    [
+     "x",
+     72
+    ],
+    [
+     "doppler",
+     25
+    ],
+    [
+     "w",
+     22
+    ],
+    [
+     "4",
+     14
+    ],
+    [
+     "tirads",
+     14
+    ],
+    [
+     "tarczycy",
+     14
+    ],
+    [
+     "cieśń",
+     13
+    ],
+    [
+     "2",
+     13
+    ],
+    [
+     "płynowa",
+     12
+    ],
+    [
+     "lite",
+     10
+    ]
+   ],
+   "worst": [
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Documentația zin ceva fax."
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Documentația zin ceva fax."
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "Documentația din ceva fax."
+    },
+    {
+     "err": 95,
+     "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+     "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+    },
+    {
+     "err": 79,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "Wymiar płat prawy czternasta na dwanaście na czterdzieści pięć mm, objętość trzy i siedem mm, płat lewy, dwanaście na trzynaście na trzydzieści dziewięć mm, objętość trzy i trzy mlitr, ciśnień o wielkości do trzech mm."
+    },
+    {
+     "err": 79,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "Płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem mm, objętość dwanaście mm, pły wielkość dziewiętnaście na dwadzieścia dwa na pięćdziesiąt czter mm, objętość jednaście i siedem mlitr, cieśń wielkości do siedmiu mm."
+    },
+    {
+     "err": 76,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "Wymiary: płat prawy czternaście na dwanaście na czterdzieści pięć mm, objętość trzy i siedem mm, płat lewy. Dwanaście na trzynaście na trzydzieści dziewięć mm objętość trzy i trzy mlitry, cień o wielkości do trzech mm."
+    },
+    {
+     "err": 76,
+     "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+     "hyp": "Wymiar i objętość, płat prawy piętnaście na pięćdziesiąt siedem na szesnaście mm, objętość sześciu pół mlitra, płat lewy dwanaście na czterdzieści pięć na osiemnaście mm, objętość cztery i pół mlitra, dziesięć do dwóch mm."
+    },
+    {
+     "err": 73,
+     "ref": "Stan po parotidektomii prawostronnej w 2013 roku z powodu raka zrazikowokomórkowego.",
+     "hyp": "Stan poparł dyrektomy prawostronnej w dwa tysiące trzynastym roku z powodu roka zdrazykowo-komórkowego."
+    },
+    {
+     "err": 72,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "Płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem mm, objętość dwanaście mlitrów, płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt czter mm, objętość jedenaście i siedemdziesiąt mlitń wielkości do siedmiu mm."
+    },
+    {
+     "err": 71,
+     "ref": "Obraz przemawia za laryngocele wewnętrznym po lewej.",
+     "hyp": "Obraz przemawia zalaryn go cele we wnętrnym, po lewej."
+    },
+    {
+     "err": 70,
+     "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+     "hyp": "Wymiary płatów tarczycy: płat lewy wielkości dziesięć na osiem na trzydzieści cztery mm, objętość jeden pół mlitra, płat prawy wielkości dwanaście na dziewięć na trzydzieści jeden mm, objętość jeden i osiem mlitra."
+    }
+   ],
+   "model": "nvidia/parakeet-tdt-0.6b-v3",
+   "lm": null,
+   "finished": "2026-11-17T02:35:57+01:00",
+   "decoding": "greedy (domyślny dekoder NeMo), bez LM"
+  },
+  "qwen3-asr-1.7b": {
+   "n_utt": 939,
+   "n_words": 17787,
+   "wer": 21.8,
+   "wer_ci": [
+    20.9,
+    22.76
+   ],
+   "cer": 7.37,
+   "cer_ci": [
+    6.88,
+    7.98
+   ],
+   "S": 3214,
+   "D": 428,
+   "I": 236,
+   "long_ins": 3,
+   "utt_perfect": 5.2,
+   "audio_s": 9672.5,
+   "proc_s": 1463.3,
+   "rtf": 0.151,
+   "num_err": 7.7,
+   "num_n": 1990,
+   "neg_err": 10.3,
+   "neg_n": 399,
+   "side_err": 13.7,
+   "side_n": 599,
+   "wer_num": 18.35,
+   "wer_num_ci": [
+    17.57,
+    19.22
+   ],
+   "top_subs": [
+    [
+     "x",
+     "na",
+     323
+    ],
+    [
+     "color",
+     "kolor",
+     63
+    ],
+    [
+     "tarczyca",
+     "tarczycza",
+     59
+    ],
+    [
+     "tirads",
+     "tiradz",
+     43
+    ],
+    [
+     "autoimmunologicznym",
+     "autoimunologicznym",
+     34
+    ],
+    [
+     "cieśń",
+     "ciśnienie",
+     30
+    ],
+    [
+     "odgraniczona",
+     "ograniczona",
+     29
+    ],
+    [
+     "tarczyca",
+     "tarczica",
+     20
+    ],
+    [
+     "hipoechogenna",
+     "hipoechogeniczna",
+     20
+    ],
+    [
+     "zwłóknień",
+     "zwłóknięć",
+     19
+    ],
+    [
+     "węzłów",
+     "węzów",
+     17
+    ],
+    [
+     "płat",
+     "plat",
+     17
+    ],
+    [
+     "izoechogenna",
+     "izoechogeniczna",
+     16
+    ],
+    [
+     "zmiany ogniskowe",
+     "zmiana ogniskowa",
+     14
+    ],
+    [
+     "biegunie dolnym",
+     "biegu niedolnym",
+     14
+    ]
+   ],
+   "top_ins": [
+    [
+     "około",
+     27
+    ],
+    [
+     "u",
+     10
+    ],
+    [
+     "i",
+     6
+    ],
+    [
+     "mililitrów",
+     6
+    ],
+    [
+     "z",
+     5
+    ],
+    [
+     "obu",
+     5
+    ],
+    [
+     "normo",
+     4
+    ],
+    [
+     "tiradz",
+     4
+    ],
+    [
+     "gładko",
+     4
+    ],
+    [
+     "przy",
+     4
+    ]
+   ],
+   "top_dels": [
+    [
+     "w",
+     29
+    ],
+    [
+     "tarczycy",
+     20
+    ],
+    [
+     "tirads 2",
+     14
+    ],
+    [
+     "stwierdzono",
+     12
+    ],
+    [
+     "płynowa",
+     11
+    ],
+    [
+     "tirads",
+     11
+    ],
+    [
+     "lewy",
+     10
+    ],
+    [
+     "lite",
+     10
+    ],
+    [
+     "cieśni",
+     10
+    ],
+    [
+     "x",
+     9
+    ]
+   ],
+   "worst": [
+    {
+     "err": 100,
+     "ref": "Tłuszczowo przebudowana ślinianka podżuchwowa prawa.",
+     "hyp": "Tuż czoło przebudowana ślimianka podżużlowa prawo."
+    },
+    {
+     "err": 100,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "Dokumentacja z dnia chowa w BAX."
+    },
+    {
+     "err": 95,
+     "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+     "hyp": "Wnioski: Obraz może odpowiadać przewlekłemu autoimunologicznemu zapaleniu tarczycy."
+    },
+    {
+     "err": 93,
+     "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+     "hyp": "Wymiary płat prawe czternaście na dwanaście na czterdzieści pięć milimetrów, objętość trzy i siedem mililitrów. Płat lewe dwanaście na trzynaście na trzydzieści dziewięć milimetrów, objętość trzy i trzy mililitry. Cieśnienie o wielkości do trzech milimetrów."
+    },
+    {
+     "err": 93,
+     "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+     "hyp": "Kład prawy wielkości dwadzieścia dwa na osiemnasty na pięćdziesiąt siedem milimetrów, objętość dwanaście mililitrów. Kład lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetrów, objętość dziesiąt i siedem mililitrów. Ciśnienie wielkości do siedmi milimetrów."
+    },
+    {
+     "err": 91,
+     "ref": "Stan po leczeniu biologicznym. Borelioza w wywiadzie i choroba zwyrodnieniowa stawów.",
+     "hyp": "Stan podejścia nie był logiczny, bo reliażowa wybiadzi i choroba zaraźnie nie miała stawów."
+    },
+    {
+     "err": 89,
+     "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+     "hyp": "Stan po reparacji tycktomi prawostronnej spowodował znów wile miejsceowej AC CCA."
+    },
+    {
+     "err": 80,
+     "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+     "hyp": "Prawy dół strzydłowa pod niebieny wąny."
+    },
+    {
+     "err": 75,
+     "ref": "Dokumentacja zdjęciowa w Pacs.",
+     "hyp": "Dokumentację zdjęciową w past."
+    },
+    {
+     "err": 75,
+     "ref": "Dokumentacja zdjęciowa w PACS.",
+     "hyp": "Dokumentacja jest inicjowana w Pads."
+    },
+    {
+     "err": 73,
+     "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+     "hyp": "Z badaniem dopplerowskim unaczynie niewplatów prawidłowych patologicznych odbić węsłowów wzdłuż naczyni śródnych obu strony niezobrazowano."
+    },
+    {
+     "err": 73,
+     "ref": "Aktualnie wznowa w loży po lewym płacie wielkości około 1 mm.",
+     "hyp": "Aktualnie wznosza wlozy polewem płaci wielkości około jednego milimetra."
+    }
+   ],
+   "model": "Qwen/Qwen3-ASR-1.7B",
+   "lm": null,
+   "finished": "2026-11-17T03:03:26+01:00",
+   "decoding": "greedy CTC, bez LM"
+  }
+ },
+ "log": [
+  {
+   "t": "2026-11-16T23:55:53+01:00",
+   "msg": "  model załadowany w 125 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T00:18:28+01:00",
+   "msg": "✔ Whisper large-v3: WER 8.03% [7.43–8.73], CER 2.17%, RTF 0.139"
+  },
+  {
+   "t": "2026-11-17T00:18:28+01:00",
+   "msg": "▶ wav2vec2 XLSR-53 Polish (bez LM): ładowanie modelu (jonatasgrosman/wav2vec2-large-xlsr-53-polish)"
+  },
+  {
+   "t": "2026-11-17T00:18:29+01:00",
+   "msg": "✖ wav2vec2 XLSR-53 Polish (bez LM): ImportError: `Wav2Vec2ProcessorWithLM` needs `pyctcdecode` and `kenlm`, which are no longer installed with `transformers[audio]`. See: https://huggingface.co/docs/transformers/model_doc/wav2vec2#migrating-to-pyctcdecode"
+  },
+  {
+   "t": "2026-11-17T00:18:29+01:00",
+   "msg": "▶ Meta MMS-1b-all (adapter pol, bez LM): ładowanie modelu (facebook/mms-1b-all)"
+  },
+  {
+   "t": "2026-11-17T00:20:41+01:00",
+   "msg": "  model załadowany w 132 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T00:21:13+01:00",
+   "msg": "✖ Meta MMS-1b-all (adapter pol, bez LM): OutOfMemoryError: MPS command buffer execution failed: Insufficient Memory (00000008:kIOGPUCommandBufferCallbackErrorOutOfMemory). This error may have been asynchronously reported, so the stack trace below might be incorrect."
+  },
+  {
+   "t": "2026-11-17T00:21:14+01:00",
+   "msg": "Koniec przebiegu."
+  },
+  {
+   "t": "2026-11-17T00:21:38+01:00",
+   "msg": "Start: 939 nagrań, 2.69 h audio"
+  },
+  {
+   "t": "2026-11-17T00:21:38+01:00",
+   "msg": "▶ wav2vec2 XLSR-53 Polish (bez LM): ładowanie modelu (jonatasgrosman/wav2vec2-large-xlsr-53-polish)"
+  },
+  {
+   "t": "2026-11-17T00:22:35+01:00",
+   "msg": "  model załadowany w 57 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T00:34:03+01:00",
+   "msg": "✔ wav2vec2 XLSR-53 Polish (bez LM): WER 58.31% [56.67–59.69], CER 30.68%, RTF 0.07"
+  },
+  {
+   "t": "2026-11-17T00:34:05+01:00",
+   "msg": "▶ Meta MMS-1b-all (adapter pol, bez LM): ładowanie modelu (facebook/mms-1b-all)"
+  },
+  {
+   "t": "2026-11-17T00:34:11+01:00",
+   "msg": "  model załadowany w 7 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T00:48:26+01:00",
+   "msg": "✔ Meta MMS-1b-all (adapter pol, bez LM): WER 35.22% [33.87–36.48], CER 13.17%, RTF 0.088"
+  },
+  {
+   "t": "2026-11-17T00:48:28+01:00",
+   "msg": "▶ Google MedASR: ładowanie modelu (google/medasr)"
+  },
+  {
+   "t": "2026-11-17T00:48:47+01:00",
+   "msg": "  model załadowany w 19 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T00:50:42+01:00",
+   "msg": "✔ Google MedASR: WER 100.84% [100.36–101.34], CER 80.43%, RTF 0.011"
+  },
+  {
+   "t": "2026-11-17T00:50:43+01:00",
+   "msg": "Koniec przebiegu."
+  },
+  {
+   "t": "2026-11-17T00:50:44+01:00",
+   "msg": "Start: 939 nagrań, 2.69 h audio"
+  },
+  {
+   "t": "2026-11-17T00:50:45+01:00",
+   "msg": "▶ NVIDIA FastConformer PL (hybrid, P&C): ładowanie modelu (nvidia/stt_pl_fastconformer_hybrid_large_pc)"
+  },
+  {
+   "t": "2026-11-17T00:51:55+01:00",
+   "msg": "  model załadowany w 70 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T00:56:53+01:00",
+   "msg": "✖ NVIDIA FastConformer PL (hybrid, P&C): ModuleNotFoundError: No module named 'num2words'"
+  },
+  {
+   "t": "2026-11-17T00:56:54+01:00",
+   "msg": "Koniec przebiegu."
+  },
+  {
+   "t": "2026-11-17T00:57:18+01:00",
+   "msg": "Start: 939 nagrań, 2.69 h audio"
+  },
+  {
+   "t": "2026-11-17T00:57:19+01:00",
+   "msg": "▶ wav2vec2 XLSR-53 Polish + KenLM: ładowanie modelu (jonatasgrosman/wav2vec2-large-xlsr-53-polish)"
+  },
+  {
+   "t": "2026-11-17T00:58:36+01:00",
+   "msg": "  model załadowany w 77 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T01:09:19+01:00",
+   "msg": "✔ wav2vec2 XLSR-53 Polish + KenLM: WER 52.8% [51.22–54.3], CER 29.54%, RTF 0.066"
+  },
+  {
+   "t": "2026-11-17T01:09:26+01:00",
+   "msg": "▶ Meta MMS-1b-all (pol) + KenLM: ładowanie modelu (facebook/mms-1b-all)"
+  },
+  {
+   "t": "2026-11-17T01:09:59+01:00",
+   "msg": "  model załadowany w 34 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T01:26:24+01:00",
+   "msg": "✔ Meta MMS-1b-all (pol) + KenLM: WER 32.07% [30.88–33.35], CER 12.47%, RTF 0.101"
+  },
+  {
+   "t": "2026-11-17T01:26:36+01:00",
+   "msg": "Koniec przebiegu."
+  },
+  {
+   "t": "2026-11-17T01:27:00+01:00",
+   "msg": "Start: 939 nagrań, 2.69 h audio"
+  },
+  {
+   "t": "2026-11-17T01:27:01+01:00",
+   "msg": "▶ NVIDIA Canary-1B-v2: ładowanie modelu (nvidia/canary-1b-v2)"
+  },
+  {
+   "t": "2026-11-17T01:30:56+01:00",
+   "msg": "  model załadowany w 235 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T02:18:30+01:00",
+   "msg": "✔ NVIDIA Canary-1B-v2: WER 20.05% [18.95–21.34], CER 8.66%, RTF 0.295"
+  },
+  {
+   "t": "2026-11-17T02:18:32+01:00",
+   "msg": "▶ NVIDIA Parakeet-TDT-0.6B-v3: ładowanie modelu (nvidia/parakeet-tdt-0.6b-v3)"
+  },
+  {
+   "t": "2026-11-17T02:20:11+01:00",
+   "msg": "  model załadowany w 98 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T02:35:57+01:00",
+   "msg": "✔ NVIDIA Parakeet-TDT-0.6B-v3: WER 18.21% [17.2–19.2], CER 6.29%, RTF 0.097"
+  },
+  {
+   "t": "2026-11-17T02:35:59+01:00",
+   "msg": "Koniec przebiegu."
+  },
+  {
+   "t": "2026-11-17T02:36:09+01:00",
+   "msg": "Start: 939 nagrań, 2.69 h audio"
+  },
+  {
+   "t": "2026-11-17T02:36:10+01:00",
+   "msg": "▶ Qwen3-ASR-1.7B: ładowanie modelu (Qwen/Qwen3-ASR-1.7B)"
+  },
+  {
+   "t": "2026-11-17T02:38:57+01:00",
+   "msg": "  model załadowany w 167 s; transkrypcja 939 nagrań"
+  },
+  {
+   "t": "2026-11-17T03:03:26+01:00",
+   "msg": "✔ Qwen3-ASR-1.7B: WER 21.8% [20.9–22.76], CER 7.37%, RTF 0.151"
+  },
+  {
+   "t": "2026-11-17T03:03:28+01:00",
+   "msg": "Koniec przebiegu."
+  }
+ ]
+}

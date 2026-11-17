@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 99.65,
+ "wer_ci": [
+  99.21,
+  100.08
+ ],
+ "cer": 80.48,
+ "cer_ci": [
+  79.48,
+  81.41
+ ],
+ "S": 8625,
+ "D": 8815,
+ "I": 284,
+ "long_ins": 41,
+ "utt_perfect": 0.0,
+ "audio_s": 9672.5,
+ "proc_s": 110.4,
+ "rtf": 0.011,
+ "num_err": 98.2,
+ "num_n": 1990,
+ "neg_err": 100.0,
+ "neg_n": 399,
+ "side_err": 100.0,
+ "side_n": 599,
+ "wer_num": 99.01,
+ "wer_num_ci": [
+  98.61,
+  99.4
+ ],
+ "top_subs": [
+  [
+   "w",
+   "unintelligible",
+   3
+  ],
+  [
+   "zmiany",
+   "unintelligible",
+   2
+  ],
+  [
+   "zmiany",
+   "30",
+   2
+  ],
+  [
+   "objętość 12",
+   "is 10",
+   2
+  ],
+  [
+   "w",
+   "in",
+   2
+  ],
+  [
+   "unaczynienie miąższu tarczycy prawidłowe",
+   "not theova ne preventionalpstidv",
+   1
+  ],
+  [
+   "nie widać powiększonych węzłów",
+   "nevituch prevention offullness occurtterval",
+   1
+  ],
+  [
+   "unaczynienie miąższu tarczycy prawidłowe",
+   "tpe separate over echo",
+   1
+  ],
+  [
+   "zmiany ogniskowe w biegunie dolnym płata prawego zmiana hipoechogenna dobrze odgraniczona unaczynienie mieszane o wymiarze",
+   "guna doma prorafgana hipo eogana of granuloma on2 of measured the osium appearance at 0",
+   1
+  ],
+  [
+   "stabilna poprzednio 10 x 5 x 13",
+   "stubing pop sh ne adjacentnp not mimro",
+   1
+  ],
+  [
+   "stabilny obraz zmian",
+   "theven ofunigible echo",
+   1
+  ],
+  [
+   "tarczyca",
+   "unina",
+   1
+  ],
+  [
+   "poniżej bieguna dolnego niejednorodny guzek",
+   "s discharge adjacent nost stimulome",
+   1
+  ],
+  [
+   "wymiary tarczycy płat prawy 21 x 15 x 50 mm objętość 8,1 ml płat lewy 14 x 17 x 47 mm",
+   "vmquv vgesapaaje mimmter obesch oom proteina than ml quad level sternasinaino tergeisa than millnmter obeum touch pinch proteinack oce tra chest",
+   1
+  ],
+  [
+   "dane z wywiadu kontrola guzków tarczycy w ośrodku zewnętrznym stan po biopsji",
+   "vi other contl andg tartrative or short cose dimens stamp for biopsy",
+   1
+  ]
+ ],
+ "top_ins": [
+  [
+   "port",
+   2
+  ],
+  [
+   "ulnoneum neur fo",
+   1
+  ],
+  [
+   "echo",
+   1
+  ],
+  [
+   "done is",
+   1
+  ],
+  [
+   "ob obrnium",
+   1
+  ],
+  [
+   "the maritorch partt",
+   1
+  ],
+  [
+   "p le",
+   1
+  ],
+  [
+   "tabilus",
+   1
+  ],
+  [
+   "terrgeist a",
+   1
+  ],
+  [
+   "was vagineal bubes asperiod as seen",
+   1
+  ]
+ ],
+ "top_dels": [
+  [
+   "zewnętrznych",
+   9
+  ],
+  [
+   "mm",
+   8
+  ],
+  [
+   "tarczycy",
+   8
+  ],
+  [
+   "2",
+   8
+  ],
+  [
+   "ogniskowych",
+   7
+  ],
+  [
+   "w opcji",
+   6
+  ],
+  [
+   "jak w autoimmunologicznym zapaleniu tarczycy",
+   6
+  ],
+  [
+   "zapaleniu tarczycy",
+   6
+  ],
+  [
+   "x 3",
+   6
+  ],
+  [
+   "wzmożonego przepływu",
+   5
+  ]
+ ],
+ "worst": [
+  {
+   "err": 183,
+   "ref": "Do rozważenia biopsja aspiracyjna cienkoigłowa celowana.",
+   "hyp": "Do was vagineal bubes asperiod as seen at the sncory groove butovana.</s>"
+  },
+  {
+   "err": 175,
+   "ref": "Unaczynienie miąższu tarczycy prawidłowe.",
+   "hyp": "ulnoneum neur fo tpe separate over. [Echo]</s>"
+  },
+  {
+   "err": 175,
+   "ref": "Tarczyca położona prawidłowo, mniejsza, o gładkich zarysach zewnętrznych.",
+   "hyp": "defit sarcos on the right le,ie shock about these risk as of mentiona.</s>"
+  },
+  {
+   "err": 157,
+   "ref": "Obraz tarczycy jak w autoimmunologicznym zapaleniu tarczycy.",
+   "hyp": "O other target say a autoimmunologic lis apple and new targets.</s>"
+  },
+  {
+   "err": 156,
+   "ref": "Na szyi nie stwierdzono patologicznych, powiększonych węzłów chłonnych. Obraz USG jak w przebiegu autoimmunologicznego zapalenia tarczycy.",
+   "hyp": "machin is sit on the pater of each neck po sh eventence of horness. Oressc. should be out remouer of which neck was app any.</s>"
+  },
+  {
+   "err": 153,
+   "ref": "Tarczyca położona typowo, niepowiększona, o pozaciąganych zarysach oraz niejednorodnej echostrukturze, z pasmami zwłóknień. Obraz jak w autoimmunologicznym zapaleniu tarczycy.",
+   "hyp": "tortust the portion of tip of mipple shna or posging guning of thee sac or as needed thea echo to occlusion. Spasm iso openning. Overall,  planelogation is appent totst.</s>"
+  },
+  {
+   "err": 150,
+   "ref": "Tarczyca położona prawidłowo, powiększona, o nierównych zarysach zewnętrznych.",
+   "hyp": "Ttut avulsion of rapid vova, pbing shanna, on uro neck satisfactory naturally.</s>"
+  },
+  {
+   "err": 150,
+   "ref": "Tarczyca położona prawidłowo, nieco powiększona, o odcinkowo nierównych zarysach zewnętrznych.",
+   "hyp": "ut the po on a previdva. Needs appoingchanna or a cinical when ne necessar sectivetrument.</s>"
+  },
+  {
+   "err": 150,
+   "ref": "Tarczyca położona prawidłowo, mała, o gładkich zarysach zewnętrznych.",
+   "hyp": "tt supposion avi overal now what keeps the risk as as mention.</s>"
+  },
+  {
+   "err": 150,
+   "ref": "Guzki obu płatów tarczycy. Ich wielkość jest porównywalna z poprzednim badaniem USG.",
+   "hyp": "Gd care upperport of su Iviico, she is put on the balancetru name, but the name was given.</s>"
+  },
+  {
+   "err": 150,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Documented assess in the above fax.</s>"
+  },
+  {
+   "err": 138,
+   "ref": "Tarczyca położona prawidłowo, mniejsza, o gładkich zarysach zewnętrznych.",
+   "hyp": "ter suportal and primary du micia and what case addressed asmentionally.</s>"
+  }
+ ],
+ "model": "google/medasr",
+ "lm": null,
+ "finished": "2026-11-17T00:50:42+01:00",
+ "decoding": "greedy CTC, bez LM"
+}

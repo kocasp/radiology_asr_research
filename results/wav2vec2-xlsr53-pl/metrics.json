@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 58.31,
+ "wer_ci": [
+  56.67,
+  59.69
+ ],
+ "cer": 30.68,
+ "cer_ci": [
+  28.38,
+  33.0
+ ],
+ "S": 8279,
+ "D": 656,
+ "I": 1436,
+ "long_ins": 121,
+ "utt_perfect": 3.4,
+ "audio_s": 9672.5,
+ "proc_s": 680.0,
+ "rtf": 0.07,
+ "num_err": 100.0,
+ "num_n": 1990,
+ "neg_err": 23.8,
+ "neg_n": 399,
+ "side_err": 25.5,
+ "side_n": 599,
+ "wer_num": 41.08,
+ "wer_num_ci": [
+  39.83,
+  42.25
+ ],
+ "top_subs": [
+  [
+   "hipoechogenna",
+   "ehogenna",
+   36
+  ],
+  [
+   "miąższ",
+   "miąż",
+   30
+  ],
+  [
+   "autoimmunologicznym",
+   "munologicznym",
+   25
+  ],
+  [
+   "węzłów",
+   "węzów",
+   19
+  ],
+  [
+   "dwupłatowa",
+   "płatowa",
+   18
+  ],
+  [
+   "4 mm",
+   "cztery milimetry",
+   15
+  ],
+  [
+   "2 mm",
+   "dwóch milimetrów",
+   14
+  ],
+  [
+   "3 mm",
+   "trzech milimetrów",
+   14
+  ],
+  [
+   "tarczycy",
+   "tarczyce",
+   14
+  ],
+  [
+   "echogeniczności",
+   "ehograniczności",
+   12
+  ],
+  [
+   "opcji color doppler",
+   "obcji kolor dopler",
+   12
+  ],
+  [
+   "echogeniczności",
+   "ehoganiczności",
+   11
+  ],
+  [
+   "echostruktura",
+   "struktura",
+   11
+  ],
+  [
+   "poniżej",
+   "niżej",
+   11
+  ],
+  [
+   "autoimmunologicznego",
+   "munologicznego",
+   10
+  ]
+ ],
+ "top_ins": [
+  [
+   "hipo",
+   59
+  ],
+  [
+   "auto i",
+   34
+  ],
+  [
+   "około",
+   24
+  ],
+  [
+   "nie",
+   24
+  ],
+  [
+   "dwanaście",
+   17
+  ],
+  [
+   "dwu",
+   17
+  ],
+  [
+   "echo",
+   16
+  ],
+  [
+   "po",
+   15
+  ],
+  [
+   "z",
+   14
+  ],
+  [
+   "czternaście",
+   13
+  ]
+ ],
+ "top_dels": [
+  [
+   "mm",
+   53
+  ],
+  [
+   "tarczycy",
+   42
+  ],
+  [
+   "w",
+   25
+  ],
+  [
+   "doppler",
+   19
+  ],
+  [
+   "2",
+   17
+  ],
+  [
+   "prawym",
+   13
+  ],
+  [
+   "color doppler",
+   11
+  ],
+  [
+   "szyi",
+   9
+  ],
+  [
+   "cd",
+   9
+  ],
+  [
+   "echogeniczności",
+   9
+  ]
+ ],
+ "worst": [
+  {
+   "err": 122,
+   "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+   "hyp": "stan po repard tyktowie prawostrony st powodów znowy willo miejscowej acer- cece a"
+  },
+  {
+   "err": 117,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "płet prawy wiekości dwadzieścia dwana osiemnaście na pięćdziesiąt siedym mili metrów o piętość dwanaście mili litrów płat lewy wielkości dziewiętnaścia na dwadzieścia dwana pięćdziesiąt cztedy mili metry o pięto jedenaście przecinek siedem mii litra cieśni wielkości do siedmiy mili metrów"
+  },
+  {
+   "err": 114,
+   "ref": "Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",
+   "hyp": "wymiary tarcziece płat prawy siedemnaście na siedemnaście na pięćdziesiąt siedem milimetrów objętość osiem i sześć mili litra płat lewy piętnaście na szesnaście na pięćdziesiąt trzy milimery objętość sześć i sześć milim litra ceśń to trzech mili metrów"
+  },
+  {
+   "err": 111,
+   "ref": "Wymiary tarczycy: płat prawy 21x15x50mm, objętość 8,1 ml płat lewy 14x17x47mm, objętość 5,8 ml cieśń 3mm.",
+   "hyp": "wymiary tarczycypłat prawy dwadzieścia jeden na piętnaście na pięćdziesiąt mili metrów objętość osiem przycinek jeden militra  płat lewy czternaście na siedemnaście na czterdzieści siedem milim metrów objątość pięć przecinek osiem militra cieśń trzy mili metry"
+  },
+  {
+   "err": 111,
+   "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+   "hyp": "wymiary tarczycy płac prawy dziewiętnaście na dwadzieścia na pięćdziesiąt pięć milimetrów  obiętość dziesięć i dziewięćdziesiątych mili litra płat lewy osiemnaście na osiemnaście na czterdzieści osiem milimetrów owiętość osiem i jeden na dziesiąta militra ceśń do czterech milimetrów"
+  },
+  {
+   "err": 110,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "płat prawy wielkości dwadzieścia dwana osiemnaście na pięćdziesiąt siedym mili metrów o piętość dwanaście mili litrów płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery mili metry o pięto siedenaście przycinek siedem mii litra cieśń wielkości do siedmiu mili metrów"
+  },
+  {
+   "err": 109,
+   "ref": "Stan po parotidektomii prawostronnej w 2013 roku z powodu raka zrazikowokomórkowego.",
+   "hyp": "stan po paru ditektomy prawo strony  dwa tysiące trzynastem roku z powodu roka z rezi kowo komorkowego"
+  },
+  {
+   "err": 107,
+   "ref": "Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,9 ml Cieśń: do 3 mm.",
+   "hyp": "wymiary płat prawy czternaście na dwanaście na czterdzieści pięć ilimetrów obiętość trzy i siedemdziesiątych mili litra płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów obiętość trzy i trzydziesiąte mili litra cieśń to trzech milimetrów"
+  },
+  {
+   "err": 107,
+   "ref": "Wymiary tarczycy: Płat prawy wielkości 14x14x41 mm, objętość 4,2 ml.",
+   "hyp": "wymiary tarczycy płat prawy wielkosi czternaście na czternascie na czterdziesci jeden milimetrów obie dość cztery i dwa mil witry"
+  },
+  {
+   "err": 107,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "wymiary płat prawe czternaście na dwanaście na czterdzieści pięć mili metrów o bjętość trzy i siedem mililitry  płat lewe dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy trzy mili litry cieśn o wilkości do trzech milimetrów"
+  },
+  {
+   "err": 107,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów o biętość dwanaście mili litrów płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry obiętość jedenaście i siedemdziesiątych mili litra dzieśni wielkości do siedmiu mili metrów"
+  },
+  {
+   "err": 104,
+   "ref": "Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",
+   "hyp": "wymiary tarczycy płat prawy dziewiętnaście na piętnaście na czterdzieście sześć milimetrów obiętość sześć i siedemdziesiątych mii litra płat lewy szesnaście na piętnaście na czterdzieści cztery milimetra obiętość pięć i pięćdziesiątych mili litra cieśń niepogrubiała i"
+  }
+ ],
+ "model": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+ "lm": null,
+ "finished": "2026-11-17T00:34:03+01:00",
+ "decoding": "greedy CTC, bez LM"
+}

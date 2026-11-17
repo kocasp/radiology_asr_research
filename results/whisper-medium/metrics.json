@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 13.77,
+ "wer_ci": [
+  12.94,
+  14.64
+ ],
+ "cer": 3.94,
+ "cer_ci": [
+  3.55,
+  4.45
+ ],
+ "S": 1912,
+ "D": 188,
+ "I": 350,
+ "long_ins": 6,
+ "utt_perfect": 22.9,
+ "audio_s": 9672.5,
+ "proc_s": 686.8,
+ "rtf": 0.071,
+ "num_err": 4.1,
+ "num_n": 1990,
+ "neg_err": 2.5,
+ "neg_n": 399,
+ "side_err": 3.8,
+ "side_n": 599,
+ "wer_num": 13.12,
+ "wer_num_ci": [
+  12.32,
+  13.99
+ ],
+ "top_subs": [
+  [
+   "tirads",
+   "tirac",
+   54
+  ],
+  [
+   "echogeniczności",
+   "ekogeniczności",
+   36
+  ],
+  [
+   "miąższ",
+   "miąż",
+   36
+  ],
+  [
+   "chłonnych",
+   "wchłonnych",
+   15
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   14
+  ],
+  [
+   "tirads",
+   "tiradz",
+   13
+  ],
+  [
+   "echostrukturze",
+   "strukturze",
+   12
+  ],
+  [
+   "echostrukturze",
+   "ekostrukturze",
+   12
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   12
+  ],
+  [
+   "echogeniczność",
+   "ekogeniczność",
+   11
+  ],
+  [
+   "guzków",
+   "gózków",
+   10
+  ],
+  [
+   "tarczyca",
+   "torczyca",
+   10
+  ],
+  [
+   "płat",
+   "płot",
+   10
+  ],
+  [
+   "x",
+   "na",
+   9
+  ],
+  [
+   "cieśń",
+   "cieśnij",
+   9
+  ]
+ ],
+ "top_ins": [
+  [
+   "w",
+   32
+  ],
+  [
+   "około",
+   28
+  ],
+  [
+   "echo",
+   21
+  ],
+  [
+   "z",
+   13
+  ],
+  [
+   "gładko",
+   11
+  ],
+  [
+   "norma",
+   10
+  ],
+  [
+   "t",
+   10
+  ],
+  [
+   "hipo",
+   7
+  ],
+  [
+   "o",
+   7
+  ],
+  [
+   "nie",
+   6
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   14
+  ],
+  [
+   "tarczycy",
+   12
+  ],
+  [
+   "2",
+   11
+  ],
+  [
+   "o",
+   6
+  ],
+  [
+   "3",
+   5
+  ],
+  [
+   "4",
+   4
+  ],
+  [
+   "do",
+   4
+  ],
+  [
+   "cieśni",
+   4
+  ],
+  [
+   "tirads",
+   4
+  ],
+  [
+   "wiekości",
+   4
+  ]
+ ],
+ "worst": [
+  {
+   "err": 125,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja jest z dyni Ciebie w fałszy."
+  },
+  {
+   "err": 100,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy duch strzelował pod niebiennym wolnym."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja z in�cia wachs."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja jest z dniego w Pax."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski, obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 93,
+   "ref": "Tarczyca dwupłatowa, mała. Miąższ niejednorodny, z pasmami zwłóknień, unaczynienie nie było wzmożone w opcji CD.",
+   "hyp": "Wystarczy to, że wersja jest wersją, która nie jest zbyt duża."
+  },
+  {
+   "err": 89,
+   "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+   "hyp": "Stan porepa rotytyk to mi prawo stronny z powodu wznowywilo miejscowej ACCCA."
+  },
+  {
+   "err": 83,
+   "ref": "Miąższ tarczycy nieco niejednorodny, o prawidłowej echogeniczności, o prawidłowym unaczynieniu w opcji color doppler, z pasmami zwłóknień. Okołotarczycowo obecne pojedyncze, niepowiększone węzły chłonne. Całość obrazu jak w autoimmunologicznym zapaleniu tarczycy.",
+   "hyp": "Całość obrazek w autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 78,
+   "ref": "W płacie prawym hipoechogenna, dobrze odgraniczona zmiana wielkości do 4x4 mm, TIRADS 4, bez wzmożonego przepływu.",
+   "hyp": "Płacie prawie na hipoechogen na dobrzy ograniczona zmiana w wielkości do 4,4 mm, tirac 4, bez zmożonowego przypływu."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja z incewa paks."
+  },
+  {
+   "err": 74,
+   "ref": "Miąższ tarczycy niejednorodny, o obniżonej echogeniczności, z pasmami zwłóknień, bez cech wzmożenia przepływu w opcji CD. Obraz miąższu tarczycy jak w chorobie Hashimoto.",
+   "hyp": "Miałam tarczycy niejednorodne, o obniżonej echo-grężności, z pasami z włókli, bez cech wzmarniania przepływów optycy d. Obraz miał szukarczycy, jak porobie hażmowy."
+  },
+  {
+   "err": 73,
+   "ref": "Stan po leczeniu biologicznym. Borelioza w wywiadzie i choroba zwyrodnieniowa stawów.",
+   "hyp": "Stan pod leczem biologicznym. Borrelioza w wywiadzie i choroba z rady nie ma warstawów."
+  }
+ ],
+ "model": "openai/whisper-medium",
+ "lm": null,
+ "finished": "2026-11-16T23:16:22+01:00",
+ "decoding": "greedy, language=pl, task=transcribe"
+}

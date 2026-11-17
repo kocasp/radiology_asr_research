@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 20.05,
+ "wer_ci": [
+  18.95,
+  21.34
+ ],
+ "cer": 8.66,
+ "cer_ci": [
+  7.83,
+  9.68
+ ],
+ "S": 2904,
+ "D": 230,
+ "I": 432,
+ "long_ins": 8,
+ "utt_perfect": 15.2,
+ "audio_s": 9672.5,
+ "proc_s": 2848.9,
+ "rtf": 0.295,
+ "num_err": 25.6,
+ "num_n": 1990,
+ "neg_err": 1.5,
+ "neg_n": 399,
+ "side_err": 5.0,
+ "side_n": 599,
+ "wer_num": 14.04,
+ "wer_num_ci": [
+  13.3,
+  14.83
+ ],
+ "top_subs": [
+  [
+   "x",
+   "na",
+   224
+  ],
+  [
+   "color",
+   "kolor",
+   65
+  ],
+  [
+   "zwłóknień",
+   "zwłoknień",
+   38
+  ],
+  [
+   "miąższ",
+   "miąż",
+   25
+  ],
+  [
+   "tirads",
+   "tirac",
+   21
+  ],
+  [
+   "niepowiększona",
+   "powiększona",
+   17
+  ],
+  [
+   "tarczycy",
+   "tarczyce",
+   17
+  ],
+  [
+   "zwłóknień",
+   "włókien",
+   16
+  ],
+  [
+   "miąższ",
+   "miesz",
+   16
+  ],
+  [
+   "tirads",
+   "tiratz",
+   16
+  ],
+  [
+   "cieśń",
+   "cień",
+   15
+  ],
+  [
+   "guzki",
+   "guski",
+   15
+  ],
+  [
+   "biegunie dolnym",
+   "biegu niedolnym",
+   14
+  ],
+  [
+   "guzków",
+   "gusków",
+   12
+  ],
+  [
+   "torbielowato lita",
+   "torbielowa tolita",
+   12
+  ]
+ ],
+ "top_ins": [
+  [
+   "w",
+   44
+  ],
+  [
+   "nie",
+   29
+  ],
+  [
+   "około",
+   26
+  ],
+  [
+   "z",
+   20
+  ],
+  [
+   "cztery na",
+   12
+  ],
+  [
+   "gładko",
+   10
+  ],
+  [
+   "przy",
+   9
+  ],
+  [
+   "dwanaście",
+   9
+  ],
+  [
+   "norma",
+   7
+  ],
+  [
+   "trzy i",
+   6
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   19
+  ],
+  [
+   "tarczycy",
+   18
+  ],
+  [
+   "tirads",
+   15
+  ],
+  [
+   "płynowa",
+   10
+  ],
+  [
+   "tirads 2",
+   8
+  ],
+  [
+   "wielkości",
+   8
+  ],
+  [
+   "prawidłowa",
+   6
+  ],
+  [
+   "chłonny",
+   6
+  ],
+  [
+   "tirads 1",
+   5
+  ],
+  [
+   "płacie",
+   4
+  ]
+ ],
+ "worst": [
+  {
+   "err": 104,
+   "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+   "hyp": "Wymiary płotów tarczyce płat lewy w wielkości dziesięć na osiem na trzydzieści cztery milimetry objęto jeden i pół militra płat prawy w wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów objęto jeden i osiem militra"
+  },
+  {
+   "err": 100,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawie duch strzelowa pod niebiedny wolny."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 90,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiery płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów objętość trzy i siedem mililitrów płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy i trzy mililitry, cieśni o wielkości do trzech milimetrów."
+  },
+  {
+   "err": 90,
+   "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+   "hyp": "Wymiery i objętość płat prawy piętnaście na pięćdziesiąt siedem na szesnaście milimetrów objętość sześć i pół militra płat lewy dwanaście na czterdzieści pięć na osiemnaście milimetrów objętość cztery i pół militra cieśnieniem do dwóch milimetrów"
+  },
+  {
+   "err": 86,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiary: płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów, objętość trzy i siedem mililitra, płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów, objętość trzy i trzy mililitra, cień o wielkości do trzech milimetrów."
+  },
+  {
+   "err": 86,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiary płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów objętość trzy i siedem mililitrów płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy i trzy mililitra cień o wielkości do trzech milimetrów"
+  },
+  {
+   "err": 85,
+   "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+   "hyp": "Wymiary płatów tarczycy płatle w wielkości dziesięć na osiem na trzydzieści cztery mm objętość jeden i pół militra płat prawy w wielkości dwanaście na dziewięć na trzydzieści jeden mm objętość jeden i osiem militra"
+  },
+  {
+   "err": 83,
+   "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+   "hyp": "Wymiary i objętość płat prawy piętnaście na pięćdziesiąt siedem na szesnaście mm objętość sześć i pół mililitra płat lewy dwanaście na czterdzieści pięć na osiemnaście mililitrów objętość cztery i pół mililitra cięć do dwóch milimetrów"
+  },
+  {
+   "err": 81,
+   "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+   "hyp": "Wymiary płatów tarczycy płat lewy wielkości dziesięć na osiem na trzydzieści cztery milimetry objętość jeden i pół militra płat prawy wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów objętość jeden i osiem militra."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja zdjęcia była w PAX."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja z inicjatywy PAST."
+  }
+ ],
+ "model": "nvidia/canary-1b-v2",
+ "lm": null,
+ "finished": "2026-11-17T02:18:30+01:00",
+ "decoding": "greedy (domyślny dekoder NeMo), bez LM"
+}

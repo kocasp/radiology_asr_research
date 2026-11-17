@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 32.07,
+ "wer_ci": [
+  30.88,
+  33.35
+ ],
+ "cer": 12.47,
+ "cer_ci": [
+  11.3,
+  13.7
+ ],
+ "S": 4096,
+ "D": 987,
+ "I": 622,
+ "long_ins": 13,
+ "utt_perfect": 13.7,
+ "audio_s": 9672.5,
+ "proc_s": 976.7,
+ "rtf": 0.101,
+ "num_err": 81.8,
+ "num_n": 1990,
+ "neg_err": 1.8,
+ "neg_n": 399,
+ "side_err": 6.8,
+ "side_n": 599,
+ "wer_num": 25.72,
+ "wer_num_ci": [
+  24.73,
+  26.73
+ ],
+ "top_subs": [
+  [
+   "miąższ",
+   "miąż",
+   58
+  ],
+  [
+   "niepowiększona",
+   "powiększona",
+   38
+  ],
+  [
+   "dwupłatowa",
+   "płatowa",
+   36
+  ],
+  [
+   "color doppler",
+   "kolor dopler",
+   35
+  ],
+  [
+   "niepowiększone",
+   "powiększone",
+   34
+  ],
+  [
+   "hipoechogenna",
+   "hypoechogenna",
+   27
+  ],
+  [
+   "tirads 2",
+   "tiras i",
+   19
+  ],
+  [
+   "izoechogenna",
+   "izoehogenna",
+   18
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   17
+  ],
+  [
+   "węzłów",
+   "węzów",
+   17
+  ],
+  [
+   "autoimmunologicznym",
+   "autoimunologicznym",
+   17
+  ],
+  [
+   "x",
+   "na",
+   17
+  ],
+  [
+   "hipoechogenna",
+   "hipoehogenna",
+   15
+  ],
+  [
+   "miąższu",
+   "miąszu",
+   15
+  ],
+  [
+   "biegunie",
+   "nie",
+   14
+  ]
+ ],
+ "top_ins": [
+  [
+   "nie",
+   79
+  ],
+  [
+   "w",
+   64
+  ],
+  [
+   "około",
+   38
+  ],
+  [
+   "dwu",
+   37
+  ],
+  [
+   "biegu",
+   14
+  ],
+  [
+   "hipo",
+   14
+  ],
+  [
+   "przy",
+   11
+  ],
+  [
+   "z",
+   11
+  ],
+  [
+   "normo",
+   9
+  ],
+  [
+   "i",
+   8
+  ]
+ ],
+ "top_dels": [
+  [
+   "4",
+   25
+  ],
+  [
+   "2",
+   25
+  ],
+  [
+   "x 4",
+   25
+  ],
+  [
+   "w",
+   25
+  ],
+  [
+   "tarczycy",
+   19
+  ],
+  [
+   "3",
+   16
+  ],
+  [
+   "x 16",
+   16
+  ],
+  [
+   "x 3",
+   16
+  ],
+  [
+   "x 57",
+   14
+  ],
+  [
+   "x 7",
+   12
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Unaczynienie miąższu tarczycy prawidłowe.",
+   "hyp": "naczynie miostarzenia"
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "dokumentacja z in ciała paks"
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "documentatia zinca wa pak"
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "documentatia z din ciowa pacs"
+  },
+  {
+   "err": 96,
+   "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+   "hyp": "wymiary tarczycy płat prawy dziewiętnaście na dwadzieścia na pięćdziesiąt pięć milimetrów objętość dziesięć i dziewięćdziesiąt mililitra płat lewy osiemnaście na osiemnaście na czterdzieści osiem milimetrów objętość osiem i jeden na dziesiąta mililitra cie do czterech milimetrów"
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy"
+  },
+  {
+   "err": 93,
+   "ref": "Wymiary: płat prawy: 14x12x45 mm, objętość 3,7ml Płat lewy: 12x13x39 mm, objętość 3,9 ml Cieśń: do 3 mm.",
+   "hyp": "wymiary płat prawy czternaście na dwanaście na czterdzieści pięć milimetrów objętość trzy i siedemdziesiąt mililitra płat lewy dwanaście na trzynaście na trzydzieści dziewięć milimetrów objętość trzy i trzydziesta mililitra cień do trzech milimetrów"
+  },
+  {
+   "err": 92,
+   "ref": "Wymiary tarczycy: płat prawy 19x15x46 mm, objętość 6,7 ml. Płat lewy 16x15x44 mm, objętość 5,5 ml. Cieśń niepogrubiała.",
+   "hyp": "wymiary tarczycy płat prawy dziewiętnaście na piętnaście na czterdzieści sześć mm objętość sześć i siedemdziesiątych mililitra płat lewy szesnaście na piętnaście na czterdzieści cztery mm objęto pięć i pięćdziesiątych mililitra cień nie pogrubia"
+  },
+  {
+   "err": 91,
+   "ref": "Wymiary i objętość - płat prawy wielkość 23x47x20 mm, objętość 10,3 ml - płat lewy wielkości 23x59x21 mm, objętość 13,4 ml -cieśń wielkości do 3 mm.",
+   "hyp": "wymiary i objętość płat prawy wielkości dwadzieścia trzy na czterdzieści siedem na dwadzieścia milimetr objętość dziesięć i trzydziesta milita płat lewy wielkości dwadzieścia trzy na pięćdziesiąt dziewięć na dwadzieścia jeden milimetr objętość trzynaście czterdziesta mililitra cieni w wielkości do trzech i"
+  },
+  {
+   "err": 89,
+   "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+   "hyp": "wymiary płatów tarczycy płat lewy wielkości dziesięć na osiem na trzydzieści cztery milimetry objęto jeden i pół mililitra płat prawy wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów objęto jeden i osiem mililitra"
+  },
+  {
+   "err": 88,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "i wyróżniających się zmian ogniskowych nie uwidoczniono okoliczne węzły chłonne nie powiększone"
+  },
+  {
+   "err": 83,
+   "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+   "hyp": "wymiary i objętość płat prawy piętnaście na pięćdziesiąt siedem na szesnaście milimetr objętość sześć i pięćdziesiąt mililitra płat lewy dwanaście na czterdzieści pięć na onimir objętość cztery i pięćdziesiąt mililitra cień do dwóch metrów"
+  }
+ ],
+ "model": "facebook/mms-1b-all",
+ "lm": "jonatasgrosman/wav2vec2-large-xlsr-53-polish",
+ "finished": "2026-11-17T01:26:24+01:00",
+ "decoding": "beam search CTC + KenLM (ogólny polski)"
+}

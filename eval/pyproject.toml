@@ -1,0 +1,18 @@
+[project]
+name = "asr-eval"
+version = "0.1.0"
+description = "Ewaluacja modeli ASR na polskich nagraniach radiologicznych (ADMEDVOICE)"
+requires-python = ">=3.12,<3.13"
+dependencies = [
+    "torch",
+    "transformers",
+    "peft",
+    "accelerate",
+    "soundfile",
+    "soxr",
+    "jiwer",
+    "numpy",
+    "pyctcdecode>=0.5.0",
+    "kenlm>=0.3.0",
+    "num2words>=0.5.14",
+]

@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 50.7,
+ "wer_ci": [
+  49.26,
+  52.17
+ ],
+ "cer": 30.29,
+ "cer_ci": [
+  28.13,
+  32.46
+ ],
+ "S": 7367,
+ "D": 689,
+ "I": 962,
+ "long_ins": 41,
+ "utt_perfect": 4.8,
+ "audio_s": 9672.5,
+ "proc_s": 293.7,
+ "rtf": 0.03,
+ "num_err": 100.0,
+ "num_n": 1990,
+ "neg_err": 7.5,
+ "neg_n": 399,
+ "side_err": 37.1,
+ "side_n": 599,
+ "wer_num": 31.4,
+ "wer_num_ci": [
+  30.39,
+  32.36
+ ],
+ "top_subs": [
+  [
+   "odgraniczona",
+   "ograniczona",
+   45
+  ],
+  [
+   "prawym",
+   "prawem",
+   28
+  ],
+  [
+   "tarczycy",
+   "tarczy",
+   24
+  ],
+  [
+   "echogeniczności",
+   "geniczności",
+   21
+  ],
+  [
+   "2 mm",
+   "dwóch milimetrów",
+   20
+  ],
+  [
+   "3 mm",
+   "trzech milimetrów",
+   18
+  ],
+  [
+   "hipoechogenna",
+   "hipoehogenna",
+   18
+  ],
+  [
+   "węzłów",
+   "węzów",
+   17
+  ],
+  [
+   "4 mm",
+   "cztery milimetry",
+   17
+  ],
+  [
+   "biegunie dolnym",
+   "biegu niedolnym",
+   16
+  ],
+  [
+   "guzki",
+   "górski",
+   16
+  ],
+  [
+   "echostruktura",
+   "struktura",
+   16
+  ],
+  [
+   "miąższ",
+   "miąż",
+   15
+  ],
+  [
+   "echostrukturze",
+   "strukturze",
+   15
+  ],
+  [
+   "echogeniczności",
+   "echoniczności",
+   14
+  ]
+ ],
+ "top_ins": [
+  [
+   "echo",
+   83
+  ],
+  [
+   "dwanaście",
+   35
+  ],
+  [
+   "cztery",
+   24
+  ],
+  [
+   "około",
+   20
+  ],
+  [
+   "czternaście",
+   15
+  ],
+  [
+   "dwadzieścia dwa",
+   15
+  ],
+  [
+   "trzy",
+   14
+  ],
+  [
+   "cztery na",
+   13
+  ],
+  [
+   "hipo",
+   12
+  ],
+  [
+   "dwadzieścia pięć",
+   12
+  ]
+ ],
+ "top_dels": [
+  [
+   "doppler",
+   48
+  ],
+  [
+   "tarczycy",
+   40
+  ],
+  [
+   "mm",
+   36
+  ],
+  [
+   "w",
+   33
+  ],
+  [
+   "2",
+   24
+  ],
+  [
+   "chłonny",
+   17
+  ],
+  [
+   "prawym",
+   13
+  ],
+  [
+   "hipoechogenna",
+   12
+  ],
+  [
+   "szyi",
+   10
+  ],
+  [
+   "tirads 2",
+   10
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiarem Płatwa. Czternaście na dwanaście na czterdzieści pięć milimetrów objętyś trzy i siedem militry. Płat lewynaście na trzynastu na trzydzieści dziewięć milimetrów objęte trzy i trzy militry dzieśń o wielkości do trzech milimetrów."
+  },
+  {
+   "err": 100,
+   "ref": "Wymiary tarczycy: płat prawy 21x15x50mm, objętość 8,1 ml płat lewy 14x17x47mm, objętość 5,8 ml cieśń 3mm.",
+   "hyp": "tarczycy płat prawy, dwadzieścia jeden na piętnaście na pięćdziesiąt kilometrów, objętość osiem przycinek jeden militra płat lewy, czternaście na siedemnaście na czterdzieści siedem milimetrów, objętość pięć przyczynek osiem militra dzieśni trzy mili metry."
+  },
+  {
+   "err": 100,
+   "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+   "hyp": "Wymiary podów Tarczycy. Płat lewy wielkości dziesięć na osiem na trzydzieści cztery mili metry objęto siedmi i pół militra, płaty wielkości dwanaście na dziewięć na trzydzieści jeden milimetrów, objęto siedem i osiem mili."
+  },
+  {
+   "err": 100,
+   "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+   "hyp": "Wymierję objętość płatę piętnaście na pięćdziesięciu siedem na szesnaście milimetrów objętych sześć pół militra. Pład lewem, dwanaście na czterdzieści pięć na osiemnaście milimetrów, objętość cztery pół militra dziesięć do dwóch milimetrów."
+  },
+  {
+   "err": 100,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W mieszkaniu wyróżniających się zmian ogniskokowych nie uwidoczniona okoliczne będą chłonne nie powiększane"
+  },
+  {
+   "err": 100,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "Płaty od wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów objętości dwanaście militrrów, płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry objętości jedenaście i siedem militra cieś wielkości do siedmiu milimetrów."
+  },
+  {
+   "err": 100,
+   "ref": "Echogeniczność podstawowa gruczołu prawidłowa, echostruktura nieco niejednorodna, bez cech wzmożenia przepływu naczyniowego w opcji color doppler.",
+   "hyp": "Ekoniczność podstawową jako czoło prawidłowe jako struktura nieco niejednorodna, bezcek zmalnie przypływ naczeniowego fukcji kolitary."
+  },
+  {
+   "err": 97,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "Wład prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów, objętość dwanaście milionów, ład lewy wielkości dziewiętnaście na dwadzieścia dwa na pięć cztery milietrów, objęto siedemnaście przycinak siedem mility trzeci wielkości do siedem milimetrów."
+  },
+  {
+   "err": 97,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "Płaty wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem milimetrów, objętość dwanaście militrów. Płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetry objętości jedenaście przyczynek siedem mili litra. Cieśń wielkości do siedem"
+  },
+  {
+   "err": 96,
+   "ref": "Wymiary tarczycy: płat prawy 19x20x55 mm, objętość 10,9 ml. Płat lewy 18x18x48 mm, objętość 8,1 ml. Cieśń do 4 mm.",
+   "hyp": "Wymiary tarczycy. Płat prawy, dziewiętnaście, na dwadzieścia na pięćdziesiąt pięć milietrów objętość, dziesięć i dziewięćdziesiątych militra. Płat lewy, osiemnaście na osiemnaście na czterdzieści osiem milimetrów, objętość osiem i jeden na dziesiąta militra dzieśń do czterech milietrów."
+  },
+  {
+   "err": 96,
+   "ref": "Wymiary tarczycy: Płat prawy 17x17x57 mm, objętości 8,6 ml. Płat lewy 15x16x53 mm, objętości 6,6 ml. Cieśń do 3 mm.",
+   "hyp": "Wymiary tarczycy płaty, siedemnasty na siedemnast na pięćdziesiąt siedem milimetrów objętość osiem sześć militra, płat lewy, piętnaście na szesnasty na pięćdziesiąt trzy milimetry, objętość sześć i sześć milimitra dzieśń do trzech milimetrów."
+  },
+  {
+   "err": 96,
+   "ref": "Wymiary tarczycy: płat prawy: 11x11x39 mm, objętość 2,5 ml. Płat lewy: 9x14x40 mm, objętość 2,6 ml. Cieśń: 2 mm.",
+   "hyp": "Wymiany tarczy płat prawy. Jedena na jedenaście na trzydzieści dziewięć milimetra. Obiejętość dwa i pół militra. Płat lewy dziewięć na czterynaście na czterdzieści milimetrów, objętość dwa i sześćdziesiątych militra. cieśń dwa militę"
+  }
+ ],
+ "model": "nvidia/stt_pl_fastconformer_hybrid_large_pc",
+ "lm": null,
+ "finished": "2026-11-17T00:56:59+01:00",
+ "decoding": "greedy (domyślny dekoder NeMo), bez LM"
+}

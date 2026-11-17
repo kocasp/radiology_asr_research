@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 9.75,
+ "wer_ci": [
+  9.1,
+  10.44
+ ],
+ "cer": 2.57,
+ "cer_ci": [
+  2.34,
+  2.84
+ ],
+ "S": 1325,
+ "D": 142,
+ "I": 267,
+ "long_ins": 3,
+ "utt_perfect": 33.7,
+ "audio_s": 9672.5,
+ "proc_s": 794.2,
+ "rtf": 0.082,
+ "num_err": 2.8,
+ "num_n": 1990,
+ "neg_err": 1.5,
+ "neg_n": 399,
+ "side_err": 2.8,
+ "side_n": 599,
+ "wer_num": 9.21,
+ "wer_num_ci": [
+  8.59,
+  9.89
+ ],
+ "top_subs": [
+  [
+   "color",
+   "kolor",
+   73
+  ],
+  [
+   "tirads",
+   "tirats",
+   53
+  ],
+  [
+   "tirads",
+   "tirac",
+   33
+  ],
+  [
+   "miąższ",
+   "miąż",
+   21
+  ],
+  [
+   "x",
+   "na",
+   14
+  ],
+  [
+   "miąższ",
+   "mioszcz",
+   14
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   12
+  ],
+  [
+   "hipoechogenna",
+   "hipoehogenna",
+   12
+  ],
+  [
+   "tirads",
+   "tiratz",
+   12
+  ],
+  [
+   "miąższ",
+   "miążcz",
+   11
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   11
+  ],
+  [
+   "torbielowato lita",
+   "torbielowa tolita",
+   10
+  ],
+  [
+   "jednej",
+   "1",
+   10
+  ],
+  [
+   "normoechogeniczna",
+   "echogeniczna",
+   9
+  ],
+  [
+   "wiekości",
+   "wielkości",
+   8
+  ]
+ ],
+ "top_ins": [
+  [
+   "w",
+   57
+  ],
+  [
+   "normo",
+   14
+  ],
+  [
+   "nie",
+   14
+  ],
+  [
+   "około",
+   13
+  ],
+  [
+   "gładko",
+   11
+  ],
+  [
+   "o",
+   10
+  ],
+  [
+   "u",
+   7
+  ],
+  [
+   "t",
+   6
+  ],
+  [
+   "z",
+   4
+  ],
+  [
+   "hipoechogen",
+   4
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   15
+  ],
+  [
+   "cieśni",
+   9
+  ],
+  [
+   "tirads",
+   7
+  ],
+  [
+   "płynowa",
+   7
+  ],
+  [
+   "tarczycy",
+   7
+  ],
+  [
+   "2",
+   6
+  ],
+  [
+   "3",
+   5
+  ],
+  [
+   "4",
+   5
+  ],
+  [
+   "tirads 2",
+   3
+  ],
+  [
+   "wzmożone",
+   3
+  ]
+ ],
+ "worst": [
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja jest dynczo w paź."
+  },
+  {
+   "err": 71,
+   "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+   "hyp": "Obecnie bez płynów prawie za do to szczękowej."
+  },
+  {
+   "err": 67,
+   "ref": "Stan po parotidektomii obustronnej, loże wolne.",
+   "hyp": "Stan poparodydektomii obustronnej lożę wolny."
+  },
+  {
+   "err": 65,
+   "ref": "Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji color doppler. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",
+   "hyp": "Poza tym miąż w tarczycy normo-echogennych i jednorodnych bez cech wzmożnia u naczynienia w opcji kolor dopler. Nie widać powiększonych węzłów chłonnych około tarczycowa."
+  },
+  {
+   "err": 65,
+   "ref": "Poza tym miąższ tarczycy normoechogenny, jednorodny, bez cech wzmożenia unaczynienia w opcji color doppler. Nie widać powiększonych węzłów chłonnych okołotarczycowo.",
+   "hyp": "Poza tym miosz tarczycy normo-echogenny, jednorodny, bez tak zmurzenia u naczynienia w opcji kolor Doppler. Nie widać powięczonych węzłów wchłonych około tarczy sowa."
+  },
+  {
+   "err": 62,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne nie powiększone."
+  },
+  {
+   "err": 60,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "Z badaniem doplerowskim u naczynienia płatów prawidłowe, patologicznych odbić węsłowych wzdłuż naczyń ślinnych obu strony nie zobrazowano."
+  },
+  {
+   "err": 60,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy dół sprzedłowo pod niebiednym wolny."
+  },
+  {
+   "err": 59,
+   "ref": "Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji color doppler.",
+   "hyp": "Miał w tarczyce niejednorodny licznymi pasmami zwłóknień oraz obszarami hipojaźniennymi oską po unaczynieniu w opcji kolor do plej."
+  },
+  {
+   "err": 55,
+   "ref": "Stan po lewostronnej parotidektomii i reparotidektomii z powodu Acnic Cell Carcinoma.",
+   "hyp": "Stań po lewą stronie parodidyktomii i reparodidyktomii z powodu acne cell carcinoma."
+  },
+  {
+   "err": 53,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "W badaniu Dopplerowskim u naczynie niepotoprawidłowe patologicznej odbić węzłowych wzdłuż na częściach obustronnymi zobrazowano."
+  }
+ ],
+ "model": "openai/whisper-large-v3-turbo",
+ "lm": null,
+ "finished": "2026-11-16T23:53:48+01:00",
+ "decoding": "greedy, language=pl, task=transcribe"
+}

@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 18.21,
+ "wer_ci": [
+  17.2,
+  19.2
+ ],
+ "cer": 6.29,
+ "cer_ci": [
+  5.6,
+  7.07
+ ],
+ "S": 2413,
+ "D": 498,
+ "I": 328,
+ "long_ins": 3,
+ "utt_perfect": 17.5,
+ "audio_s": 9672.5,
+ "proc_s": 942.2,
+ "rtf": 0.097,
+ "num_err": 20.8,
+ "num_n": 1990,
+ "neg_err": 1.8,
+ "neg_n": 399,
+ "side_err": 5.3,
+ "side_n": 599,
+ "wer_num": 15.03,
+ "wer_num_ci": [
+  14.32,
+  15.73
+ ],
+ "top_subs": [
+  [
+   "x",
+   "na",
+   129
+  ],
+  [
+   "ml",
+   "mm",
+   81
+  ],
+  [
+   "odgraniczona",
+   "ograniczona",
+   57
+  ],
+  [
+   "miąższ",
+   "miąż",
+   40
+  ],
+  [
+   "tirads",
+   "tirac",
+   36
+  ],
+  [
+   "węzłów",
+   "węzów",
+   24
+  ],
+  [
+   "color",
+   "kolor",
+   23
+  ],
+  [
+   "ml cieśń",
+   "mm cień",
+   18
+  ],
+  [
+   "color",
+   "kolordopler",
+   15
+  ],
+  [
+   "miąższ",
+   "mąż",
+   15
+  ],
+  [
+   "miąższu",
+   "miąszu",
+   11
+  ],
+  [
+   "echogeniczności",
+   "echoganiczności",
+   10
+  ],
+  [
+   "guzków",
+   "gusków",
+   10
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   10
+  ],
+  [
+   "guzkowa",
+   "gózkowa",
+   10
+  ]
+ ],
+ "top_ins": [
+  [
+   "w",
+   65
+  ],
+  [
+   "około",
+   17
+  ],
+  [
+   "mm",
+   11
+  ],
+  [
+   "u",
+   10
+  ],
+  [
+   "gładko",
+   10
+  ],
+  [
+   "i",
+   8
+  ],
+  [
+   "o",
+   7
+  ],
+  [
+   "dwanaście",
+   6
+  ],
+  [
+   "przy",
+   5
+  ],
+  [
+   "z",
+   5
+  ]
+ ],
+ "top_dels": [
+  [
+   "x",
+   72
+  ],
+  [
+   "doppler",
+   25
+  ],
+  [
+   "w",
+   22
+  ],
+  [
+   "4",
+   14
+  ],
+  [
+   "tirads",
+   14
+  ],
+  [
+   "tarczycy",
+   14
+  ],
+  [
+   "cieśń",
+   13
+  ],
+  [
+   "2",
+   13
+  ],
+  [
+   "płynowa",
+   12
+  ],
+  [
+   "lite",
+   10
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Documentația zin ceva fax."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Documentația zin ceva fax."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Documentația din ceva fax."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 79,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiar płat prawy czternasta na dwanaście na czterdzieści pięć mm, objętość trzy i siedem mm, płat lewy, dwanaście na trzynaście na trzydzieści dziewięć mm, objętość trzy i trzy mlitr, ciśnień o wielkości do trzech mm."
+  },
+  {
+   "err": 79,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "Płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem mm, objętość dwanaście mm, pły wielkość dziewiętnaście na dwadzieścia dwa na pięćdziesiąt czter mm, objętość jednaście i siedem mlitr, cieśń wielkości do siedmiu mm."
+  },
+  {
+   "err": 76,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiary: płat prawy czternaście na dwanaście na czterdzieści pięć mm, objętość trzy i siedem mm, płat lewy. Dwanaście na trzynaście na trzydzieści dziewięć mm objętość trzy i trzy mlitry, cień o wielkości do trzech mm."
+  },
+  {
+   "err": 76,
+   "ref": "Wymiary i objętość: Płat prawy 15x57x16 mm, objętość 6,5 ml. Płat lewy 12x45x18 mm, objętość 4,5 ml. Cieśń do 2 mm.",
+   "hyp": "Wymiar i objętość, płat prawy piętnaście na pięćdziesiąt siedem na szesnaście mm, objętość sześciu pół mlitra, płat lewy dwanaście na czterdzieści pięć na osiemnaście mm, objętość cztery i pół mlitra, dziesięć do dwóch mm."
+  },
+  {
+   "err": 73,
+   "ref": "Stan po parotidektomii prawostronnej w 2013 roku z powodu raka zrazikowokomórkowego.",
+   "hyp": "Stan poparł dyrektomy prawostronnej w dwa tysiące trzynastym roku z powodu roka zdrazykowo-komórkowego."
+  },
+  {
+   "err": 72,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "Płat prawy wielkości dwadzieścia dwa na osiemnaście na pięćdziesiąt siedem mm, objętość dwanaście mlitrów, płat lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt czter mm, objętość jedenaście i siedemdziesiąt mlitń wielkości do siedmiu mm."
+  },
+  {
+   "err": 71,
+   "ref": "Obraz przemawia za laryngocele wewnętrznym po lewej.",
+   "hyp": "Obraz przemawia zalaryn go cele we wnętrnym, po lewej."
+  },
+  {
+   "err": 70,
+   "ref": "Wymiary płatów tarczycy: Płat lewy wielkości 10x8x34 mm, objętość 1,5 ml. Płat prawy wielkości 12x9x31 mm, objętość 1,8 ml.",
+   "hyp": "Wymiary płatów tarczycy: płat lewy wielkości dziesięć na osiem na trzydzieści cztery mm, objętość jeden pół mlitra, płat prawy wielkości dwanaście na dziewięć na trzydzieści jeden mm, objętość jeden i osiem mlitra."
+  }
+ ],
+ "model": "nvidia/parakeet-tdt-0.6b-v3",
+ "lm": null,
+ "finished": "2026-11-17T02:35:57+01:00",
+ "decoding": "greedy (domyślny dekoder NeMo), bez LM"
+}

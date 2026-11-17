@@ -4,3 +4,10 @@ recordings/audio/
 __pycache__/
 *.pyc
 .venv/
+models/
+eval/.venv/
+eval/.venv-*/
+eval/.env
+results/results.sqlite
+results/run.log
+results/_smoke*/

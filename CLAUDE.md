@@ -52,6 +52,8 @@ Przy pisaniu pilnuj, żeby:
 
 ## Zasady techniczne
 
+- **Testujemy tylko gotowe, dostępne rozwiązania.** Nie oceniamy modeli dotrenowanych na ADMEDVOICE
+  (np. whisper-medium-medical-pl, VoxMedic), bo znają frazy testowe. Uzasadnienie: README, sekcja 4.2.
 - Audio (`recordings/audio/`, 5,6 GB) nie jest w Git. Odtwarza się je skryptem
   `scripts/build_radiology_db.py`.
 - Do oceny ASR używaj nagrań `source='natural'`. Przy podziale na train/test nagrania anonymized,

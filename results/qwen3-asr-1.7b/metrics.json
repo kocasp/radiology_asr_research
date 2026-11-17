@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 21.8,
+ "wer_ci": [
+  20.9,
+  22.76
+ ],
+ "cer": 7.37,
+ "cer_ci": [
+  6.88,
+  7.98
+ ],
+ "S": 3214,
+ "D": 428,
+ "I": 236,
+ "long_ins": 3,
+ "utt_perfect": 5.2,
+ "audio_s": 9672.5,
+ "proc_s": 1463.3,
+ "rtf": 0.151,
+ "num_err": 7.7,
+ "num_n": 1990,
+ "neg_err": 10.3,
+ "neg_n": 399,
+ "side_err": 13.7,
+ "side_n": 599,
+ "wer_num": 18.35,
+ "wer_num_ci": [
+  17.57,
+  19.22
+ ],
+ "top_subs": [
+  [
+   "x",
+   "na",
+   323
+  ],
+  [
+   "color",
+   "kolor",
+   63
+  ],
+  [
+   "tarczyca",
+   "tarczycza",
+   59
+  ],
+  [
+   "tirads",
+   "tiradz",
+   43
+  ],
+  [
+   "autoimmunologicznym",
+   "autoimunologicznym",
+   34
+  ],
+  [
+   "cieśń",
+   "ciśnienie",
+   30
+  ],
+  [
+   "odgraniczona",
+   "ograniczona",
+   29
+  ],
+  [
+   "tarczyca",
+   "tarczica",
+   20
+  ],
+  [
+   "hipoechogenna",
+   "hipoechogeniczna",
+   20
+  ],
+  [
+   "zwłóknień",
+   "zwłóknięć",
+   19
+  ],
+  [
+   "węzłów",
+   "węzów",
+   17
+  ],
+  [
+   "płat",
+   "plat",
+   17
+  ],
+  [
+   "izoechogenna",
+   "izoechogeniczna",
+   16
+  ],
+  [
+   "zmiany ogniskowe",
+   "zmiana ogniskowa",
+   14
+  ],
+  [
+   "biegunie dolnym",
+   "biegu niedolnym",
+   14
+  ]
+ ],
+ "top_ins": [
+  [
+   "około",
+   27
+  ],
+  [
+   "u",
+   10
+  ],
+  [
+   "i",
+   6
+  ],
+  [
+   "mililitrów",
+   6
+  ],
+  [
+   "z",
+   5
+  ],
+  [
+   "obu",
+   5
+  ],
+  [
+   "normo",
+   4
+  ],
+  [
+   "tiradz",
+   4
+  ],
+  [
+   "gładko",
+   4
+  ],
+  [
+   "przy",
+   4
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   29
+  ],
+  [
+   "tarczycy",
+   20
+  ],
+  [
+   "tirads 2",
+   14
+  ],
+  [
+   "stwierdzono",
+   12
+  ],
+  [
+   "płynowa",
+   11
+  ],
+  [
+   "tirads",
+   11
+  ],
+  [
+   "lewy",
+   10
+  ],
+  [
+   "lite",
+   10
+  ],
+  [
+   "cieśni",
+   10
+  ],
+  [
+   "x",
+   9
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Tłuszczowo przebudowana ślinianka podżuchwowa prawa.",
+   "hyp": "Tuż czoło przebudowana ślimianka podżużlowa prawo."
+  },
+  {
+   "err": 100,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja z dnia chowa w BAX."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski: Obraz może odpowiadać przewlekłemu autoimunologicznemu zapaleniu tarczycy."
+  },
+  {
+   "err": 93,
+   "ref": "Wymiary: Płat prawy: 14x12x45 mm, objętość 3,7 ml. Płat lewy: 12x13x39 mm, objętość 3,3 ml. Cieśń o wielkości do 3 mm.",
+   "hyp": "Wymiary płat prawe czternaście na dwanaście na czterdzieści pięć milimetrów, objętość trzy i siedem mililitrów. Płat lewe dwanaście na trzynaście na trzydzieści dziewięć milimetrów, objętość trzy i trzy mililitry. Cieśnienie o wielkości do trzech milimetrów."
+  },
+  {
+   "err": 93,
+   "ref": "Płat prawy wielkości 22x18x57 mm, objętość 12 ml. Płat lewy wielkości 19x22x54 mm, objętość 11,7 ml. Cieśń wielkości do 7 mm.",
+   "hyp": "Kład prawy wielkości dwadzieścia dwa na osiemnasty na pięćdziesiąt siedem milimetrów, objętość dwanaście mililitrów. Kład lewy wielkości dziewiętnaście na dwadzieścia dwa na pięćdziesiąt cztery milimetrów, objętość dziesiąt i siedem mililitrów. Ciśnienie wielkości do siedmi milimetrów."
+  },
+  {
+   "err": 91,
+   "ref": "Stan po leczeniu biologicznym. Borelioza w wywiadzie i choroba zwyrodnieniowa stawów.",
+   "hyp": "Stan podejścia nie był logiczny, bo reliażowa wybiadzi i choroba zaraźnie nie miała stawów."
+  },
+  {
+   "err": 89,
+   "ref": "Stan po reparotidektomii prawostronnej z powodu wznowy wielomiejscowej, AcCCa.",
+   "hyp": "Stan po reparacji tycktomi prawostronnej spowodował znów wile miejsceowej AC CCA."
+  },
+  {
+   "err": 80,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy dół strzydłowa pod niebieny wąny."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentację zdjęciową w past."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w PACS.",
+   "hyp": "Dokumentacja jest inicjowana w Pads."
+  },
+  {
+   "err": 73,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "Z badaniem dopplerowskim unaczynie niewplatów prawidłowych patologicznych odbić węsłowów wzdłuż naczyni śródnych obu strony niezobrazowano."
+  },
+  {
+   "err": 73,
+   "ref": "Aktualnie wznowa w loży po lewym płacie wielkości około 1 mm.",
+   "hyp": "Aktualnie wznosza wlozy polewem płaci wielkości około jednego milimetra."
+  }
+ ],
+ "model": "Qwen/Qwen3-ASR-1.7B",
+ "lm": null,
+ "finished": "2026-11-17T03:03:26+01:00",
+ "decoding": "greedy CTC, bez LM"
+}

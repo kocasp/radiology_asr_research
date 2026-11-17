@@ -1,0 +1,260 @@
+{
+ "n_utt": 939,
+ "n_words": 17787,
+ "wer": 8.03,
+ "wer_ci": [
+  7.43,
+  8.73
+ ],
+ "cer": 2.17,
+ "cer_ci": [
+  1.92,
+  2.44
+ ],
+ "S": 1085,
+ "D": 142,
+ "I": 202,
+ "long_ins": 2,
+ "utt_perfect": 39.6,
+ "audio_s": 9672.5,
+ "proc_s": 1348.9,
+ "rtf": 0.139,
+ "num_err": 2.8,
+ "num_n": 1990,
+ "neg_err": 2.8,
+ "neg_n": 399,
+ "side_err": 2.5,
+ "side_n": 599,
+ "wer_num": 7.61,
+ "wer_num_ci": [
+  7.03,
+  8.27
+ ],
+ "top_subs": [
+  [
+   "tirads",
+   "tirac",
+   41
+  ],
+  [
+   "tirads",
+   "tirats",
+   37
+  ],
+  [
+   "color",
+   "kolor",
+   29
+  ],
+  [
+   "okołotarczycowo",
+   "tarczycowo",
+   16
+  ],
+  [
+   "tirads",
+   "tiras",
+   15
+  ],
+  [
+   "gładkokonturowany",
+   "konturowany",
+   12
+  ],
+  [
+   "lito",
+   "litopłynowa",
+   10
+  ],
+  [
+   "okołotarczycowe",
+   "tarczycowe",
+   10
+  ],
+  [
+   "miąższ",
+   "miosz",
+   10
+  ],
+  [
+   "guzki",
+   "głuski",
+   9
+  ],
+  [
+   "miąższ",
+   "miąż",
+   9
+  ],
+  [
+   "pacs",
+   "pax",
+   9
+  ],
+  [
+   "z",
+   "starczycy",
+   9
+  ],
+  [
+   "torbielowato",
+   "to",
+   8
+  ],
+  [
+   "cieśń",
+   "cieść",
+   8
+  ]
+ ],
+ "top_ins": [
+  [
+   "około",
+   35
+  ],
+  [
+   "w",
+   18
+  ],
+  [
+   "gładko",
+   12
+  ],
+  [
+   "torbielowa",
+   6
+  ],
+  [
+   "hipoechogen",
+   5
+  ],
+  [
+   "doplerowskim",
+   4
+  ],
+  [
+   "o",
+   4
+  ],
+  [
+   "z",
+   4
+  ],
+  [
+   "i",
+   4
+  ],
+  [
+   "hipoechogeny",
+   4
+  ]
+ ],
+ "top_dels": [
+  [
+   "w",
+   12
+  ],
+  [
+   "tarczycy",
+   11
+  ],
+  [
+   "płynowa",
+   10
+  ],
+  [
+   "cieśni",
+   8
+  ],
+  [
+   "2",
+   8
+  ],
+  [
+   "4",
+   6
+  ],
+  [
+   "wzmożone",
+   5
+  ],
+  [
+   "tirads",
+   4
+  ],
+  [
+   "wiekości",
+   4
+  ],
+  [
+   "3",
+   3
+  ]
+ ],
+ "worst": [
+  {
+   "err": 100,
+   "ref": "Prawy dół skrzydłowo-podniebienny wolny.",
+   "hyp": "Prawy duch strzydłował pod niebiednym wolnym."
+  },
+  {
+   "err": 95,
+   "ref": "Wnioski: konglomerat zmian ogniskowych w płacie lewym tarczy (EU-TIRADS-PL 3) oraz na granicy płata lewego i cieśni (EU-TIRADS 4).",
+   "hyp": "Wnioski, obraz może odpowiadać przewlekłym autoimmunologicznym zapaleniu tarczycy."
+  },
+  {
+   "err": 75,
+   "ref": "Dokumentacja zdjęciowa w Pacs.",
+   "hyp": "Dokumentacja z niczego w Pax."
+  },
+  {
+   "err": 67,
+   "ref": "W badaniu dopplerowskim unaczynienie płatów prawidłowe. Patologicznych odbić węzłowych wzdłuż naczyń szyjnych obustronnie nie zobrazowano.",
+   "hyp": "W badaniu Doplerowskim o naczynienie płotu prawidłowe patologicznej odbyć węzłowych wzdłuż na częściach obustronnymi zobrazowano."
+  },
+  {
+   "err": 67,
+   "ref": "Stan po parotidektomii obustronnej, loże wolne.",
+   "hyp": "Stan poparodydektomii obustronnej loża wolna."
+  },
+  {
+   "err": 63,
+   "ref": "Zmiana dominująca w płacie prawym, TIRADS 2, o stabilnej wielkości. Do obserwacji pozostaje ognisko w płacie prawym, TIRADS 4.",
+   "hyp": "Zmiana dominująca w płacie prawym, tirac 2, o stabilnej wielkości. Do obserwacji pozostaje ognisko w płacie prawym, tirac 4. Zmiana dominująca w płacie prawym, tirac 2, o stabilnej wielkości."
+  },
+  {
+   "err": 62,
+   "ref": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono.",
+   "hyp": "W miąższu wyróżniających się zmian ogniskowych nie uwidoczniono. Okoliczne węzły chłonne nie powiększone."
+  },
+  {
+   "err": 60,
+   "ref": "Tłuszczowo przebudowana ślinianka podżuchwowa prawa.",
+   "hyp": "Łódczowo przebudowana ślinianka pod żuchwowa prawa."
+  },
+  {
+   "err": 58,
+   "ref": "Fałdy głosowe wydają się ustawione symetrycznie, fałd nalewkowo-nagłośniowy lewy jest niepogrubiały.",
+   "hyp": "VD głosowe wydają się ustawione symetrycznie. VD na lewkowe nagłośniowe lewe jest niepogrobiały."
+  },
+  {
+   "err": 57,
+   "ref": "Obecnie bez płynu w prawej zatoce szczękowej.",
+   "hyp": "obecnie bez płynów prawie za to szczękowej."
+  },
+  {
+   "err": 53,
+   "ref": "Miąższ tarczycy niejednorodny, z licznymi pasmami zwłóknień oraz obszarami hipoechogennymi, o skąpym unaczynieniu w opcji color doppler.",
+   "hyp": "Miał w tarczycy niejednorodne z licznymi pasmami zwłóknień oraz obszarami hipojachodemnymi, bo skąd po unaczynieniu w opcji kolor doper."
+  },
+  {
+   "err": 50,
+   "ref": "Tarczyca o atroficznym miąższu, zmiany ogniskowe, TIRADS 4, do okresowej kontroli USG.",
+   "hyp": "Tarczyca o atroficznym miąższu, zmiany obniżkowe, TIR-S4, dogresowe kontroli WSG."
+  }
+ ],
+ "model": "openai/whisper-large-v3",
+ "lm": null,
+ "finished": "2026-11-17T00:18:28+01:00",
+ "decoding": "greedy, language=pl, task=transcribe"
+}

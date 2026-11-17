@@ -24,8 +24,9 @@ zmieniają znaczenie kliniczne i lekarz może ich nie zauważyć:
 - słowa wstawione, choć nikt ich nie powiedział (tzw. halucynacje).
 
 **Pytania badawcze:**
-1. Jak duży jest błąd rozpoznawania (WER, CER) polskich fraz z opisów radiologicznych dla różnych
-   modeli ASR, ogólnych i dotrenowanych medycznie?
+1. Jak duży jest błąd rozpoznawania (WER, CER) polskich fraz z opisów radiologicznych dla gotowych,
+   dostępnych rozwiązań ASR: otwartych modeli uruchamianych lokalnie i komercyjnych usług
+   chmurowych?
 2. Jakie typy błędów dominują (podmiany, pominięcia, wstawienia) i jaka ich część jest istotna
    klinicznie: terminy, liczby i jednostki, strona ciała, zaprzeczenia?
 3. Które cechy nagrania zwiększają liczbę błędów: szum tła, cisza, długość, mikrofon, mówca, głos
@@ -43,15 +44,25 @@ Enhancing Automatic Medical Dictation*, Scientific Data 12:1436 (2025),
 [PMC12357909](https://europepmc.org/articles/PMC12357909). Zespół pochodzi z Politechniki Gdańskiej
 i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4/0003/2022).
 
-**Jak powstał model.** Opis pochodzi z artykułu, karty modelu na Kaggle i notebooka autora
-(sprawdzone 2026-11-16).
+**Jak powstał model.** Opis pochodzi z artykułu, karty modelu na Kaggle, notebooka autora oraz z
+plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.json`,
+`trainer_state.json`).
 
 - **Model bazowy:** `openai/whisper-medium` (769M parametrów, licencja Apache 2.0). Notebook odczytuje
   go z konfiguracji adaptera (`PeftConfig.base_model_name_or_path`).
-- **Metoda:** artykuł jej nie nazywa. Karta na Kaggle podaje „trained with LoRA” i 4,7M trenowanych
-  parametrów, czyli około 0,6% modelu. Notebook ładuje adapter przez `PeftModel` i scala go
-  (`merge_and_unload`). Rank, alpha i docelowe moduły LoRA nie są nigdzie podane.
-- **Parametry treningu:** wszystkie dane pochodzą z artykułu, nie sprawdzaliśmy ich.
+- **Metoda: LoRA** (artykuł tego nie mówi; wynika to z karty na Kaggle i z plików modelu).
+  Konfiguracja adaptera, taka sama we wszystkich wariantach:
+
+  | Parametr LoRA | Wartość |
+  |---|---|
+  | rank `r` | 16 |
+  | `lora_alpha` | 32 |
+  | `lora_dropout` | 0,05 |
+  | moduły docelowe | `q_proj`, `v_proj` |
+  | biblioteka | PEFT |
+
+  Karta podaje 4,7M trenowanych parametrów, czyli około 0,6% modelu.
+- **Parametry treningu według artykułu:**
 
   | Parametr | Wartość |
   |---|---|
@@ -63,6 +74,20 @@ i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4
   | Biblioteki | PyTorch 2.5, transformers 4.48, HF datasets |
   | Audio | próbkowanie 16 kHz; nagrania dłuższe niż 30 s usunięte |
 
+- **Parametry treningu według logów (`trainer_state.json`)** różnią się od artykułu:
+
+  | Wariant | Batch | Learning rate (z nazwy katalogu) | Najlepszy krok | WER walidacji |
+  |---|---:|---|---:|---:|
+  | natural | 8 | — | 7 600 z 10 000 | 9,92 |
+  | anonymized | 16 | — | 9 100 | 15,75 |
+  | synthetic | 8 | — | 8 400 | 2,38 |
+  | natural_anonym_synth | 64 | 1e-4 | 3 000 | 7,57 |
+  | natural_anonym_synth_cv_fl | 32 | 1e-3 | 1 400 | 8,67 |
+
+  Artykuł podaje jeden zestaw ustawień (batch 64, lr 1e-5, 10 000 kroków). Logi pokazują, że warianty
+  trenowano z różnym batchem, a dla wariantów łączonych z wyższym learning rate. WER walidacji
+  jest liczony na zbiorach walidacyjnych autorów, a nie na naszym teście.
+
 - **Dane:** wszystkie kategorie ADMEDVOICE, nie tylko radiologia. Podział jest rozłączny po mówcach
   (deklaracja autorów):
 
@@ -72,8 +97,9 @@ i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4
   | Natural | 7 404 (9,6 h) | 529 | 2 645 (3,4 h) |
 
   W zbiorze testowym każda unikalna fraza pojawia się średnio 4,6 razy.
-- **Warianty:** na Kaggle są checkpointy trenowane na danych natural, anonym, synth oraz na wszystkich
-  trzech razem. Najlepszy to `natural_anonym_synth`.
+- **Warianty:** archiwum na Kaggle zawiera pięć adapterów: `natural`, `anonymized`, `synthetic`,
+  `natural_anonym_synth` i `natural_anonym_synth_cv_fl`. Notebook autora używa
+  `natural_anonym_synth`.
 - **Wyniki:** WER na teście natural, deklaracja autorów, w nawiasach 95% CI z bootstrapu.
 
   | Model | WER (natural test) |
@@ -84,10 +110,8 @@ i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4
   | trening na N+A+S | 13,9 [12,4; 15,6] |
   | N+A+S + Common Voice + FLEURS | 9,5 [8,1; 11,1] |
 
-  Wariantu z Common Voice i FLEURS (WER 9,5) nie ma wśród checkpointów wymienionych w opisie modelu
-  na Kaggle. Opis podaje tylko natural, anonym, synth i `natural_anonym_synth`. Najlepszy model,
-  który da się pobrać, ma więc deklarowany WER 13,9, a nie 9,5. Listy plików modelu nie
-  sprawdzaliśmy, bo wymaga logowania do Kaggle.
+  Wariant z Common Voice i FLEURS (WER 9,5) **jest** opublikowany. Opis modelu na Kaggle go nie
+  wymienia, ale adapter `natural_anonym_synth_cv_fl` jest w archiwum.
 - **Publikacja:** model na Kaggle `msxksm/whisper-medium-medical-pl` (Apache 2.0) i notebook
   `msxksm/transcribe-medical-pl-whisper-medium`. Wersja dla whisper.cpp to HF
   `fwasil162/whisper-medium-medical-pl-ggml`: adapter scalony z modelem bazowym, przekonwertowany
@@ -103,12 +127,9 @@ i Gdańskiego Uniwersytetu Medycznego, a projekt finansowało NCBR (INFOSTRATEG4
     dla wariantu z Common Voice i FLEURS;
   - przedziały ufności wariantów natural i anonymized nakładają się, więc teza, że trening na danych
     zanonimizowanych jest lepszy, nie jest dowiedziona.
-- **Ryzyko przecieku danych (najważniejsze dla nas):** model trenowano na mówcach z ADMEDVOICE, a lista
-  mówców testowych nie jest opublikowana w artykule ani w notebooku. Ocena tego modelu na naszym
-  wycinku radiologicznym może więc obejmować nagrania, które widział w treningu, nawet jeśli tylko
-  w wersji zanonimizowanej. Notebook demonstracyjny transkrybuje nagranie mówcy AMV010
-  z `cat_02-001`, który jest w naszym zbiorze. *TODO: ustalić podział mówców autorów, np. z kodu na
-  Kaggle albo przez kontakt z autorami, zanim porównamy ten model z bazowym Whisperem.*
+- **Przeciek danych:** model trenowano na frazach ADMEDVOICE, więc na naszym zbiorze testowym zna
+  frazy, które ma rozpoznać. Potwierdziliśmy to pomiarem i wykluczyliśmy model z porównania
+  (sekcja 4.2).
 
 ### 2.2 Inne prace
 
@@ -232,11 +253,120 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 
 ## 4. Metoda
 
-*TODO: wybrane modele ASR, normalizacja tekstu, metryki (WER, CER), wyrównanie i klasyfikacja błędów, kryteria błędu istotnego klinicznie.*
+### 4.1 Zakres: gotowe rozwiązania
+
+Testujemy rozwiązania, które radiolog lub szpital może dziś wdrożyć bez własnego treningu:
+- **Otwarte modele uruchamiane lokalnie (offline):**
+  - Whisper medium (model bazowy z publikacji ADMEDVOICE), large-v3-turbo i large-v3,
+  - NVIDIA FastConformer PL,
+  - wav2vec2 XLSR-53 Polish,
+  - Meta MMS-1b-all,
+  - Google MedASR (model tylko angielski, jako kontrola negatywna).
+- **Usługi chmurowe (online):**
+  - ElevenLabs Scribe,
+  - OpenAI whisper-1 i gpt-4o-transcribe,
+  - Deepgram Nova-3,
+  - Google Chirp,
+  - Azure AI Speech.
+
+Aktualny plan z postępem i blokadami jest w `eval/asr_eval/plan.py` i na stronie `dashboard/`.
+
+### 4.2 Wykluczone: modele dotrenowane na ADMEDVOICE
+
+Z porównania wyłączyliśmy modele dotrenowane na korpusie, z którego pochodzi nasz zbiór testowy:
+`whisper-medium-medical-pl` (wszystkie warianty LoRA) i VoxMedic (trenowany na `lion-ai/admed_voice`).
+
+Pomiar wariantu N+A+S pokazał, że taki model zna frazy testowe:
+- WER 1,46% wobec 13,9% deklarowanych przez autorów na ich teście;
+- u każdego z 14 mówców WER mieści się w przedziale 0–10%, a jeden mówca ma 60 nagrań bez błędu;
+- na frazach czytanych przez wielu mówców WER wynosi 0,9%, a na czytanych przez jednego 5,4%.
+
+Podział autorów jest rozłączny po mówcach, ale nie po tekstach: te same frazy występują w korpusie
+wielokrotnie, czytane przez różnych mówców oraz w wersjach zanonimizowanej i syntetycznej. Wynik
+takiego modelu na ADMEDVOICE nie mierzy więc rozpoznawania nowej mowy.
+
+### 4.3 Procedura
+
+**Zbiór testowy:** 939 nagrań naturalnych (2,69 h, 14 mówców) z bazy `recordings/radiology.sqlite`.
+Audio jest przepróbkowane do 16 kHz mono (soxr).
+
+**Dekodowanie (identyczne w obrębie rodziny modeli, bez promptów i słowników):**
+- Whisper: transformers, greedy, `language="pl"`, `task="transcribe"`, batch 8, fp16 na MPS.
+- Modele CTC (wav2vec2, MMS): greedy. Warianty „+ KenLM” używają beam search (pyctcdecode) z ogólnym
+  polskim 5-gramowym modelem językowym z repozytorium `jonatasgrosman/wav2vec2-large-xlsr-53-polish`.
+  Ten model językowy pochodzi z 2021 roku, czyli sprzed ADMEDVOICE, i nie zawiera np. słowa
+  „hipoechogenny”.
+- NVIDIA NeMo (FastConformer, Canary, Parakeet): domyślny dekoder modelu; Canary z
+  `source_lang=target_lang="pl"`.
+- Qwen3-ASR: pakiet `qwen-asr`, backend transformers, `language="Polish"`.
+- Usługi chmurowe: każde nagranie wysyłane osobno, `language=pl`, bez promptu i bez słownika.
+
+**Normalizacja tekstu** (`eval/asr_eval/textnorm.py`, taka sama dla referencji i hipotezy):
+- małe litery, usunięta interpunkcja;
+- wymiary rozdzielone („14x12x45” → „14 x 12 x 45”), jednostka odklejona od liczby („50mm” → „50 mm”);
+- przecinek dziesiętny zachowany;
+- usunięte znaczniki techniczne modeli (`</s>`, `<unk>`).
+
+Liczby **nie** są zamieniane na słowa, bo w opisie badania oczekiwane są cyfry.
+
+**Metryki** (`eval/asr_eval/metrics.py`, jiwer):
+- **WER i CER** z 95% przedziałem ufności z bootstrapu po wypowiedziach (1000 losowań).
+- **WER-N:** WER po zamianie liczb na słowa (num2words), „x” → „na” i jednostek zapisanych słownie
+  na skróty. Oddziela błędy rozpoznania od formy zapisu liczb.
+- **Kategorie istotne klinicznie:** odsetek błędnie rozpoznanych tokenów referencji (podmiana lub
+  pominięcie) w trzech grupach:
+  - liczby (tokeny z cyfrą),
+  - zaprzeczenia („nie”, „bez”, „brak”),
+  - strona ciała (prawy/lewy we wszystkich formach).
+- **Wstawki ≥3:** miejsca, w których model wstawił co najmniej 3 słowa, których nie było (przybliżenie
+  halucynacji).
+- **RTF:** czas przetwarzania podzielony przez długość audio (MacBook M1 Pro, 16 GB).
+
+**Dane wynikowe:**
+- `results/<model>/hyp.jsonl`: surowe transkrypcje;
+- `results/<model>/metrics.json`: metryki zbiorcze;
+- `results/summary.csv`: zestawienie wszystkich modeli;
+- baza `results/results.sqlite`, odtwarzana poleceniem `eval/build_results_db.py`:
+  - tabele `runs`, `utterances` (wynik każdego nagrania) i `errors` (dziennik wszystkich błędów),
+  - widoki według kategorii, mówcy i mikrofonu.
 
 ## 5. Eksperymenty i wyniki
 
-*TODO.*
+### 5.1 Modele otwarte uruchamiane lokalnie (stan na 2026-11-17)
+
+Liczby w procentach; WER z 95% CI. Kolumny „Liczby”, „Zaprzecz.” i „Strona” podają odsetek błędnie
+rozpoznanych tokenów w danej kategorii (n = 1 990 / 399 / 599 tokenów w referencji).
+
+| Model | WER [95% CI] | WER-N | CER | Liczby | Zaprzecz. | Strona | Wstawki ≥3 | RTF |
+|---|---|---:|---:|---:|---:|---:|---:|---:|
+| Whisper large-v3 | 8,03 [7,43–8,73] | 7,61 | 2,17 | 2,8 | 2,8 | 2,5 | 2 | 0,139 |
+| Whisper large-v3-turbo | 9,75 [9,1–10,44] | 9,21 | 2,57 | 2,8 | 1,5 | 2,8 | 3 | 0,082 |
+| Whisper medium | 13,77 [12,94–14,64] | 13,12 | 3,94 | 4,1 | 2,5 | 3,8 | 6 | 0,071 |
+| NVIDIA Parakeet-TDT-0.6B-v3 | 18,21 [17,2–19,2] | 15,03 | 6,29 | 20,8 | 1,8 | 5,3 | 3 | 0,097 |
+| NVIDIA Canary-1B-v2 | 20,05 [18,95–21,34] | 14,04 | 8,66 | 25,6 | 1,5 | 5,0 | 8 | 0,295 |
+| Qwen3-ASR-1.7B | 21,8 [20,9–22,76] | 18,35 | 7,37 | 7,7 | 10,3 | 13,7 | 3 | 0,151 |
+| Meta MMS-1b-all (pol) + KenLM | 32,07 [30,88–33,35] | 25,72 | 12,47 | 81,8 | 1,8 | 6,8 | 13 | 0,101 |
+| Meta MMS-1b-all (adapter pol, bez LM) | 35,22 [33,87–36,48] | 27,46 | 13,17 | 57,3 | 6,3 | 11,0 | 36 | 0,088 |
+| NVIDIA FastConformer PL (hybrid, P&C) | 50,7 [49,26–52,17] | 31,4 | 30,29 | 100,0 | 7,5 | 37,1 | 41 | 0,03 |
+| wav2vec2 XLSR-53 Polish + KenLM | 52,8 [51,22–54,3] | 32,94 | 29,54 | 100,0 | 14,0 | 20,7 | 132 | 0,066 |
+| wav2vec2 XLSR-53 Polish (bez LM) | 58,31 [56,67–59,69] | 41,08 | 30,68 | 100,0 | 23,8 | 25,5 | 121 | 0,07 |
+| Google MedASR | 99,65 [99,21–100,08] | 99,01 | 80,48 | 98,2 | 100,0 | 100,0 | 41 | 0,011 |
+
+**Wstępne obserwacje** (do potwierdzenia po dołożeniu usług chmurowych):
+- **Whisper large-v3 jest najlepszy spośród modeli otwartych** (WER 8,0%), także wobec nowszych
+  modeli z lat 2025–2026: NVIDIA Canary-1B-v2, Parakeet-TDT-0.6B-v3 i Qwen3-ASR-1.7B.
+- **Nowe modele NVIDIA tracą głównie na zapisie liczb** (20–26% błędów w wymiarach). Po wyrównaniu
+  formy zapisu (WER-N 14–15%) zbliżają się do Whisper medium.
+- **Qwen3-ASR dobrze radzi sobie z liczbami, ale źle z zaprzeczeniami i stroną ciała** (10–14%
+  błędów), czyli z kategoriami najgroźniejszymi klinicznie.
+- **Ogólny polski model językowy poprawia modele CTC:** wav2vec2 z 58,3 do 52,8% WER, MMS z 35,2
+  do 32,1%, a u MMS liczba długich wstawek spada z 36 do 13.
+- **NVIDIA FastConformer PL myli stronę ciała w 37% przypadków** (np. „prawym” → „prawem”).
+- **Google MedASR** (tylko angielski) daje WER ~100% zgodnie z oczekiwaniem dla kontroli
+  negatywnej. Zamienia polską mowę na angielskie terminy medyczne („discharge”, „protein”),
+  co ilustruje mechanizm halucynacji.
+
+*TODO: usługi chmurowe, Cohere Transcribe, NVIDIA Nemotron 3.5 Transcribe.*
 
 ## 6. Dyskusja i ograniczenia
 
@@ -250,6 +380,14 @@ każdego tekstu w każdym źródle: `n_natural`, `n_anonymized`, `n_synthetic`.
 | Python | 3.15.2 (biblioteka standardowa: `csv`, `sqlite3`, `struct`, `hashlib`) | budowa bazy, odczyt nagłówków WAV |
 | SQLite | 3.43.2 | baza metadanych |
 | NumPy | 2.5.5 (Python 3.12.16) | korelacja obwiedni głośności (analiza par, sekcja 3.4) |
+| PyTorch | 2.15.0 (MPS) | inferencja modeli |
+| transformers | 5.23.0 (Qwen3-ASR: 4.57.6 w osobnym środowisku) | Whisper, wav2vec2, MMS, MedASR |
+| NVIDIA NeMo | 3.0.0 (osobne środowisko) | FastConformer, Canary, Parakeet |
+| qwen-asr | z PyPI (osobne środowisko) | Qwen3-ASR |
+| jiwer | z `eval/uv.lock` | WER, CER, wyrównanie |
+| pyctcdecode + kenlm | 0.5.0 | dekodowanie CTC z modelem językowym |
+| num2words | z `eval/uv.lock` | metryka WER-N |
+| Sprzęt | MacBook Pro M1 Pro, 16 GB RAM | wszystkie przebiegi offline |
 
 Odtworzenie danych:
 1. pobierz ADMEDVOICE z Kaggle i rozpakuj go do `recordings/`,
