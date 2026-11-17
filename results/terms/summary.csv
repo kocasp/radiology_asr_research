@@ -1,0 +1,13 @@
+run_id,name,n_terms,ter,ter_ci_lo,ter_ci_hi,ter_lenient,share_form,share_segmentation,share_near_miss,share_substitution,share_deletion,n_general,gwer,gwer_ci_lo,gwer_ci_hi,gwer_lenient,ter_to_gwer
+whisper-large-v3,Whisper large-v3,5429,15.84,14.76,17.07,12.99,0.85,2.01,8.51,3.67,0.81,9405,3.08,2.59,3.56,2.34,5.14
+whisper-large-v3-turbo,Whisper large-v3-turbo,5429,19.54,18.4,20.8,16.49,1.12,1.93,11.05,4.48,0.96,9405,3.41,2.93,3.88,2.69,5.73
+whisper-medium,Whisper medium,5429,27.0,25.64,28.39,23.63,1.31,2.06,14.5,7.81,1.33,9405,5.57,4.9,6.26,4.44,4.85
+nvidia-parakeet-tdt-v3,NVIDIA Parakeet-TDT-0.6B-v3,5429,28.94,27.6,30.27,25.29,0.99,2.65,14.46,7.81,3.02,9405,5.9,5.3,6.51,4.99,4.9
+nvidia-canary-1b-v2,NVIDIA Canary-1B-v2,5429,30.06,28.78,31.37,26.25,1.47,2.34,13.72,10.74,1.79,9405,5.72,5.13,6.35,4.9,5.26
+mms-1b-all-pol-lm,Meta MMS-1b-all (pol) + KenLM,5429,30.28,28.86,31.51,24.06,1.46,4.77,13.0,8.82,2.23,9405,9.02,8.27,9.87,7.46,3.36
+mms-1b-all-pol,"Meta MMS-1b-all (adapter pol, bez LM)",5429,39.27,37.79,40.69,35.26,1.2,2.82,23.67,8.57,3.02,9405,14.13,13.07,15.17,11.77,2.78
+qwen3-asr-1.7b,Qwen3-ASR-1.7B,5429,39.29,37.69,40.69,33.93,3.04,2.32,19.3,11.66,2.97,9405,10.23,9.48,11.07,8.18,3.84
+wav2vec2-xlsr53-pl-lm,wav2vec2 XLSR-53 Polish + KenLM,5429,45.96,44.5,47.4,39.99,1.55,4.42,17.15,19.93,2.91,9405,25.98,24.84,27.12,22.25,1.77
+nemo-fastconformer-pl,"NVIDIA FastConformer PL (hybrid, P&C)",5429,53.9,52.31,55.3,49.16,1.69,3.04,21.22,21.85,6.1,9405,23.15,22.1,24.21,21.02,2.33
+wav2vec2-xlsr53-pl,wav2vec2 XLSR-53 Polish (bez LM),5429,54.91,53.33,56.33,49.68,1.55,3.68,21.62,23.67,4.38,9405,31.91,30.72,33.02,27.19,1.72
+google-medasr,Google MedASR,5429,97.62,97.15,98.07,97.62,0.0,0.0,0.44,50.1,47.08,9405,98.05,97.67,98.42,98.04,1.0

@@ -2,8 +2,10 @@
 
 Badamy, jak i dlaczego modele ASR (np. Whisper) mylą się przy dyktowaniu polskich opisów
 radiologicznych. Mierzymy ogólny poziom błędu (WER, CER) i typy błędów: podmiany, pominięcia,
-wstawienia. Sprawdzamy też, które błędy są istotne klinicznie: terminy, liczby i jednostki, strona
-ciała, zaprzeczenia. Halucynacje są tylko jedną z kategorii błędów, a nie głównym tematem.
+wstawienia. Główny temat: poprawny zapis słownictwa radiologicznego (terminy anatomiczne, opisu obrazu,
+jednostek chorobowych, skróty) w porównaniu ze słowami ogólnymi; leksykon terminów:
+`eval/lexicon/radiology_terms.tsv`, analiza: `eval/terms.py`. Halucynacje są tylko jedną z kategorii
+błędów, a nie głównym tematem.
 Dane opisuje `recordings/README.md`.
 
 Nazwa repo (`halucination_research`) jest historyczna. Temat to błędy ASR w ogóle.

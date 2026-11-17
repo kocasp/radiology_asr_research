@@ -15,4 +15,7 @@ dependencies = [
     "pyctcdecode>=0.5.0",
     "kenlm>=0.3.0",
     "num2words>=0.5.14",
+    "wordfreq>=3.1.1",
+    "simplemma>=2.0.0",
+    "matplotlib>=3.11.2",
 ]

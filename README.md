@@ -15,16 +15,25 @@ recognition*) na polskich frazach z opisów diagnostyki
 obrazowej. Zbiór testowy to 939 nagrań głosu naturalnego (2,69 h, 14 mówców, ultrasonografia (USG) tarczycy oraz
 radiologia głowy i szyi) z publicznego korpusu ADMEDVOICE. Poza WER (ang. *word error rate*: odsetek słów rozpoznanych błędnie, czyli
 podmienionych, pominiętych lub wstawionych, względem liczby słów w tekście wzorcowym) i CER (ang.
-*character error rate*: to samo liczone na znakach) mierzone są błędy w trzech
-kategoriach istotnych klinicznie (liczby i wymiary, zaprzeczenia, strona ciała) oraz wstawki słów,
-których nie było w nagraniu.
+*character error rate*: to samo liczone na znakach) mierzona jest przede wszystkim poprawność zapisu
+**słownictwa radiologicznego**: TER (ang. *term error rate*: odsetek błędnie zapisanych wystąpień
+terminów z ręcznie oznaczonego leksykonu 309 form) w porównaniu z tym samym wskaźnikiem dla słów ogólnych.
+
+**Główny wynik: terminy radiologiczne są rozpoznawane 3–6 razy gorzej niż słowa ogólne w tych samych
+nagraniach** (dotyczy modeli, które dobrze radzą sobie z ogólną polszczyzną). Najlepszy model, Whisper large-v3, zapisuje błędnie 15,8% wystąpień terminów (95% CI
+14,8–17,1) i tylko 3,1% słów ogólnych. Ponad połowa błędów terminologicznych tego modelu to
+*bliskie zapisy* („TIRADS” → „TIRAC”, „miąższ” → „miosz”, „color” → „kolor”, „dopplerowskim” →
+„doplerowskim”): model słyszy termin, ale nie zna jego pisowni. Najtrudniejsze są skróty i nazwy
+obce (TIRADS, PACS, color Doppler: błędy w 44–68% wystąpień) oraz złożenia pisane łącznie
+(„okołotarczycowo”, „gładkokonturowany”), które modele rozbijają na dwa słowa. Wyższy odsetek błędów
+dla terminów utrzymuje się także przy tej samej częstości słowa w ogólnej polszczyźnie, więc nie
+wynika tylko z rzadkości słów.
 
 Wśród 10 modeli otwartych uruchamianych lokalnie (12 konfiguracji, w tym warianty z modelem
 językowym i kontrola negatywna) najlepszy jest **Whisper large-v3: WER 8,0%**
-(95% przedział ufności, CI: 7,4–8,7), z błędami w 2,5–2,8% liczb, zaprzeczeń i określeń strony. Nowsze modele z lat
-2025–2026 (NVIDIA Canary-1B-v2, Parakeet-TDT-0.6B-v3, Qwen3-ASR-1.7B) osiągają WER 18–22%. Ich
-słabości są różne: modele NVIDIA tracą głównie na zapisie liczb, a Qwen3-ASR na zaprzeczeniach
-i stronie ciała (10–14% błędów). Modele CTC (ang. *connectionist temporal classification*: wybierają literę
+(95% przedział ufności, CI: 7,4–8,7) i TER 15,8%. Nowsze modele z lat
+2025–2026 (NVIDIA Canary-1B-v2, Parakeet-TDT-0.6B-v3, Qwen3-ASR-1.7B) osiągają WER 18–22% i TER
+29–39%; Qwen3-ASR myli ponad połowę wystąpień nazw jednostek chorobowych i zabiegów. Modele CTC (ang. *connectionist temporal classification*: wybierają literę
 dla każdego fragmentu dźwięku osobno, bez wbudowanej wiedzy o języku) bez modelu językowego (wav2vec2,
 Meta MMS, ang. *Massively Multilingual Speech*) mają WER 35–58%;
 ogólny polski model językowy obniża go o 3–6 punktów procentowych (p.p.), czyli
@@ -52,12 +61,14 @@ zmieniają znaczenie kliniczne i lekarz może ich nie zauważyć:
 1. Jak duży jest błąd rozpoznawania (WER, CER) polskich fraz z opisów radiologicznych dla gotowych,
    dostępnych rozwiązań ASR: otwartych modeli uruchamianych lokalnie i komercyjnych usług
    chmurowych?
-2. Jakie typy błędów dominują (podmiany, pominięcia, wstawienia) i jaka ich część jest istotna
-   klinicznie: terminy, liczby i jednostki, strona ciała, zaprzeczenia?
+2. Jak poprawnie zapisywane jest słownictwo radiologiczne (anatomia, opis obrazu, jednostki
+   chorobowe i zabiegi, skróty i nazwy obce) w porównaniu ze słowami ogólnymi w tych samych
+   nagraniach? Jakiego rodzaju są te błędy: fleksja, podział na słowa, błędna pisownia słyszanego
+   terminu, podmiana na inne słowo, pominięcie?
 3. Które cechy nagrania zwiększają liczbę błędów: szum tła, cisza, długość, mikrofon, mówca, głos
    przetworzony lub syntetyczny?
 
-*TODO: operacyjne definicje metryk i kategorii błędów, w tym błędu istotnego klinicznie.*
+Definicje operacyjne terminu, wskaźnika TER i kategorii błędów są w sekcji 4.4.
 
 ## 2. Powiązane prace
 
@@ -369,6 +380,52 @@ Liczby **nie** są zamieniane na słowa, bo w opisie badania oczekiwane są cyfr
   - tabele `runs`, `utterances` (wynik każdego nagrania) i `errors` (dziennik wszystkich błędów),
   - widoki według kategorii, mówcy i mikrofonu.
 
+### 4.4 Rozpoznawanie słownictwa radiologicznego
+
+**Leksykon terminów** (`eval/lexicon/radiology_terms.tsv`). Słownik referencji zbioru testowego po
+normalizacji liczy 736 typów słów bez cyfr, więc został oznaczony w całości, ręcznie, a nie filtrem
+częstości. Adnotację wykonał model językowy Claude Opus 5.5 (Anthropic) z regułami zapisanymi w nagłówku pliku; nie była
+jeszcze weryfikowana przez radiologa. Każda forma terminu ma lemat i jedną z czterech klas:
+
+| Klasa | Zawartość | Formy | Lematy | Wystąpienia w referencjach |
+|---|---|---:|---:|---:|
+| anatomia (`anatomy`) | narządy i okolice oraz przymiotniki od nich: tarczyca, płat, cieśń, miąższ, przygardłowy | 112 | 68 | 2 326 |
+| opis obrazu (`descriptor`) | echogeniczność, echostruktura, unaczynienie, morfologia zmiany, sekwencje i techniki | 114 | 59 | 2 142 |
+| patologia i zabiegi (`pathology`) | zapalenie, guzek, limfadenopatia, biopsja, parotidektomia | 54 | 35 | 410 |
+| skróty i nazwy obce (`acronym`) | TIRADS, USG, DWI, PACS, color Doppler, Hashimoto, Gadovist | 29 | 29 | 551 |
+| **terminy razem** | | **309** | **191** | **5 429** |
+| słowa ogólne (grupa porównawcza) | pozostałe słowa bez cyfr: prawidłowy, wielkość, zmiana, położona, prawy | 424 | 319 | 9 405 |
+
+Liczby, jednostki i znak wymiaru „x” nie należą do żadnej grupy. Dwie formy z błędem pisowni
+w referencji („wiekości” zamiast „wielkości”, 13 wystąpień; „hiperechegennicznym”) zostały pominięte
+w obu grupach.
+
+**Los każdego słowa referencji** (`eval/terms.py`). Na wyrównaniu jiwer (po normalizacji z sekcji 4.3)
+każde wystąpienie słowa referencji dostaje jeden status, sprawdzany w tej kolejności:
+1. *poprawne*: forma identyczna;
+2. *podział na słowa*: te same litery, inny podział (rozbicie „okołotarczycowo” → „około
+   tarczycowo” albo sklejenie „płynowo lita” → „płynowolita”, „ti rads” → „tirads”);
+3. *pominięcie*: słowo nie ma odpowiednika w hipotezie;
+4. *inna forma*: ten sam lemat, inna forma fleksyjna („przepływu” → „przepływów”). Lematy form
+   z referencji pochodzą z leksykonu, a słów hipotezy z lematyzatora simplemma;
+5. *bliski zapis*: odległość edycyjna na znakach (Levenshteina) ≤ max(1, round(0,3 · długość słowa));
+   wyjątkiem jest zmiana przedrostka niosącego znaczenie (nie-, hipo-, hiper-, izo-, normo-),
+   np. „niejednorodny” → „jednorodne”, która zawsze liczy się jako podmiana;
+6. *podmiana*: każde inne słowo.
+
+**Wskaźniki:**
+- **TER** (ang. *term error rate*): odsetek wystąpień terminów o statusie innym niż *poprawne*;
+- **TER-L** (wersja łagodna): liczone są tylko *bliski zapis*, *podmiana* i *pominięcie*. Inna
+  forma fleksyjna i podział na słowa nie są błędem, bo lekarz zwykle nie musi ich poprawiać
+  w znaczeniu, a jedynie w zapisie;
+- **GWER** (ang. *general word error rate*): odsetek błędów liczony tak samo jak TER, dla słów
+  ogólnych. Iloraz TER/GWER mówi, ile razy trudniejsze dla modelu są terminy;
+- 95% CI z bootstrapu po wypowiedziach (1000 losowań, seed 0), jak dla WER.
+
+**Rzadkość a terminologia.** Żeby oddzielić efekt dziedziny od efektu rzadkości słowa, odsetek
+błędów policzono osobno w przedziałach częstości słowa w ogólnej polszczyźnie (skala Zipfa:
+log10 liczby wystąpień na miliard słów, biblioteka wordfreq 3.1.1).
+
 ## 5. Eksperymenty i wyniki
 
 ### 5.1 Modele otwarte uruchamiane lokalnie (stan na 2026-11-17)
@@ -407,6 +464,78 @@ rozpoznanych tokenów w danej kategorii (n = 1 990 / 399 / 599 tokenów w refere
 
 *TODO: usługi chmurowe, Cohere Transcribe, NVIDIA Nemotron 3.5 Transcribe.*
 
+### 5.2 Słownictwo radiologiczne (stan na 2026-11-17)
+
+Te same transkrypcje co w sekcji 5.1, ocenione metodą z sekcji 4.4. Wartości w procentach.
+Kolumny „Inna forma” … „Pominięcie” podają odsetek wszystkich wystąpień terminów (n = 5 429);
+ich suma to TER.
+
+| Model | TER [95% CI] | TER-L | GWER | TER/GWER | Inna forma | Podział | Bliski zapis | Podmiana | Pominięcie |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Whisper large-v3 | 15,8 [14,8–17,1] | 13,0 | 3,1 | 5,1 | 0,9 | 2,0 | 8,7 | 3,4 | 0,8 |
+| Whisper large-v3-turbo | 19,5 [18,4–20,8] | 16,5 | 3,4 | 5,7 | 1,1 | 1,9 | 11,4 | 4,1 | 1,0 |
+| Whisper medium | 27,0 [25,6–28,4] | 23,6 | 5,6 | 4,8 | 1,3 | 2,1 | 15,1 | 7,2 | 1,3 |
+| NVIDIA Parakeet-TDT-0.6B-v3 | 28,9 [27,6–30,3] | 25,3 | 5,9 | 4,9 | 1,0 | 2,7 | 14,9 | 7,4 | 3,0 |
+| NVIDIA Canary-1B-v2 | 30,1 [28,8–31,4] | 26,3 | 5,7 | 5,3 | 1,5 | 2,3 | 14,5 | 10,0 | 1,8 |
+| Meta MMS-1b-all (pol) + KenLM | 30,3 [28,9–31,5] | 24,1 | 9,0 | 3,4 | 1,5 | 4,8 | 14,8 | 7,0 | 2,2 |
+| Meta MMS-1b-all (bez LM) | 39,3 [37,8–40,7] | 35,3 | 14,1 | 2,8 | 1,2 | 2,8 | 24,2 | 8,0 | 3,0 |
+| Qwen3-ASR-1.7B | 39,3 [37,7–40,7] | 33,9 | 10,2 | 3,8 | 3,0 | 2,3 | 20,1 | 10,8 | 3,0 |
+| wav2vec2 XLSR-53 Polish + KenLM | 46,0 [44,5–47,4] | 40,0 | 26,0 | 1,8 | 1,6 | 4,4 | 18,4 | 18,7 | 2,9 |
+| NVIDIA FastConformer PL | 53,9 [52,3–55,3] | 49,2 | 23,2 | 2,3 | 1,7 | 3,0 | 22,4 | 20,7 | 6,1 |
+| wav2vec2 XLSR-53 Polish (bez LM) | 54,9 [53,3–56,3] | 49,7 | 31,9 | 1,7 | 1,6 | 3,7 | 22,9 | 22,4 | 4,4 |
+| Google MedASR (kontrola negatywna) | 97,6 [97,2–98,1] | 97,6 | 98,1 | 1,0 | 0,0 | 0,0 | 0,5 | 50,1 | 47,1 |
+
+TER według klasy terminu (wybrane modele; pełna tabela: `results/terms/by_class.csv`):
+
+| Model | Anatomia | Opis obrazu | Patologia i zabiegi | Skróty i nazwy obce |
+|---|---:|---:|---:|---:|
+| Whisper large-v3 | 12,2 | 12,6 | 15,9 | 43,9 |
+| Whisper large-v3-turbo | 13,5 | 17,4 | 15,1 | 56,8 |
+| NVIDIA Parakeet-TDT-0.6B-v3 | 23,3 | 24,0 | 33,4 | 68,2 |
+| NVIDIA Canary-1B-v2 | 27,7 | 23,7 | 33,4 | 62,4 |
+| Qwen3-ASR-1.7B | 30,0 | 40,6 | 58,1 | 59,4 |
+
+![Odsetek błędów a częstość słowa w ogólnej polszczyźnie](assets/terms_vs_frequency.svg)
+
+**Obserwacje:**
+- **Terminy są 3,4–5,7 razy trudniejsze niż słowa ogólne** dla siedmiu modeli z GWER ≤ 10,2%
+  (Whisper, NVIDIA Canary i Parakeet, Qwen3-ASR, MMS + KenLM). Iloraz TER/GWER spada do 1,7–2,8
+  u modeli, które źle rozpoznają także zwykłą polszczyznę (MMS bez LM, wav2vec2, FastConformer),
+  i do 1,0 w kontroli negatywnej.
+- **Dominuje bliski zapis, nie podmiana na inne słowo.** U Whisper large-v3 8,7 z 15,8 p.p. TER
+  to zapisy bliskie poprawnemu: model rozpoznaje brzmienie terminu, ale go nie zna. Najczęstsze:
+  „TIRADS” → „TIRAC”/„TIRATS”/„TIRAS” (104 ze 176 wystąpień), „color” → „kolor” (34),
+  „miąższ” → „miosz”/„miąż” (19), „guzki” → „głuski”/„guski” (15), „cieśń” → „cieść” (8).
+  To wskazuje, że słownik podpowiedzi lub korekta pisowni po rozpoznaniu mogłyby usunąć dużą część
+  błędów bez zmiany modelu akustycznego (hipoteza do sprawdzenia).
+- **Złożenia pisane łącznie są rozbijane** („okołotarczycowo” → „około tarczycowo”,
+  „gładkokonturowany” → „gładko konturowany”): 2–5% wystąpień terminów.
+- **Najtrudniejsza klasa to skróty i nazwy obce** (44–68% błędów). Sam TIRADS odpowiada za 18%
+  błędów terminologicznych Whisper large-v3; po wyłączeniu skrótów TIRADS, EU, CD i color TER
+  tego modelu spada z 15,8 do 12,8%.
+- **Qwen3-ASR wyróżnia się słabością w nazwach chorób i zabiegów** (58% błędów: „limfadenopatii”,
+  „autoimmunologicznym”, „parotidektomii”) i w przymiotnikach echogeniczności („hipoechogenny”:
+  87% błędów wobec 20% u Whisper large-v3).
+- **Efekt dziedziny nie sprowadza się do rzadkości słów.** Słowa nieobecne w ogólnym korpusie
+  (Zipf < 1, np. „hipoechogenna”) są najtrudniejsze dla wszystkich modeli (30% błędów u Whisper
+  large-v3). Jednak także przy tej samej częstości ogólnej (Zipf 3–5) terminy mają 10–13% błędów,
+  a słowa ogólne 2–3% (Whisper large-v3; wykres powyżej, dane `results/terms/by_zipf.csv`). Słowa
+  takie jak „płat”, „miąższ” czy „cieśń” są znane z polszczyzny ogólnej, ale w kontekście
+  radiologicznym modele zapisują je gorzej.
+- Terminy najczęściej mylone przez trzy najlepsze modele (średnio, lematy z ≥ 10 wystąpieniami):
+  gładkokonturowany (97%), PACS (95%), TIRADS (94%), torbielowaty (92%), dopplerowski (82%),
+  okołotarczycowy (79%), normoechogeniczny (75%). Pełna lista: `results/terms/by_lemma.csv`.
+
+**Ograniczenia tej analizy:**
+- leksykon oznaczył model językowy, bez weryfikacji przez radiologa; granica między terminem
+  a słowem ogólnym jest umowna (np. „zmiana”, „prawidłowy” zostały uznane za ogólne);
+- korpus obejmuje tylko dwie kategorie (USG tarczycy, głowa i szyja), więc słownictwo jest wąskie,
+  a pojedyncze terminy (TIRADS: 176 wystąpień) mają duży wpływ na wynik;
+- próg bliskiego zapisu (30% długości słowa) jest arbitralny; dla krótkich słów może zaliczyć
+  do tej kategorii rzeczywiście inne słowo („płat” → „płot”);
+- „color” → „kolor” to raczej spolszczenie pisowni niż błąd rozpoznania, a mimo to liczy się
+  jako błąd.
+
 ## 6. Dyskusja i ograniczenia
 
 *TODO.*
@@ -426,7 +555,14 @@ rozpoznanych tokenów w danej kategorii (n = 1 990 / 399 / 599 tokenów w refere
 | jiwer | z `eval/uv.lock` | WER, CER, wyrównanie |
 | pyctcdecode + kenlm | 0.5.0 | dekodowanie CTC z modelem językowym |
 | num2words | z `eval/uv.lock` | metryka WER-N |
+| wordfreq | 3.1.1 | częstość słów w ogólnej polszczyźnie (skala Zipfa) |
+| simplemma | 2.0.0 | lematy słów hipotezy (analiza terminów) |
+| matplotlib | 3.11.2 | wykres `assets/terms_vs_frequency.svg` |
 | Sprzęt | MacBook Pro M1 Pro, 16 GB pamięci operacyjnej (RAM) | wszystkie przebiegi offline |
+
+Analizę terminów (sekcja 5.2) odtwarza `cd eval && uv run python terms.py` (ok. 30 s na M1 Pro);
+zapisuje `results/terms/*.csv`, wykres i tabelę `term_tokens` w `results/results.sqlite`.
+Polecenie trzeba uruchomić ponownie po `build_results_db.py`, bo ten odbudowuje bazę od zera.
 
 Odtworzenie danych:
 1. pobranie ADMEDVOICE z Kaggle i rozpakowanie go do `recordings/`,

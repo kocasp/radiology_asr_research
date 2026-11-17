@@ -1,0 +1,49 @@
+run_id,name,cls,n,ter,ter_ci_lo,ter_ci_hi,ter_lenient
+whisper-medium,Whisper medium,anatomy,2326,23.26,21.31,25.3,21.02
+whisper-medium,Whisper medium,descriptor,2142,26.28,24.36,28.36,20.54
+whisper-medium,Whisper medium,pathology,410,30.24,25.56,34.99,29.27
+whisper-medium,Whisper medium,acronym,551,43.19,38.8,48.33,42.47
+whisper-large-v3-turbo,Whisper large-v3-turbo,anatomy,2326,13.46,11.98,15.1,11.65
+whisper-large-v3-turbo,Whisper large-v3-turbo,descriptor,2142,17.41,15.57,19.25,11.76
+whisper-large-v3-turbo,Whisper large-v3-turbo,pathology,410,15.12,11.43,19.29,14.39
+whisper-large-v3-turbo,Whisper large-v3-turbo,acronym,551,56.81,53.26,60.44,56.81
+whisper-large-v3,Whisper large-v3,anatomy,2326,12.21,10.73,13.76,9.72
+whisper-large-v3,Whisper large-v3,descriptor,2142,12.56,10.95,14.18,8.31
+whisper-large-v3,Whisper large-v3,pathology,410,15.85,12.15,19.66,15.37
+whisper-large-v3,Whisper large-v3,acronym,551,43.92,39.33,48.65,43.19
+nemo-fastconformer-pl,"NVIDIA FastConformer PL (hybrid, P&C)",anatomy,2326,45.1,42.52,47.35,41.79
+nemo-fastconformer-pl,"NVIDIA FastConformer PL (hybrid, P&C)",descriptor,2142,50.56,48.52,52.51,42.67
+nemo-fastconformer-pl,"NVIDIA FastConformer PL (hybrid, P&C)",pathology,410,65.61,60.97,69.93,63.41
+nemo-fastconformer-pl,"NVIDIA FastConformer PL (hybrid, P&C)",acronym,551,95.28,93.45,97.01,94.92
+nvidia-canary-1b-v2,NVIDIA Canary-1B-v2,anatomy,2326,27.69,25.79,29.62,24.38
+nvidia-canary-1b-v2,NVIDIA Canary-1B-v2,descriptor,2142,23.67,21.84,25.64,17.88
+nvidia-canary-1b-v2,NVIDIA Canary-1B-v2,pathology,410,33.41,28.94,38.35,32.2
+nvidia-canary-1b-v2,NVIDIA Canary-1B-v2,acronym,551,62.43,59.15,66.24,62.25
+nvidia-parakeet-tdt-v3,NVIDIA Parakeet-TDT-0.6B-v3,anatomy,2326,23.34,21.59,25.09,20.89
+nvidia-parakeet-tdt-v3,NVIDIA Parakeet-TDT-0.6B-v3,descriptor,2142,24.04,21.92,26.15,17.6
+nvidia-parakeet-tdt-v3,NVIDIA Parakeet-TDT-0.6B-v3,pathology,410,33.41,28.92,38.17,32.93
+nvidia-parakeet-tdt-v3,NVIDIA Parakeet-TDT-0.6B-v3,acronym,551,68.24,64.74,71.78,68.06
+qwen3-asr-1.7b,Qwen3-ASR-1.7B,anatomy,2326,30.01,27.83,32.07,24.51
+qwen3-asr-1.7b,Qwen3-ASR-1.7B,descriptor,2142,40.62,38.19,42.78,33.57
+qwen3-asr-1.7b,Qwen3-ASR-1.7B,pathology,410,58.05,53.54,62.53,55.12
+qwen3-asr-1.7b,Qwen3-ASR-1.7B,acronym,551,59.35,55.57,63.46,59.35
+wav2vec2-xlsr53-pl,wav2vec2 XLSR-53 Polish (bez LM),anatomy,2326,44.97,42.71,47.2,38.18
+wav2vec2-xlsr53-pl,wav2vec2 XLSR-53 Polish (bez LM),descriptor,2142,53.27,51.18,55.25,47.76
+wav2vec2-xlsr53-pl,wav2vec2 XLSR-53 Polish (bez LM),pathology,410,65.37,61.7,69.27,63.41
+wav2vec2-xlsr53-pl,wav2vec2 XLSR-53 Polish (bez LM),acronym,551,95.46,93.74,97.02,95.46
+mms-1b-all-pol,"Meta MMS-1b-all (adapter pol, bez LM)",anatomy,2326,30.27,28.0,32.5,26.31
+mms-1b-all-pol,"Meta MMS-1b-all (adapter pol, bez LM)",descriptor,2142,36.32,34.43,38.34,30.77
+mms-1b-all-pol,"Meta MMS-1b-all (adapter pol, bez LM)",pathology,410,56.34,52.39,60.45,54.63
+mms-1b-all-pol,"Meta MMS-1b-all (adapter pol, bez LM)",acronym,551,76.04,72.35,79.46,76.04
+wav2vec2-xlsr53-pl-lm,wav2vec2 XLSR-53 Polish + KenLM,anatomy,2326,34.95,32.74,37.17,28.55
+wav2vec2-xlsr53-pl-lm,wav2vec2 XLSR-53 Polish + KenLM,descriptor,2142,45.14,43.07,47.09,37.63
+wav2vec2-xlsr53-pl-lm,wav2vec2 XLSR-53 Polish + KenLM,pathology,410,50.24,45.98,54.3,46.83
+wav2vec2-xlsr53-pl-lm,wav2vec2 XLSR-53 Polish + KenLM,acronym,551,92.38,90.22,94.32,92.38
+mms-1b-all-pol-lm,Meta MMS-1b-all (pol) + KenLM,anatomy,2326,22.61,20.73,24.37,17.07
+mms-1b-all-pol-lm,Meta MMS-1b-all (pol) + KenLM,descriptor,2142,28.2,26.41,29.94,18.72
+mms-1b-all-pol-lm,Meta MMS-1b-all (pol) + KenLM,pathology,410,26.59,22.33,31.01,25.37
+mms-1b-all-pol-lm,Meta MMS-1b-all (pol) + KenLM,acronym,551,73.5,69.67,77.23,73.32
+google-medasr,Google MedASR,anatomy,2326,100.0,100.0,100.0,100.0
+google-medasr,Google MedASR,descriptor,2142,99.95,99.85,100.0,99.95
+google-medasr,Google MedASR,pathology,410,100.0,100.0,100.0,100.0
+google-medasr,Google MedASR,acronym,551,76.77,72.66,81.03,76.77
