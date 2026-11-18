@@ -142,13 +142,14 @@ table.grid.compact th,table.grid.compact td{padding:6px 9px}
 .btn:hover{background:var(--ink2);border-color:var(--ink2);transform:translateY(-1px);box-shadow:0 4px 10px rgba(15,23,42,.22)}
 .btn:active{transform:translateY(0);box-shadow:none}
 
-/* dark selects (custom light chevron) */
-.controls select{appearance:none;-webkit-appearance:none;background-color:var(--ink);border-color:var(--ink);color:#fff;cursor:pointer;
-  padding-right:34px;
+/* dark selects (custom light chevron; dark native popup for readable options) */
+.controls select{appearance:none;-webkit-appearance:none;color-scheme:dark;
+  background-color:var(--ink);border-color:var(--ink);color:#fff;cursor:pointer;padding-right:34px;
   background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/></svg>");
   background-repeat:no-repeat;background-position:right 12px center}
-.controls select:hover{background-color:var(--ink2)}
-.controls select option{color:#111827;background:#fff}
+.controls select:hover{background-color:var(--ink2);color:#fff}
+.controls select option{background-color:#111827;color:#f3f4f6}
+.controls select option:checked,.controls select option:hover{background-color:var(--accent);color:#fff}
 
 /* dark search fields */
 .search{background:var(--ink);border-color:var(--ink);color:#fff}
