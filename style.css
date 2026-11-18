@@ -122,3 +122,59 @@ table.grid.compact th,table.grid.compact td{padding:6px 9px}
 .legend .catnum,.legend .catneg,.legend .catside{background:var(--bg-soft);padding:3px 9px}
 
 .foot{color:var(--muted);font-size:12.5px;padding:28px 24px 60px;border-top:1px solid var(--rule2);margin-top:10px}
+
+/* ============================================================
+   Interactive affordances: dark controls + motion
+   Visual language: dark = interactive, light = content.
+   ============================================================ */
+.tab,.btn,.item,table.grid tbody tr,.search,.controls select{
+  transition:background-color .16s ease,color .16s ease,border-color .16s ease,box-shadow .16s ease,transform .1s ease;
+}
+
+/* segmented tabs — active is a dark pill */
+.tabs{display:inline-flex;gap:4px;background:var(--chip);border:1px solid var(--rule2);border-radius:10px;padding:4px;margin:4px 0 22px}
+.tab{border:0;border-radius:6px;margin:0;padding:8px 18px;color:#475569}
+.tab:hover{background:#e2e8f0;color:#0f172a}
+.tab.active{background:var(--ink);color:#fff;box-shadow:0 1px 3px rgba(0,0,0,.28)}
+
+/* dark buttons */
+.btn{background:var(--ink);border-color:var(--ink);color:#fff}
+.btn:hover{background:var(--ink2);border-color:var(--ink2);transform:translateY(-1px);box-shadow:0 4px 10px rgba(15,23,42,.22)}
+.btn:active{transform:translateY(0);box-shadow:none}
+
+/* dark selects (custom light chevron) */
+.controls select{appearance:none;-webkit-appearance:none;background-color:var(--ink);border-color:var(--ink);color:#fff;cursor:pointer;
+  padding-right:34px;
+  background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='12' height='12' viewBox='0 0 12 12'><path d='M2 4l4 4 4-4' fill='none' stroke='white' stroke-width='1.6' stroke-linecap='round'/></svg>");
+  background-repeat:no-repeat;background-position:right 12px center}
+.controls select:hover{background-color:var(--ink2)}
+.controls select option{color:#111827;background:#fff}
+
+/* dark search fields */
+.search{background:var(--ink);border-color:var(--ink);color:#fff}
+.search::placeholder{color:#9ca3af}
+.search:hover{background:var(--ink2)}
+.search:focus{background:var(--ink2);border-color:var(--accent);outline:2px solid #bfdbfe;outline-offset:1px}
+
+/* clickable table rows -> go dark on hover */
+table.grid tbody tr:hover{background:var(--ink)}
+table.grid tbody tr:hover td{color:#e5e7eb}
+table.grid tbody tr:hover .best{color:#93c5fd}
+
+/* clickable list items -> dark on hover / active */
+.item:hover,.item.active{background:var(--ink);border-left:3px solid var(--accent)}
+.item:hover .id,.item.active .id{color:#fff}
+.item:hover .txt,.item.active .txt{color:#cbd5e1}
+.item:hover .meta,.item.active .meta{color:#94a3b8}
+
+/* keyboard focus stays visible on dark controls */
+.tab:focus-visible,.btn:focus-visible,.search:focus-visible,.controls select:focus-visible,
+table.grid tbody tr:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
+
+/* gentle reveal when detail panels re-render */
+@keyframes fadeUp{from{opacity:0;transform:translateY(5px)}to{opacity:1;transform:none}}
+.diff-block,.card,.kpis{animation:fadeUp .22s ease both}
+
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+}
