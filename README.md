@@ -6,7 +6,7 @@ Konrad Strojny
 
 ## Abstract
 
-Ready-to-use automatic speech recognition (ASR) systems are increasingly considered for dictating radiology reports, yet their behaviour on Polish clinical speech is poorly characterised. This work benchmarks off-the-shelf systems on 939 natural-voice recordings (2.69 h, 14 speakers) from the public ADMEDVOICE corpus, covering thyroid ultrasound and head-and-neck radiology. Besides the word error rate (WER, the fraction of reference words that are substituted, deleted, or inserted) and the character error rate (CER), the main focus is the correctness of **radiology terminology**: the term error rate (TER, the fraction of misrecognised occurrences of terms from a manually annotated lexicon of 309 forms) is compared with the same measure for general words. In classical ASR systems, radiology terms are recognised **3–6 times worse** than general words in the same recordings; large language model (LLM)-based transcribers narrow this gap. The best open model, Whisper large-v3, misrecognises 15.8% of term occurrences (95% CI 14.8–17.1) but only 3.1% of general words. More than half of its terminology errors are *near-misses* (e.g., "TIRADS" → "TIRAC", "miąższ" → "miosz"): the model hears the term but does not know its spelling. Abbreviations and foreign names are hardest (44–68% errors). The best cloud service, OpenAI gpt-4o-transcribe, reaches WER 5.96% (95% CI 5.4–6.5), outperforming Whisper large-v3 (8.03%); Google Gemini 3.5 Flash has the lowest TER (6.6%). ElevenLabs Scribe v2 spells out numbers (e.g., "2 mm" → "dwóch milimetrów"), which inflates its WER to 28.27%; after number-format normalisation its normalised WER is 5.22%. A model fine-tuned on ADMEDVOICE leaks the test phrases (WER 1.46% versus 13.9% declared by its authors) and is excluded. The higher error rate for terms also persists at equal word frequency, so it is not explained by word rarity alone.
+Ready-to-use automatic speech recognition (ASR) systems are increasingly considered for dictating radiology reports, yet their behaviour on Polish clinical speech is poorly characterised. This work benchmarks off-the-shelf systems on 939 natural-voice Polish research recordings (2.69 h, 14 speakers) of thyroid ultrasound and head-and-neck radiology. Besides the word error rate (WER, the fraction of reference words that are substituted, deleted, or inserted) and the character error rate (CER), the main focus is the correctness of **radiology terminology**: the term error rate (TER, the fraction of misrecognised occurrences of terms from a manually annotated lexicon of 309 forms) is compared with the same measure for general words. In classical ASR systems, radiology terms are recognised **3–6 times worse** than general words in the same recordings; large language model (LLM)-based transcribers narrow this gap. The best open model, Whisper large-v3, misrecognises 15.8% of term occurrences (95% CI 14.8–17.1) but only 3.1% of general words. More than half of its terminology errors are *near-misses* (e.g., "TIRADS" → "TIRAC", "miąższ" → "miosz"): the model hears the term but does not know its spelling. Abbreviations and foreign names are hardest (44–68% errors). The best cloud service, OpenAI gpt-4o-transcribe, reaches WER 5.96% (95% CI 5.4–6.5), outperforming Whisper large-v3 (8.03%); Google Gemini 3.5 Flash has the lowest TER (6.6%). ElevenLabs Scribe v2 spells out numbers (e.g., "2 mm" → "dwóch milimetrów"), which inflates its WER to 28.27%; after number-format normalisation its normalised WER is 5.22%. The higher error rate for terms also persists at equal word frequency, so it is not explained by word rarity alone.
 
 ## 1. Introduction
 
@@ -27,62 +27,16 @@ Radiologists increasingly dictate reports into speech recognition (ASR) systems.
 - A term-level error analysis that separates radiology terms (309 forms in four classes) from general words via TER and GWER (general word error rate), and classifies errors into inflection, segmentation, near-miss, substitution, and deletion.
 - Clinically critical error categories (numbers, negations, body side) and a proxy for hallucinations (insertions of three or more words).
 - A number-format-normalised WER (WER-N) that separates recognition errors from number-formatting conventions.
-- Evidence that models fine-tuned on ADMEDVOICE memorise the test phrases, and a clear exclusion of such models from the comparison.
 
 ## 2. Related Work
 
-### 2.1 ADMEDVOICE and the `whisper-medium-medical-pl` model
-
-The corpus is described in Czyżewski et al., *A Comprehensive Polish Medical Speech Dataset for Enhancing Automatic Medical Dictation*, Scientific Data 12:1436 (2025), [doi:10.1038/s41597-025-05776-1](https://doi.org/10.1038/s41597-025-05776-1) [1]. The team comes from Gdańsk University of Technology and the Medical University of Gdańsk; the project was funded by the Polish National Centre for Research and Development (NCBR, grant INFOSTRATEG4/0003/2022).
-
-**How the model was built.** The description below comes from the article, the Kaggle model card, the author's notebook, and the model files themselves (archive downloaded from Kaggle on 2026-11-16: `adapter_config.json`, `trainer_state.json`).
-
-- **Base model:** `openai/whisper-medium` (769M parameters, Apache 2.0 licence) [2]. The notebook reads it from the adapter configuration (`PeftConfig.base_model_name_or_path`).
-- **Method: LoRA** (low-rank adaptation [5]; the article does not state this, but the model card and files do). Adapter configuration:
-
-  | LoRA parameter | Value |
-  |---|---|
-  | rank `r` | 16 |
-  | `lora_alpha` | 32 |
-  | `lora_dropout` | 0.05 |
-  | target modules | `q_proj`, `v_proj` |
-  | library | PEFT (parameter-efficient fine-tuning, Hugging Face) |
-
-  The model card reports 4.7M trained parameters, about 0.6% of the model.
-- **Training parameters from the article:**
-
-  | Parameter | Value |
-  |---|---|
-  | Number of steps | up to 10,000 |
-  | Batch | 64 |
-  | Learning rate | 1e-5 |
-  | Checkpoint selection | lowest validation WER |
-  | Hardware | 1× NVIDIA A100 GPU on PLGrid (Polish research computing infrastructure), up to 48 h per run |
-  | Libraries | PyTorch 2.5, transformers 4.48, Hugging Face (HF) datasets [18, 19] |
-  | Audio | 16 kHz sampling; recordings longer than 30 s removed |
-
-- **Data:** all ADMEDVOICE categories, not only radiology. The split is disjoint by speaker (per the authors); in their test set each unique phrase appears on average 4.6 times. The authors report a WER of about 14% on their natural test set (details in the article).
-- **Release:** the model is on Kaggle as `msxksm/whisper-medium-medical-pl` (Apache 2.0) with the notebook `msxksm/transcribe-medical-pl-whisper-medium`. The whisper.cpp version is on the Hugging Face Hub as `fwasil162/whisper-medium-medical-pl-ggml`: the adapter merged with the base model, converted to ggml (the format used by the whisper.cpp library) and quantised to q5_0 (weights stored in about 5 bits) — 514 MB. That repository is not from the corpus authors.
-
-**Gaps and inconsistencies relevant to this study.**
-- **The article reports an aggregate WER.** It does not break errors down by type or assess their clinical weight. Hallucinations are cited from the literature but not measured. This is precisely what the present study addresses.
-- **It is unknown how text was normalised before computing WER.** The article does not say.
-- **Data leakage:** the model was trained on ADMEDVOICE phrases, so on this study's test set it knows the phrases it is asked to recognise. This was confirmed by measurement, and the model is excluded from the comparison (Section 4.2).
-
-### 2.2 Other work
-
-- Kurowski, Zaporowski, Kostek, and Czyżewski (International Conference on Information Systems Development, ISD, 2025) compare PEFT methods (LoRA, DoRA, MoRA) on Whisper small, evaluated on the ADMEDVOICE test set [27]. Their work concerns parameter-efficient adaptation rather than a per-term error analysis of the kind reported here.
+The open models evaluated here were introduced in prior work: Whisper [2], wav2vec 2.0 [3], and the multilingual MMS family [4]. Recent domain-specific and commercial transcribers are documented in their model cards and product documentation (Section 4.1). ASR benchmarking for clinical dictation has largely focused on English and on aggregate word error rates; this study targets Polish radiology dictation and analyses errors at the level of individual terms and clinically critical tokens (numbers, negations, body side).
 
 ## 3. Data
 
-### 3.1 Source
+### 3.1 Research recordings
 
-Polish medical recordings from the **ADMEDVOICE** corpus:
-- Kaggle `karmarci/polish-medical-multi-source-corpus`,
-- DOI 10.34740/kaggle/ds/6698205,
-- licence CC BY 4.0 (Creative Commons Attribution).
-
-The corpus contains 52,990 recordings (88:19 h, per the authors). **This study uses only the natural-voice variant (human speech)**; the anonymised (voice-timbre conversion via the SALT method) and synthetic (text-to-speech, TTS) variants are not considered. The recordings are short read phrases, not spontaneous dictation of whole reports.
+The study uses 939 natural-voice Polish radiology recordings (2.69 h, 14 speakers): short read phrases from thyroid ultrasound and head-and-neck reports, not spontaneous dictation of whole reports. The recordings come from a public research corpus (ADMEDVOICE; Kaggle `karmarci/polish-medical-multi-source-corpus`, DOI 10.34740/kaggle/ds/6698205, licence CC BY 4.0) [1]; only the natural human-voice variant is used.
 
 ### 3.2 Radiology subset
 
@@ -142,7 +96,6 @@ Columns `text_id`, `phrase_group`, `category_code`, `phrase`, and `n_words`, plu
 
 - **There are no identical files.** This was checked with the MD5 cryptographic hash of the audio samples, ignoring the WAV header.
 - **The same speaker reads the same text several times:** 129 cases, 258 recordings in total. Each text has 3.8 recordings on average (up to 13).
-- **Leakage risk:** a model fine-tuned on ADMEDVOICE phrases knows the test phrases — confirmed by measurement in Section 4.2 (WER 1.46% versus 13.9% declared by the authors).
 
 ### 3.5 Data limitations
 
@@ -166,40 +119,29 @@ All results in Section 5 come from stage 1.
 The evaluated systems are ready-made solutions that a radiologist or hospital can deploy today without their own training.
 
 **Open models run locally (offline):**
-- Whisper medium (the base model of the ADMEDVOICE publication [1]), large-v3-turbo, and large-v3 [2];
-- recent 2025–2026 models with declared Polish support: NVIDIA Canary-1B-v2 [6], NVIDIA Parakeet-TDT-0.6B-v3 [7], and Qwen3-ASR-1.7B [9];
-- NVIDIA FastConformer PL [8];
-- wav2vec2 XLSR-53 Polish [3, 10] and Meta MMS-1b-all [4], each without a language model (LM) and with a general Polish KenLM (n-gram LM) [22];
-- Google MedASR [11], an English-only model used as a negative control.
+- Whisper medium, large-v3-turbo, and large-v3 [2];
+- recent 2025–2026 models with declared Polish support: NVIDIA Canary-1B-v2 [5], NVIDIA Parakeet-TDT-0.6B-v3 [6], and Qwen3-ASR-1.7B [8];
+- NVIDIA FastConformer PL [7];
+- wav2vec2 XLSR-53 Polish [3, 9] and Meta MMS-1b-all [4], each without a language model (LM) and with a general Polish KenLM (n-gram LM) [20];
+- Google MedASR [10], an English-only model used as a negative control.
 
 **Commercial cloud services (online):**
-- OpenAI whisper-1 and gpt-4o-transcribe [12],
-- ElevenLabs Scribe v2 [13],
-- Deepgram Nova-3 [14],
-- AssemblyAI Universal-2 [15],
-- Speechmatics (Polish) [16],
-- Google Gemini 3.5 Flash (transcription through a general LLM) [17].
+- OpenAI whisper-1 and gpt-4o-transcribe [11],
+- ElevenLabs Scribe v2 [12],
+- Deepgram Nova-3 [13],
+- AssemblyAI Universal-2 [14],
+- Speechmatics (Polish) [15],
+- Google Gemini 3.5 Flash (transcription through a general LLM) [16].
 
 Polish support for the new models was checked in their Hugging Face model cards (2026-11-17). Systems that could not be evaluated are listed in Section 7.
 
-### 4.2 Excluded: models fine-tuned on ADMEDVOICE
-
-Models fine-tuned on the corpus from which the test set is drawn were excluded from the comparison: `whisper-medium-medical-pl` (all LoRA adaptations) and VoxMedic (trained on `lion-ai/admed_voice`).
-
-Measuring such a model showed that it knows the test phrases:
-- WER 1.46% versus 13.9% declared by its authors on their test;
-- for every one of the 14 speakers the WER lies in the range 0–10%, and one speaker has 60 recordings with no error;
-- on phrases read by many speakers the WER is 0.9%, and on those read by a single speaker 5.4%.
-
-The authors' split is disjoint by speaker but not by text: the same phrases are read by many speakers (3.8 recordings per text on average). The result of such a model on ADMEDVOICE therefore does not measure recognition of new speech.
-
-### 4.3 Procedure
+### 4.2 Procedure
 
 **Test set:** 939 natural recordings (2.69 h, 14 speakers) from `recordings/radiology.sqlite`. Audio is resampled to 16 kHz mono (soxr).
 
 **Decoding (identical within a model family, without prompts or dictionaries):**
-- Whisper: transformers, greedy decoding, `language="pl"`, `task="transcribe"`, batch 8, half precision (fp16) on the Mac GPU (MPS, Metal Performance Shaders) [2, 18].
-- CTC models (wav2vec2, MMS): greedy. The "+ KenLM" variants use beam search (pyctcdecode) with a general Polish 5-gram language model from the `jonatasgrosman/wav2vec2-large-xlsr-53-polish` repository [10, 21, 22]. This language model dates from 2021, i.e. before ADMEDVOICE, and does not contain e.g. the word "hipoechogenny".
+- Whisper: transformers, greedy decoding, `language="pl"`, `task="transcribe"`, batch 8, half precision (fp16) on the Mac GPU (MPS, Metal Performance Shaders) [2, 17].
+- CTC models (wav2vec2, MMS): greedy. The "+ KenLM" variants use beam search (pyctcdecode) with a general Polish 5-gram language model from the `jonatasgrosman/wav2vec2-large-xlsr-53-polish` repository [9, 19, 20]. This language model dates from 2021 and does not contain e.g. the word "hipoechogenny".
 - NVIDIA NeMo (FastConformer, Canary, Parakeet): the model's default decoder; Canary with `source_lang=target_lang="pl"`.
 - Qwen3-ASR: the `qwen-asr` package, transformers backend, `language="Polish"`.
 - Cloud services (`eval/asr_eval/cloud.py`): each recording is sent as a separate request as a 16 kHz mono WAV, `language=pl`, without a prompt or dictionary (stage 1); up to 8 requests in parallel. The exception is Google Gemini (the general multimodal LLM `gemini-3.5-flash`), which through the `generateContent` API receives a neutral "transcribe verbatim" instruction — without vocabulary and without medical context. Asynchronous services (Speechmatics, Soniox, AssemblyAI) are polled for the result, and files and jobs are removed from their servers after the transcription is read. The RTF of cloud services includes network and queueing time, so it is not comparable with local models.
@@ -212,9 +154,9 @@ The authors' split is disjoint by speaker but not by text: the same phrases are 
 
 Numbers are **not** converted to words, because digits are expected in a radiology report.
 
-**Metrics** (`eval/asr_eval/metrics.py`, jiwer [20]):
+**Metrics** (`eval/asr_eval/metrics.py`, jiwer [18]):
 - **WER and CER** with a 95% confidence interval from bootstrapping over utterances (1,000 resamples).
-- **WER-N:** WER after converting numbers to words (num2words [25]), "x" → "na", and units written as words to abbreviations. This separates recognition errors from number-formatting conventions.
+- **WER-N:** WER after converting numbers to words (num2words [23]), "x" → "na", and units written as words to abbreviations. This separates recognition errors from number-formatting conventions.
 - **Clinically critical categories:** the fraction of misrecognised reference tokens (substitution or deletion) in three groups:
   - numbers (tokens containing a digit),
   - negations ("nie", "bez", "brak", i.e. no / without / absent),
@@ -230,7 +172,7 @@ Numbers are **not** converted to words, because digits are expected in a radiolo
   - tables `runs`, `utterances` (per-recording result), and `errors` (log of all errors),
   - views by category, speaker, and microphone.
 
-### 4.4 Radiology terminology recognition
+### 4.3 Radiology terminology recognition
 
 **Term lexicon** (`eval/lexicon/radiology_terms.tsv`). The reference vocabulary of the test set after normalisation has 736 word types without digits, so it was annotated in full, manually, rather than by a frequency filter. The annotation was produced by the language model Claude Opus 5.5 (Anthropic) with rules recorded in the file header; it has not yet been verified by a radiologist. Each term form has a lemma and one of four classes:
 
@@ -245,11 +187,11 @@ Numbers are **not** converted to words, because digits are expected in a radiolo
 
 Numbers, units, and the dimension sign "x" belong to no group. Two misspelled forms in the reference ("wiekości" instead of "wielkości", 13 occurrences; "hiperechegennicznym") were excluded from both groups.
 
-**Fate of each reference word** (`eval/terms.py`). On the jiwer alignment (after normalisation from Section 4.3), each reference-word occurrence receives one status, checked in this order:
+**Fate of each reference word** (`eval/terms.py`). On the jiwer alignment (after normalisation from Section 4.2), each reference-word occurrence receives one status, checked in this order:
 1. *correct*: identical form;
 2. *word segmentation*: the same letters, a different split (splitting "okołotarczycowo" → "około tarczycowo", or merging "płynowo lita" → "płynowolita", "ti rads" → "tirads");
 3. *deletion*: the word has no counterpart in the hypothesis;
-4. *inflection*: the same lemma, a different inflectional form ("przepływu" → "przepływów"). Lemmas of reference forms come from the lexicon, and those of hypothesis words from the simplemma lemmatiser [24];
+4. *inflection*: the same lemma, a different inflectional form ("przepływu" → "przepływów"). Lemmas of reference forms come from the lexicon, and those of hypothesis words from the simplemma lemmatiser [22];
 5. *near-miss*: character edit distance (Levenshtein) ≤ max(1, round(0.3 · word length)); the exception is a change of a meaning-bearing prefix (nie-, hipo-, hiper-, izo-, normo-), e.g. "niejednorodny" → "jednorodne", which always counts as a substitution;
 6. *substitution*: any other word.
 
@@ -259,7 +201,7 @@ Numbers, units, and the dimension sign "x" belong to no group. Two misspelled fo
 - **GWER** (general word error rate): the error fraction computed the same way as TER, for general words. The ratio TER/GWER indicates how many times harder the terms are for a model;
 - 95% CI from bootstrapping over utterances (1,000 resamples, seed 0), as for WER.
 
-**Rarity versus terminology.** To separate the domain effect from the word-rarity effect, the error fraction was computed separately in bins of word frequency in general Polish (Zipf scale: log10 of occurrences per billion words, wordfreq 3.1.1 library [23, 26]).
+**Rarity versus terminology.** To separate the domain effect from the word-rarity effect, the error fraction was computed separately in bins of word frequency in general Polish (Zipf scale: log10 of occurrences per billion words, wordfreq 3.1.1 library [21, 24]).
 
 ## 5. Experiments and Results
 
@@ -292,7 +234,7 @@ Values in percent; WER with 95% CI. The "Numbers", "Negations", and "Body side" 
 
 ### 5.2 Cloud services
 
-Columns as in Section 5.1. The RTF includes network and queueing time, so it is not comparable with local models (Section 4.3).
+Columns as in Section 5.1. The RTF includes network and queueing time, so it is not comparable with local models (Section 4.2).
 
 | Model | WER [95% CI] | WER-N | CER | Numbers | Negations | Body side | Insertions ≥3 | RTF |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -314,7 +256,7 @@ Columns as in Section 5.1. The RTF includes network and queueing time, so it is 
 
 ### 5.3 Radiology terminology
 
-The same transcriptions as in Sections 5.1 and 5.2, evaluated with the method of Section 4.4. Values in percent. The columns "Inflection" … "Deletion" give the fraction of all term occurrences (n = 5,429); their sum is TER.
+The same transcriptions as in Sections 5.1 and 5.2, evaluated with the method of Section 4.3. Values in percent. The columns "Inflection" … "Deletion" give the fraction of all term occurrences (n = 5,429); their sum is TER.
 
 | Model | TER [95% CI] | TER-L | GWER | TER/GWER | Inflection | Segmentation | Near-miss | Substitution | Deletion |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|
@@ -381,8 +323,6 @@ TER by term class (selected models; full table: `results/terms/by_class.csv`):
 
 **Near-miss dominance points to a cheap remedy.** Because most terminology errors in classical ASR are near-misses — the acoustic model heard the word but did not know its spelling — a lexicon-driven post-correction or a decoding-time term list could remove a large share of errors without retraining. An upper bound for this remedy is visible in the gap between TER (15.8%) and TER-L (13.0%) for Whisper large-v3, and in the concentration of errors on a small set of high-impact abbreviations (TIRADS, PACS, color Doppler). This is the object of stage 2.
 
-**Reproducibility and leakage.** The single most important methodological caveat is leakage: a model fine-tuned on ADMEDVOICE reaches WER 1.46% on this test set, not because it recognises new speech better, but because it has seen the phrases (Section 4.2). Benchmarks built on read-speech corpora with repeated phrases must verify that no evaluated model was trained on the same texts, and should report the fine-tuned baseline as evidence of the achievable leak.
-
 ## 7. Limitations
 
 - **Data.** The test set is small (2.69 h), covers two categories dominated by thyroid ultrasound, and consists of read phrases rather than spontaneous dictation (Section 3.5). Results may not transfer to full, free-form reports or to other anatomical regions.
@@ -394,7 +334,7 @@ TER by term class (selected models; full table: `results/terms/by_class.csv`):
 
 ## 8. Conclusion
 
-Ready-made ASR systems are close to usable for Polish radiology dictation, but aggregate WER hides the clinically relevant failures. On 939 natural-voice recordings from ADMEDVOICE, the best open model (Whisper large-v3) reaches WER 8.03% but misrecognises 15.8% of radiology terms, 3–6 times more than general words, with near-misses dominating. LLM-based transcribers narrow this gap: OpenAI gpt-4o-transcribe attains the best overall WER (5.96%) and Google Gemini 3.5 Flash the best terminology accuracy (TER 6.6%). Number formatting can inflate raw WER dramatically, so a number-normalised metric is essential; ElevenLabs Scribe v2 drops from a misleading 28.27% raw WER to 5.22% WER-N. Because errors concentrate in numbers, negations, body side, and a handful of abbreviations, both model selection and quality assurance should target these tokens rather than the aggregate score, and a lexicon-based post-correction is a promising, low-cost next step. Finally, benchmarks on read-speech corpora must guard against leakage: a model fine-tuned on ADMEDVOICE scores 1.46% WER by memorisation and must be excluded.
+Ready-made ASR systems are close to usable for Polish radiology dictation, but aggregate WER hides the clinically relevant failures. On 939 natural-voice recordings, the best open model (Whisper large-v3) reaches WER 8.03% but misrecognises 15.8% of radiology terms, 3–6 times more than general words, with near-misses dominating. LLM-based transcribers narrow this gap: OpenAI gpt-4o-transcribe attains the best overall WER (5.96%) and Google Gemini 3.5 Flash the best terminology accuracy (TER 6.6%). Number formatting can inflate raw WER dramatically, so a number-normalised metric is essential; ElevenLabs Scribe v2 drops from a misleading 28.27% raw WER to 5.22% WER-N. Because errors concentrate in numbers, negations, body side, and a handful of abbreviations, both model selection and quality assurance should target these tokens rather than the aggregate score, and a lexicon-based post-correction is a promising, low-cost next step.
 
 ## Data and Code Availability
 
@@ -437,48 +377,42 @@ Reproducing the data:
 
 [4] Pratap, V., Tjandra, A., Shi, B., et al. *Scaling Speech Technology to 1,000+ Languages.* 2023. arXiv:2305.13516
 
-[5] Hu, E. J., Shen, Y., Wallis, P., et al. *LoRA: Low-Rank Adaptation of Large Language Models.* ICLR 2022. arXiv:2106.09685
+[5] NVIDIA. *Canary-1B-v2* model card. Hugging Face, 2025. https://huggingface.co/nvidia/canary-1b-v2
 
-[6] NVIDIA. *Canary-1B-v2* model card. Hugging Face, 2025. https://huggingface.co/nvidia/canary-1b-v2
+[6] NVIDIA. *Parakeet-TDT-0.6B-v3* model card. Hugging Face, 2025. https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3
 
-[7] NVIDIA. *Parakeet-TDT-0.6B-v3* model card. Hugging Face, 2025. https://huggingface.co/nvidia/parakeet-tdt-0.6b-v3
+[7] NVIDIA. *Polish FastConformer hybrid (P&C)* model card. Hugging Face. https://huggingface.co/nvidia/stt_pl_fastconformer_hybrid_large_pc
 
-[8] NVIDIA. *Polish FastConformer hybrid (P&C)* model card. Hugging Face. https://huggingface.co/nvidia/stt_pl_fastconformer_hybrid_large_pc
+[8] Qwen Team. *Qwen3-ASR-1.7B* model card. Hugging Face, 2026. https://huggingface.co/Qwen/Qwen3-ASR-1.7B
 
-[9] Qwen Team. *Qwen3-ASR-1.7B* model card. Hugging Face, 2026. https://huggingface.co/Qwen/Qwen3-ASR-1.7B
+[9] Grosman, J. *wav2vec2-large-xlsr-53-polish* model card. Hugging Face. https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-polish
 
-[10] Grosman, J. *wav2vec2-large-xlsr-53-polish* model card. Hugging Face. https://huggingface.co/jonatasgrosman/wav2vec2-large-xlsr-53-polish
+[10] Google. *MedASR* model card. Hugging Face. https://huggingface.co/google/medasr
 
-[11] Google. *MedASR* model card. Hugging Face. https://huggingface.co/google/medasr
+[11] OpenAI. *Audio transcription API (whisper-1, gpt-4o-transcribe).* Documentation, 2026. https://platform.openai.com/docs
 
-[12] OpenAI. *Audio transcription API (whisper-1, gpt-4o-transcribe).* Documentation, 2026. https://platform.openai.com/docs
+[12] ElevenLabs. *Speech-to-text (Scribe) documentation.* 2026. https://elevenlabs.io/docs
 
-[13] ElevenLabs. *Speech-to-text (Scribe) documentation.* 2026. https://elevenlabs.io/docs
+[13] Deepgram. *Nova-3 documentation.* 2026. https://developers.deepgram.com
 
-[14] Deepgram. *Nova-3 documentation.* 2026. https://developers.deepgram.com
+[14] AssemblyAI. *Documentation.* 2026. https://www.assemblyai.com/docs
 
-[15] AssemblyAI. *Documentation.* 2026. https://www.assemblyai.com/docs
+[15] Speechmatics. *Documentation.* 2026. https://docs.speechmatics.com
 
-[16] Speechmatics. *Documentation.* 2026. https://docs.speechmatics.com
+[16] Google. *Gemini API documentation.* 2026. https://ai.google.dev/gemini-api/docs
 
-[17] Google. *Gemini API documentation.* 2026. https://ai.google.dev/gemini-api/docs
+[17] Wolf, T., Debut, L., Sanh, V., et al. *Transformers: State-of-the-Art Natural Language Processing.* EMNLP 2020 (system demonstrations). arXiv:1910.03771
 
-[18] Wolf, T., Debut, L., Sanh, V., et al. *Transformers: State-of-the-Art Natural Language Processing.* EMNLP 2020 (system demonstrations). arXiv:1910.03771
+[18] Morris, A. C., Maier, V., Green, P. *jiwer: Evaluate ASR output.* GitHub. https://github.com/jitsi/jiwer
 
-[19] Paszke, A., Gross, S., Massa, F., et al. *PyTorch: An Imperative Style, High-Performance Deep Learning Library.* NeurIPS 2019.
+[19] Kensho Technologies. *pyctcdecode.* GitHub. https://github.com/kensho-technologies/pyctcdecode
 
-[20] Morris, A. C., Maier, V., Green, P. *jiwer: Evaluate ASR output.* GitHub. https://github.com/jitsi/jiwer
+[20] Heafield, K. *KenLM: Faster and Smaller Language Model Queries.* WMT 2011.
 
-[21] Kensho Technologies. *pyctcdecode.* GitHub. https://github.com/kensho-technologies/pyctcdecode
+[21] Speer, R., Chin, J., Lin, A. *wordfreq.* GitHub, 2018. https://github.com/rspeer/wordfreq
 
-[22] Heafield, K. *KenLM: Faster and Smaller Language Model Queries.* WMT 2011.
+[22] Barbaresi, A. *simplemma.* GitHub. https://github.com/adbar/simplemma
 
-[23] Speer, R., Chin, J., Lin, A. *wordfreq.* GitHub, 2018. https://github.com/rspeer/wordfreq
+[23] Savoir-faire Linux. *num2words.* GitHub. https://github.com/savoirfairelinux/num2words
 
-[24] Barbaresi, A. *simplemma.* GitHub. https://github.com/adbar/simplemma
-
-[25] Savoir-faire Linux. *num2words.* GitHub. https://github.com/savoirfairelinux/num2words
-
-[26] Zipf, G. K. *Human Behavior and the Principle of Least Effort.* Addison-Wesley, 1949.
-
-[27] Kurowski, M., Zaporowski, S., Kostek, B., Czyżewski, A. *Parameter-efficient fine-tuning of Whisper for Polish medical speech.* International Conference on Information Systems Development (ISD), 2025.
+[24] Zipf, G. K. *Human Behavior and the Principle of Least Effort.* Addison-Wesley, 1949.
