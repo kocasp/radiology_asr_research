@@ -8,6 +8,10 @@ const NEGATIONS = new Set(['nie', 'bez', 'brak']);
 const fmt = (v, d = 2) => (v === null || v === undefined || v === '') ? '–' : Number(v).toFixed(d);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
 const audioHtml = (rec) => `<div class="audio"><audio controls preload="none" src="audio/${encodeURIComponent(rec)}.ogg"></audio><span class="muted">original dictation</span></div>`;
+const ccerOf = (u) => {
+  const t = (u.num_n || 0) + (u.neg_n || 0) + (u.side_n || 0);
+  return t ? 100 * ((u.num_err || 0) + (u.neg_err || 0) + (u.side_err || 0)) / t : null;
+};
 
 let db, runs = [], runById = {}, recIndex = [];
 let mode = 'rec';
@@ -73,6 +77,7 @@ function renderOverview() {
       <td class="num">${fmt(r.num_err, 1)}</td>
       <td class="num">${fmt(r.neg_err, 1)}</td>
       <td class="num">${fmt(r.side_err, 1)}</td>
+      <td class="num">${fmt(r.ccer)}</td>
       <td class="num">${fmt(r.rtf, 3)}</td>
     </tr>`;
   }).join('');
@@ -140,6 +145,7 @@ function renderRecDetail() {
       <td>${esc(info.name || r.run_id)}${isBest ? ' <span class="best">best</span>' : ''}</td>
       <td class="num">${fmt(r.wer)}</td>
       <td class="num">${r.S}</td><td class="num">${r.D}</td><td class="num">${r.I}</td>
+      <td class="num">${fmt(ccerOf(r))}</td>
       <td class="num">${r.perfect ? '✓' : ''}</td>
     </tr>`;
   }).join('');
@@ -157,7 +163,7 @@ function renderRecDetail() {
     <h3 style="margin:14px 0 6px">All models on this recording</h3>
     <div class="table-scroll" style="max-height:360px">
       <table class="grid compact"><thead><tr>
-        <th>Model</th><th class="num">WER</th><th class="num">S</th><th class="num">D</th><th class="num">I</th><th class="num">Perfect</th>
+        <th>Model</th><th class="num">WER</th><th class="num">S</th><th class="num">D</th><th class="num">I</th><th class="num">CCER</th><th class="num">Perfect</th>
       </tr></thead><tbody>${cmpRows}</tbody></table>
     </div>
     <p class="sub" style="margin-top:10px">Showing the diff for <b>${esc(model.name || selectedModelForDiff)}</b> — click a row above to switch.</p>
@@ -239,6 +245,7 @@ function renderModelTable() {
       <td>${esc(r.speaker_id)}</td>
       <td class="num">${fmt(r.wer)}</td>
       <td class="num">${r.S}</td><td class="num">${r.D}</td><td class="num">${r.I}</td>
+      <td class="num">${fmt(ccerOf(r))}</td>
       <td class="num">${r.perfect ? '✓' : ''}</td>
     </tr>`).join('');
   document.querySelectorAll('#model-table tbody tr').forEach(tr => tr.addEventListener('click', () => showModelDiff(tr.dataset.rec)));
@@ -262,6 +269,7 @@ function showModelDiff(rec) {
         ${kpi('Numbers err', row.num_n ? `${row.num_err}/${row.num_n}` : '–')}
         ${kpi('Negations err', row.neg_n ? `${row.neg_err}/${row.neg_n}` : '–')}
         ${kpi('Body-side err', row.side_n ? `${row.side_err}/${row.side_n}` : '–')}
+        ${kpi('CCER', fmt(ccerOf(row)))}
       </div>
       <div class="diff-block">
         <p class="diff-label">Reference — flagged errors (D = deleted, S = substituted; numbers/negations/body side underlined)</p>
