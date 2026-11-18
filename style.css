@@ -179,3 +179,20 @@ table.grid tbody tr:focus-visible{outline:2px solid #93c5fd;outline-offset:2px}
 @media (prefers-reduced-motion:reduce){
   *{animation:none!important;transition:none!important}
 }
+
+/* custom dropdown (dark, fully controlled — readable hover) */
+.dd{position:relative;min-width:232px;font-family:var(--sans)}
+.dd-btn{width:100%;display:flex;justify-content:space-between;align-items:center;gap:10px;
+  background:var(--ink);color:#fff;border:1px solid var(--ink);border-radius:7px;padding:8px 11px;
+  font:14px var(--sans);cursor:pointer;transition:background-color .16s ease,box-shadow .16s ease}
+.dd-btn:hover{background:var(--ink2)}
+.dd.open .dd-btn{background:var(--ink2);box-shadow:0 0 0 2px #bfdbfe}
+.dd-lbl{white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.dd-caret{opacity:.75;font-size:10px}
+.dd-menu{position:absolute;z-index:60;top:calc(100% + 5px);left:0;right:0;background:#0f172a;border:1px solid #1f2937;
+  border-radius:8px;box-shadow:0 14px 30px rgba(15,23,42,.38);max-height:320px;overflow:auto;padding:5px;display:none}
+.dd.open .dd-menu{display:block;animation:fadeUp .12s ease both}
+.dd-opt{display:block;width:100%;text-align:left;background:none;border:0;color:#e5e7eb;padding:8px 10px;
+  border-radius:6px;font:13.5px var(--sans);cursor:pointer;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;
+  transition:background-color .12s ease,color .12s ease}
+.dd-opt:hover,.dd-opt.sel{background:var(--accent);color:#fff}

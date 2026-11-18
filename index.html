@@ -92,14 +92,8 @@
 
     <div id="pane-model" class="pane" hidden>
       <div class="controls">
-        <label>Model <select id="model-select"></select></label>
-        <label>Sort
-          <select id="model-sort">
-            <option value="wer_desc">WER (worst first)</option>
-            <option value="wer_asc">WER (best first)</option>
-            <option value="rec">Recording id</option>
-          </select>
-        </label>
+        <label>Model <div class="dd" id="dd-model"></div></label>
+        <label>Sort <div class="dd" id="dd-sort"></div></label>
         <input id="model-search" class="search" type="search" placeholder="Filter by reference text or id…">
       </div>
       <div class="table-scroll tall">
