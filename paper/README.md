@@ -32,5 +32,5 @@ To regenerate the figure from the current results (from the repo root):
 - **Description:** copy the paper abstract
 - **Keywords:** automatic speech recognition; Polish; radiology; medical dictation; terminology; benchmark; speech-to-text
 - **License:** CC BY 4.0 (adjust as desired)
-- **Related identifiers:** *is supplemented by* the code repository `https://github.com/kocasp/halucination_research`; the dataset ADMEDVOICE, DOI `10.34740/kaggle/ds/6698205`
+- **Related identifiers:** *is supplemented by* the code repository `https://github.com/kocasp/radiology_asr_research`; the dataset ADMEDVOICE, DOI `10.34740/kaggle/ds/6698205`
 - **Files:** `main.pdf` (and optionally the LaTeX sources + figure)

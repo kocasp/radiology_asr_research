@@ -340,7 +340,7 @@ Ready-made ASR systems are close to usable for Polish radiology dictation, but a
 
 ## Data and Code Availability
 
-The **ADMEDVOICE** corpus is public (Kaggle `karmarci/polish-medical-multi-source-corpus`, DOI 10.34740/kaggle/ds/6698205, licence CC BY 4.0) [1]. The evaluation code, the term lexicon, and the per-model transcriptions and metrics are provided in the project repository (`halucination_research`, GitHub `kocasp/halucination_research`); the audio itself is not redistributed and is reconstructed from ADMEDVOICE with `scripts/build_radiology_db.py`. Reproducibility details (library versions, seeds, timing) are listed in Section 9.
+The **ADMEDVOICE** corpus is public (Kaggle `karmarci/polish-medical-multi-source-corpus`, DOI 10.34740/kaggle/ds/6698205, licence CC BY 4.0) [1]. The evaluation code, the term lexicon, and the per-model transcriptions and metrics are provided in the project repository (`radiology_asr_research`, GitHub `kocasp/radiology_asr_research`); the audio itself is not redistributed and is reconstructed from ADMEDVOICE with `scripts/build_radiology_db.py`. Reproducibility details (library versions, seeds, timing) are listed in Section 9.
 
 ## 9. Reproducibility
 
