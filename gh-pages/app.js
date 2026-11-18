@@ -211,7 +211,7 @@ function showModelDiff(rec) {
   const dp = diffPair(row.ref_norm || '', row.hyp_norm || '');
   const kpi = (label, val) => `<div class="kpi"><b>${val}</b><span>${label}</span></div>`;
   document.getElementById('model-detail').innerHTML = `
-    <div class="card" style="background:#0f141b;margin-top:16px">
+    <div class="card" style="margin-top:18px">
       <h3 style="margin:0 0 4px">${esc(info.name || selectedRun)} · ${esc(rec)}</h3>
       ${audioHtml(rec)}
       <div class="kpis">
