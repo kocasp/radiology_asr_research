@@ -98,7 +98,7 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
 - **Model bazowy:** `openai/whisper-medium` (769M parametrów, licencja Apache 2.0). Notebook odczytuje
   go z konfiguracji adaptera (`PeftConfig.base_model_name_or_path`).
 - **Metoda: LoRA** (artykuł tego nie mówi; wynika to z karty na Kaggle i z plików modelu).
-  Konfiguracja adaptera, taka sama we wszystkich wariantach:
+  Konfiguracja adaptera LoRA:
 
   | Parametr LoRA | Wartość |
   |---|---|
@@ -121,44 +121,9 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
   | Biblioteki | PyTorch 2.5, transformers 4.48, Hugging Face (HF) datasets |
   | Audio | próbkowanie 16 kHz; nagrania dłuższe niż 30 s usunięte |
 
-- **Parametry treningu według logów (`trainer_state.json`)** różnią się od artykułu:
-
-  | Wariant | Batch | Learning rate (z nazwy katalogu) | Najlepszy krok | WER walidacji |
-  |---|---:|---|---:|---:|
-  | natural | 8 | — | 7 600 z 10 000 | 9,92 |
-  | anonymized | 16 | — | 9 100 | 15,75 |
-  | synthetic | 8 | — | 8 400 | 2,38 |
-  | natural_anonym_synth | 64 | 1e-4 | 3 000 | 7,57 |
-  | natural_anonym_synth_cv_fl | 32 | 1e-3 | 1 400 | 8,67 |
-
-  Artykuł podaje jeden zestaw ustawień (batch 64, lr 1e-5, 10 000 kroków). Logi pokazują, że warianty
-  trenowano z różnym batchem, a dla wariantów łączonych z wyższym learning rate. WER walidacji
-  jest liczony na zbiorach walidacyjnych autorów, a nie na zbiorze testowym niniejszego badania.
-
 - **Dane:** wszystkie kategorie ADMEDVOICE, nie tylko radiologia. Podział jest rozłączny po mówcach
-  (deklaracja autorów):
-
-  | Zbiór | Train | Val | Test |
-  |---|---|---|---|
-  | N+A+S (natural + anonymized + synthetic, łącznie) | 34 900 próbek (58 h) | 2 492 (4 h) | 12 468 (21 h) |
-  | Natural | 7 404 (9,6 h) | 529 | 2 645 (3,4 h) |
-
-  W zbiorze testowym każda unikalna fraza pojawia się średnio 4,6 razy.
-- **Warianty:** archiwum na Kaggle zawiera pięć adapterów: `natural`, `anonymized`, `synthetic`,
-  `natural_anonym_synth` i `natural_anonym_synth_cv_fl`. Notebook autora używa
-  `natural_anonym_synth`.
-- **Wyniki:** WER na teście natural, deklaracja autorów, w nawiasach 95% CI z bootstrapu.
-
-  | Model | WER (natural test) |
-  |---|---|
-  | Whisper bazowy | 24,0 [22,3; 26,0] |
-  | trening na natural | 15,5 [12,5; 19,8] |
-  | trening na anonymized | 13,6 [12,1; 15,2] |
-  | trening na N+A+S | 13,9 [12,4; 15,6] |
-  | N+A+S + Common Voice + FLEURS | 9,5 [8,1; 11,1] |
-
-  Wariant z Common Voice i FLEURS (WER 9,5) **jest** opublikowany. Opis modelu na Kaggle go nie
-  wymienia, ale adapter `natural_anonym_synth_cv_fl` jest w archiwum.
+  (deklaracja autorów); w zbiorze testowym każda unikalna fraza pojawia się średnio 4,6 razy.
+  Autorzy deklarują WER ok. 14% na swoim teście naturalnym (szczegóły w artykule).
 - **Publikacja:** model na Kaggle `msxksm/whisper-medium-medical-pl` (Apache 2.0) i notebook
   `msxksm/transcribe-medical-pl-whisper-medium`. Wersja dla whisper.cpp to HF
   `fwasil162/whisper-medium-medical-pl-ggml`: adapter scalony z modelem bazowym, przekonwertowany
@@ -170,11 +135,6 @@ plików samego modelu (archiwum pobrane z Kaggle 2026-11-16: `adapter_config.jso
   wagi klinicznej. Halucynacje są w nim cytowane z literatury, ale nie są mierzone. Tym właśnie
   zajmuje się niniejsze badanie.
 - **Nie wiadomo, jak normalizowano tekst przed liczeniem WER.** Artykuł o tym nie pisze.
-- **Niespójności w artykule:**
-  - w tekście wyników WER 9,5% przypisano treningowi na nagraniach naturalnych, a tabela podaje 9,5
-    dla wariantu z Common Voice i FLEURS;
-  - przedziały ufności wariantów natural i anonymized nakładają się, więc teza, że trening na danych
-    zanonimizowanych jest lepszy, nie jest dowiedziona.
 - **Przeciek danych:** model trenowano na frazach ADMEDVOICE, więc na zbiorze testowym niniejszego badania
   zna frazy, które ma rozpoznać. Zostało to potwierdzone pomiarem, a model został wykluczony
   z porównania (sekcja 4.2).
@@ -329,7 +289,7 @@ Aktualny plan z postępem i blokadami jest w `eval/asr_eval/plan.py` i na stroni
 ### 4.2 Wykluczone: modele dotrenowane na ADMEDVOICE
 
 Z porównania wyłączone zostały modele dotrenowane na korpusie, z którego pochodzi zbiór testowy:
-`whisper-medium-medical-pl` (wszystkie warianty LoRA) i VoxMedic (trenowany na `lion-ai/admed_voice`).
+`whisper-medium-medical-pl` (wszystkie adaptacje LoRA) i VoxMedic (trenowany na `lion-ai/admed_voice`).
 
 Pomiar takiego modelu pokazał, że zna frazy testowe:
 - WER 1,46% wobec 13,9% deklarowanych przez autorów na ich teście;
