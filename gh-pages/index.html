@@ -1,0 +1,129 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ASR Errors in Polish Radiology Dictation — interactive results</title>
+<meta name="description" content="Interactive browser of ASR errors on Polish radiology dictation: per-recording and per-model views of WER, CER, terminology errors, numbers, negations and body side.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<header class="hero">
+  <div class="wrap">
+    <p class="eyebrow">Benchmark · Speech recognition · Polish radiology</p>
+    <h1>ASR Errors in Polish Radiology Dictation</h1>
+    <p class="lede">An interactive browser of the benchmark from the paper <em>“Benchmarking Off-the-Shelf ASR Systems on Polish Radiology Dictation: Terminology, Numbers, and Clinically Critical Errors.”</em> Explore every transcription, per model and per recording, and compare how 19 systems differ on the same dictated phrase.</p>
+    <ul class="stats" id="stats">
+      <li><b>939</b><span>recordings</span></li>
+      <li><b>2.69 h</b><span>natural voice</span></li>
+      <li><b>14</b><span>speakers</span></li>
+      <li><b>19</b><span>systems</span></li>
+      <li><b>309</b><span>radiology terms</span></li>
+    </ul>
+    <p class="links">
+      <a href="https://github.com/kocasp/halucination_research/blob/main/README.md">Paper (README)</a>
+      <a href="https://doi.org/10.34740/kaggle/ds/6698205">Dataset DOI</a>
+      <a href="https://github.com/kocasp/halucination_research">Repository</a>
+    </p>
+  </div>
+</header>
+
+<main class="wrap">
+  <p id="loading" class="loading">Loading database…</p>
+  <p id="error" class="error" hidden></p>
+
+  <section id="overview" class="card" hidden>
+    <h2>Models overview</h2>
+    <p class="sub">Click a column header to sort. WER/CER in %. TER = term error rate, GWER = general-word error rate. Click a model to open its per-recording list.</p>
+    <div class="table-scroll">
+      <table id="runs-table" class="grid">
+        <thead>
+          <tr>
+            <th data-sort="name">Model</th>
+            <th data-sort="mode">Mode</th>
+            <th data-sort="wer" class="num">WER</th>
+            <th data-sort="wer_num" class="num">WER-N</th>
+            <th data-sort="cer" class="num">CER</th>
+            <th data-sort="ter" class="num">TER</th>
+            <th data-sort="gwer" class="num">GWER</th>
+            <th data-sort="num_err" class="num">Numbers</th>
+            <th data-sort="neg_err" class="num">Negations</th>
+            <th data-sort="side_err" class="num">Body side</th>
+            <th data-sort="rtf" class="num">RTF</th>
+          </tr>
+        </thead>
+        <tbody></tbody>
+      </table>
+    </div>
+  </section>
+
+  <section id="browser" class="card" hidden>
+    <div class="tabs" role="tablist">
+      <button id="tab-rec" class="tab active" role="tab">By recording</button>
+      <button id="tab-model" class="tab" role="tab">By model</button>
+    </div>
+
+    <!-- By recording -->
+    <div id="pane-rec" class="pane">
+      <p class="sub">Pick a recording to see how <b>all models</b> transcribed the same phrase, ranked by WER. Click a model to inspect the word-level diff.</p>
+      <input id="rec-search" class="search" type="search" placeholder="Search by recording id or reference text (e.g. tarczycy, TIRADS, 45 mm)…">
+      <div class="two-col">
+        <div class="col-list">
+          <div id="rec-list" class="list" aria-label="recordings"></div>
+        </div>
+        <div class="col-detail">
+          <div id="rec-detail"><p class="muted">Select a recording on the left.</p></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- By model -->
+    <div id="pane-model" class="pane" hidden>
+      <p class="sub">Pick a model to see all its transcriptions, worst first. Click a row to inspect the diff or jump to the cross-model comparison.</p>
+      <div class="controls">
+        <label>Model <select id="model-select"></select></label>
+        <label>Sort
+          <select id="model-sort">
+            <option value="wer_desc">WER (worst first)</option>
+            <option value="wer_asc">WER (best first)</option>
+            <option value="rec">Recording id</option>
+          </select>
+        </label>
+        <input id="model-search" class="search" type="search" placeholder="Filter by reference text or id…">
+      </div>
+      <div class="table-scroll tall">
+        <table id="model-table" class="grid compact">
+          <thead><tr>
+            <th>Recording</th><th>Category</th><th>Speaker</th>
+            <th class="num">WER</th><th class="num">S</th><th class="num">D</th><th class="num">I</th><th class="num">Perfect</th>
+          </tr></thead>
+          <tbody></tbody>
+        </table>
+      </div>
+      <div id="model-detail"></div>
+    </div>
+  </section>
+
+  <section class="card legend-card">
+    <h2>How to read the diff</h2>
+    <p class="legend">
+      <span class="tok ok">correct</span>
+      <span class="tok S">substitution</span>
+      <span class="tok D">deletion</span>
+      <span class="tok I">insertion</span>
+      <span class="catnum">number</span>
+      <span class="catneg">negation</span>
+      <span class="catside">body side</span>
+    </p>
+    <p class="sub">Texts are shown after the paper's normalisation (lowercase, punctuation removed, dimensions split). “Deletion” means the reference word has no counterpart; “insertion” means the model added a word.</p>
+  </section>
+</main>
+
+<footer class="wrap foot">
+  <p>Data: ADMEDVOICE corpus (CC BY 4.0, DOI 10.34740/kaggle/ds/6698205). Audio is not redistributed. Built with sql.js.</p>
+</footer>
+
+<script src="vendor/sql-wasm.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
