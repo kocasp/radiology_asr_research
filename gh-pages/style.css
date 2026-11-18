@@ -93,3 +93,7 @@ table.grid.compact td,table.grid.compact th{padding:7px 10px}
 .legend .catnum,.legend .catneg,.legend .catside{background:#101820;padding:3px 9px}
 
 .foot{color:var(--muted);font-size:12.5px;padding:26px 0 50px;border-top:1px solid var(--line);margin-top:20px}
+
+.audio{display:flex;align-items:center;gap:12px;margin:2px 0 14px}
+.audio audio{width:100%;max-width:440px;height:34px}
+.audio .muted{font-size:12px;white-space:nowrap}

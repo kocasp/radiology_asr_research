@@ -7,6 +7,7 @@
 const NEGATIONS = new Set(['nie', 'bez', 'brak']);
 const fmt = (v, d = 2) => (v === null || v === undefined || v === '') ? '–' : Number(v).toFixed(d);
 const esc = (s) => String(s ?? '').replace(/[&<>"]/g, c => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+const audioHtml = (rec) => `<div class="audio"><audio controls preload="none" src="audio/${encodeURIComponent(rec)}.ogg"></audio><span class="muted">original dictation</span></div>`;
 
 let db, runs = [], runById = {}, recIndex = [];
 let mode = 'rec';
@@ -146,6 +147,7 @@ function renderRecDetail() {
   const dp = diffPair(ref, row ? row.hyp_norm || '' : '');
 
   document.getElementById('rec-detail').innerHTML = `
+    ${audioHtml(selectedRec)}
     <div class="diff-block">
       <p class="diff-label">Reference (${esc(meta.category_code)}, ${esc(meta.speaker_id)}, ${fmt(meta.duration_s, 1)} s)</p>
       <div class="tokens">${ref ? ref.split(/\s+/).map(t => `<span class="tok ok ${catClass(t)}">${esc(t)}</span>`).join(' ') : '<span class="muted">(empty)</span>'}</div>
@@ -211,6 +213,7 @@ function showModelDiff(rec) {
   document.getElementById('model-detail').innerHTML = `
     <div class="card" style="background:#0f141b;margin-top:16px">
       <h3 style="margin:0 0 4px">${esc(info.name || selectedRun)} · ${esc(rec)}</h3>
+      ${audioHtml(rec)}
       <div class="kpis">
         ${kpi('WER', fmt(row.wer))}
         ${kpi('Substitutions', row.S)}
@@ -277,8 +280,7 @@ function align(refT, hypT) {
   return { refTags, hypTags };
 }
 
-function diffPair(ref, hyp) {
-  const refT = ref ? ref.split(/\s+/) : [];
+function diffPair(ref, hyp) {  const refT = ref ? ref.split(/\s+/) : [];
   const hypT = hyp ? hyp.split(/\s+/) : [];
   const { refTags, hypTags } = align(refT, hypT);
   const refHtml = refT.map((t, i) => `<span class="tok ${refTags[i]} ${catClass(t)}">${esc(t)}</span>`).join(' ') || '<span class="muted">(empty)</span>';
