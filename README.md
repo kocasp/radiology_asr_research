@@ -1,6 +1,6 @@
 # Benchmarking Off-the-Shelf ASR Systems on Polish Radiology Dictation: Terminology, Numbers, and Clinically Critical Errors
 
-*[Author names and affiliations to be added before submission.]*
+Konrad Strojny
 
 **Keywords:** automatic speech recognition; Polish; radiology; medical dictation; terminology; benchmark; word error rate
 
