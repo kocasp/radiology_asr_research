@@ -3,38 +3,54 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>ASR Errors in Polish Radiology Dictation — interactive results</title>
-<meta name="description" content="Interactive browser of ASR errors on Polish radiology dictation: per-recording and per-model views of WER, CER, terminology errors, numbers, negations and body side.">
+<title>Benchmarking Off-the-Shelf ASR on Polish Radiology Dictation — results</title>
+<meta name="description" content="Companion site for a benchmark of 19 automatic speech recognition systems on 939 Polish radiology dictations, with term-, number-, negation- and body-side error analysis and an interactive error browser.">
 <link rel="stylesheet" href="style.css">
 </head>
 <body>
-<header class="hero">
-  <div class="wrap">
-    <p class="eyebrow">Benchmark · Speech recognition · Polish radiology</p>
-    <h1>ASR Errors in Polish Radiology Dictation</h1>
-    <p class="lede">An interactive browser of the benchmark from the paper <em>“Benchmarking Off-the-Shelf ASR Systems on Polish Radiology Dictation: Terminology, Numbers, and Clinically Critical Errors.”</em> Explore every transcription, per model and per recording, and compare how 19 systems differ on the same dictated phrase.</p>
-    <ul class="stats" id="stats">
-      <li><b>939</b><span>recordings</span></li>
-      <li><b>2.69 h</b><span>natural voice</span></li>
-      <li><b>14</b><span>speakers</span></li>
-      <li><b>19</b><span>systems</span></li>
-      <li><b>309</b><span>radiology terms</span></li>
-    </ul>
-    <p class="links">
-      <a href="https://github.com/kocasp/halucination_research/blob/main/README.md">Paper (README)</a>
+<header class="masthead">
+  <div class="container narrow">
+    <p class="venue">Preprint · Speech recognition · Clinical NLP</p>
+    <h1 class="title">Benchmarking Off-the-Shelf ASR Systems on Polish Radiology Dictation: Terminology, Numbers, and Clinically Critical Errors</h1>
+    <p class="author">Konrad Strojny</p>
+    <nav class="meta-links">
+      <a href="https://github.com/kocasp/halucination_research/blob/main/README.md">Preprint (README)</a>
       <a href="https://doi.org/10.34740/kaggle/ds/6698205">Dataset DOI</a>
-      <a href="https://github.com/kocasp/halucination_research">Repository</a>
-    </p>
+      <a href="https://github.com/kocasp/halucination_research">Code</a>
+    </nav>
+    <ul class="facts">
+      <li><b>939</b> recordings</li>
+      <li><b>2.69 h</b> natural voice</li>
+      <li><b>14</b> speakers</li>
+      <li><b>19</b> systems</li>
+      <li><b>309</b> radiology terms</li>
+    </ul>
   </div>
 </header>
 
-<main class="wrap">
-  <p id="loading" class="loading">Loading database…</p>
-  <p id="error" class="error" hidden></p>
+<main class="container">
+  <section class="abstract narrow">
+    <h2>Abstract</h2>
+    <p>Ready-to-use automatic speech recognition (ASR) systems are increasingly considered for dictating radiology reports, yet their behaviour on Polish clinical speech is poorly characterised. We benchmark 19 off-the-shelf systems (12 open configurations and 7 commercial cloud services) on 939 natural-voice recordings (2.69 h, 14 speakers) of thyroid ultrasound and head-and-neck radiology. Beyond the word error rate (WER) and character error rate (CER), we measure the correctness of radiology <em>terminology</em> (term error rate, TER) against general words (GWER), and errors in numbers, negations, and body side. In classical ASR, radiology terms are recognised <strong>3–6 times worse</strong> than general words; LLM-based transcribers narrow this gap. The best open model (Whisper large-v3) misrecognises 15.8% of term occurrences but 3.1% of general words; the best cloud system (OpenAI gpt-4o-transcribe) reaches WER 5.96%, and Google Gemini 3.5 Flash has the lowest TER (6.6%). Number-formatting conventions can inflate raw WER substantially, which is why a number-normalised WER is reported alongside.</p>
+    <p class="keywords"><b>Keywords:</b> automatic speech recognition; Polish; radiology; medical dictation; terminology; benchmark</p>
+  </section>
 
-  <section id="overview" class="card" hidden>
-    <h2>Models overview</h2>
-    <p class="sub">Click a column header to sort. WER/CER in %. TER = term error rate, GWER = general-word error rate. Click a model to open its per-recording list.</p>
+  <section class="narrow">
+    <h2>Key findings</h2>
+    <ol class="findings">
+      <li>In classical ASR, radiology terms are recognised 3–6× worse than general words in the same recordings (Whisper large-v3: TER 15.8% vs GWER 3.1%); near-misses dominate (the model hears the term but misspells it).</li>
+      <li>The best overall system is OpenAI gpt-4o-transcribe (WER 5.96%); the best terminology accuracy is Google Gemini 3.5 Flash (TER 6.6%).</li>
+      <li>ElevenLabs Scribe v2 spells numbers out (“2 mm” → “dwóch milimetrów”), inflating raw WER to 28.27%; after number normalisation it drops to 5.22% WER-N.</li>
+      <li>Errors concentrate in numbers, negations, and body side — the clinically critical tokens — so aggregate WER alone misleads model selection.</li>
+    </ol>
+  </section>
+
+  <p id="loading" class="loading container">Loading database…</p>
+  <p id="error" class="error container" hidden></p>
+
+  <section id="overview" class="paper-section" hidden>
+    <h2>Table 1. Overview of the 19 evaluated systems</h2>
+    <p class="caption">WER, WER-N (number-normalised), CER, TER (term error rate), GWER (general-word error rate) in percent; Numbers/Negations/Body side are error rates in those token categories; RTF is the real-time factor. Click a column header to sort, or a row to open that model’s recording list.</p>
     <div class="table-scroll">
       <table id="runs-table" class="grid">
         <thead>
@@ -57,29 +73,24 @@
     </div>
   </section>
 
-  <section id="browser" class="card" hidden>
+  <section id="browser" class="paper-section" hidden>
+    <h2>Interactive material: browse every transcription</h2>
+    <p class="caption">Two complementary views over the same 939 recordings and 19 systems. <strong>By recording</strong> shows all models on one dictated phrase (with the original audio); <strong>by model</strong> lists all recordings of a single system, worst first. Click any row to inspect the word-level diff.</p>
+
     <div class="tabs" role="tablist">
       <button id="tab-rec" class="tab active" role="tab">By recording</button>
       <button id="tab-model" class="tab" role="tab">By model</button>
     </div>
 
-    <!-- By recording -->
     <div id="pane-rec" class="pane">
-      <p class="sub">Pick a recording to see how <b>all models</b> transcribed the same phrase, ranked by WER. Click a model to inspect the word-level diff.</p>
       <input id="rec-search" class="search" type="search" placeholder="Search by recording id or reference text (e.g. tarczycy, TIRADS, 45 mm)…">
       <div class="two-col">
-        <div class="col-list">
-          <div id="rec-list" class="list" aria-label="recordings"></div>
-        </div>
-        <div class="col-detail">
-          <div id="rec-detail"><p class="muted">Select a recording on the left.</p></div>
-        </div>
+        <div class="col-list"><div id="rec-list" class="list" aria-label="recordings"></div></div>
+        <div class="col-detail"><div id="rec-detail"><p class="muted">Select a recording on the left.</p></div></div>
       </div>
     </div>
 
-    <!-- By model -->
     <div id="pane-model" class="pane" hidden>
-      <p class="sub">Pick a model to see all its transcriptions, worst first. Click a row to inspect the diff or jump to the cross-model comparison.</p>
       <div class="controls">
         <label>Model <select id="model-select"></select></label>
         <label>Sort
@@ -104,8 +115,9 @@
     </div>
   </section>
 
-  <section class="card legend-card">
-    <h2>How to read the diff</h2>
+  <section class="paper-section narrow">
+    <h2>Note on the error annotation</h2>
+    <p class="caption">Texts are shown after the paper’s normalisation (lowercase, punctuation removed, dimensions split). Alignment and error types are recomputed in the browser from the normalised reference and hypothesis.</p>
     <p class="legend">
       <span class="tok ok">correct</span>
       <span class="tok S">substitution</span>
@@ -115,12 +127,17 @@
       <span class="catneg">negation</span>
       <span class="catside">body side</span>
     </p>
-    <p class="sub">Texts are shown after the paper's normalisation (lowercase, punctuation removed, dimensions split). “Deletion” means the reference word has no counterpart; “insertion” means the model added a word.</p>
+    <p class="caption"><b>Substitution</b> — a different word replaces the reference word. <b>Deletion</b> — the reference word has no counterpart. <b>Insertion</b> — the model added a word that was not spoken. Numbers, negations (nie / bez / brak) and body side (prawy / lewy) are underlined in the reference.</p>
+  </section>
+
+  <section class="paper-section narrow">
+    <h2>Data and code</h2>
+    <p class="caption">Recordings derive from the public <b>ADMEDVOICE</b> corpus (Kaggle <code>karmarci/polish-medical-multi-source-corpus</code>, DOI 10.34740/kaggle/ds/6698205, licence CC BY 4.0); only the natural human-voice variant is used. Audio here is served as Opus for web playback and is not the original WAV. The evaluation code, term lexicon, and per-system transcriptions and metrics are in the project repository.</p>
   </section>
 </main>
 
-<footer class="wrap foot">
-  <p>Data: ADMEDVOICE corpus (CC BY 4.0, DOI 10.34740/kaggle/ds/6698205). Audio is not redistributed. Built with sql.js.</p>
+<footer class="container narrow foot">
+  <p>Companion site to the preprint. Interactive browser built with <a href="https://sql.js.org">sql.js</a>; data prepared from the benchmark’s per-recording results.</p>
 </footer>
 
 <script src="vendor/sql-wasm.js"></script>
