@@ -12,6 +12,7 @@ const audioHtml = (rec) => `<div class="audio"><audio controls preload="none" sr
 let db, runs = [], runById = {}, recIndex = [];
 let mode = 'rec';
 let selectedRec = null, selectedModelForDiff = null, selectedRun = null;
+let modelSort = 'wer_desc', ddModel = null, ddSort = null;
 
 function q(sql, params = []) {
   const st = db.prepare(sql); st.bind(params);
@@ -37,7 +38,7 @@ async function init() {
     document.getElementById('browser').hidden = false;
 
     renderOverview();
-    populateModelSelect();
+    initControls();
     renderRecList('');
     wire();
   } catch (e) {
@@ -90,8 +91,8 @@ function wire() {
   document.getElementById('tab-model').addEventListener('click', () => switchTab('model'));
   document.getElementById('rec-search').addEventListener('input', e => renderRecList(e.target.value));
   document.getElementById('model-search').addEventListener('input', () => renderModelTable());
-  document.getElementById('model-sort').addEventListener('change', () => renderModelTable());
-  document.getElementById('model-select').addEventListener('change', e => { selectedRun = e.target.value; renderModelTable(); });
+  document.addEventListener('click', () => closeDD());
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeDD(); });
 }
 
 function switchTab(m) {
@@ -100,6 +101,7 @@ function switchTab(m) {
   document.getElementById('tab-model').classList.toggle('active', m === 'model');
   document.getElementById('pane-rec').hidden = m !== 'rec';
   document.getElementById('pane-model').hidden = m !== 'model';
+  if (m === 'model' && selectedRun) renderModelTable();
 }
 
 /* ---------- by recording ---------- */
@@ -174,18 +176,56 @@ function renderRecDetail() {
 }
 
 /* ---------- by model ---------- */
-function populateModelSelect() {
-  const sel = document.getElementById('model-select');
+function closeDD(except) {
+  document.querySelectorAll('.dd.open').forEach(d => { if (d !== except) d.classList.remove('open'); });
+}
+
+function buildDD(id, options, value, onChange) {
+  const root = document.getElementById(id);
+  root.classList.add('dd');
+  root.innerHTML = `<button type="button" class="dd-btn" aria-haspopup="listbox"><span class="dd-lbl"></span><span class="dd-caret">▾</span></button>
+                    <div class="dd-menu" role="listbox"></div>`;
+  const btn = root.querySelector('.dd-btn'), menu = root.querySelector('.dd-menu');
+  const label = () => { const o = options.find(o => o.v === value); root.querySelector('.dd-lbl').textContent = o ? o.t : ''; };
+  menu.innerHTML = options.map(o => `<button type="button" role="option" class="dd-opt ${o.v === value ? 'sel' : ''}" data-v="${esc(o.v)}">${esc(o.t)}</button>`).join('');
+  label();
+  btn.addEventListener('click', e => {
+    e.stopPropagation();
+    const willOpen = !root.classList.contains('open');
+    closeDD(root);
+    root.classList.toggle('open', willOpen);
+  });
+  menu.querySelectorAll('.dd-opt').forEach(b => b.addEventListener('click', e => {
+    e.stopPropagation();
+    value = b.dataset.v;
+    menu.querySelectorAll('.dd-opt').forEach(x => x.classList.toggle('sel', x === b));
+    label();
+    root.classList.remove('open');
+    onChange(value);
+  }));
+  return {
+    set(v) { value = v; menu.querySelectorAll('.dd-opt').forEach(x => x.classList.toggle('sel', x.dataset.v === v)); label(); },
+    get() { return value; },
+  };
+}
+
+function initControls() {
   const sorted = [...runs].sort((a, b) => a.wer - b.wer);
-  sel.innerHTML = sorted.map(r => `<option value="${esc(r.run_id)}">${esc(r.name)} (WER ${fmt(r.wer)})</option>`).join('');
   selectedRun = sorted[0].run_id;
-  sel.value = selectedRun;
+  ddModel = buildDD('dd-model',
+    sorted.map(r => ({ v: r.run_id, t: `${r.name} (WER ${fmt(r.wer)})` })), selectedRun,
+    v => { selectedRun = v; renderModelTable(); });
+  ddSort = buildDD('dd-sort', [
+    { v: 'wer_desc', t: 'WER (worst first)' },
+    { v: 'wer_asc', t: 'WER (best first)' },
+    { v: 'rec', t: 'Recording id' },
+  ], modelSort, v => { modelSort = v; renderModelTable(); });
 }
 
 let modelRowsCache = [];
 function renderModelTable() {
   const ql = document.getElementById('model-search').value.trim().toLowerCase();
-  const sort = document.getElementById('model-sort').value;
+  const sort = modelSort;
   let rows = q('SELECT * FROM utterances WHERE run_id=?', [selectedRun]);
   if (ql) rows = rows.filter(r => r.recording_id.toLowerCase().includes(ql) || (r.ref_norm || '').includes(ql));
   if (sort === 'wer_asc') rows.sort((a, b) => a.wer - b.wer);
@@ -245,7 +285,7 @@ function showModelDiff(rec) {
 
 function showModel(runId) {
   selectedRun = runId;
-  document.getElementById('model-select').value = runId;
+  if (ddModel) ddModel.set(runId);
   switchTab('model');
   renderModelTable();
   document.getElementById('pane-model').scrollIntoView({ behavior: 'smooth', block: 'start' });
