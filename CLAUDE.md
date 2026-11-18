@@ -1,4 +1,4 @@
-# halucination_research — błędy ASR w dyktowaniu opisów diagnostyki obrazowej (PL)
+# radiology_asr_research — błędy ASR w dyktowaniu opisów diagnostyki obrazowej (PL)
 
 Badamy, jak i dlaczego modele ASR (np. Whisper) mylą się przy dyktowaniu polskich opisów
 radiologicznych. Mierzymy ogólny poziom błędu (WER, CER) i typy błędów: podmiany, pominięcia,
@@ -8,7 +8,7 @@ jednostek chorobowych, skróty) w porównaniu ze słowami ogólnymi; leksykon te
 błędów, a nie głównym tematem.
 Dane opisuje `recordings/README.md`.
 
-Nazwa repo (`halucination_research`) jest historyczna. Temat to błędy ASR w ogóle.
+Repozytorium: `kocasp/radiology_asr_research` (wcześniej `halucination_research`). Temat to błędy ASR w ogóle.
 
 **To autonomiczny projekt.** Nie przeszukuj, nie czytaj i nie cytuj plików z nadrzędnego katalogu
 `exrais/` (jego CLAUDE.md, README, briefs/, status/, data/, asr/…). Wiedza z zewnątrz pochodzi tylko
@@ -20,13 +20,13 @@ Z projektu mają powstać:
 1. **artykuł naukowy** do złożenia w czasopiśmie,
 2. **landing page** z opisem eksperymentu, do CV.
 
-Oba powstaną z pliku `halucination_research/README.md` (README w katalogu głównym tego repo, nie
+Oba powstaną z pliku `README.md` w katalogu głównym tego repo (nie
 `recordings/README.md` i nie README projektu exrais). Dlatego README musi być na bieżąco i tak
 kompletne, żeby dało się z niego napisać artykuł bez zaglądania do historii rozmów.
 
 ## Zasada: sposób dojścia do wyniku zapisujemy w README.md
 
-Po każdym nowym kroku, eksperymencie lub wyniku dopisz do `halucination_research/README.md`:
+Po każdym nowym kroku, eksperymencie lub wyniku dopisz do `README.md` w katalogu głównym repo:
 
 - **Jak doszliśmy do analizy błędów ASR:** pytania badawcze, przyjęte założenia, definicje metryk
   i kategorii błędów, sposób ich wykrywania.
