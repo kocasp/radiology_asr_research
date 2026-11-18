@@ -83,6 +83,12 @@ def aggregate(stats, audio_s, proc_s):
         e = sum(s["cats"][k][0] for s in stats); t = sum(s["cats"][k][1] for s in stats)
         res[f"{k}_err"] = round(100 * e / t, 1) if t else None
         res[f"{k}_n"] = t
+    # CCER (Clinically Critical Error Rate): połączone błędy na tokenach istotnych klinicznie
+    # (liczby + zaprzeczenia + strona ciała), mikro-uśrednione po tokenach.
+    ce = sum(s["cats"][k][0] for s in stats for k in ("num", "neg", "side"))
+    ct = sum(s["cats"][k][1] for s in stats for k in ("num", "neg", "side"))
+    res["ccer"] = round(100 * ce / ct, 2) if ct else None
+    res["ccer_n"] = ct
     return res
 
 

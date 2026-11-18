@@ -32,3 +32,6 @@ for spec in PLAN:
 prog["updated"] = run.now()
 json.dump(prog, open(run.PROG, "w"), ensure_ascii=False, indent=1)
 import build_results_db; build_results_db.main()
+class _P: pass
+_p = _P(); _p.p = prog
+run.write_summary(_p)

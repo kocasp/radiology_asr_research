@@ -25,6 +25,8 @@
  "neg_n": 399,
  "side_err": 1.7,
  "side_n": 599,
+ "ccer": 65.56,
+ "ccer_n": 2988,
  "wer_num": 5.22,
  "wer_num_ci": [
   4.7,

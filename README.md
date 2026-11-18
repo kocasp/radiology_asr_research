@@ -20,7 +20,6 @@ Radiologists increasingly dictate reports into speech recognition (ASR) systems.
 **Research questions.**
 1. How large is the recognition error (WER, CER) on Polish phrases from radiology reports for ready-made ASR solutions: open models run locally and commercial cloud services?
 2. How correctly is radiology terminology written (anatomy, image description, diseases and procedures, abbreviations and foreign names) compared with general words in the same recordings? What kinds of errors occur: inflection, word segmentation, misspelling of a heard term, substitution with another word, deletion?
-3. Which properties of a recording increase the number of errors: background noise, silence, duration, microphone, speaker?
 
 **Contributions.**
 - A benchmark of 12 open configurations (10 open models, including language-model variants and a negative control) and 7 commercial cloud services on 939 Polish radiology recordings of natural voice.
@@ -161,6 +160,7 @@ Numbers are **not** converted to words, because digits are expected in a radiolo
   - numbers (tokens containing a digit),
   - negations ("nie", "bez", "brak", i.e. no / without / absent),
   - body side (right/left in all forms).
+- **CCER** (clinically critical error rate): a single token-weighted (micro-averaged) rate over the three critical categories, `CCER = 100·(num_err + neg_err + side_err) / (num_n + neg_n + side_n)`, computed over the pooled 2,988 critical reference tokens (1,990 numbers, 399 negations, 599 body-side). Each reference token counts once; only substitutions and deletions count (insertions are not critical-category errors), consistent with the per-category rates. CCER summarises, in one figure, how often a model gets the clinically salient tokens right, and complements the per-category breakdown.
 - **Insertions ≥3:** places where the model inserted at least three words that were not present (a proxy for hallucinations).
 - **RTF** (real-time factor): processing time divided by audio duration (MacBook Pro M1 Pro, 16 GB RAM).
 
@@ -207,25 +207,26 @@ Numbers, units, and the dimension sign "x" belong to no group. Two misspelled fo
 
 ### 5.1 Open models run locally
 
-Values in percent; WER with 95% CI. The "Numbers", "Negations", and "Body side" columns give the fraction of misrecognised tokens in that category (n = 1,990 / 399 / 599 reference tokens).
+Values in percent; WER with 95% CI. The "Numbers", "Negations", and "Body side" columns give the fraction of misrecognised tokens in that category (n = 1,990 / 399 / 599 reference tokens); CCER pools the three into one token-weighted rate over their 2,988 reference tokens (Section 4.3).
 
-| Model | WER [95% CI] | WER-N | CER | Numbers | Negations | Body side | Insertions ≥3 | RTF |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| Whisper large-v3 | 8.03 [7.43–8.73] | 7.61 | 2.17 | 2.8 | 2.8 | 2.5 | 2 | 0.139 |
-| Whisper large-v3-turbo | 9.75 [9.1–10.44] | 9.21 | 2.57 | 2.8 | 1.5 | 2.8 | 3 | 0.082 |
-| Whisper medium | 13.77 [12.94–14.64] | 13.12 | 3.94 | 4.1 | 2.5 | 3.8 | 6 | 0.071 |
-| NVIDIA Parakeet-TDT-0.6B-v3 | 18.21 [17.2–19.2] | 15.03 | 6.29 | 20.8 | 1.8 | 5.3 | 3 | 0.097 |
-| NVIDIA Canary-1B-v2 | 20.05 [18.95–21.34] | 14.04 | 8.66 | 25.6 | 1.5 | 5.0 | 8 | 0.295 |
-| Qwen3-ASR-1.7B | 21.8 [20.9–22.76] | 18.35 | 7.37 | 7.7 | 10.3 | 13.7 | 3 | 0.151 |
-| Meta MMS-1b-all (pol) + KenLM | 32.07 [30.88–33.35] | 25.72 | 12.47 | 81.8 | 1.8 | 6.8 | 13 | 0.101 |
-| Meta MMS-1b-all (pol adapter, no LM) | 35.22 [33.87–36.48] | 27.46 | 13.17 | 57.3 | 6.3 | 11.0 | 36 | 0.088 |
-| NVIDIA FastConformer PL (hybrid, P&C) | 50.7 [49.26–52.17] | 31.4 | 30.29 | 100.0 | 7.5 | 37.1 | 41 | 0.03 |
-| wav2vec2 XLSR-53 Polish + KenLM | 52.8 [51.22–54.3] | 32.94 | 29.54 | 100.0 | 14.0 | 20.7 | 132 | 0.066 |
-| wav2vec2 XLSR-53 Polish (no LM) | 58.31 [56.67–59.69] | 41.08 | 30.68 | 100.0 | 23.8 | 25.5 | 121 | 0.07 |
-| Google MedASR | 99.65 [99.21–100.08] | 99.01 | 80.48 | 98.2 | 100.0 | 100.0 | 41 | 0.011 |
+| Model | WER [95% CI] | WER-N | CER | Numbers | Negations | Body side | CCER | Insertions ≥3 | RTF |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| Whisper large-v3 | 8.03 [7.43–8.73] | 7.61 | 2.17 | 2.8 | 2.8 | 2.5 | 2.71 | 2 | 0.139 |
+| Whisper large-v3-turbo | 9.75 [9.1–10.44] | 9.21 | 2.57 | 2.8 | 1.5 | 2.8 | 2.61 | 3 | 0.082 |
+| Whisper medium | 13.77 [12.94–14.64] | 13.12 | 3.94 | 4.1 | 2.5 | 3.8 | 3.85 | 6 | 0.071 |
+| NVIDIA Parakeet-TDT-0.6B-v3 | 18.21 [17.2–19.2] | 15.03 | 6.29 | 20.8 | 1.8 | 5.3 | 15.13 | 3 | 0.097 |
+| NVIDIA Canary-1B-v2 | 20.05 [18.95–21.34] | 14.04 | 8.66 | 25.6 | 1.5 | 5.0 | 18.27 | 8 | 0.295 |
+| Qwen3-ASR-1.7B | 21.8 [20.9–22.76] | 18.35 | 7.37 | 7.7 | 10.3 | 13.7 | 9.27 | 3 | 0.151 |
+| Meta MMS-1b-all (pol) + KenLM | 32.07 [30.88–33.35] | 25.72 | 12.47 | 81.8 | 1.8 | 6.8 | 56.09 | 13 | 0.101 |
+| Meta MMS-1b-all (pol adapter, no LM) | 35.22 [33.87–36.48] | 27.46 | 13.17 | 57.3 | 6.3 | 11.0 | 41.23 | 36 | 0.088 |
+| NVIDIA FastConformer PL (hybrid, P&C) | 50.7 [49.26–52.17] | 31.4 | 30.29 | 100.0 | 7.5 | 37.1 | 75.03 | 41 | 0.03 |
+| wav2vec2 XLSR-53 Polish + KenLM | 52.8 [51.22–54.3] | 32.94 | 29.54 | 100.0 | 14.0 | 20.7 | 72.62 | 132 | 0.066 |
+| wav2vec2 XLSR-53 Polish (no LM) | 58.31 [56.67–59.69] | 41.08 | 30.68 | 100.0 | 23.8 | 25.5 | 74.90 | 121 | 0.07 |
+| Google MedASR | 99.65 [99.21–100.08] | 99.01 | 80.48 | 98.2 | 100.0 | 100.0 | 98.83 | 41 | 0.011 |
 
 **Observations.**
 - **Whisper large-v3 is the best open model** (WER 8.0%), also relative to the newer 2025–2026 models NVIDIA Canary-1B-v2, Parakeet-TDT-0.6B-v3, and Qwen3-ASR-1.7B.
+- **CCER confirms the ranking but exposes clinically risky outliers.** Whisper large-v3 has the lowest CCER among open models (2.71%), close to its three category rates; Qwen3-ASR reaches a much higher CCER (9.27%) than its low number-error rate (7.7%) because of frequent negation (10.3%) and body-side (13.7%) errors.
 - **The new NVIDIA models lose mainly on number formatting** (20–26% errors on dimensions). After normalising the format (WER-N 14–15%) they approach Whisper medium.
 - **Qwen3-ASR handles numbers well but negations and body side poorly** (10–14% errors), i.e. the categories most dangerous clinically.
 - **A general Polish language model improves CTC models:** wav2vec2 from 58.3 to 52.8% WER, MMS from 35.2 to 32.1%, and for MMS the number of long insertions drops from 36 to 13.
@@ -236,18 +237,19 @@ Values in percent; WER with 95% CI. The "Numbers", "Negations", and "Body side" 
 
 Columns as in Section 5.1. The RTF includes network and queueing time, so it is not comparable with local models (Section 4.2).
 
-| Model | WER [95% CI] | WER-N | CER | Numbers | Negations | Body side | Insertions ≥3 | RTF |
-|---|---:|---:|---:|---:|---:|---:|---:|---:|
-| OpenAI gpt-4o-transcribe | 5.96 [5.4–6.52] | 4.47 | 2.03 | 1.9 | 2.0 | 2.7 | 1 | 0.021 |
-| OpenAI whisper-1 | 9.93 [9.26–10.62] | 9.45 | 2.58 | 3.5 | 3.3 | 3.5 | 1 | 0.032 |
-| AssemblyAI Universal-2 | 10.25 [9.54–10.96] | 9.71 | 2.77 | 3.5 | 2.8 | 3.8 | 1 | 0.265 |
-| Google Gemini 3.5 Flash | 10.4 [9.75–11.09] | 4.18 | 4.03 | 3.0 | 1.0 | 3.0 | 8 | 0.076 |
-| Deepgram Nova-3 | 15.06 [14.3–15.84] | 8.48 | 7.88 | 8.0 | 3.5 | 2.5 | 6 | 0.018 |
-| Speechmatics (pl) | 19.41 [18.68–20.18] | 16.37 | 6.18 | 16.1 | 0.3 | 7.0 | 1 | 0.03 |
-| ElevenLabs Scribe v2 | 28.27 [26.22–30.33] | 5.22 | 23.53 | 97.7 | 1.3 | 1.7 | 65 | 0.037 |
+| Model | WER [95% CI] | WER-N | CER | Numbers | Negations | Body side | CCER | Insertions ≥3 | RTF |
+|---|---|---:|---:|---:|---:|---:|---:|---:|---:|
+| OpenAI gpt-4o-transcribe | 5.96 [5.4–6.52] | 4.47 | 2.03 | 1.9 | 2.0 | 2.7 | 2.07 | 1 | 0.021 |
+| OpenAI whisper-1 | 9.93 [9.26–10.62] | 9.45 | 2.58 | 3.5 | 3.3 | 3.5 | 3.48 | 1 | 0.032 |
+| AssemblyAI Universal-2 | 10.25 [9.54–10.96] | 9.71 | 2.77 | 3.5 | 2.8 | 3.8 | 3.48 | 1 | 0.265 |
+| Google Gemini 3.5 Flash | 10.4 [9.75–11.09] | 4.18 | 4.03 | 3.0 | 1.0 | 3.0 | 2.74 | 8 | 0.076 |
+| Deepgram Nova-3 | 15.06 [14.3–15.84] | 8.48 | 7.88 | 8.0 | 3.5 | 2.5 | 6.33 | 6 | 0.018 |
+| Speechmatics (pl) | 19.41 [18.68–20.18] | 16.37 | 6.18 | 16.1 | 0.3 | 7.0 | 12.18 | 1 | 0.03 |
+| ElevenLabs Scribe v2 | 28.27 [26.22–30.33] | 5.22 | 23.53 | 97.7 | 1.3 | 1.7 | 65.56 | 65 | 0.037 |
 
 **Observations.**
 - **OpenAI gpt-4o-transcribe is the best system overall** (WER 5.96%, CER 2.03%, WER-N 4.47%, the lowest number-error rate: 1.9%). It surpasses the best open model, Whisper large-v3 (8.03%), and all cloud competitors. As many as 54% of its utterances are transcribed without error (Whisper large-v3: 39.6%).
+- **By CCER, gpt-4o-transcribe is the clinically safest (2.07%) and Gemini 3.5 Flash is close (2.74%)**, whereas ElevenLabs Scribe v2 has the highest CCER among cloud services (65.56%): its number verbalisation turns numbers into a critical-error source even though its TER is low.
 - **Google Gemini 3.5 Flash writes terms best** (TER 6.6%, the lowest of all, versus 15.8% for Whisper large-v3) and has the best WER-N (4.18%) and the fewest negation errors (1.0%). Its raw WER (10.4%) is higher because the general LLM "smooths" the content (punctuation, word splitting, 8 longer insertions), which the WER metric counts as errors.
 - **OpenAI whisper-1 (9.93%)** and AssemblyAI Universal-2 (10.25%) sit just behind Whisper large-v3, but ahead of Whisper medium (13.77%). AssemblyAI almost never inserts longer phrases (1 insertion).
 - **ElevenLabs Scribe v2 spells out numbers**, which artificially inflates WER: "2 mm" → "dwóch milimetrów", "14x12x45 mm" → "czternaście na dwanaście na czterdzieści pięć milimetrów", "10.9 ml" → "dziesięć i dziewięć dziesiątych mililitra". This affects 97.7% of tokens with a digit and raises CER to 23.53%. After normalising the number format (WER-N) ElevenLabs reaches 5.22% — the third best result (after Gemini 4.18% and gpt-4o-transcribe 4.47%). At the same time it has the most long insertions (65 versus 1–6 for the others), suggesting "smoothing" of the content rather than verbatim transcription.
@@ -319,7 +321,7 @@ TER by term class (selected models; full table: `results/terms/by_class.csv`):
 
 **Number verbalisation is a metric artefact, not a recognition failure.** ElevenLabs Scribe v2 renders numbers as words ("2 mm" → "dwóch milimetrów"), producing a raw WER of 28.27% that would wrongly suggest a poor system. Its WER-N of 5.22% places it among the best. Any benchmark of Polish (or other morphologically rich) radiology dictation should therefore report a number-normalised metric alongside raw WER, and should state explicitly which convention (digits versus words) the deployment context requires.
 
-**What matters clinically is not aggregate WER.** The clinically critical categories diverge from the aggregate ranking. Qwen3-ASR is competitive on numbers (7.7% number errors) but has the worst negation- and body-side error rates among open models (10.3% and 13.7%), and FastConformer PL confuses body side in 37% of cases. A system chosen on aggregate WER may therefore still be the riskiest for a signed report. A deployment decision should weight numbers, negations, and body side explicitly, and a human-in-the-loop review should target exactly these tokens.
+**What matters clinically is not aggregate WER.** The clinically critical categories diverge from the aggregate ranking. Qwen3-ASR is competitive on numbers (7.7% number errors) but has the worst negation- and body-side error rates among open models (10.3% and 13.7%), and FastConformer PL confuses body side in 37% of cases. A system chosen on aggregate WER may therefore still be the riskiest for a signed report. A deployment decision should weight numbers, negations, and body side explicitly, and a human-in-the-loop review should target exactly these tokens. We summarise the three categories in a single clinically critical error rate (CCER, Section 4.3): gpt-4o-transcribe leads (2.07%), Gemini 3.5 Flash follows (2.74%), and ElevenLabs Scribe v2 is the riskiest among cloud services (65.56%) because it spells numbers out.
 
 **Near-miss dominance points to a cheap remedy.** Because most terminology errors in classical ASR are near-misses — the acoustic model heard the word but did not know its spelling — a lexicon-driven post-correction or a decoding-time term list could remove a large share of errors without retraining. An upper bound for this remedy is visible in the gap between TER (15.8%) and TER-L (13.0%) for Whisper large-v3, and in the concentration of errors on a small set of high-impact abbreviations (TIRADS, PACS, color Doppler). This is the object of stage 2.
 

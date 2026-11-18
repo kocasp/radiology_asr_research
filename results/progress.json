@@ -1,6 +1,6 @@
 {
  "title": "Błędy modeli ASR w dyktowaniu polskich opisów diagnostyki obrazowej",
- "updated": "2026-11-18T00:00:55+01:00",
+ "updated": "2026-11-18T10:35:11+01:00",
  "state": "idle",
  "smoke": false,
  "test_set": {
@@ -344,6 +344,8 @@
    "neg_n": 399,
    "side_err": 3.8,
    "side_n": 599,
+   "ccer": 3.85,
+   "ccer_n": 2988,
    "wer_num": 13.12,
    "wer_num_ci": [
     12.32,
@@ -604,6 +606,8 @@
    "neg_n": 399,
    "side_err": 2.8,
    "side_n": 599,
+   "ccer": 2.61,
+   "ccer_n": 2988,
    "wer_num": 9.21,
    "wer_num_ci": [
     8.59,
@@ -864,6 +868,8 @@
    "neg_n": 399,
    "side_err": 2.5,
    "side_n": 599,
+   "ccer": 2.71,
+   "ccer_n": 2988,
    "wer_num": 7.61,
    "wer_num_ci": [
     7.03,
@@ -1124,6 +1130,8 @@
    "neg_n": 399,
    "side_err": 25.5,
    "side_n": 599,
+   "ccer": 74.9,
+   "ccer_n": 2988,
    "wer_num": 41.08,
    "wer_num_ci": [
     39.83,
@@ -1384,6 +1392,8 @@
    "neg_n": 399,
    "side_err": 11.0,
    "side_n": 599,
+   "ccer": 41.23,
+   "ccer_n": 2988,
    "wer_num": 27.46,
    "wer_num_ci": [
     26.46,
@@ -1644,6 +1654,8 @@
    "neg_n": 399,
    "side_err": 100.0,
    "side_n": 599,
+   "ccer": 98.83,
+   "ccer_n": 2988,
    "wer_num": 99.01,
    "wer_num_ci": [
     98.61,
@@ -1904,6 +1916,8 @@
    "neg_n": 399,
    "side_err": 37.1,
    "side_n": 599,
+   "ccer": 75.03,
+   "ccer_n": 2988,
    "wer_num": 31.4,
    "wer_num_ci": [
     30.39,
@@ -2164,6 +2178,8 @@
    "neg_n": 399,
    "side_err": 20.7,
    "side_n": 599,
+   "ccer": 72.62,
+   "ccer_n": 2988,
    "wer_num": 32.94,
    "wer_num_ci": [
     31.72,
@@ -2416,7 +2432,7 @@
    "long_ins": 13,
    "utt_perfect": 13.7,
    "audio_s": 9672.5,
-   "proc_s": 976.7,
+   "proc_s": 976.6,
    "rtf": 0.101,
    "num_err": 81.8,
    "num_n": 1990,
@@ -2424,6 +2440,8 @@
    "neg_n": 399,
    "side_err": 6.8,
    "side_n": 599,
+   "ccer": 56.09,
+   "ccer_n": 2988,
    "wer_num": 25.72,
    "wer_num_ci": [
     24.73,
@@ -2684,6 +2702,8 @@
    "neg_n": 399,
    "side_err": 5.0,
    "side_n": 599,
+   "ccer": 18.27,
+   "ccer_n": 2988,
    "wer_num": 14.04,
    "wer_num_ci": [
     13.3,
@@ -2944,6 +2964,8 @@
    "neg_n": 399,
    "side_err": 5.3,
    "side_n": 599,
+   "ccer": 15.13,
+   "ccer_n": 2988,
    "wer_num": 15.03,
    "wer_num_ci": [
     14.32,
@@ -3204,6 +3226,8 @@
    "neg_n": 399,
    "side_err": 13.7,
    "side_n": 599,
+   "ccer": 9.27,
+   "ccer_n": 2988,
    "wer_num": 18.35,
    "wer_num_ci": [
     17.57,
@@ -3464,6 +3488,8 @@
    "neg_n": 399,
    "side_err": 1.7,
    "side_n": 599,
+   "ccer": 65.56,
+   "ccer_n": 2988,
    "wer_num": 5.22,
    "wer_num_ci": [
     4.7,
@@ -3724,6 +3750,8 @@
    "neg_n": 399,
    "side_err": 2.5,
    "side_n": 599,
+   "ccer": 6.33,
+   "ccer_n": 2988,
    "wer_num": 8.48,
    "wer_num_ci": [
     7.9,
@@ -3984,6 +4012,8 @@
    "neg_n": 399,
    "side_err": 7.0,
    "side_n": 599,
+   "ccer": 12.18,
+   "ccer_n": 2988,
    "wer_num": 16.37,
    "wer_num_ci": [
     15.69,
@@ -4244,6 +4274,8 @@
    "neg_n": 399,
    "side_err": 3.8,
    "side_n": 599,
+   "ccer": 3.48,
+   "ccer_n": 2988,
    "wer_num": 9.71,
    "wer_num_ci": [
     9.0,
@@ -4504,6 +4536,8 @@
    "neg_n": 399,
    "side_err": 3.5,
    "side_n": 599,
+   "ccer": 3.48,
+   "ccer_n": 2988,
    "wer_num": 9.45,
    "wer_num_ci": [
     8.76,
@@ -4764,6 +4798,8 @@
    "neg_n": 399,
    "side_err": 2.7,
    "side_n": 599,
+   "ccer": 2.07,
+   "ccer_n": 2988,
    "wer_num": 4.47,
    "wer_num_ci": [
     4.02,
@@ -5024,6 +5060,8 @@
    "neg_n": 399,
    "side_err": 3.0,
    "side_n": 599,
+   "ccer": 2.74,
+   "ccer_n": 2988,
    "wer_num": 4.18,
    "wer_num_ci": [
     3.69,

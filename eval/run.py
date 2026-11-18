@@ -208,7 +208,8 @@ def write_summary(prog):
         if r:
             rows.append(dict(id=e["id"], name=e["name"], mode=e["mode"], wer=r["wer"], wer_ci_lo=r["wer_ci"][0],
                              wer_ci_hi=r["wer_ci"][1], cer=r["cer"], num_err=r["num_err"], neg_err=r["neg_err"],
-                             side_err=r["side_err"], S=r["S"], D=r["D"], I=r["I"], long_ins=r["long_ins"],
+                             side_err=r["side_err"], ccer=r.get("ccer"), ccer_n=r.get("ccer_n"),
+                             S=r["S"], D=r["D"], I=r["I"], long_ins=r["long_ins"],
                              utt_perfect=r["utt_perfect"], rtf=r["rtf"], leak_risk=bool(e.get("leak_risk"))))
     if rows:
         with open(os.path.join(RES, "summary.csv"), "w", newline="", encoding="utf-8") as f:

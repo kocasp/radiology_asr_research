@@ -17,7 +17,7 @@
  "long_ins": 13,
  "utt_perfect": 13.7,
  "audio_s": 9672.5,
- "proc_s": 976.7,
+ "proc_s": 976.6,
  "rtf": 0.101,
  "num_err": 81.8,
  "num_n": 1990,
@@ -25,6 +25,8 @@
  "neg_n": 399,
  "side_err": 6.8,
  "side_n": 599,
+ "ccer": 56.09,
+ "ccer_n": 2988,
  "wer_num": 25.72,
  "wer_num_ci": [
   24.73,

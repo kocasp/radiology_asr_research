@@ -20,7 +20,7 @@ CREATE TABLE runs(
   n_utt INTEGER, n_words INTEGER, wer REAL, wer_ci_lo REAL, wer_ci_hi REAL, cer REAL, cer_ci_lo REAL, cer_ci_hi REAL,
   S INTEGER, D INTEGER, I INTEGER, long_ins INTEGER, utt_perfect REAL,
   num_err REAL, num_n INTEGER, neg_err REAL, neg_n INTEGER, side_err REAL, side_n INTEGER,
-  audio_s REAL, proc_s REAL, rtf REAL);
+  audio_s REAL, proc_s REAL, rtf REAL, ccer REAL, ccer_n INTEGER);
 CREATE TABLE utterances(
   run_id TEXT REFERENCES runs(run_id), recording_id TEXT,
   speaker_id TEXT, speaker_sex TEXT, category_code TEXT, mic_code TEXT, rec_place TEXT, duration_s REAL, text_id INTEGER,
@@ -91,7 +91,7 @@ def main():
             m.get("decoding"), NORM_VERSION, spec.get("leak_risk"), m.get("finished"),
             m["n_utt"], m["n_words"], m["wer"], m["wer_ci"][0], m["wer_ci"][1], m["cer"], m["cer_ci"][0], m["cer_ci"][1],
             m["S"], m["D"], m["I"], m["long_ins"], m["utt_perfect"], m["num_err"], m["num_n"], m["neg_err"], m["neg_n"],
-            m["side_err"], m["side_n"], m["audio_s"], m["proc_s"], m["rtf"])
+            m["side_err"], m["side_n"], m["audio_s"], m["proc_s"], m["rtf"], m.get("ccer"), m.get("ccer_n"))
         q = lambda n: "(" + ",".join("?" * n) + ")"
         con.execute("INSERT INTO runs VALUES" + q(len(run_row)), run_row)
         if utts:
